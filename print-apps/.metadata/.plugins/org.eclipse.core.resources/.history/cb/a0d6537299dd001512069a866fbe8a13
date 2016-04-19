@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-27T15:59:11 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="mapSubReport2k" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="mapSubReport10k" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="scalebarSubReport2k" class="java.lang.String"/>
+	<parameter name="scalebarSubReport10k" class="java.lang.String"/>
+	<parameter name="northArrowSubReport2k" class="java.lang.String"/>
+	<parameter name="requerente" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="pedido" class="java.lang.String"/>
+	<parameter name="datahora" class="java.lang.String"/>
+	<parameter name="centro" class="java.lang.String"/>
+	<title>
+		<band height="555" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="0" y="0" width="802" height="72" uuid="4ede5754-9943-4280-a547-48f8c413f1d8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<subreport>
+				<reportElement x="0" y="92" width="802" height="463" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{mapSubReport2k}]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="4" y="7" width="80" height="71" uuid="c1da311a-a546-4027-ac8b-fd8624b73357"/>
+				<imageExpression><![CDATA["/var/lib/tomcat7/webapps/print/print-apps/plantas/logotipo_utsig.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="100" y="15" width="180" height="42" backcolor="rgba(255, 255, 255, 0.52156866)" uuid="3988392b-f1e2-4eda-9cb4-7caa2b3eb0cc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Plantas de Localização<br/>Câmara Municipal de Águeda<br/>Unidade Técnica de SIG]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="630" y="22" width="160" height="40" uuid="fb476ec0-cba6-41a9-bb5a-7b39027170b5"/>
+				<subreportExpression><![CDATA[$P{scalebarSubReport2k}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="560" y="17" width="50" height="50" uuid="ca2c1c8f-047b-4c2b-827d-afa2f4107543">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{northArrowSubReport2k}]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="100" width="260" height="16" uuid="cb62c9eb-2d20-407e-af94-802106a897d0"/>
+				<text><![CDATA[Coordenadas (PT-TM06/ETRS89) do ponto central:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="520" width="762" height="20" uuid="49e8bb88-2cd5-4467-be35-3237c1fcd2e3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Câmara Municipal de Águeda, Praça do Município, 3754-500 Águeda, Telefone 234 610 070 Linha Verde: 800 203 197, Email: geral@cm-agueda.pt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="15" width="160" height="15" uuid="bca589fa-e381-4903-bfcf-2960e4b045dc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{requerente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="15" width="72" height="15" uuid="595557b2-0c25-4726-8791-17899738d1f3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[Requerente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="30" width="72" height="15" uuid="0d10a379-9137-46e1-b228-9c9d58d086b2"/>
+				<text><![CDATA[Nº Pedido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="30" width="160" height="15" uuid="28d81211-15ff-4158-b083-61019d9ed763">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{pedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="100" width="230" height="16" uuid="8ed8c360-778f-4086-8736-736e1574c2b6"/>
+				<textFieldExpression><![CDATA[$P{centro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="45" width="72" height="15" uuid="171de400-c084-4f22-a661-9836650e72de">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<text><![CDATA[Data/hora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="45" width="160" height="15" uuid="d3d70441-4ead-42e6-9888-181638a1c7f1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{datahora}	]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="86" y="0" width="1" height="72" uuid="f7dd09f9-c497-4310-bc09-abe359975f75">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="289" y="0" width="1" height="72" uuid="1bc701be-6f68-4df9-b579-14f0743d80ff">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="550" y="1" width="1" height="72" uuid="5a2a1f4a-b485-459f-9254-66fb4feaa605">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="620" y="0" width="1" height="72" uuid="11e7c6de-acfe-4afd-9f53-349898dd97c4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="557" y="4" width="57" height="13" uuid="22c02201-a46d-4172-ace1-1ef2ddc0793f"/>
+				<text><![CDATA[Orientação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="682" y="4" width="57" height="13" uuid="1affdd64-ac67-469e-9dd7-c2c4877b7009"/>
+				<text><![CDATA[Escala]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="554">
+			<subreport>
+				<reportElement x="12" y="50" width="780" height="330" uuid="8c72ea54-9c50-4111-b09f-84f846357727">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{mapSubReport10k}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="460" y="340" width="320" height="40" uuid="3090ba49-84a1-4e01-9f45-45d131318e3e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{scalebarSubReport10k}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="4" y="80" width="50" height="50" uuid="ba56c9f3-1803-4052-9dbb-6f8790bc222a">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{northArrowSubReport2k}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

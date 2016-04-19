@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Registo de utilizadores
+    
+  if user
+    p. Bem vindo, #{user.name}    
+    p. 
+      O seu email #{user.email} está confirmado e o seu registo está concluído. 
+      Pode autenticar-se com o este email e com a senha que escolheu.
+  else
+    p.
+      Este pedido de confirmação do email já está caducado. Tente aceder com as suas credendicais (email e senha).
+    p Se não está a conseguir entrar, registe-se novamente.
+    
+  p Seguir para o 
+    a(href='#{site}') site

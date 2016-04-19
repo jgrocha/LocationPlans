@@ -1,0 +1,55 @@
+{
+  "ServerConfig": {
+    "port": 3000,
+    "logger": "dev",
+    "enableUpload": true,
+    "enableCompression": true,
+    "webRoot": "/public",
+    "fileUploadFolder": "./uploads",
+    "enableSessions": true,
+    "sessionSecret": "vdW3F6y3506h",
+    "enableCORS": true,
+    "AccessControl": {
+      "AllowOrigin": "*",
+      "AllowMethods": "GET,PUT,POST,DELETE,OPTIONS",
+      "AllowHeaders": "Origin, X-Requested-With, Content-Type, Accept, Authorization, Content-Length",
+      "AllowCredentials": true,
+      "MaxAge": 3600
+    },
+    "dbide": "postgres://geobox:geobox@localhost:9433/ide",
+    "dbpublica": "postgres://geobox:geobox@localhost:9432/ide",
+    "dbproduction": "postgres://geobox:geoptbox2k16@marte/web",
+    "_dbdevelopment": "postgres://geobox:geoptbox2k16@marte.sig.cm-agueda.pt/web",
+    "dbdevelopment": "postgres://geobox:geobox@localhost/geotuga",
+    "dblayers": "public.mainz",
+    "mssqlserver": "mssql://sig:sig@localhost:8433/SIGMAGEST15"
+  },
+  "ExtDirectConfig": {
+    "rootNamespace": "Server",
+    "apiName": "API",
+    "apiUrl": "/directapi",
+    "classRouteUrl": "/direct",
+    "classPath": "/direct",
+    "server": "localhost",
+    "port": "3000",
+    "protocol": "http",
+    "timeout": 30000,
+    "cacheAPI": false,
+    "relativeUrl": true,
+    "appendRequestResponseObjects": true,
+    "enableMetadata": true,
+    "responseHelper": true,
+    "enableProcessors": true
+  },
+  "ClientConfig": {
+    "title": "Unidade Técnica de SIG, Câmara Municipal de Águeda",
+    "author": "Geomaster, Lda",
+    "description": "Impressão de Plantas de Localização",
+    "keywords": "Palntas de localização, impressão, 2000, 10000",
+    "headertitle": "UT SIG",
+    "headerlogo": "resources/images/dadosagueda_sem.png",
+    "headerlogowidth": "56",
+    "headerlogoheight": "26",
+    "helpbasefolder": "resources/help/"
+  }
+}

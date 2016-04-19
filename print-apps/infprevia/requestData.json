@@ -1,0 +1,153 @@
+{
+    "attributes": {
+        "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas, massa eget placerat fermentum, nunc massa facilisis enim, id eleifend orci lacus sed sem.",
+        "datasource": [
+            {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas, massa eget placerat fermentum, nunc massa facilisis enim, id eleifend orci lacus sed sem. Donec ultricies rhoncus sem vel suscipit. Nullam fermentum mollis orci, volutpat tristique leo vulputate ut. Sed nisl dolor, auctor quis facilisis in, interdum et leo.",
+                "map": {
+                    "center": [
+                        -8233518.5005945,
+                        4980320.4059228
+                    ],
+                    "dpi": 72,
+                    "layers": [
+                        {
+                            "geoJson": {
+                                "features": [{
+                                    "geometry": {
+                                        "coordinates": [
+                                            -8233518.5005945,
+                                            4980320.4059228
+                                        ],
+                                        "type": "Point"
+                                    },
+                                    "properties": {"name": "Lake View"},
+                                    "type": "Feature"
+                                }],
+                                "type": "FeatureCollection"
+                            },
+                            "style": {
+                                "*": {"symbolizers": [{
+                                    "fillColor": "red",
+                                    "pointRadius": 6,
+                                    "strokeColor": "red",
+                                    "strokeOpacity": 1,
+                                    "strokeWidth": 2,
+                                    "type": "point"
+                                }]},
+                                "version": "2"
+                            },
+                            "type": "geojson"
+                        },
+            {
+                "baseURL": "http://otile1.mqcdn.com/tiles/1.0.0/map",
+                "imageExtension": "png",
+                "type": "OSM"
+            }
+                    ],
+                    "projection": "EPSG:900913",
+                    "scale": 25000
+                },
+                "title": "Lake View"
+            },
+            {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas, massa eget placerat fermentum, nunc massa facilisis enim, id eleifend orci lacus sed sem. Donec ultricies rhoncus sem vel suscipit. Nullam fermentum mollis orci, volutpat tristique leo vulputate ut. Sed nisl dolor, auctor quis facilisis in, interdum et leo.",
+                "map": {
+                    "center": [
+                        -8234918.5005945,
+                        4981920.4059228
+                    ],
+                    "dpi": 72,
+                    "layers": [
+                        {
+                            "geoJson": {
+                                "features": [{
+                                    "geometry": {
+                                        "coordinates": [
+                                            -8234918.5005945,
+                                            4981920.4059228
+                                        ],
+                                        "type": "Point"
+                                    },
+                                    "properties": {"name": "Chez Jean"},
+                                    "type": "Feature"
+                                }],
+                                "type": "FeatureCollection"
+                            },
+                            "style": {
+                                "*": {"symbolizers": [{
+                                    "fillColor": "red",
+                                    "pointRadius": 6,
+                                    "strokeColor": "red",
+                                    "strokeOpacity": 1,
+                                    "strokeWidth": 2,
+                                    "type": "point"
+                                }]},
+                                "version": "2"
+                            },
+                            "type": "geojson"
+                        },
+            {
+                "baseURL": "http://otile1.mqcdn.com/tiles/1.0.0/map",
+                "imageExtension": "png",
+                "type": "OSM"
+            }
+                    ],
+                    "projection": "EPSG:900913",
+                    "scale": 25000
+                },
+                "title": "Chez Jean"
+            },
+            {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas, massa eget placerat fermentum, nunc massa facilisis enim, id eleifend orci lacus sed sem. Donec ultricies rhoncus sem vel suscipit. Nullam fermentum mollis orci, volutpat tristique leo vulputate ut. Sed nisl dolor, auctor quis facilisis in, interdum et leo.",
+                "map": {
+                    "center": [
+                        -8234618.5005945,
+                        4981920.4059228
+                    ],
+                    "dpi": 72,
+                    "layers": [
+                        {
+                            "geoJson": {
+                                "features": [{
+                                    "geometry": {
+                                        "coordinates": [
+                                            -8234618.5005945,
+                                            4981920.4059228
+                                        ],
+                                        "type": "Point"
+                                    },
+                                    "properties": {"name": "Little Italy"},
+                                    "type": "Feature"
+                                }],
+                                "type": "FeatureCollection"
+                            },
+                            "style": {
+                                "*": {"symbolizers": [{
+                                    "fillColor": "red",
+                                    "pointRadius": 6,
+                                    "strokeColor": "red",
+                                    "strokeOpacity": 1,
+                                    "strokeWidth": 2,
+                                    "type": "point"
+                                }]},
+                                "version": "2"
+                            },
+                            "type": "geojson"
+                        },
+            {
+                "baseURL": "http://otile1.mqcdn.com/tiles/1.0.0/map",
+                "imageExtension": "png",
+                "type": "OSM"
+            }
+                    ],
+                    "projection": "EPSG:900913",
+                    "scale": 25000
+                },
+                "title": "Little Italy"
+            }
+        ],
+        "title": "Restaurants"
+    },
+    "layout": "A4 portrait"
+}

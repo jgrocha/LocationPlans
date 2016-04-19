@@ -1,0 +1,275 @@
+pdfConfig: !pdfConfig
+  compressed: true
+  title: "Plantas de Localização"
+  author: "Câmara Municipal de Águeda"
+  subject: "Plantas de Localização sobre a cartografia oficial 1:2k e 1:10k"
+  creator: "Geomaster, Lda"
+  keywords: ["Cartografia oficial", "Águeda"]
+
+throwErrorOnExtraParameters: true
+
+templates:
+  A3_portrait: !template
+    reportTemplate: A3vertical.jrxml
+    attributes:
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      map2k: !map
+        maxDpi: 400
+        width: 802
+        height: 1150
+      map10k: !map
+        maxDpi: 400
+        width: 802
+        height: 1150
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      scalebar10k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map10k: map}
+      outputMapper: { mapSubReport: mapSubReport10k, mapContext: mapContext10k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createScalebar
+      inputMapper: { scalebar10k: scalebar, mapContext10k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport10k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }
+  A3_landscape: !template
+    reportTemplate: A3horizontal.jrxml
+    attributes:
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      map2k: !map
+        maxDpi: 400
+        width: 1150
+        height: 802
+      map10k: !map
+        maxDpi: 400
+        width: 1150
+        height: 802
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      scalebar10k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map10k: map}
+      outputMapper: { mapSubReport: mapSubReport10k, mapContext: mapContext10k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createScalebar
+      inputMapper: { scalebar10k: scalebar, mapContext10k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport10k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }
+  A4_portrait: !template
+    reportTemplate: A4vertical.jrxml
+    attributes:
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      map2k: !map
+        maxDpi: 400
+        width: 555
+        height: 802
+      map10k: !map
+        maxDpi: 400
+        width: 555
+        height: 802
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      scalebar10k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map10k: map}
+      outputMapper: { mapSubReport: mapSubReport10k, mapContext: mapContext10k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createScalebar
+      inputMapper: { scalebar10k: scalebar, mapContext10k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport10k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }
+  A4_landscape: !template
+    reportTemplate: A4horizontal.jrxml
+    attributes:
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      map2k: !map
+        maxDpi: 400
+        width: 802
+        height: 555
+      map10k: !map
+        maxDpi: 400
+        width: 802
+        height: 555
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      scalebar10k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map10k: map}
+      outputMapper: { mapSubReport: mapSubReport10k, mapContext: mapContext10k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createScalebar
+      inputMapper: { scalebar10k: scalebar, mapContext10k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport10k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }

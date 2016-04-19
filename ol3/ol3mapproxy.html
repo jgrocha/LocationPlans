@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>OpenLayers v3.13.1 com MapProxy</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.13.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../resources/js/OL3/ol3-layerswitcher.css"/>
+    <script src="http://openlayers.org/en/v3.13.1/build/ol.js"></script>
+    <!--<script src="http://openlayers.org/en/v3.13.1/build/ol-debug.js"></script>-->
+    <script src="../resources/js/OL3/ol3-layerswitcher.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+    <script src="http://epsg.io/3763.js"></script>
+
+    <script type="text/javascript">
+        var map;
+        function init() {
+
+            var projection = new ol.proj.Projection({
+                code: 'EPSG:3763',
+                // Gridset bounds
+                // Computed from maximum extent of CRS
+                // extent: [-127096.80687006014, -301702.02931375435, 173081.7938279003, 278541.6694684961]
+                extent: [-119191.407499, -300404.803999, 162129.0811, 276083.7674]
+
+            });
+            var projectionExtent = projection.getExtent();
+
+            var resolutions = [281.488560253, 140.744280127, 70.3721400634, 35.1860700317, 17.5930350158, 8.79651750792, 4.39825875396, 2.19912937698, 1.09956468849, 0.549782344245, 0.274891172122, 0.137445586061, 0.0687227930306],
+                    matrixIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], // ['00', '01', '02', '03', '04', '05', '06', '07','08', '09', '10', '11', '12'],
+                    extent = [-119191.407499, -300404.803999, 162129.0811, 276083.7674],
+                    origin = [-119191.407499, 276083.7674];
+            var pt_tm_06_grid = new ol.tilegrid.WMTS({
+                origin: origin,
+                resolutions: resolutions,
+                matrixIds: matrixIds
+            });
+            var osm = new ol.layer.Tile({
+                // para o layer switcher
+                title: 'OpenStreetMap',
+                type: 'base',
+                visible: true,
+                //
+                source: new ol.source.WMTS({
+                    url: 'http://{a-d}.geomaster.pt/mapproxy/wmts/osm/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png',
+                    layer: 'osm', // mapproxy layer
+                    attributions: [new ol.Attribution({
+                        html: "© contribuidores do OpenStreetMap"
+                    })],
+                    requestEncoding: 'REST',
+                    matrixSet: 'pt_tm_06', // mapproxy grid
+                    format: 'image/png',
+//                    projection: projection,
+                    extent: extent,
+                    tileGrid: pt_tm_06_grid
+                })
+            });
+            var mapquest = new ol.layer.Tile({
+
+                title: 'MapQuest', // para o layer switcher
+                type: 'base', // para o layer switcher
+                visible: false,
+                //
+                source: new ol.source.WMTS({
+                    url: 'http://{a-d}.geomaster.pt/mapproxy/wmts/mapquest/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png',
+                    layer: 'mapquest', // mapproxy layer
+                    attributions: [new ol.Attribution({
+                        html: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">&nbsp; © contribuidores do OpenStreetMap'
+                    })],
+                    requestEncoding: 'REST',
+                    matrixSet: 'pt_tm_06', // mapproxy grid
+                    format: 'image/png',
+//                    projection: projection,
+                    extent: extent,
+                    tileGrid: pt_tm_06_grid
+                })
+            });
+            var carto10k = new ol.layer.Tile({
+                // para o layer switcher
+                title: 'Cartografia 10k',
+                type: 'base',
+                visible: false,
+                //
+                source: new ol.source.WMTS({
+                    url: 'http://{a-d}.geomaster.pt/mapproxy/wmts/carto10k/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png',
+                    layer: 'carto10k', // mapproxy layer
+                    attributions: [new ol.Attribution({
+                        html: "Câmara Municipal de Águeda"
+                    })],
+                    requestEncoding: 'REST',
+                    matrixSet: 'pt_tm_06', // mapproxy grid
+                    format: 'image/png',
+//                    projection: projection,
+                    extent: extent,
+                    tileGrid: pt_tm_06_grid
+                })
+            });
+            var ortos = new ol.layer.Tile({
+                // para o layer switcher
+                title: 'Ortos DGT',
+                type: 'base',
+                visible: false,
+                //
+                source: new ol.source.WMTS({
+                    url: 'http://{a-d}.geomaster.pt/mapproxy/wmts/ortos/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png',
+                    layer: 'ortos', // mapproxy layer
+                    attributions: [new ol.Attribution({
+                        html: "Direção Geral do Território"
+                    })],
+                    requestEncoding: 'REST',
+                    matrixSet: 'pt_tm_06', // mapproxy grid
+                    format: 'image/png',
+//                    projection: projection,
+                    extent: extent,
+                    tileGrid: pt_tm_06_grid
+                })
+            });
+            var parque = new ol.layer.Tile({
+                title: 'Parque Urbano',
+                source: new ol.source.TileWMS({
+                    url: 'http://softwarelivre.cm-agueda.pt/geoserver/ide_local/wms',
+                    params: {'LAYERS': 'ppgis_pu'},
+                    serverType: 'geoserver',
+                    crossOrigin: 'anonymous',
+                    attributions: [new ol.Attribution({
+                        html: "UT-SIG, CM Águeda"
+                    })]
+                })
+            });
+
+            var grupo = new ol.layer.Group({
+                title: 'CMA',
+                layers: [ ortos, carto10k, parque]
+            });
+
+            map = new ol.Map({
+                target: 'map',
+                layers: [osm, mapquest, grupo],
+                view: new ol.View({
+                    projection: projection,
+                    center: [-26000, 100800],
+                    zoom: 10
+                })
+            });
+            // https://github.com/walkermatt/ol3-layerswitcher
+            var layerSwitcher = new ol.control.LayerSwitcher({
+                tipLabel: 'Legenda'
+            });
+            map.addControl(layerSwitcher);
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id='map'></div>
+</body>
+</html>

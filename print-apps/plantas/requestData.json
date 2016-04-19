@@ -1,0 +1,50 @@
+{
+    "layout": "A4_portrait",
+    "attributes": {
+        "requerente": "Ana Isabel Gomes Vilar",
+        "pedido": "1999/2016",
+        "centro": "-26177, 101169",
+        "map2k": {
+            "center": [-26177, 101169],
+            "dpi": 200,
+            "layers": [{
+                "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                "customParams": {
+                    "VERSION": "1.1.1",
+                    "tiled": true,
+                    "STYLES": "",
+                    "LAYERS": "carto2_5k"
+                },
+                "layers": ["carto2_5k"],
+                "opacity": 1,
+                "styles": [""],
+                "type": "WMS"
+            }
+            ],
+            "projection": "EPSG:3763",
+            "rotation": 0,
+            "scale": 2000
+        },
+        "map10k": {
+            "center": [-26177, 101169],
+            "dpi": 200,
+            "layers": [{
+                "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                "customParams": {
+                    "VERSION": "1.1.1",
+                    "tiled": true,
+                    "STYLES": "",
+                    "LAYERS": "carto10k"
+                },
+                "layers": ["carto10k"],
+                "opacity": 1,
+                "styles": [""],
+                "type": "WMS"
+            }
+            ],
+            "projection": "EPSG:3763",
+            "rotation": 0,
+            "scale": 10000
+        }
+    }
+}

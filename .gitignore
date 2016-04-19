@@ -1,0 +1,7 @@
+server/public
+server/node_modules
+server/uploads
+uploaded_images
+build/development
+build/temp
+ext

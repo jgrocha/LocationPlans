@@ -1,0 +1,37 @@
+[{
+    "id": "Password reset",
+    "translation": "Pedido de nova senha"
+}, {
+    "id": "Registration",
+    "translation": "Registo"
+}, {
+    "id": "Error sending mail to %s",
+    "translation": "Erro ao enviar email para %s"
+}, {
+    "id": "Session not registered or too old",
+    "translation": "Sem sessão válida"
+}, {
+    "id": "Session recovered",
+    "translation": "Sessão recuperada"
+}, {
+    "id": "Database connection error",
+    "translation": "Erro na ligação à base de dados"
+}, {
+    "id": "Database error",
+    "translation": "Erro reportado pela base de dados"
+}, {
+    "id": "Invalid user or password",
+    "translation": "Identificação ou senha inválida"
+}, {
+    "id": "Login successful",
+    "translation": "Autenticação bem sucedida"
+}, {
+    "id": "Logout successful",
+    "translation": "Sessão encerrada"
+}, {
+    "id": "Language changed",
+    "translation": "Idioma alterado"
+}, {
+    "id": "Language was not updated",
+    "translation": "O idioma não foi alterado"
+}]

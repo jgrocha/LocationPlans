@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "totalFeatures": "unknown",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "agueda.010124",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      },
+      "geometry_name": "wkb_geometry",
+      "properties": [
+        {
+          "prop": "ogc_fid",
+          "value": 9
+        },
+        {
+          "prop": "dicofre",
+          "value": "010124"
+        },
+        {
+          "prop": "freguesia",
+          "value": "União das freguesias de Recardães e Espinhel"
+        },
+        {
+          "prop": "concelho",
+          "value": "ÁGUEDA"
+        },
+        {
+          "prop": "distrito",
+          "value": "AVEIRO"
+        },
+        {
+          "prop": "area",
+          "value": 1991.78
+        },
+        {
+          "prop": "nut1_cod",
+          "value": 1
+        },
+        {
+          "prop": "nut1",
+          "value": "CONTINENTE"
+        },
+        {
+          "prop": "nut2_cod",
+          "value": 16
+        },
+        {
+          "prop": "nut2",
+          "value": "CENTRO"
+        },
+        {
+          "prop": "nut3_cod",
+          "value": "16D"
+        },
+        {
+          "prop": "nut3",
+          "value": "REGIÃO DE AVEIRO"
+        }
+      ]
+    },
+    {
+      "type": "Feature",
+      "id": "bgri2011_0101.2",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": []
+      },
+      "geometry_name": "geom",
+      "properties": [
+        {
+          "prop": "id",
+          "value": 2
+        },
+        {
+          "prop": "dtmn11",
+          "value": "0101"
+        },
+        {
+          "prop": "fr11",
+          "value": "08"
+        },
+        {
+          "prop": "sec11",
+          "value": "001"
+        },
+        {
+          "prop": "ss11",
+          "value": "42"
+        },
+        {
+          "prop": "bgri11",
+          "value": "01010800142"
+        },
+        {
+          "prop": "lug11",
+          "value": "999999"
+        },
+        {
+          "prop": "lug11desig",
+          "value": "Residual"
+        }
+      ]
+    }
+  ],
+  "crs": {
+    "type": "name",
+    "properties": [
+      {
+        "prop": "name",
+        "value": "urn:ogc:def:crs:EPSG::3763"
+      }
+    ]
+  }
+}

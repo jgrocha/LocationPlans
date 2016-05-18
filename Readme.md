@@ -152,6 +152,28 @@ exit
 
 ### Application
 
+#### Deploy the application from Gitlab
+
+```bash
+cd /mnt/nfs/data/
+git clone https://gitlab.com/jgrocha/MyDashBoard.git
+```
+
+#### Update the application from Gitlab
+
+```bash
+cd /mnt/nfs/data/MyDashBoard/
+git remote update
+git status -uno
+git pull
+
+— diff server/server-config.json ~/public_html/server-config.json
+sudo stop web
+cp -rf server/* ~/public_html
+cp -rf build/production/Admin/* ~/public_html/public
+sudo start web
+```
+
 #### Deploy the application
 
 Note: A key pair is needed to check out the code this way. Can be improved [this way](http://jonathannicol.com/blog/2013/11/19/automated-git-deployments-from-bitbucket/).

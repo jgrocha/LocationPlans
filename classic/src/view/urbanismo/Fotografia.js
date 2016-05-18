@@ -6,6 +6,8 @@ Ext.define("Admin.view.urbanismo.Fotografia", {
 
     title: 'Fotografias',
 
+    controller: "fotografia",
+
     items: [{
         xtype: 'dataview',
         bind: {
@@ -20,7 +22,11 @@ Ext.define("Admin.view.urbanismo.Fotografia", {
             '</tpl>'
         ],
         itemSelector: 'div.thumb-wrap',
-        emptyText: 'No images available'.translate()
+        emptyText: 'No images available'.translate(),
+        listeners: {
+            selectionchange: 'onSelectionChange',
+            itemclick: 'onItemClick'
+        }
     }]
 
 });

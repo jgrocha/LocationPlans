@@ -126,16 +126,16 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
         selectSingleClick.on('select', function (e) {
             selectedFeatures = [];
             e.target.getFeatures().forEach(function (feature, idx, a) {
-                console.log('selected → ' + feature.get('gid'));
+                // console.log('selected → ' + feature.get('gid'));
                 selectedFeatures.push(feature.get('gid'));
-                console.log(selectedFeatures);
+                // console.log(selectedFeatures);
             }, view);
 
             featureStore.filterBy(function (record, id) {
                 return Ext.Array.indexOf(selectedFeatures, record.get("gid")) !== -1;
             }, this);
 
-            console.log(featureStore.count());
+            // console.log(featureStore.count());
         });
     }
 

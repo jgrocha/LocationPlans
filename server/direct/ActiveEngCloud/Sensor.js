@@ -90,7 +90,8 @@ var Sensor = {
         console.log('ActiveEngCloud.Sensor.status');
         console.log(params);
         /*
-         { installdate: 'Adelaide',
+         {
+         installdate: 'Adelaide',
          location: 'Rita Rocha',
          address: '30:14:12:18:06:34',
          sensorid: '1' }
@@ -106,7 +107,7 @@ var Sensor = {
          from activenglabs.calibration
          group by sensorid, address
          )
-         select s.sensorid, s.address, temperature.lasttemperature, calibration.lastcalibration
+         select s.sensorid, s.address, s.location, s.sensortype, temperature.lasttemperature, calibration.lastcalibration
          from activenglabs.sensor s
          LEFT JOIN temperature ON s.sensorid = temperature.sensorid and s.address = temperature.address
          LEFT JOIN calibration ON s.sensorid = calibration.sensorid and s.address = calibration.address
@@ -124,7 +125,7 @@ var Sensor = {
             sql += '  from activenglabs.calibration ';
             sql += '  group by sensorid, address ';
             sql += ') ';
-            sql += 'select s.sensorid, s.address, temperature.lasttemperature, calibration.lastcalibration ';
+            sql += 'select s.sensorid, s.address, s.location, s.sensortype, temperature.lasttemperature, calibration.lastcalibration ';
             sql += 'from activenglabs.sensor s ';
             sql += 'LEFT JOIN temperature ON s.sensorid = temperature.sensorid and s.address = temperature.address ';
             sql += 'LEFT JOIN calibration ON s.sensorid = calibration.sensorid and s.address = calibration.address ';

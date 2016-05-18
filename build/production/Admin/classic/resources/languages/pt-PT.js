@@ -385,4 +385,7 @@ Translation = [{
 }, {
     "id": 'Sensors',
     "translation": 'Sensores'
+}, {
+    "id": 'No images available',
+    "translation": 'Sem fotografias'
 }];

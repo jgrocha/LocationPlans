@@ -3,7 +3,7 @@ Ext.define('Admin.view.consulta.EmbargoModel', {
     alias: 'viewmodel.embargo',
 
     stores: {
-        embargos: {
+        embargo: {
             model: 'consulta.Embargo',
             autoLoad: true,
             autoSync: false,

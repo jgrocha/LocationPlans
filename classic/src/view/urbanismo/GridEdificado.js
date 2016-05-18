@@ -8,16 +8,21 @@ Ext.define("Admin.view.urbanismo.GridEdificado", {
     // store: '{featureStore}',
 
     title: 'Edificado',
+    reference: 'edificadoGrid',
+    
+    // listeners: {
+    //     'selectionchange': 'edificadoGridSelectionChanged'
+    // },
 
     viewConfig: {
         emptyText: 'No data available',
         deferEmptyText: false
     },
 
-    columns: [{
+    columns: [ /* {
         xtype: 'gx_symbolizercolumn',
         width: 40
-    }, {
+    },*/ {
         text: 'Internal ID',
         dataIndex: 'gid',
         width: 80,
@@ -26,20 +31,19 @@ Ext.define("Admin.view.urbanismo.GridEdificado", {
             type: 'number'
         }
     }, {
-        text: 'Inspire ID',
-        dataIndex: 'inspireid',
+        text: 'ID',
+        // dataIndex: 'inspireid',
+        dataIndex: 'id_edifica',
         width: 80,
         filter: {
             type: 'number'
         }
     }, {
-        text: 'Data (inser.)',
-        dataIndex: 'data_inser',
-        xtype: 'datecolumn',
-        format: 'Y-m-d H:i:s',
-        width: 150,
+        text: 'Função (Uso)',
+        dataIndex: 'uso',
+        flex: 1,
         filter: {
-            type: 'date'
+            type: 'string'
         }
     }, {
         text: 'Data (sub.)',
@@ -56,24 +60,17 @@ Ext.define("Admin.view.urbanismo.GridEdificado", {
         dataIndex: 'estado',
         width: 120,
         filter: {
-            type: 'string',
-            value: 'funcional' // active with tis initial value
+            type: 'string' // , value: 'funcional' // active with this initial value
         }
     }, {
         text: 'Valor Elev.',
         dataIndex: 'valor_elev',
+        hidden: true,
         xtype: 'numbercolumn',
         //format: '0,000',
         width: 80,
         filter: {
             type: 'number'
-        }
-    }, {
-        text: 'Função (Uso)',
-        dataIndex: 'funcao_uso',
-        flex: 1,
-        filter: {
-            type: 'string'
         }
     }, {
         text: 'Nº Proc.',
@@ -89,6 +86,15 @@ Ext.define("Admin.view.urbanismo.GridEdificado", {
         hidden: true,
         filter: {
             type: 'string'
+        }
+    }, {
+        text: 'Atualizado em',
+        dataIndex: 'd_actualiz',
+        xtype: 'datecolumn',
+        format: 'Y-m-d H:i:s',
+        width: 150,
+        filter: {
+            type: 'date'
         }
     }],
 

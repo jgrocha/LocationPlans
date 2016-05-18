@@ -27,7 +27,6 @@ Ext.define('Admin.view.urbanismo.FullMapPanelModel', {
                 width: 2
             })
         })
-
     }
 
 });

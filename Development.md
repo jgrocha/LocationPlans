@@ -22,8 +22,10 @@ rm -rf .git
 git init
 git config user.name "Jorge Gustavo Rocha"
 git config user.email "jgr@geomaster.pt"
-git remote add origin git@gitlab.com:jgrocha/MyDashBoard.git
-vi .gitignore
+-- git remote add origin git@gitlab.com:jgrocha/MyDashBoard.git
+git remote add origin https://gitlab.com/jgrocha/MyDashBoard.git
+-- vi .gitignore
 git add .
-
+git commit -m "Initial commit on gitlab"
+git push -u origin master
 ```

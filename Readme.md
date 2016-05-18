@@ -21,9 +21,117 @@ The server is written in Javascript, using node.js. Several node modules are use
 The printing capabilities are supported by MapFish Print 3. The printing layout can be designed using Jaspersoft Studio.
 Jaspersoft Studio is the free, open source, eclipse-based report designer for JasperReports and JasperReports Server.
 
-## Deploy
+## Deployment on a new instance based on Ubuntu
 
-### Common tables and data
+### Preparation
+
+```
+echo "127.0.0.1 instance-locplan" | sudo tee -a /etc/hosts
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo locale-gen "en_US.UTF-8"
+sudo apt-get install language-pack-en
+sudo apt-get -y install redis-server build-essential subversion graphicsmagick imagemagick htop nmap unzip
+sudo apt-get install libgeos-dev gdal-bin
+```
+
+### JAVA, Tomcat and MapFish
+
+#### Installing JAVA 8
+
+```
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+
+#### Installing JAVA JAI
+
+```
+cd /tmp
+wget http://data.opengeo.org/suite/jai/jai-1_1_3-lib-linux-amd64-jdk.bin
+wget http://data.opengeo.org/suite/jai/jai_imageio-1_1-lib-linux-amd64-jdk.bin
+sed s/+215/-n+215/ jai_imageio-1_1-lib-linux-amd64-jdk.bin > jai_imageio-1_1-lib-linux-amd64-jdk_fixed.bin
+
+sudo cp jai-1_1_3-lib-linux-amd64-jdk.bin /usr/lib/jvm/java-8-oracle
+sudo cp jai_imageio-1_1-lib-linux-amd64-jdk_fixed.bin /usr/lib/jvm/java-8-oracle
+
+cd /usr/lib/jvm/java-8-oracle
+sudo sh jai-1_1_3-lib-linux-amd64-jdk.bin
+sudo sh jai_imageio-1_1-lib-linux-amd64-jdk_fixed.bin
+```
+
+#### Installing Tomcat
+
+```
+sudo apt-get install tomcat7 tomcat7-admin tomcat7-common
+sudo vi /etc/default/tomcat7
+```
+
+Set:
+
+```
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+JAVA_OPTS="-Djava.awt.headless=true -Xmx1536m -XX:+UseConcMarkSweepGC"
+```
+
+```
+sudo vi /etc/tomcat7/tomcat-users.xml
+```
+
+```
+<tomcat-users>
+  <role rolename="tomcat"/>
+  <user username="tomcat" password="locationplans2k16" roles="manager,manager-gui,manager-script"/>
+</tomcat-users>
+```
+
+```
+sudo service tomcat7 restart
+```
+
+#### Installing MapFish
+
+```
+cd /tmp
+wget http://repo1.maven.org/maven2/org/mapfish/print/print-servlet/3.3.0/print-servlet-3.3.0.war
+sudo mv print-servlet-3.3.0.war /var/lib/tomcat7/webapps/print.war
+```
+
+### Installing PostgreSQL
+
+```
+echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql-9.5 postgresql-9.5-postgis-2.2 postgresql-contrib postgresql-client-9.5
+```
+
+### PostgreSQL performance tuning
+
+### OS parameters
+
+```
+sudo vi /etc/sysctl.conf
+vm.overcommit_memory=1
+sudo sysctl vm.overcommit_memory=1
+```
+
+### PostgreSQL parameters
+
+```
+sudo vi /etc/postgresql/9.5/main/postgresql.conf
+```
+
+```
+shared_buffers = 256MB
+fsync = off
+effective_io_concurrency = 2
+listen_addresses = '*'
+max_connections = 250
+```
+
+### Database
 
 ```bash
 sudo su postgres
@@ -41,8 +149,6 @@ psql dashboard -f dashboard-data.sql
 psql dashboard -c "insert into users.utilizador (idgrupo, email, password, nome, emailconfirmacao) values (1, 'jgr@geomaster.pt', encode(digest('pa55word', 'sha1'), 'hex'), 'Administrator', true);"
 exit
 ```
-
-### Tables and data for specific apps
 
 ### Application
 

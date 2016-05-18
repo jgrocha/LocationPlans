@@ -4,7 +4,8 @@ Ext.define('Admin.view.urbanismo.UrbanismoModel', {
 
     data: {
         urbanismo: {
-            pretensao: null
+            pretensao: null,
+            edificio: null
         }
     },
 
@@ -32,6 +33,19 @@ Ext.define('Admin.view.urbanismo.UrbanismoModel', {
             remoteSort: true,
             remoteFilter: true,
             pageSize: 20
+        },
+        fotografia: {
+            model: 'urbanismo.Fotografia',
+            autoLoad: true, // important to set autoLoad to false. If there is an error on the backend, Ext will still try to resolve Direct method names and crash the app.
+            autoSync: true, // true,
+            remoteSort: true,
+            remoteFilter: true,
+            pageSize: 10,
+            filters: [{
+                property: 'id_edifica',
+                type: 'string',
+                value: '{edificadoGrid.selection.id_edifica}'
+            }]
         }
     },
 

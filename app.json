@@ -188,9 +188,9 @@
       "path": "/translation",
       "remote": true
     }, {
-      //        "path": "http://openlayers.org/en/master/build/ol.js",
-      //        "path": "http://openlayers.org/en/master/build/ol-debug.js",
-      "path": "resources/js/OL3/ol.js",
+      // "path": "http://openlayers.org/en/master/build/ol.js",
+      // "path": "http://openlayers.org/en/master/build/ol-debug.js",
+       "path": "resources/js/OL3/ol.js",
 //      "path": "resources/js/OL3/ol-debug.js",
       "remote": false
     }, {

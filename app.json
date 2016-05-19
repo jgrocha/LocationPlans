@@ -286,6 +286,10 @@
     {
       "path": "resources/js/OL3/mapscale.css",
       "remote": false
+    },
+    {
+      "path": "resources/css/organizer.css",
+      "remote": false
     }
   ],
   /**

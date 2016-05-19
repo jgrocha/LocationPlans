@@ -22,6 +22,7 @@ Ext.define("Admin.view.urbanismo.Fotografia", {
             '</tpl>'
         ],
         itemSelector: 'div.thumb-wrap',
+        cls: 'x-image-view',
         emptyText: 'No images available'.translate(),
         listeners: {
             selectionchange: 'onSelectionChange',

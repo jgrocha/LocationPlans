@@ -160,36 +160,49 @@ var DXFormUploads = {
     /*
      * Tenho que estar em sessão...
      */
-    filesubmitinstantaneo: function (params, callback, sessionID, request, response/*formHandler*/) {
 
+    filesubmitinstantaneo: function (params, callback, sessionID, request, response) {
+        //@formHandler
         console.log('filesubmitinstantaneo');
         var files = request.files;
         // get files from request object
         console.log(params);
+
+        var edificio = -1;
+        if (params.hasOwnProperty('id_edifica') && parseInt(params.id_edifica) > 0) {
+            edificio = parseInt(params.id_edifica);
+            console.log('edificio: ' + edificio);
+        } else {
+            callback({
+                message: 'Missing building id'
+            });
+        }
+
         // console.log(request);
         console.log(files);
 
-        // participation_data/promotor/plano/nome.png (original)
-        // participation_data/promotor/plano/80x80/nome.png (80 por 80)
-        // participation_data/promotor/plano/_x600/nome.png (limitado a 600 de altura)
-        // participation_data/1/2/teste.png
-        // participation_data/1/2/80x80/teste.png
-        // participation_data/1/2/_x600/teste.png
+        //imagens
+        // uploaded_images/edificado/91/medium/img_3398_1a9c3aad506dbeab0af53985665f6eee.jpg
+        // uploaded_images/edificado/91/original/img_3398_1a9c3aad506dbeab0af53985665f6eee.jpg
+        // uploaded_images/edificado/91/thumb/img_3398_1a9c3aad506dbeab0af53985665f6eee.jpg
+
+        // documentos
+        // uploaded_images/edificado/91/doc/megatronica_2132306_2013_40652322cfd5ca72c6fe0614615a1f79.pdf
+        // uploaded_images/edificado/91/thumb/megatronica_2132306_2013_40652322cfd5ca72c6fe0614615a1f79.pdf.png
 
         var fs = require('fs'), path = require('path');
 
-        var file = {};
-        console.log('Instantaneo: ', files.instantaneo.size, 'Documento: ', files.documento.size);
-        if (files.instantaneo.size > 0) {
+        var file;
+        if (files.instantaneo && files.instantaneo.size > 0) {
             file = files.instantaneo;
         } else {
-            if (files.documento.size > 0) {
+            if (files.documento && files.documento.size > 0) {
                 file = files.documento;
             } else {
                 console.log('file.size === 0');
                 callback({
                     success: false,
-                    msg: "Upload failed - empty file",
+                    message: "Upload failed - empty file",
                     params: params,
                     errors: {
                         clientCode: "File not found",
@@ -201,23 +214,33 @@ var DXFormUploads = {
 
         var tmp_path = file.path;
         console.log('Temporary path = ' + tmp_path);
-        var aleatorio = tmp_path.split('/')[1];
 
-        // { idplano: '1', idpromotor: '1' }
-        // Tempory path = uploads/03738e700d5d1538df59d4c9931724b4
+        // var aleatorio = tmp_path.split('/')[1];
+        var base = Math.floor(edificio/100)+1;
+        // var pasta = 'uploaded_images/edificado/' + base + '/' ; // + params.idpromotor + '/' + params.idplano;
+
+        var pasta = path.join('./public/uploaded_images/edificado/', base.toString());
 
         // we can use the extension of the original file
         // or the file type returned by gm().identify
-        var extension = path.extname(file.name).toLowerCase();
-        // client side path
-        // image url: pasta + '/' + newfilename
-        var pasta = 'participation_data/' + params.idpromotor + '/' + params.idplano;
-        var newfilename = aleatorio + extension;
-        // server side
+        // var extension = path.extname(file.name).toLowerCase();
+        var extension = file.extension.toLowerCase();
+
+        // remove extension
+        // change non alpha chars with _
+        var original = file.originalname.replace(/\.[^/.]+$/, "").replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        var aleatorio = file.name.replace(/\.[^/.]+$/, "");
+
+        // the usar can upload two different images with the same name
+        var newfilename = original + '_' + aleatorio + '.' + extension;
+        var path_thumb = path.join(pasta, 'thumb', newfilename);
+        var path_medium = path.join(pasta, 'medium', newfilename);
         var path_normal = ''; // mudará consoante se for imagem ou documento
-        var path_thumb = './public/' + pasta + '/80x80/' + newfilename;
-        var path_medium = './public/' + pasta + '/_x600/' + newfilename;
-        console.log(file.name, path_normal, path_thumb, path_medium);
+
+        console.log(newfilename);
+        console.log(pasta);
+        console.log(path_normal, path_thumb, path_medium);
+
         var resize80 = null, resize600 = null;
 
         function complete(folder, largura, altura) {
@@ -226,25 +249,32 @@ var DXFormUploads = {
                     fs.rename(tmp_path, path_normal, function (err) {
                         if (err)
                             throw err;
-                        var fields = ['sessionid', 'pasta', 'caminho', 'idutilizador', 'tamanho', 'largura', 'altura', 'name'];
+                        var fields = ['id_edifica', 'pasta', 'caminho', 'idutilizador', 'tamanho', 'largura', 'altura', 'name'];
                         var buracos = ['$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8'];
-                        var values = [sessionID, folder, newfilename, request.session.userid, file.size, largura, altura, file.name];
+                        var values = [params.id_edifica, folder.replace(/^public\//, ''), newfilename, request.session.userid, file.size, largura, altura, file.originalname];
                         console.log(values);
-                        var conn = db.connect();
-                        conn.query('INSERT INTO ppgis.fotografiatmp (' + fields.join() + ') VALUES (' + buracos.join() + ') RETURNING id', values, function (err, resultInsert) {
-                            db.disconnect(conn);
-                            if (err) {
-                                db.debugError(callback, err);
-                            } else {
-                                callback({
-                                    success: true,
-                                    msg: 'Uploaded successfully',
+
+                        pg.connect(global.App.connection, function (err, client, done) {
+                            if (err)
+                                return dberror('Database connection error', '', err, callback);
+                            var sql = `INSERT INTO edificios.fotografia (${fields.join()}) VALUES (${buracos.join()}) RETURNING id`;
+                            console.log(sql);
+                            client.query(sql, values, function (err, result) {
+                                if (err)
+                                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                console.log(result.rows[0]);
+                                callback(null, {
+                                    message: 'Uploaded successfully',
                                     size: file.size,
                                     path: path_normal,
-                                    data: resultInsert.rows // id para fazer o load do store :-)
+                                    data: result.rows,
+                                    total: result.rows.length
                                 });
-                            }
+                                // free this client, from the client pool
+                                done();
+                            });
                         });
+
                     });
                 } catch (e) {
                     console.log('Exception');
@@ -262,25 +292,32 @@ var DXFormUploads = {
                 fs.rename(tmp_path, path_normal, function (err) {
                     if (err)
                         throw err;
-                    var fields = ['sessionid', 'pasta', 'caminho', 'observacoes', 'idutilizador', 'tamanho', 'largura', 'altura', 'name'];
-                    var buracos = ['$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8', '$9'];
-                    var values = [sessionID, folder, aleatorio + '.png', pasta + '/doc/' + newfilename, request.session.userid, file.size, largura, altura, file.name];
+                    var fields = ['id_edifica', 'pasta', 'caminho', 'idutilizador', 'tamanho', 'largura', 'altura', 'name'];
+                    var buracos = ['$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8'];
+                    var values = [params.id_edifica, folder.replace(/^public\//, ''), newfilename, request.session.userid, file.size, largura, altura, file.originalname];
                     console.log(values);
-                    var conn = db.connect();
-                    conn.query('INSERT INTO ppgis.fotografiatmp (' + fields.join() + ') VALUES (' + buracos.join() + ') RETURNING id', values, function (err, resultInsert) {
-                        db.disconnect(conn);
-                        if (err) {
-                            db.debugError(callback, err);
-                        } else {
-                            callback({
-                                success: true,
-                                msg: 'Uploaded successfully',
+
+                    pg.connect(global.App.connection, function (err, client, done) {
+                        if (err)
+                            return dberror('Database connection error', '', err, callback);
+                        var sql = `INSERT INTO edificios.fotografia (${fields.join()}) VALUES (${buracos.join()}) RETURNING id`;
+                        console.log(sql);
+                        client.query(sql, values, function (err, result) {
+                            if (err)
+                                return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                            console.log(result.rows[0]);
+                            callback(null, {
+                                message: 'Uploaded successfully',
                                 size: file.size,
                                 path: path_normal,
-                                data: resultInsert.rows // id para fazer o load do store :-)
+                                data: result.rows,
+                                total: result.rows.length
                             });
-                        }
-                    });
+                            // free this client, from the client pool
+                            done();
+                        });
+                    })
+
                 });
             } catch (e) {
                 console.log('Exception');
@@ -301,31 +338,23 @@ var DXFormUploads = {
                 switch (tipo['mime']) {
                     case "application/pdf":
                         console.log('PDF a CAMINHO...', extension, tipo['mime']);
-                        path_normal = './public/' + pasta + '/doc/' + newfilename;
-                        path_thumb = './public/' + pasta + '/80x80/' + aleatorio + '.png';
-                        /*
-                         gm(tmp_path + '[0]').thumb(80, 80, path_thumb, 80, function (err, stdout, stderr, command) {
-                         if (err) {
-                         console.log('Erro: ', err);
-                         } else {
-                         console.log(path_thumb, ' was saved');
-                         complete_documento(pasta, 438, 438); // o tamanho é irrelevante
-                         }
-                         });
-                         */
+                        // path_normal = pasta + '/doc/' + newfilename;
+                        path_normal = path.join(pasta, 'doc', newfilename);
+                        // path_thumb = pasta + '/thumb/' + newfilename + '.png';
+                        path_thumb = path.join(pasta, 'thumb', newfilename + '.png');
                         gm(tmp_path + '[0]').resize(80, 80, "^").gravity('Center').extent(80, 80).noProfile().write(path_thumb, function (err) {
                             if (err) {
                                 console.log('Erro: ', err);
                             } else {
                                 console.log(path_thumb, ' was saved');
-                                complete_documento(pasta, 438, 438); // o tamanho é irrelevante
+                                complete_documento(pasta, 0, 0); // o tamanho é irrelevante
                             }
                         });
                         break;
                     case "image/jpeg":
                     case "image/png":
                     case "image/tiff":
-                        path_normal = './public/' + pasta + '/' + newfilename;
+                        path_normal = path.join(pasta, 'original', newfilename);
                         gm(tmp_path).identify(function (err, data) {
                             if (err) {
                                 // Penso que não se trata de uma imagem
@@ -340,7 +369,7 @@ var DXFormUploads = {
                                 // { format: 'JPEG', width: 3904, height: 2622, depth: 8 }
                                 // { format: 'PNG',
                                 // if (data.format == 'JPEG')
-                                gm(tmp_path).resize(null, 600).noProfile().write(path_medium, function (err) {
+                                gm(tmp_path).resize(800, 800).noProfile().write(path_medium, function (err) {
                                     if (err) {
                                         console.log('Erro: ', err);
                                     } else {
@@ -376,8 +405,8 @@ var DXFormUploads = {
 
         }
 
-        if ((params.idpromotor) && (params.idplano) && (sessionID) && (request.session.userid)) {
-            mkdirp('./public/' + pasta + '/80x80/', function (err) {
+        if (sessionID && request.session.userid) {
+            mkdirp(pasta + '/thumb/', function (err) {
                 if (err) {
                     console.error(err);
                     callback({
@@ -387,7 +416,7 @@ var DXFormUploads = {
                     });
                 }
                 else { //
-                    mkdirp('./public/' + pasta + '/_x600/', function (err) {
+                    mkdirp(pasta + '/medium/', function (err) {
                         if (err) {
                             console.error(err);
                             callback({
@@ -397,7 +426,7 @@ var DXFormUploads = {
                             });
                         }
                         else { //
-                            mkdirp('./public/' + pasta + '/doc/', function (err) {
+                            mkdirp(pasta + '/doc/', function (err) {
                                 if (err) {
                                     console.error(err);
                                     callback({
@@ -406,8 +435,20 @@ var DXFormUploads = {
                                         params: params
                                     });
                                 }
-                                else {
-                                    processa();
+                                else { //
+                                    mkdirp(pasta + '/original/', function (err) {
+                                        if (err) {
+                                            console.error(err);
+                                            callback({
+                                                success: false,
+                                                msg: "Upload failed. Server error.",
+                                                params: params
+                                            });
+                                        }
+                                        else {
+                                            processa();
+                                        }
+                                    });
                                 }
                             });
                         }
@@ -426,7 +467,7 @@ var DXFormUploads = {
     filesubmit: function (params, callback, sessionID, request, response) {
         //@formHandler
         var files = request.files; //get files from request object
-        // console.log(params, files)
+        console.log(params, files)
 
         // Do something with uploaded file, e.g. move to another location
         var fs = require('fs'),
@@ -479,7 +520,7 @@ var DXFormUploads = {
                         errors: err.message
                     });
                 } else {
-                    console.log('Vou criar a pasta ' + folder160 );
+                    console.log('Vou criar a pasta ' + folder160);
 
                     mkdirp('./public/' + folder160, function (err) {
                         if (err)
@@ -506,40 +547,40 @@ var DXFormUploads = {
                                         if (resize160 !== null && resize32 !== null) {
                                             try {
 
-                                                    // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
-                                                    fs.unlink(tmp_path, function () {
+                                                // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+                                                fs.unlink(tmp_path, function () {
 
 
-                                                        var sql = "UPDATE users.utilizador SET fotografia = '" + path_32 + "', datamodificacao = now() where id = " + request.session.userid;
+                                                    var sql = "UPDATE users.utilizador SET fotografia = '" + path_32 + "', datamodificacao = now() where id = " + request.session.userid;
 
-                                                        pg.connect(global.App.connection, function (err, client, done) {
+                                                    pg.connect(global.App.connection, function (err, client, done) {
+                                                        if (err)
+                                                            return dberror('Database connection error', '', err, callback);
+                                                        console.log(sql);
+                                                        client.query(sql, function (err, result) {
                                                             if (err)
-                                                                return dberror('Database connection error', '', err, callback);
-                                                            console.log(sql);
-                                                            client.query(sql, function (err, result) {
-                                                                if (err)
-                                                                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
-                                                                callback(null, {
-                                                                    message: 'Uploaded successfully',
-                                                                    size: file.size,
-                                                                    name32: path_32,
-                                                                    name160: path_160
-                                                                });
-                                                                // free this client, from the client pool
-                                                                done();
+                                                                return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                                            callback(null, {
+                                                                message: 'Uploaded successfully',
+                                                                size: file.size,
+                                                                name32: path_32,
+                                                                name160: path_160
                                                             });
+                                                            // free this client, from the client pool
+                                                            done();
                                                         });
-
-                                                        callback(null, {
-                                                            message: 'Uploaded successfully',
-                                                            size: file.size,
-                                                            //name: file.name,
-                                                            name32: path_32,
-                                                            name160: path_160
-                                                        });
-
-
                                                     });
+
+                                                    callback(null, {
+                                                        message: 'Uploaded successfully',
+                                                        size: file.size,
+                                                        //name: file.name,
+                                                        name32: path_32,
+                                                        name160: path_160
+                                                    });
+
+
+                                                });
 
                                             } catch (e) {
                                                 console.log('Exception on fs.unlink');
@@ -576,65 +617,6 @@ var DXFormUploads = {
 
 
                 }
-
-
-                /*
-                 console.log('NÃO deu erro...');
-                 console.log('Detalhes da imagem: ');
-                 console.log(data);
-
-                 function complete() {
-                 if (resize160 !== null && resize32 !== null) {
-                 try {
-                 fs.rename(tmp_path, target_path, function (err) {
-                 if (err) {
-                 callback({
-                 errors: err.message,
-                 message: "Upload failed - can't rename the file"
-                 });
-                 }
-                 // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
-                 fs.unlink(tmp_path, function () {
-                 callback(null, {
-                 message: 'Uploaded successfully',
-                 size: file.size,
-                 //name: file.name,
-                 name32: path_32,
-                 name160: path_160
-                 });
-                 });
-                 });
-                 } catch (e) {
-                 console.log('Exception on fs.unlink');
-                 callback({
-                 errors: err.message,
-                 message: "Upload failed - can't rename the file"
-                 });
-                 }
-                 }
-                 }
-
-                 gm(tmp_path).resize(160, 160).noProfile().write(target_path_160, function (err) {
-                 if (err) {
-                 console.log('Erro: ', err);
-                 } else {
-                 resize160 = target_path_160;
-                 complete();
-                 }
-                 });
-
-                 gm(tmp_path).resize(32, 32).noProfile().write(target_path_32, function (err) {
-                 if (err) {
-                 console.log('Erro: ', err);
-                 } else {
-                 resize32 = target_path_32;
-                 complete();
-                 }
-                 });
-
-
-                 } // else
-                 */
             });
 
 

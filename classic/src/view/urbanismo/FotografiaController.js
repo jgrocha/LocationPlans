@@ -9,13 +9,16 @@ Ext.define('Admin.view.urbanismo.FotografiaController', {
     },
     
     onItemClick: function (dv, record, item, index, e, eOpts) {
-        // console.log('itemclick');
-        // console.log(arguments);
-
-        var imagem = "uploaded_images/edificado/" + record.get('pasta') + "/" + record.get('caminho') ;
+        var imagem;
+        var filename = record.get('caminho');
+        var patt = /pdf$/i;
+        if (patt.test(filename)) {
+            imagem = record.get('pasta') + "/doc/" + filename;
+        } else {
+            imagem = record.get('pasta') + "/original/" + filename;
+        }
         var win = window.open(imagem, '_blank');
         win.focus();
-
     }
 
 });

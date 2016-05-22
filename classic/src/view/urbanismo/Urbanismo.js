@@ -21,7 +21,7 @@ Ext.define('Admin.view.urbanismo.Urbanismo', {
         xtype: 'urbanismogridprocesso',
         responsiveCls: 'big-60'
     }, */ {
-        xtype: 'edificioform', // 'fotografia',
+        xtype: 'edificio', // 'fotografia',
         responsiveCls: 'big-60'
     }]
 

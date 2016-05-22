@@ -1,7 +1,8 @@
-Ext.define('Admin.view.urbanismo.EdificioForm', {
+Ext.define('Admin.view.urbanismo.Edificio', {
     extend: 'Ext.panel.Panel',
-    xtype: 'edificioform',
+    xtype: 'edificio',
     // requires: ['Admin.view.profile.PersonalDataFormModel', 'Ext.form.RadioGroup', 'Ext.form.FieldSet'],
+    requires : ['Ext.form.action.DirectLoad', 'Ext.form.action.DirectSubmit'],
     bodyPadding: '0 10 0 10',
 
     // height: 680,
@@ -12,15 +13,17 @@ Ext.define('Admin.view.urbanismo.EdificioForm', {
     //     type: 'edificioform'
     // },
 
-    // controller: 'edificioform',
+    controller: 'edificio',
 
     title: 'Building details'.translate(),
 
     items: [{
         xtype: 'form',
         reference: 'buidingdetail',
+        api : {
+            submit: 'Server.DXFormUploads.filesubmitinstantaneo'
+        },
         trackResetOnLoad: true, // saber que fields estão dirty
-        // title: 'Building details'.translate(),
         items: [{
             xtype: 'fieldset',
             title: 'Identification'.translate(),
@@ -99,6 +102,108 @@ Ext.define('Admin.view.urbanismo.EdificioForm', {
             items: [{
                 xtype: 'fotografia',
                 height: 132 // 140
+            }]
+        }, {
+            autoWidth : true,
+            // xtype : 'form',
+            xtype : 'fieldset',
+            // reference: 'buildingphotoform',
+            // itemId : 'photos',
+            layout : {
+                pack : 'start',
+                type : 'hbox'
+            },
+            // api : {
+            //     // submit : 'Server.DXFormUploads.filesubmitbuilding'
+            //     submit: 'Server.DXFormUploads.filesubmitinstantaneo'
+            // },
+            items : [{
+                xtype : 'filefield',
+                padding: '0 10 0 0',
+                name : 'documento',
+                inputAttrTpl: 'accept="application/pdf"',
+                msgTarget : 'side',
+                allowBlank : true,
+                buttonOnly : true,
+                buttonText : 'PDF...',
+                buttonConfig : {
+                    glyph: 0xf1c1 // fa-file-pdf-o [&#xf1c1;]
+                },
+                reset: function () {
+                    /*
+                     Não está a fazer nenhuma validação. Só serve para o file browser!
+                     http://stackoverflow.com/questions/22554621/accept-image-in-filefield-extjs/26017499
+                     */
+                    var me = this,
+                        clear = me.clearOnSubmit;
+                    if (me.rendered) {
+                        me.button.reset(clear);
+                        me.fileInputEl = me.button.fileInputEl;
+                        me.fileInputEl.set({
+                            accept: 'application/pdf'
+                        });
+                        if (clear) {
+                            me.inputEl.dom.value = '';
+                        }
+                        me.callParent();
+                    }
+                },
+                listeners : {
+                    change : 'onButtonUpload',
+                    afterrender : function(cmp) {
+                        cmp.fileInputEl.set({
+                            accept : 'application/pdf'
+                        });
+                    }
+                }
+            }, {
+                xtype : 'filefield',
+                padding: '0 10 0 0',
+                name: 'instantaneo',
+                inputAttrTpl: 'accept="image/jpeg,image/png,image/tif"',
+                msgTarget : 'side',
+                allowBlank : true,
+                buttonOnly : true,
+                buttonText : 'Photo'.translate() + '...',
+                buttonConfig : {
+                    glyph: 0xf030 // fa-camera [&#xf030;] // não está a funcionar...
+                },
+
+                reset: function () {
+                    /*
+                     Não está a fazer nenhuma validação. Só serve para o file browser!
+                     http://stackoverflow.com/questions/22554621/accept-image-in-filefield-extjs/26017499
+                     */
+                    var me = this,
+                        clear = me.clearOnSubmit;
+                    if (me.rendered) {
+                        me.button.reset(clear);
+                        me.fileInputEl = me.button.fileInputEl;
+                        me.fileInputEl.set({
+                            accept: 'image/jpeg,image/png,image/tif,application/pdf'
+                        });
+                        if (clear) {
+                            me.inputEl.dom.value = '';
+                        }
+                        me.callParent();
+                    }
+                },
+                listeners : {
+                    change : 'onButtonUpload',
+                    afterrender : function(cmp) {
+                        cmp.fileInputEl.set({
+                            accept : 'image/jpeg,image/png,image/tif,application/pdf'
+                        });
+                    }
+                }
+            }, {
+                xtype : 'button',
+                iconCls: 'x-fa fa-trash-o',
+                tooltip: 'Remove selected image or document'.translate(),
+                listeners : {
+                    click : 'onButtonRemoverInstantaneo'
+                },
+                text : 'Remove'.translate()
             }]
         }, {
             xtype: 'fieldset',

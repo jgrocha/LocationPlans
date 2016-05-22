@@ -19,7 +19,7 @@ var Urbanismo = {
         console.log('Urbanismo.Urbanismo.create');
         console.log(params);
 
-        var rows = [].concat( params ); // even if we receive just one object, we create an array with that object
+        var rows = [].concat(params); // even if we receive just one object, we create an array with that object
         console.log(rows);
         console.log(rows.length);
 
@@ -172,6 +172,79 @@ var Urbanismo = {
         });
     },
 
+    destroyFotografia: function (params, callback) {
+        //  { id: 30 }
+        //  [ { id: 30 }, { id: 31 }, { id: 71 }, { id: 74 } ]
+        var rows = [].concat(params); // even if we receive just one object, we create an array with that object
+        console.log(rows);
+        console.log(rows.length);
+        var ids = rows.reduce(function (previousValue, currentValue, index, array) {
+            return previousValue.concat(currentValue['id']);
+        }, []);
+        console.log(ids);
+        var sql = `DELETE FROM edificios.fotografia WHERE id IN (${ids.toString()})`;
+        console.log(sql);
+        pg.connect(global.App.connection, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            client.query(sql, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                console.log(result.rowCount);
+                if (result.rowCount != rows.length) {
+                    console.error('Error: only ' + result.rowCount + ' rows of ' + rows.length + ' were deleted');
+                }
+                callback(null, {});
+                // free this client, from the client pool
+                done();
+            });
+        });
+    },
+
+    updateEdificio: function (params, callback, sessionID, request, response) {
+        console.log('Urbanismo.updateEdificio() Session ID = ' + sessionID);
+        console.log(params);
+
+        var edificio = params.id_edifica;
+        delete params.id_edifica;
+
+
+
+        var fields = [], values = [], i = 1;
+        for (var key in params) {
+            fields.push(key + '= $' + i);
+            values.push(params[key]);
+            i = i + 1;
+        }
+        fields.push('d_actualiz = $' + i);
+        values.push('now()');
+        i = i + 1;
+        fields.push('u_actualiz = $' + i);
+        values.push(request.session.userid);
+
+        var sql = `UPDATE edificios.edificado_vti2 SET ${fields.join()} WHERE id_edifica = '${edificio}'`;
+
+        if (request.session.userid && parseInt(edificio) > 0) {
+            pg.connect(global.App.connection, function (err, client, done) {
+                if (err)
+                    return dberror('Database connection error', '', err, callback, request, done);
+                client.query(sql, values, function (err, result) {
+                    if (err)
+                        return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
+                    callback(null, {
+                        message: 'Building updated'
+                    });
+                    done();
+                });
+            });
+        } else {
+            callback({
+                success: false,
+                message: 'User was not updated'
+            });
+        }
+    },
+
     // curl -v -H "Content-type: application/json" -d '{"action":"Urbanismo.Urbanismo","method":"read","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
     read: function (params, callback) {
         console.log(params);
@@ -276,7 +349,7 @@ var Urbanismo = {
          { email: 'adele_singer@gmail.com', id: 8 } ]
          */
 
-        var rows = [].concat( params ); // even if we receive just one object, we create an array with that object
+        var rows = [].concat(params); // even if we receive just one object, we create an array with that object
         console.log(rows);
         console.log(rows.length);
 
@@ -327,6 +400,7 @@ var Urbanismo = {
                 console.log('Not yet... ' + updatesDone.length + ' de ' + updatesToDo);
             }
         }
+
         pg.connect(global.App.connectionide, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
@@ -339,10 +413,10 @@ var Urbanismo = {
     destroy: function (params, callback) {
         //  { id: 30 }
         //  [ { id: 30 }, { id: 31 }, { id: 71 }, { id: 74 } ]
-        var rows = [].concat( params ); // even if we receive just one object, we create an array with that object
+        var rows = [].concat(params); // even if we receive just one object, we create an array with that object
         console.log(rows);
         console.log(rows.length);
-        var ids = rows.reduce(function(previousValue, currentValue, index, array) {
+        var ids = rows.reduce(function (previousValue, currentValue, index, array) {
             return previousValue.concat(currentValue['id']);
         }, []);
         console.log(ids);

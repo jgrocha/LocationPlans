@@ -109,7 +109,7 @@ var SQLServer = {
         if (params.hasOwnProperty('limit') && params.hasOwnProperty('start')) {
             console.log('params.limit: ' + params.limit);
             console.log('params.start: ' + params.start);
-            var sum = parseInt(params.start) + parseInt(params.limit)
+            var sum = parseInt(params.start) + parseInt(params.limit);
             paging = ' WHERE row > ' + params.start + ' and row <= ' + sum;
             console.log('paging: ' + paging);
         }

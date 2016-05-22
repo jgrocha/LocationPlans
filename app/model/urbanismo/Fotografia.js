@@ -23,7 +23,8 @@ Ext.define('Admin.model.urbanismo.Fotografia', {
     proxy: {
         type: 'direct',
         api: {
-            read: 'Server.Urbanismo.Urbanismo.readFotografia'
+            read: 'Server.Urbanismo.Urbanismo.readFotografia',
+            destroy: 'Server.Urbanismo.Urbanismo.destroyFotografia'
         },
         reader: {
             type: 'json',

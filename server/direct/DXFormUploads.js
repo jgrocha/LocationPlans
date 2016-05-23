@@ -216,7 +216,7 @@ var DXFormUploads = {
         console.log('Temporary path = ' + tmp_path);
 
         // var aleatorio = tmp_path.split('/')[1];
-        var base = Math.floor(edificio/100)+1;
+        var base = Math.floor(edificio / 100) + 1;
         // var pasta = 'uploaded_images/edificado/' + base + '/' ; // + params.idpromotor + '/' + params.idplano;
 
         var pasta = path.join('./public/uploaded_images/edificado/', base.toString());
@@ -246,7 +246,9 @@ var DXFormUploads = {
         function complete(folder, largura, altura) {
             if (resize600 !== null && resize80 !== null) {
                 try {
-                    fs.rename(tmp_path, path_normal, function (err) {
+                    fs.move(tmp_path, path_normal, function (err) {
+                        // fs.rename does not work between filesystems
+                        // fs.rename(tmp_path, path_normal, function (err) {
                         if (err)
                             throw err;
                         var fields = ['id_edifica', 'pasta', 'caminho', 'idutilizador', 'tamanho', 'largura', 'altura', 'name'];
@@ -289,7 +291,8 @@ var DXFormUploads = {
 
         function complete_documento(folder, largura, altura) {
             try {
-                fs.rename(tmp_path, path_normal, function (err) {
+                fs.move(tmp_path, path_normal, function (err) {
+                    // fs.rename(tmp_path, path_normal, function (err) {
                     if (err)
                         throw err;
                     var fields = ['id_edifica', 'pasta', 'caminho', 'idutilizador', 'tamanho', 'largura', 'altura', 'name'];

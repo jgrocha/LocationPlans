@@ -7,7 +7,7 @@ Ext.define("Admin.view.urbanismo.GridEdificado", {
     // The store will be set later
     // store: '{featureStore}',
 
-    title: 'Selected buidings'.translate(),
+    title: 'Selected buildings'.translate(),
     
     reference: 'edificadoGrid',
     

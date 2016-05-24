@@ -208,8 +208,6 @@ var Urbanismo = {
         var edificio = params.id_edifica;
         delete params.id_edifica;
 
-
-
         var fields = [], values = [], i = 1;
         for (var key in params) {
             fields.push(key + '= $' + i);
@@ -240,7 +238,7 @@ var Urbanismo = {
         } else {
             callback({
                 success: false,
-                message: 'User was not updated'
+                message: 'Building was not updated'
             });
         }
     },

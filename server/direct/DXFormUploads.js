@@ -190,7 +190,7 @@ var DXFormUploads = {
         // uploaded_images/edificado/91/doc/megatronica_2132306_2013_40652322cfd5ca72c6fe0614615a1f79.pdf
         // uploaded_images/edificado/91/thumb/megatronica_2132306_2013_40652322cfd5ca72c6fe0614615a1f79.pdf.png
 
-        var fs = require('fs'), path = require('path');
+        var fs = require('fs-extra'), path = require('path');
 
         var file;
         if (files.instantaneo && files.instantaneo.size > 0) {

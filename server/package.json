@@ -25,6 +25,7 @@
     "express-session": "^1.11.1",
     "extdirect": "^2.0.1",
     "file-type": "^3.8.0",
+    "fs-extra": "^0.30.0",
     "gm": "^1.21.1",
     "html": "0.0.10",
     "jade": "^1.11.0",

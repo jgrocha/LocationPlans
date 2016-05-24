@@ -22,7 +22,7 @@
     "_dbdevelopment": "postgres://geobox:geoptbox2k16@marte.sig.cm-agueda.pt/web",
     "dbdevelopment": "postgres://geobox:geobox@localhost/geotuga",
     "dblayers": "public.mainz",
-    "mssqlserver": "mssql://sig:sig@localhost:8433/SIGMAGEST15"
+    "mssqlserver": "mssql://sig:sig@localhost:8433/SIGMAGEST16"
   },
   "ExtDirectConfig": {
     "rootNamespace": "Server",

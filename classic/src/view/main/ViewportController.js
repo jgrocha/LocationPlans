@@ -43,6 +43,8 @@ Ext.define('Admin.view.main.ViewportController', {
         var me = this;
         // console.log('Admin.view.main.ViewportController.init()');
 
+        Ext.tip.QuickTipManager.init();
+        
         me.getViewModel().set('flagCls', 'app-language-cls'.translate());
         me.getViewModel().set('language', 'app-language'.translate());
         me.getViewModel().set('languageName', 'app-language-name'.translate());

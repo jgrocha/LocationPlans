@@ -27,9 +27,9 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
                             color: [255, 153, 0, 1],
                             width: 2
                         })/*,
-                        text: new ol.style.Text({
-                            text: text
-                        })*/
+                         text: new ol.style.Text({
+                         text: text
+                         })*/
                     })];
                     styles['Anexo'] = [new ol.style.Style({
                         fill: new ol.style.Fill({
@@ -39,9 +39,9 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
                             color: [204, 153, 0, 1],
                             width: 2
                         })/*,
-                        text: new ol.style.Text({
-                            text: text
-                        })*/
+                         text: new ol.style.Text({
+                         text: text
+                         })*/
                     })];
                     styles['default'] = [new ol.style.Style({
                         stroke: new ol.style.Stroke({
@@ -51,9 +51,9 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
                         fill: new ol.style.Fill({
                             color: 'rgba(255, 0, 0, 0.1)'
                         })/*,
-                        text: new ol.style.Text({
-                            text: text
-                        })*/
+                         text: new ol.style.Text({
+                         text: text
+                         })*/
                     })];
                     res = styles[feature.get('uso')] || styles['default'];
                     if (feature.get('fotografias') > 0) {

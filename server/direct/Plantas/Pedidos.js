@@ -60,7 +60,15 @@ var Pedidos = {
         //-- fim de query
         sql += ') As f )  As fc';
         console.log(sql);
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'asGeoJson'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);
@@ -119,7 +127,15 @@ var Pedidos = {
         //-- fim de query
         sql += ') As f )  As fc';
         console.log(sql);
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'asGeoJsonDetail'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);
@@ -256,7 +272,16 @@ var Pedidos = {
             }
         }
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        // pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'saveGeoJsonDetail'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             pgclient = client;
@@ -552,7 +577,16 @@ var Pedidos = {
         sql += where;
         sql += order;
         sql += paging;
-        pg.connect(global.App.connection, function (err, client, done) {
+        // pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'Urbanismo.Pedidos.read'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log("sql = " + sql);

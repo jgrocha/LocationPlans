@@ -184,7 +184,16 @@ var Urbanismo = {
         console.log(ids);
         var sql = `DELETE FROM edificios.fotografia WHERE id IN (${ids.toString()})`;
         console.log(sql);
-        pg.connect(global.App.connection, function (err, client, done) {
+        // pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'destroyFotografia'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             client.query(sql, function (err, result) {
@@ -223,7 +232,16 @@ var Urbanismo = {
         var sql = `UPDATE edificios.edificado_vti2 SET ${fields.join()} WHERE id_edifica = '${edificio}'`;
 
         if (request.session.userid && parseInt(edificio) > 0) {
-            pg.connect(global.App.connection, function (err, client, done) {
+            // pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'updateEdificio'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query(sql, values, function (err, result) {

@@ -59,7 +59,16 @@ var DXLogin = {
             var sql = 'SELECT *, st_x(ponto) as longitude, st_y(ponto) as latitude FROM ' + table, where = '';
             where = " WHERE id = '" + request.session.userid + "' and ativo and emailconfirmacao";
             sql += where;
-            pg.connect(global.App.connection, function (err, client, done) {
+            // pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.alive'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query(sql, function (err, resultSelect) {
@@ -158,7 +167,16 @@ var DXLogin = {
             var where = " WHERE " + verifica + " = '" + email + "'  AND password = '" + password + "' and ativo and emailconfirmacao";
             sql += where;
             console.log('SQL=' + sql);
-            pg.connect(global.App.connection, function (err, client, done) {
+            // pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.authenticate'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query(sql, function (err, resultSelect) {
@@ -234,7 +252,15 @@ var DXLogin = {
         var sql = "select * from " + table + " where token = '" + params.token + "'";
         console.log('SQL=' + sql);
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'DXLogin.beforeReset'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback, request, done);
             client.query(sql, function (err, result) {
@@ -274,7 +300,15 @@ var DXLogin = {
         var sql = "select * from " + table + " where token = '" + params.token + "'";
         console.log('SQL=' + sql);
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'DXLogin.confirmEmail'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback, request, done);
             client.query(sql, function (err, result) {
@@ -288,7 +322,6 @@ var DXLogin = {
                     });
                 } else {
                     console.log('Pedido existe. Utilizador: ' + result.rows[0].nome + ' → ' + result.rows[0].email);
-
 
                     var sqlupdate = "UPDATE " + table + " SET datamodificacao = now(), emailconfirmacao = true, ativo = true, token=null ";
                     sqlupdate += " where token = '" + params.token + "'";
@@ -329,7 +362,15 @@ var DXLogin = {
         //console.log(request.session.userid);
         if (request.session.userid && request.session.userid > 0) {
             var sql = "UPDATE users.sessao SET datalogout = now() where userid = " + request.session.userid + " and sessionid = '" + sessionID + "'";
-            pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.deauthenticate'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query(sql, function (err, resultSelect) {
@@ -467,7 +508,16 @@ var DXLogin = {
             var sql = "SELECT nome, datacriacao, emailconfirmacao FROM " + table + " WHERE email = '" + email + "'";
             console.log('SQL=' + sql);
 
-            pg.connect(global.App.connection, function (err, client, done) {
+            // pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.registration'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query(sql, function (err, result) {
@@ -523,7 +573,15 @@ var DXLogin = {
         var sql = "SELECT nome, masculino FROM " + table + " WHERE email = '" + email + "' and ativo and emailconfirmacao";
         console.log('SQL=' + sql);
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'DXLogin.reset'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback, request, done);
             client.query(sql, function (err, result) {
@@ -653,7 +711,15 @@ var DXLogin = {
         fields.push('datamodificacao = $' + i);
         values.push('now()');
         if (request.session.userid) {
-            pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.update'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query('UPDATE ' + table + ' SET ' + fields.join() + ' WHERE id = ' + request.session.userid, values, function (err, result) {
@@ -706,7 +772,15 @@ var DXLogin = {
         fields.push('token = $' + i);
         values.push('NULL');
         if (email) {
-            pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.updatePassword'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback, request, done);
                 client.query('UPDATE ' + table + ' SET ' + fields.join() + " WHERE email = '" + email + "'", values, function (err, result) {

@@ -75,7 +75,15 @@ var DXSessao = {
         sql += where;
         sql += order;
         sql += paging;
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'DXSessao.readLayer'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);

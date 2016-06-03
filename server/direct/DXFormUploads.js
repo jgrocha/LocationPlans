@@ -256,7 +256,16 @@ var DXFormUploads = {
                         var values = [params.id_edifica, folder.replace(/^public\//, ''), newfilename, request.session.userid, file.size, largura, altura, file.originalname];
                         console.log(values);
 
-                        pg.connect(global.App.connection, function (err, client, done) {
+                        // pg.connect(global.App.connection, function (err, client, done) {
+                        var detail = global.App.connection.split('/');
+                        pg.connect({
+                            user: detail[2].split('@')[0].split(':')[0],
+                            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                            database: detail[3], // 'geotuga',
+                            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                            application_name: 'filesubmitinstantaneo'
+                        }, function (err, client, done) {
                             if (err)
                                 return dberror('Database connection error', '', err, callback);
                             var sql = `INSERT INTO edificios.fotografia (${fields.join()}) VALUES (${buracos.join()}) RETURNING id`;

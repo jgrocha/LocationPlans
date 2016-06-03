@@ -61,7 +61,15 @@ var User = {
         }
         sql += 'order by id ';
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'readNavTree'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
             client.query(sql, function (err, result) {

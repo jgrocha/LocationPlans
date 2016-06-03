@@ -223,13 +223,14 @@ var Urbanismo = {
             values.push(params[key]);
             i = i + 1;
         }
-        fields.push('d_actualiz = $' + i);
-        values.push('now()');
-        i = i + 1;
+        fields.push('d_actualiz = now()');
+        // values.push('now()');
+        // i = i + 1;
         fields.push('u_actualiz = $' + i);
         values.push(request.session.userid);
 
         var sql = `UPDATE edificios.edificado_vti2 SET ${fields.join()} WHERE id_edifica = '${edificio}'`;
+        console.log(sql);
 
         if (request.session.userid && parseInt(edificio) > 0) {
             // pg.connect(global.App.connection, function (err, client, done) {

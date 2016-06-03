@@ -181,7 +181,15 @@ var Pedidos = {
 
             var sql = `INSERT INTO ${table} (${fields.join()}) VALUES (${buracos.join()}) RETURNING gid`;
             console.log(sql);
-            pg.connect(global.App.connection, function (err, client, done) {
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'Pedidos.saveGeoJson'
+            }, function (err, client, done) {
                 if (err)
                     return dberror('Database connection error', '', err, callback);
                 client.query(sql, values, function (err, result) {
@@ -426,7 +434,15 @@ var Pedidos = {
             }
         }
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'Pedidos.update'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             pgclient = client;
@@ -489,7 +505,15 @@ var Pedidos = {
         sql += group;
         sql += order;
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'estatisticas'
+        }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);

@@ -164,6 +164,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
         });
 
         var nominatimLayer = new ol.layer.Vector({
+            name: 'nominatim--',  // legend tree
             source: new ol.source.Vector({}),
             style: new ol.style.Style({
                 image: new ol.style.Icon({

@@ -318,6 +318,85 @@ var Sensor = {
         });
     },
 
+    updateBySensorIdAndAddress: function (params, callback) {
+        /*
+         { email: 'adele_singer@gmail.com', id: 7 }
+         * it can have more than one record to update:
+         * [ { name: 'Ana', id: 7 },
+         { email: 'adele_singer@gmail.com', id: 8 } ]
+         */
+
+        var rows = [].concat( params ); // even if we receive just one object, we create an array with that object
+        console.log(rows);
+        console.log(rows.length);
+
+        var updatesToDo = rows.length;
+        var updatesDone = [];
+        var pgclient = null;
+        var pgdone = null;
+
+        function updateRow(element, index, array) {
+            var i = 1, id, sensorid, fields = [], values = [], address;
+
+            sensorid = element.sensorid;
+            delete element.sensorid;
+            address = element.address;
+            delete element.address;
+
+            for (var key in element) {
+                fields.push(key + '= $' + i);
+                values.push(element[key]);
+                i = i + 1;
+            }
+            var sql = `UPDATE ${table} SET ${fields.join()} WHERE sensorid  = ${sensorid} and address = '${address}' RETURNING id`;
+            console.log(sql);
+            pgclient.query(sql, values, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql} Values: ${values.toString()}`, err, callback);
+                console.log('Rows updated: ' + result.rowCount);
+                if (result.rowCount != updatesToDo) {
+                    console.error('Error: only ' + result.rowCount + ' rows of ' + updatesToDo + ' were updated');
+                }
+                console.log(result);
+                // updatesDone.push(id);
+                if (result.rowCount > 0) {
+                    id = result.rows[0].id;
+                    updatesDone.push(id);
+                } else {
+                    updatesDone.push(0);
+                }
+                finish();
+            });
+        }
+
+        function finish() {
+            if (updatesToDo == updatesDone.length) {
+                console.log('Done!');
+                sql = `SELECT * FROM ${table} where id IN (${updatesDone.toString()})`;
+                console.log(sql);
+                pgclient.query(sql, function (err, result) {
+                    if (err)
+                        return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                    console.log(result.rows);
+                    callback(null, {
+                        data: result.rows,
+                        total: result.rows.length
+                    });
+                    pgdone();
+                });
+            } else {
+                console.log('Not yet... ' + updatesDone.length + ' de ' + updatesToDo);
+            }
+        }
+        pg.connect(global.App.connection, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            pgclient = client;
+            pgdone = done;
+            rows.forEach(updateRow);
+        });
+    },
+
     destroy: function (params, callback) {
         //  { id: 30 }
         //  [ { id: 30 }, { id: 31 }, { id: 71 }, { id: 74 } ]

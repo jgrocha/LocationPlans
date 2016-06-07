@@ -347,6 +347,48 @@ var DXLogin = {
         });
     },
 
+    savePreferences: function (params, callback, sessionID, request, response) {
+        console.log('Save preferences. Session ID = ' + sessionID);
+        console.log(params);
+        var lang = 'en';
+        if (request.session && request.session.lang) {
+            lang = request.session.lang;
+        }
+        console.log('Language: ' + lang + ' request.session.lang=' + request.session.lang);
+        if (request.session.userid && request.session.userid > 0) {
+            console.log(request.session.userid);
+            var sql = "UPDATE users.utilizador SET preferencias = $1, datamodificacao = now() where id = " + request.session.userid;
+            var detail = global.App.connection.split('/');
+            pg.connect({
+                user: detail[2].split('@')[0].split(':')[0],
+                password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+                database: detail[3], // 'geotuga',
+                host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+                port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+                application_name: 'DXLogin.savePreferences'
+            }, function (err, client, done) {
+                if (err)
+                    return dberror('Database connection error', '', err, callback, request, done);
+                client.query(sql, [params.preferencias], function (err, resultSelect) {
+                    done();
+                    if (err)
+                        return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
+                    callback(null, {
+                        message: request.app.locals.translate('Preferences changed', lang)
+                    });
+                });
+            })
+        } else {
+            console.log('invalid request.session.userid');
+            callback({
+                message: {
+                    text: request.app.locals.translate('Session not registered or too old', lang),
+                    detail: 'This should not happen'
+                }
+            });
+        }
+    },
+
     deauthenticate: function (params, callback, sessionID, request, response) {
         console.log('Vai terminar Session ID = ' + sessionID);
         // console.log(request);

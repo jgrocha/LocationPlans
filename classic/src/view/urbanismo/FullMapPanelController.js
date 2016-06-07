@@ -2,13 +2,38 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
     extend: 'Admin.view.maps.FullMapPanelController',
     alias: 'controller.fullmap-urbanismo',
 
+    onHelp: function (panel) {
+        console.log('onHelp');
+        var me = this; // ViewController
+
+        var vm = me.getViewModel();
+        var fn = vm.get('current.user.preferencias');
+        var prefObj = {};
+        // var fn = JSON.parse('{"urbanismo":{"hidehelp":false},"plantas":{"color":"red"},"sensor":{"unit":"metric","period":"day"}}');
+        if (fn) {
+            prefObj = JSON.parse(fn);
+            prefObj["urbanismo"]["hidehelp"] = false;
+        } else {
+            prefObj["urbanismo"] = {
+                "hidehelp": false
+            }
+        }
+        vm.set('current.user.preferencias', JSON.stringify(prefObj));
+
+    },
+
     onAfterLayersLoaded: function (view) {
         var me = this;
         console.log('afterlayersloaded()@fullmap-urbanismo');
 
         var olMap = view.map;
-        var vm = view.getViewModel();
+        // var vm = view.getViewModel();
+        var vm = me.getView().getViewModel();
+
         //var vmurbanismo = view.up('urbanismo').getViewModel();
+
+        console.log('Urbanismo FullMapPanle Controller ViewModel onAfterLayersLoaded');
+        console.log(vm);
 
         var styleFunction = (function () {
             var styles = {};
@@ -137,6 +162,126 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
             // console.log(featureStore.count());
         });
+
+        var nominatimLayer = new ol.layer.Vector({
+            name: 'nominatim--',  // legend tree
+            source: new ol.source.Vector({}),
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    //anchor: [0.5, 1],
+                    src: 'resources/images/location-icon-24.svg'
+                })
+            })
+        });
+        olMap.addLayer(nominatimLayer);
+        vm.set('nominatimLayer', nominatimLayer);
+
+    },
+
+    onSearchByIDEnter: function(field, e) {
+        var me = this;
+        if (e.getKey() == e.ENTER) {
+            console.log('Search by ID');
+            var key = field.getValue();
+            console.log(key);
+            if (key) {
+                Server.Urbanismo.Urbanismo.readEdificioByID({
+                    id: key
+                }, function (result, event) {
+                    if (result) {
+                        if (result.success) {
+                            // Ext.Msg.alert('Successo', 'As alterações foram gravadas com sucesso.');
+                            console.log(result);
+
+                            if (result.total == 1) {
+
+                                var spot = [result.data[0]["st_x"], result.data[0]["st_y"]];
+                                var vm = me.getView().getViewModel();
+                                var vectorLayer = vm.get('nominatimLayer');
+                                var geoMarker = new ol.Feature({
+                                    geometry: new ol.geom.Point(spot)
+                                });
+                                vectorLayer.getSource().addFeature(geoMarker);
+                                //
+                                var map = me.getView().down('mapcanvas').map;
+                                var mapView = map.getView();
+
+                                var pan = ol.animation.pan({
+                                    duration: 2000,
+                                    source: mapView.getCenter()
+                                });
+                                map.beforeRender(pan);
+                                mapView.setCenter(spot);
+
+                                var zoom = ol.animation.zoom({
+                                    duration: 2000,
+                                    resolution:  mapView.getResolution()
+                                });
+                                map.beforeRender(zoom);
+                                mapView.setResolution(0.27999999999999997);
+                            } else {
+                                Ext.Msg.alert('Not found'.translate(), 'No building found'.translate());
+                            }
+                        } else {
+                            Ext.Msg.alert('Error'.translate(), 'Error searching building by ID'.translate());
+                        }
+                    } else {
+                        Ext.Msg.alert('Error'.translate(), 'Error searching building by ID'.translate());
+                    }
+                });
+            }
+        }
+    },
+
+    onSearchNominatim: function (combo, newValue, oldValue, eOpts) {
+        var me = this;
+        var vm = me.getView().getViewModel();
+
+        console.log('Urbanismo FullMapPanle Controller ViewModel onSearchNominatim');
+        console.log(vm);
+
+        console.log('Pesquisa: ' + newValue);
+        console.log(newValue);
+
+        var vectorLayer = vm.get('nominatimLayer');
+        console.log(vectorLayer);
+
+        // vectorLayer.getSource().clear(true);
+        //
+        if (Array.isArray(newValue)) {
+            //console.log('É um array com ' + newValue.length);
+
+            var spot = ol.proj.transform(newValue, 'EPSG:4326', 'EPSG:3763');
+            //console.log(spot);
+
+            var geoMarker = new ol.Feature({
+                geometry: new ol.geom.Point(spot)
+            });
+
+            vectorLayer.getSource().addFeature(geoMarker);
+
+            //
+            var map = me.getView().down('mapcanvas').map;
+            var mapView = map.getView();
+
+            var pan = ol.animation.pan({
+                duration: 2000,
+                source: mapView.getCenter()
+            });
+            map.beforeRender(pan);
+            mapView.setCenter(spot);
+
+            var zoom = ol.animation.zoom({
+                duration: 2000,
+                resolution:  mapView.getResolution()
+            });
+            map.beforeRender(zoom);
+            mapView.setResolution(0.5599999999999999);
+
+
+        } else {
+            //console.log('Não é um array');
+        }
     }
 
 });

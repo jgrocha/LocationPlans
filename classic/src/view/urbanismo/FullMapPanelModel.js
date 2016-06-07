@@ -1,6 +1,7 @@
 Ext.define('Admin.view.urbanismo.FullMapPanelModel', {
     extend: 'Admin.view.maps.FullMapPanelModel',
     alias: 'viewmodel.fullmap-urbanismo',
+    requires: ['Admin.model.geo.Nominatim'],
 
     data: {
         defaultStyle: new ol.style.Style({
@@ -27,6 +28,24 @@ Ext.define('Admin.view.urbanismo.FullMapPanelModel', {
                 width: 2
             })
         })
+    },
+
+    stores: {
+        nominatimdata: {
+            model: 'geo.Nominatim'
+        },
+        estilos: {
+            fields: ['value', 'name'],
+            data: [
+                {value: "Point", name: "Point".translate()},
+                {value: "LineString", name: "Line".translate()},
+                {value: "Polygon", name: "Polygon".translate()},
+                //{value: "Circle", name: "Circle".translate()},
+                //{value: "Square", name: "Square".translate()},
+                //{value: "Box", name: "Box".translate()},
+                {value: "None", name: "Select/Modify".translate()}
+            ]
+        }
     }
 
 });

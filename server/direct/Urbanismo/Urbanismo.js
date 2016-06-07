@@ -77,7 +77,7 @@ var Urbanismo = {
             }
         }
 
-        pg.connect(global.App.connectionide, function (err, client, done) {
+        pg.connect(global.App.connection, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             pgclient = client;
@@ -262,6 +262,40 @@ var Urbanismo = {
         }
     },
 
+    // curl -v -H "Content-type: application/json" -d '{"action":"Urbanismo.Urbanismo","method":"readEdificioByID","data":[{"id":"9999"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
+    readEdificioByID: function (params, callback) {
+        console.log(params);
+        /*
+         { id: 9999 }
+         */
+
+        //var sql = 'SELECT  sensorid, address, location, installdate, sensortype, metric, calibrated, quantity, decimalplaces, cal_a, cal_b, read_interval, record_sample FROM ' + table,
+        var sql = "select st_x(st_centroid(the_geom)), st_y(st_centroid(the_geom)) from edificios.edificado_vti2 where id_edifica = '" + params.id + "'";
+            where = '', order = '', paging = '';
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'Urbanismo.readEdificioByID'
+        }, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            console.log(sql);
+            client.query(sql, function (err, result) {
+                done();
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                callback(null, {
+                    data: result.rows,
+                    total: result.rows.length
+                });
+            });
+        });
+    },
+
     // curl -v -H "Content-type: application/json" -d '{"action":"Urbanismo.Urbanismo","method":"read","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
     read: function (params, callback) {
         console.log(params);
@@ -330,7 +364,7 @@ var Urbanismo = {
         sql += where;
         sql += order;
         sql += paging;
-        pg.connect(global.App.connectionide, function (err, client, done) {
+        pg.connect(global.App.connection, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);
@@ -418,7 +452,7 @@ var Urbanismo = {
             }
         }
 
-        pg.connect(global.App.connectionide, function (err, client, done) {
+        pg.connect(global.App.connection, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             pgclient = client;
@@ -439,7 +473,7 @@ var Urbanismo = {
         console.log(ids);
         var sql = `DELETE FROM ${table} WHERE id IN (${ids.toString()})`;
         console.log(sql);
-        pg.connect(global.App.connectionide, function (err, client, done) {
+        pg.connect(global.App.connection, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             client.query(sql, function (err, result) {

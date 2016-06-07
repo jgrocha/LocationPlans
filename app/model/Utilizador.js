@@ -129,8 +129,10 @@ Ext.define('Admin.model.Utilizador', {
         type: 'date'
     }, {
         name: 'preferencias',
-        //type : 'any',
-        persist: false
+        type: 'string'
+
+        /*        //type : 'any',
+                persist: false*/
     }, {
         name: 'ativo',
         type: 'boolean'

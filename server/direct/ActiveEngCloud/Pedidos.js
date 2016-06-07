@@ -1,7 +1,20 @@
 var pg = global.App.postgres;
 
-var dberror = function (text, log, err, callback) {
+var dbconnerror = function (text, log, err, callback) {
     console.error(text + ' ' + err.toString() + ' ' + log);
+    done();
+    callback({
+        message: {
+            text: text,
+            detail: err.toString()
+        }
+    });
+    return false;
+};
+
+var dberror = function (done, text, log, err, callback) {
+    console.error(text + ' ' + err.toString() + ' ' + log);
+    done();
     callback({
         message: {
             text: text,
@@ -23,11 +36,11 @@ var Pedidos = {
 
         pg.connect(global.App.connection, function (err, client, done) {
             if (err)
-                return dberror('Database connection error', '', err, callback);
+                return dbconnerror('Database connection error', '', err, callback);
             console.log(sql);
             client.query(sql, function (err, result) {
                 if (err)
-                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                    return dberror(done, 'Database error', `${err.toString()} SQL: ${sql}`, err, callback);
                 callback(null, {
                     data: result.rows,
                     total: result.rows.length

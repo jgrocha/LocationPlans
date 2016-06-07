@@ -5,7 +5,28 @@ Ext.define('Admin.view.urbanismo.UrbanismoModel', {
     data: {
         urbanismo: {
             pretensao: null,
-            edificio: null
+            edificio: null // , hidehelp: true
+        }
+    },
+
+    formulas: {
+        hidehelp: {
+            get: function (get) {
+                var hide = false;
+                var fn = get('current.user.preferencias');
+                if (fn) {
+                    // var obj = JSON.parse('{"urbanismo":{"hidehelp":false},"plantas":{"color":"red"},"sensor":{"unit":"metric","period":"day"}}');
+                    var obj = JSON.parse(fn);
+                    if (obj.hasOwnProperty("urbanismo")) {
+                        var urb = obj["urbanismo"];
+                        if (urb.hasOwnProperty("hidehelp")) {
+                            hide = urb["hidehelp"];
+                            console.log("urbanismo hide help → " + hide);
+                        }
+                    }
+                }
+                return hide;
+            }
         }
     },
 

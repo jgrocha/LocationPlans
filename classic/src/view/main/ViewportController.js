@@ -44,7 +44,7 @@ Ext.define('Admin.view.main.ViewportController', {
         // console.log('Admin.view.main.ViewportController.init()');
 
         Ext.tip.QuickTipManager.init();
-        
+
         me.getViewModel().set('flagCls', 'app-language-cls'.translate());
         me.getViewModel().set('language', 'app-language'.translate());
         me.getViewModel().set('languageName', 'app-language-name'.translate());
@@ -70,8 +70,39 @@ Ext.define('Admin.view.main.ViewportController', {
                 }
             }
         });
+
+        this.getViewModel().bind('{current.user.preferencias}', this.changeUserPreferences, this);
+
         me.callParent(arguments);
 
+    },
+
+    preferences: '',
+    preferencesread: false,
+
+    changeUserPreferences: function () {
+        var strPref = this.getViewModel().get('current.user.preferencias');
+
+        if (!this.preferencesread) {
+            this.preferences = strPref;
+            this.preferencesread = true;
+            console.log('ViewportController initial preferences: ' + strPref);
+        } else {
+            if (this.preferences != strPref) {
+                console.log('ViewportController preferences changed: ' + strPref);
+                this.preferences = strPref;
+                console.log('ViewportController preferences should be saved: ' + strPref);
+                Server.DXLogin.savePreferences({
+                    preferencias: strPref
+                }, function (result, event) {
+                    if (!result.success) {
+                        Ext.Msg.alert('Error saving preferences', Ext.encode(result));
+                    }
+                });
+            } else {
+                console.log('ViewportController preferences NOT changed: ' + strPref);
+            }
+        }
     },
 
     onLoginComSucesso: function (user) {
@@ -79,6 +110,9 @@ Ext.define('Admin.view.main.ViewportController', {
         var viewModel = me.getViewModel();
         viewModel.set('current.user', Ext.create('Admin.model.Utilizador', user));
         viewModel.set('current.user.login', "local");
+
+        this.preferences = this.getViewModel().get('current.user.preferencias');
+        this.preferencesread = true;
 
         var treelist = this.getReferences().navigationTreeList;
         var estore = viewModel.getStore('navigationTree');
@@ -105,6 +139,9 @@ Ext.define('Admin.view.main.ViewportController', {
         mainCard.removeAll(true);
         viewModel.set('current.user.id', null);
         viewModel.set('current.user', null);
+
+        this.preferences = '';
+        this.preferencesread = false;
 
         var treelist = this.getReferences().navigationTreeList;
         var estore = viewModel.getStore('navigationTree');
@@ -160,12 +197,12 @@ Ext.define('Admin.view.main.ViewportController', {
             existingItem = mainCard.child('component[routeId=' + hashTag + ']'),
             newView;
 
-            var rec, storeStatic = viewModel.getStore('navigationTreeStatic');
-            if (!view) {
-                // console.log(hashTag + ' available → navigationTreeStatic');
-                rec = storeStatic.findRecord('routeId', hashTag);
-                view = rec ? rec.get('extjsview') : null;
-            }
+        var rec, storeStatic = viewModel.getStore('navigationTreeStatic');
+        if (!view) {
+            // console.log(hashTag + ' available → navigationTreeStatic');
+            rec = storeStatic.findRecord('routeId', hashTag);
+            view = rec ? rec.get('extjsview') : null;
+        }
 
         // Kill any previously routed window
         if (lastView && lastView.isWindow) {

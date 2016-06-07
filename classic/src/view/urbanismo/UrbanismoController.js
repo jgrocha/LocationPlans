@@ -9,7 +9,12 @@ Ext.define('Admin.view.urbanismo.UrbanismoController', {
     },
 
     onAfterRender: function () {
-        console.log('onAfterRender');
+        // console.log('onAfterRender');
+        var view = this.getView();
+        var tree = view.down('fullmap').down('maptree');
+        // Não dá. É muito cedo para fazer o collapse
+        // tree.toggleCollapse();
+        // console.log(tree);
     },
 
     onDismissClick: function (button, e, eOpts) {

@@ -43,7 +43,7 @@ Ext.define("Admin.view.maps.FullMapPanel", {
                 region: 'east',
                 width: 150,
                 collapsible: true,
-                collapsed: false, // true,
+                collapsed: true, // false, // true,
                 minWidth: 100,
                 maxWidth: 200
             }]

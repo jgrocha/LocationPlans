@@ -54,11 +54,10 @@ Ext.define('Admin.view.urbanismo.Urbanismo', {
      }, */ {
         xtype: 'edificio', // 'fotografia',
         responsiveCls: 'big-60'
-    }]/*,
-
+    }],
     listeners : {
         scope       : 'controller',
         afterrender : 'onAfterRender'
     }
-*/
+
 });

@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61e971d5-b08e-4d59-b333-e3de1794b27a" name="Default" comment="Added more application_name to PostgreSQL connections to monitor issue #6">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/production/Admin/resources/help/en/urbanismo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/help/en/urbanismo.html" />
+    <list default="true" id="61e971d5-b08e-4d59-b333-e3de1794b27a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Utilizador.js" afterPath="$PROJECT_DIR$/app/model/Utilizador.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic.json" afterPath="$PROJECT_DIR$/build/production/Admin/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic/app.js" afterPath="$PROJECT_DIR$/build/production/Admin/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/main/ViewportController.js" afterPath="$PROJECT_DIR$/classic/src/view/main/ViewportController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/maps/FullMapPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/maps/FullMapPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoModel.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/direct/ActiveEngCloud/Pedidos.js" afterPath="$PROJECT_DIR$/server/direct/ActiveEngCloud/Pedidos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/direct/ActiveEngCloud/Sensor.js" afterPath="$PROJECT_DIR$/server/direct/ActiveEngCloud/Sensor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/direct/DXLogin.js" afterPath="$PROJECT_DIR$/server/direct/DXLogin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js" afterPath="$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js" />
     </list>
     <ignored path="server/server-config.json" />
     <ignored path="server/node_modules/" />
@@ -54,12 +44,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.55445546">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                <state relative-caret-position="-1386">
+                  <caret line="1" column="41" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="41" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Readme.md" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Readme.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="201">
+                    <caret line="202" column="18" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="18" />
+                    <folding />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -67,8 +70,18 @@
           <file leaf-file-name="Urbanismo.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1098">
-                  <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+                <state relative-caret-position="482">
+                  <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UrbanismoController.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
                   <folding />
                 </state>
               </provider>
@@ -77,14 +90,12 @@
           <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="422">
-                  <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
+                <state relative-caret-position="-3235">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding>
                     <element signature="e#1283#4066#0" expanded="false" />
-                    <element signature="e#4120#4735#0" expanded="false" />
-                    <element signature="e#4783#5073#0" expanded="false" />
-                    <element signature="e#5181#5245#0" expanded="false" />
-                    <element signature="e#5989#6524#0" expanded="false" />
+                    <element signature="e#5214#5278#0" expanded="false" />
+                    <element signature="e#6022#6557#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -93,8 +104,18 @@
           <file leaf-file-name="MapCanvas.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapCanvas.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
+                <state relative-caret-position="36">
                   <caret line="49" column="230" selection-start-line="49" selection-start-column="211" selection-end-line="49" selection-end-column="230" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MapTree.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapTree.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="18">
+                  <caret line="1" column="27" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -113,7 +134,7 @@
           <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/server.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
+                <state relative-caret-position="810">
                   <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="25" />
                   <folding />
                 </state>
@@ -123,28 +144,8 @@
           <file leaf-file-name="Urbanismo.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1566">
+                <state relative-caret-position="5364">
                   <caret line="298" column="101" selection-start-line="298" selection-start-column="97" selection-end-line="298" selection-end-column="101" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FullMapPanelModel.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="504">
-                  <caret line="34" column="33" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Nominatim.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/geo/Nominatim.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -153,7 +154,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -164,11 +165,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/classic/src/view/maps/FullMapPanel.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-456">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="540">
+                  <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -208,7 +209,7 @@
             <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapCanvasController.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="504">
-                  <caret line="34" column="49" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="49" />
+                  <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="54" />
                   <folding />
                 </state>
               </provider>
@@ -234,11 +235,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+                <state relative-caret-position="360">
+                  <caret line="289" column="45" selection-start-line="289" selection-start-column="45" selection-end-line="289" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -263,7 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classic/src/view/main/Viewport.js" />
         <option value="$PROJECT_DIR$/classic/src/view/pages/Error404Window.js" />
         <option value="$PROJECT_DIR$/classic/src/view/pages/FAQEPL.js" />
         <option value="$PROJECT_DIR$/resources/help/activeng/en/help.html" />
@@ -305,15 +305,16 @@
         <option value="$PROJECT_DIR$/app/model/Utilizador.js" />
         <option value="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoModel.js" />
         <option value="$PROJECT_DIR$/server/preferences.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js" />
         <option value="$PROJECT_DIR$/server/direct/DXLogin.js" />
         <option value="$PROJECT_DIR$/classic/src/view/main/ViewportController.js" />
         <option value="$PROJECT_DIR$/resources/help/en/urbanismo.html" />
         <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js" />
         <option value="$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/maps/FullMapPanel.js" />
       </list>
     </option>
   </component>
@@ -381,7 +382,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
+              <option name="myItemId" value="classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,41 +400,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
+              <option name="myItemId" value="classic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -443,23 +422,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
+              <option name="myItemId" value="classic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
+              <option name="myItemId" value="urbanismo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,31 +448,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
+              <option name="myItemId" value="classic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pt" />
+              <option name="myItemId" value="maps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -508,154 +471,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -665,8 +480,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -880,7 +695,8 @@
       <workItem from="1465034293044" duration="8927000" />
       <workItem from="1465217045853" duration="4789000" />
       <workItem from="1465229180791" duration="12040000" />
-      <workItem from="1465290746329" duration="17993000" />
+      <workItem from="1465290746329" duration="20595000" />
+      <workItem from="1465338627772" duration="2049000" />
     </task>
     <task id="LOCAL-00001" summary="Navigation tree from database">
       <created>1447546384939</created>
@@ -1008,11 +824,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464973007012</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Search using nominatim and search by building id. Closes #1. Finally.">
+      <created>1465313853170</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1465313853170</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360258000" />
+    <option name="totallyTimeSpent" value="364909000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1027,14 +850,14 @@
     <frame x="0" y="24" width="1920" height="993" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20137058" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1676331" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42807826" sideWeight="0.37121212" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3779264" sideWeight="0.4832251" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61105317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39018953" sideWeight="0.6287879" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22853957" sideWeight="0.6287879" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1064,7 +887,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server/public" />
     </ignored-roots>
-    <MESSAGE value="Feature draw and printing; added chart; disabled GFI" />
     <MESSAGE value="Map toolbar rearranged; fixed style missing when serializing features for printing; fixed OL3 interactions/missing styles" />
     <MESSAGE value="Live statistics on the dashboard; detect a previous valid session; refactoring Ext.Direct handling of callback results" />
     <MESSAGE value="Removed alert when recovering session; detailed message on loging failure" />
@@ -1089,7 +911,8 @@
     <MESSAGE value="Building form properly submitted with only dirty fields&#10;Building form with proper tooltips on every field" />
     <MESSAGE value="Added application_name to PostgreSQL connections to monitor issue #6" />
     <MESSAGE value="Added more application_name to PostgreSQL connections to monitor issue #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more application_name to PostgreSQL connections to monitor issue #6" />
+    <MESSAGE value="Search using nominatim and search by building id. Closes #1. Finally." />
+    <option name="LAST_COMMIT_MESSAGE" value="Search using nominatim and search by building id. Closes #1. Finally." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1110,13 +933,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/model/plantas/Estatisticas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/plantas/Pedido.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1156,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="831">
           <caret line="52" column="56" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="831">
           <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="50" column="12" selection-start-line="50" selection-start-column="11" selection-end-line="77" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1157">
           <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,21 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="198" column="27" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="382">
-            <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="183" column="3" selection-start-line="183" selection-start-column="3" selection-end-line="183" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1274,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2214">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
           <caret line="476" column="27" selection-start-line="476" selection-start-column="20" selection-end-line="476" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="28" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1298,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2112">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="36" selection-end-line="27" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1306,9 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1316,7 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10">
           <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1324,14 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
           <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/FullMapPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1360,19 +1141,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapCanvasController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/help/en/urbanismo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="122" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1384,19 +1156,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/PlantasModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1404,13 +1167,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="371" column="55" selection-start-line="371" selection-start-column="55" selection-end-line="371" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="612">
           <caret line="34" column="33" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="33" />
           <folding />
         </state>
@@ -1428,7 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1458,7 +1219,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="810">
           <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="25" />
           <folding />
         </state>
@@ -1466,54 +1227,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1566">
+        <state relative-caret-position="5364">
           <caret line="298" column="101" selection-start-line="298" selection-start-column="97" selection-end-line="298" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js">
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="183" column="3" selection-start-line="183" selection-start-column="3" selection-end-line="183" selection-end-column="3" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="201">
+            <caret line="202" column="18" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="18" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapCanvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="36">
+          <caret line="49" column="230" selection-start-line="49" selection-start-column="211" selection-end-line="49" selection-end-column="230" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="289" column="45" selection-start-line="289" selection-start-column="45" selection-end-line="289" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapCanvas.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="49" column="230" selection-start-line="49" selection-start-column="211" selection-end-line="49" selection-end-column="230" />
+        <state relative-caret-position="18">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
+        <state relative-caret-position="-3235">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1283#4066#0" expanded="false" />
-            <element signature="e#4120#4735#0" expanded="false" />
-            <element signature="e#4783#5073#0" expanded="false" />
-            <element signature="e#5181#5245#0" expanded="false" />
-            <element signature="e#5989#6524#0" expanded="false" />
+            <element signature="e#5214#5278#0" expanded="false" />
+            <element signature="e#6022#6557#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/Urbanismo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="-1386">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/MapCanvasController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/maps/FullMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
           <folding />
         </state>
       </provider>

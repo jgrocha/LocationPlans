@@ -115,7 +115,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
         var vectorWFS = new ol.layer.Vector({
             title: 'Edificado WFS',
-            name: 'Edificado WFS',
+            name: 'Edificado WFS--',  // não mostrar na legend tree
             source: vectorSource,
             style: styleFunction,
             maxResolution: 1.09956468849 // 2.199129376979828 // The maximum resolution (exclusive) below which this layer will be visible.
@@ -164,7 +164,6 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
         });
 
         var nominatimLayer = new ol.layer.Vector({
-            name: 'nominatim--',  // legend tree
             source: new ol.source.Vector({}),
             style: new ol.style.Style({
                 image: new ol.style.Icon({

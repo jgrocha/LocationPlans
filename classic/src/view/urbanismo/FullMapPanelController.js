@@ -99,6 +99,39 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
             };
         })();
 
+        var simpleStyleFunction = (function () {
+            var styles = {};
+            return function (feature) {
+                var res = [];
+                if (feature instanceof ol.Feature) {
+                    res.push(new ol.style.Style({
+                        stroke: new ol.style.Stroke({
+                            color: 'gray',
+                            width: 3
+                        }),
+                        fill: new ol.style.Fill({
+                            color: 'rgba(255, 0, 0, 0.1)'
+                        })
+                    }));
+                    if (feature.get('fotografias') > 0) {
+                        res.push(new ol.style.Style({
+                            image: new ol.style.Icon({
+                                src: 'resources/images/icons/applications-photography.svg',
+                                scale: 0.5
+                            }),
+                            geometry: function (feature) {
+                                // return the coordinates of the first ring of the polygon
+                                // var coordinates = feature.getGeometry().getCoordinates()[0];
+                                var center = ol.extent.getCenter(feature.getGeometry().getExtent());
+                                return new ol.geom.Point(center);
+                            }
+                        }));
+                    }
+                    return res;
+                }
+            };
+        })();
+
         var vectorSource = new ol.source.Vector({
             format: new ol.format.GeoJSON({
                 defaultDataProjection: 'EPSG:3763'
@@ -117,7 +150,8 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
             title: 'Edificado WFS',
             name: 'Edificado WFS--',  // não mostrar na legend tree
             source: vectorSource,
-            style: styleFunction,
+            // style: styleFunction,
+            style: simpleStyleFunction,
             maxResolution: 1.09956468849 // 2.199129376979828 // The maximum resolution (exclusive) below which this layer will be visible.
         });
 
@@ -178,7 +212,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
     },
 
-    onSearchByIDEnter: function(field, e) {
+    onSearchByIDEnter: function (field, e) {
         var me = this;
         if (e.getKey() == e.ENTER) {
             console.log('Search by ID');
@@ -215,7 +249,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
                                 var zoom = ol.animation.zoom({
                                     duration: 2000,
-                                    resolution:  mapView.getResolution()
+                                    resolution: mapView.getResolution()
                                 });
                                 map.beforeRender(zoom);
                                 mapView.setResolution(0.27999999999999997);
@@ -273,7 +307,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
             var zoom = ol.animation.zoom({
                 duration: 2000,
-                resolution:  mapView.getResolution()
+                resolution: mapView.getResolution()
             });
             map.beforeRender(zoom);
             mapView.setResolution(0.5599999999999999);

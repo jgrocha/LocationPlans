@@ -16,12 +16,13 @@
       "AllowCredentials": true,
       "MaxAge": 3600
     },
-    "dbide": "postgres://user:pass@localhost:9433/database",
-    "dbpublica": "postgres://user:pass@localhost:9432/database",
-    "dbproduction": "postgres://user:pass@localhost/database",
-    "dbdevelopment": "postgres://user:pass@localhost/database",
+    "dbide": "postgres://geobox:geobox@localhost:9433/ide",
+    "dbpublica": "postgres://geobox:geobox@localhost:9432/publica",
+    "dbproduction": "postgres://geobox:geoptbox2k16@marte/web",
+    "_dbdevelopment": "postgres://geobox:geoptbox2k16@marte.sig.cm-agueda.pt/web",
+    "dbdevelopment": "postgres://geobox:geobox@localhost/geotuga",
     "dblayers": "public.mainz",
-    "mssqlserver": "mssql://user:pass@localhost:8433/database"
+    "mssqlserver": "mssql://sig:sig@localhost:8433/SIGMAGEST16"
   },
   "ExtDirectConfig": {
     "rootNamespace": "Server",
@@ -34,20 +35,21 @@
     "protocol": "http",
     "timeout": 30000,
     "cacheAPI": false,
-    "relativeUrl": false,
+    "relativeUrl": true,
     "appendRequestResponseObjects": true,
     "enableMetadata": true,
     "responseHelper": true,
     "enableProcessors": true
   },
   "ClientConfig": {
-    "title": "Rede dos pequenos produtores",
-    "author": "Jorge Gustavo Rocha",
-    "description": "Rede de pequenos produtores",
-    "keywords": "Câmara Municipal de Águeda, Águeda, Dados Abertos, Infraetruturas, Serviços de Utilidade Pública",
-    "headertitle": "Rede de pequenos produtores<br/>Projeto Parnet TIC 2<br/>Câmara Municipal de Águeda",
-    "headerlogo": "resources/images/fisalis.png",
-    "headerlogowidth": "156",
-    "headerlogoheight": "127"
+    "title": "Unidade Técnica de SIG, Câmara Municipal de Águeda",
+    "author": "Geomaster, Lda",
+    "description": "Impressão de Plantas de Localização",
+    "keywords": "Palntas de localização, impressão, 2000, 10000",
+    "headertitle": "UT SIG",
+    "headerlogo": "resources/images/dadosagueda_sem.png",
+    "headerlogowidth": "56",
+    "headerlogoheight": "26",
+    "helpbasefolder": "resources/help/"
   }
 }

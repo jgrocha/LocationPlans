@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61e971d5-b08e-4d59-b333-e3de1794b27a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/server-config.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-data.sql" afterPath="$PROJECT_DIR$/dashboard-data.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.sql" afterPath="$PROJECT_DIR$/dashboard.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server-config-TEMPLATE.json" afterPath="$PROJECT_DIR$/server/server-config-TEMPLATE.json" />
     </list>
     <ignored path="server/server-config.json" />
     <ignored path="server/node_modules/" />
@@ -29,7 +26,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -49,12 +45,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="423">
-                <caret line="262" column="3" selection-start-line="262" selection-start-column="3" selection-end-line="262" selection-end-column="3" />
+              <first_editor relative-caret-position="381">
+                <caret line="259" column="50" selection-start-line="259" selection-start-column="50" selection-end-line="259" selection-end-column="50" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -62,15 +58,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Readme-Notes.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Readme-Notes.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="418">
-                <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server-config.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server-config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,7 +84,7 @@
       <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="7722">
               <caret line="429" column="47" selection-start-line="429" selection-start-column="42" selection-end-line="429" selection-end-column="47" />
               <folding />
             </state>
@@ -88,8 +94,8 @@
       <file leaf-file-name="dashboard-data.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard-data.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2695">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-512">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -155,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/help/activeng/en/help.html" />
         <option value="$PROJECT_DIR$/resources/help/activeng/pt/ajuda.html" />
         <option value="$PROJECT_DIR$/resources/help/activeng/en/welcome.html" />
         <option value="$PROJECT_DIR$/resources/help/activeng/pt/bemvindo.html" />
@@ -204,8 +209,9 @@
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
         <option value="$PROJECT_DIR$/dashboard.sql" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/Readme-Notes.md" />
+        <option value="$PROJECT_DIR$/dashboard-data.sql" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
@@ -245,7 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -264,8 +269,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -321,17 +341,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -484,7 +493,19 @@
       <workItem from="1465338627772" duration="2986000" />
       <workItem from="1465462045186" duration="7510000" />
       <workItem from="1465763061171" duration="141000" />
-      <workItem from="1467113073302" duration="10431000" />
+      <workItem from="1467113073302" duration="10785000" />
+      <workItem from="1467271750209" duration="35000" />
+      <workItem from="1467324535979" duration="639000" />
+      <workItem from="1467584493963" duration="8000" />
+      <workItem from="1467646767761" duration="290000" />
+      <workItem from="1467685436835" duration="7000" />
+      <workItem from="1467700647290" duration="77000" />
+      <workItem from="1467700814052" duration="782000" />
+      <workItem from="1467707174617" duration="5000" />
+      <workItem from="1468247416541" duration="9000" />
+      <workItem from="1468317357262" duration="1776000" />
+      <workItem from="1468319407987" duration="176000" />
+      <workItem from="1468334703085" duration="2834000" />
     </task>
     <task id="LOCAL-00001" summary="Navigation tree from database">
       <created>1447546384939</created>
@@ -640,11 +661,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465479103186</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Prepare app for deploy">
+      <created>1467124853214</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1467124853214</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383928000" />
+    <option name="totallyTimeSpent" value="390920000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,12 +687,12 @@
     <frame x="0" y="24" width="1920" height="993" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2256194" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17764892" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42807826" sideWeight="0.37121212" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61105317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2954292" sideWeight="0.6287879" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29497206" sideWeight="0.6287879" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -696,7 +724,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server/public" />
     </ignored-roots>
-    <MESSAGE value="Fixed print request for 10k resolution" />
     <MESSAGE value="User profile added" />
     <MESSAGE value="Plantas x mes graph; passing statusURL to the backend" />
     <MESSAGE value="User can recover previous print requests" />
@@ -721,7 +748,8 @@
     <MESSAGE value="Hide WFS from layer tree; layer tree starts collapsed" />
     <MESSAGE value="nominatimLayer must have a name property" />
     <MESSAGE value="changed the buildings WFS style to work over the buildings WMS" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the buildings WFS style to work over the buildings WMS" />
+    <MESSAGE value="Prepare app for deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepare app for deploy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1033,13 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server-config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-288">
@@ -1073,53 +1094,67 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="LargeFileEditor">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard-data.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2695">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="437">
+          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="7722">
           <caret line="429" column="47" selection-start-line="429" selection-start-column="42" selection-end-line="429" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
+    <entry file="file://$PROJECT_DIR$/server/server-config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="423">
-            <caret line="262" column="3" selection-start-line="262" selection-start-column="3" selection-end-line="262" selection-end-column="3" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="183" column="3" selection-start-line="183" selection-start-column="3" selection-end-line="183" selection-end-column="3" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard-data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-512">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="418">
-            <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
+          <first_editor relative-caret-position="381">
+            <caret line="259" column="50" selection-start-line="259" selection-start-column="50" selection-end-line="259" selection-end-column="50" />
             <folding />
           </first_editor>
           <second_editor />

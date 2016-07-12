@@ -134,8 +134,7 @@ sudo vi /var/lib/tomcat7/webapps/geoserver/WEB-INF/web.xml
 sudo service tomcat7 start
 ```
 
-The default credentials for Geoserver are:
-admin/geoserver
+The default credentials for Geoserver are: admin/geoserver
 
 #### Installing MapFish
 
@@ -147,6 +146,8 @@ sudo mv print-servlet-3.5.0.war /var/lib/tomcat7/webapps/print.war
 ```
 
 #### Print test
+
+To make sure that Geoserver and MapFish is running properly, the following test should be performed.
 
 ### Installing PostgreSQL
 
@@ -196,24 +197,17 @@ psql dashboard -c "CREATE EXTENSION adminpack;"
 psql dashboard -c "CREATE EXTENSION postgis;"
 -- psql dashboard -c "CREATE EXTENSION hstore;"
 psql dashboard -c "CREATE EXTENSION pgcrypto;"
--- populate supporting tables
-psql dashboard -f dashboard.sql
-psql dashboard -f dashboard-data.sql
--- initial user; replace the email 'jgr@geomaster.pt' with your own; replace the password 'pa55word' with your own
-psql dashboard -c "insert into users.utilizador (idgrupo, email, password, nome, emailconfirmacao) values (1, 'jgr@geomaster.pt', encode(digest('pa55word', 'sha1'), 'hex'), 'Administrator', true);"
 exit
 ```
 
 ### Application
 
-#### Deploy the application from Gitlab (VM)
+#### Deploy the application from GitHub
 
 ```bash
 cd
-mkdir dashboard
-cd dashboard
-git clone https://gitlab.com/jgrocha/MyDashBoard.git
-cd MyDashBoard
+git clone https://github.com/jgrocha/LocationPlans.git
+cd LocationPlans
 
 sudo su postgres
 -- create database tables
@@ -249,15 +243,22 @@ sudo forever-service install -e "NODE_ENV=production" dashboard --script server.
 sudo start dashboard
 ```
 
-#### Update the application from Gitlab (VM)
+#### Update the application from GitHub
 
 ```bash
-cd
-cd dashboard/MyDashBoard/
+cd ~/LocationPlans
 git pull
 
 sudo stop dashboard
 cp -rf server/* ~/public_html
 cp -rf build/production/Admin/* ~/public_html/public
 sudo start dashboard
+```
+
+### Application log
+
+The application log is written in /var/log/dashboard.log.
+
+```bash
+tail -f /var/log/dashboard.log
 ```

@@ -142,20 +142,20 @@ Ext.define('Admin.view.urbanismo.Edificio', {
                         }
                     }
                 }, /*{
-                    xtype: 'checkboxfield',
-                    name: 'siou',
-                    labelAlign: 'right',
-                    fieldLabel: 'SIOU',
-                    boxLabel: '(registado no INE)',
-                    tooltip: 'Registo de dados no Sistema de Indicadores de Operações Urbanísticas (SIOU) do INE',
-                    bind: '{edificadoGrid.selection.siou}',
-                    name: 'siou',
-                    listeners: {
-                        render: function (p) {
-                            p.getEl().down('input').set({'data-qtip': p.tooltip});
-                        }
-                    }
-                },*/ {
+                 xtype: 'checkboxfield',
+                 name: 'siou',
+                 labelAlign: 'right',
+                 fieldLabel: 'SIOU',
+                 boxLabel: '(registado no INE)',
+                 tooltip: 'Registo de dados no Sistema de Indicadores de Operações Urbanísticas (SIOU) do INE',
+                 bind: '{edificadoGrid.selection.siou}',
+                 name: 'siou',
+                 listeners: {
+                 render: function (p) {
+                 p.getEl().down('input').set({'data-qtip': p.tooltip});
+                 }
+                 }
+                 },*/ {
                     xtype: 'textfield',
                     labelAlign: 'right',
                     fieldLabel: 'SIOU-INE'.translate(),
@@ -713,25 +713,25 @@ Ext.define('Admin.view.urbanismo.Edificio', {
                 xtype: 'container',
                 layout: 'hbox',
                 anchor: '100%',
-                items: [{
-                    xtype: 'htmleditor',
-                    grow: true,
-                    // fieldLabel: 'obs'.translate(),
-                    bind: {
-                        value: '{edificadoGrid.selection.obs}'
-                    },
-                    // padding: '0 0 10 0',
-                    flex: 1,
-                    name: 'obs'
-                } /*{
-                 xtype: 'textareafield',
+                items: [/*{
+                 xtype: 'htmleditor', // Está a dar erro após impressão, ao refazer o layout
                  grow: true,
                  // fieldLabel: 'obs'.translate(),
-                 bind: '{edificadoGrid.selection.obs}',
+                 bind: {
+                 value: '{edificadoGrid.selection.obs}'
+                 },
                  // padding: '0 0 10 0',
                  flex: 1,
                  name: 'obs'
-                 }*/]
+                 }*/ {
+                    xtype: 'textareafield',
+                    grow: true,
+                    // fieldLabel: 'obs'.translate(),
+                    bind: '{edificadoGrid.selection.obs}',
+                    // padding: '0 0 10 0',
+                    flex: 1,
+                    name: 'obs'
+                }]
             }]
         }]
     }],
@@ -740,7 +740,14 @@ Ext.define('Admin.view.urbanismo.Edificio', {
         reference: 'navigation-toolbar',
         //margin: 8,
         style: 'background-color: transparent',
-        items: ['->', {
+        items: [{
+            text: 'Print'.translate(),
+            ui: 'blue',
+            // formBind: true,
+            listeners: {
+                click: 'onPrintClick'
+            }
+        }, '->', {
             text: 'Save'.translate(),
             ui: 'blue',
             formBind: true,

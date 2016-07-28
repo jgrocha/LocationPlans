@@ -9,12 +9,11 @@ These prints are often requested by public authorities for legal purposes.
 
 ### Client (web app)
 
-The web application is developed in HTML, CSS and Javascript,
-taking advantage of the well known libraries ExtJS 6, GeoExt 3 and OpenLayers 3.x.
+The web application is developed in HTML, CSS and Javascript, taking advantage of the well known libraries ExtJS 6, GeoExt 3 and OpenLayers 3.x.
 
 ### Server
 
-The server is written in Javascript, using node.js. Several node modules are used.
+The server is written in Javascript. node.js is required to run the server code. Several node modules are used.
 
 ### Print server
 
@@ -95,6 +94,8 @@ JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 JAVA_OPTS="-Djava.awt.headless=true -Xmx1536m -XX:+UseConcMarkSweepGC"
 ```
 
+Set user/password:
+
 ```
 sudo vi /etc/tomcat7/tomcat-users.xml
 ```
@@ -108,6 +109,11 @@ sudo vi /etc/tomcat7/tomcat-users.xml
 
 ```
 sudo service tomcat7 restart
+
+-- Wait until tomcat7 is ready, with:
+-- tail -f /var/log/tomcat7/catalina.out
+-- Wait until the server reports:
+-- INFO: Server startup in xxxxx ms
 ```
 
 #### Installing Geoserver
@@ -121,6 +127,11 @@ wget http://ncu.dl.sourceforge.net/project/geoserver/GeoServer/2.9.0/geoserver-2
 unzip geoserver-2.9.0-war.zip
 sudo cp geoserver.war /var/lib/tomcat7/webapps/
 
+-- Wait until geoserver app is deployed, with:
+-- tail -f /var/log/tomcat7/catalina.out
+-- Wait until the server reports:
+-- INFO: Server startup in xxxxx ms
+
 sudo service tomcat7 stop
 sudo cp -a /var/lib/tomcat7/webapps/geoserver/data ~/geoserver
 
@@ -132,9 +143,44 @@ sudo vi /var/lib/tomcat7/webapps/geoserver/WEB-INF/web.xml
 	</context-param>
 
 sudo service tomcat7 start
+
+-- Wait until tomcat7 is ready, with:
+-- tail -f /var/log/tomcat7/catalina.out
+-- Wait until the server reports:
+-- INFO: Server startup in xxxxx ms
 ```
 
 The default credentials for Geoserver are: admin/geoserver
+
+#### Disable Tomcat CORS (not necessary for cloud deploy)
+
+```
+sudo vi /etc/tomcat7/web.xml
+```
+
+```
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  <init-param>
+	<param-name>cors.allowed.origins</param-name>
+	<param-value>*</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+```
+sudo service tomcat7 restart
+
+-- Wait until tomcat7 is ready, with:
+-- tail -f /var/log/tomcat7/catalina.out
+-- Wait until the server reports:
+-- INFO: Server startup in xxxxx ms
+```
 
 #### Installing MapFish
 
@@ -143,11 +189,48 @@ cd /tmp
 # wget http://repo1.maven.org/maven2/org/mapfish/print/print-servlet/3.3.0/print-servlet-3.3.0.war
 wget http://repo1.maven.org/maven2/org/mapfish/print/print-servlet/3.5.0/print-servlet-3.5.0.war
 sudo mv print-servlet-3.5.0.war /var/lib/tomcat7/webapps/print.war
+
+-- Wait until mapfish app is deployed, with:
+-- tail -f /var/log/tomcat7/catalina.out
+-- Wait until the server reports:
+-- INFO: Server startup in xxxxx ms
 ```
 
 #### Print test
 
-To make sure that Geoserver and MapFish is running properly, the following test should be performed.
+To make sure that Geoserver and MapFish are running, the following urls should open:
+
+* [Geoserver](http://localhost:8080/geoserver)
+* [MapFish](http://localhost:8080/print/)
+
+To make sure that MapFish is running properly, the following print should be request:
+
+Select in the `Print App/Example` combo box: verboseExample
+
+Click on `Create And Get Print` button
+
+#### (Skip) Customize printing templates 
+
+Note: **this is not necessary for cloud deploy.**
+
+The application prints existing contents (the map, attributes, etc) using a template that defines the output layout.
+The layout can be edited using [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio/releases). 
+
+Jasper Studio can be installed in two different ways;
+
+[JaspersoftStudio-6.3.0.final-linux-x86_64.tgz](http://netassist.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.3.0/TIBCOJaspersoftStudio-6.3.0.final-linux-x86_64.tgz)
+
+```
+cd ~/bin
+tar xvzf ~/Transferências/TIBCOJaspersoftStudio-6.3.0.final-linux-x86_64.tgz
+~/bin/TIBCOJaspersoftStudio-6.3.0.final/runubuntu.sh
+```
+
+[JaspersoftStudio_6.3.0.final_amd64.deb](http://netcologne.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.3.0/TIBCOJaspersoftStudio_6.3.0.final_amd64.deb) for Debain based Linux.
+
+```
+sudo dpkg -i TIBCOJaspersoftStudio_6.3.0.final_amd64.deb
+```
 
 ### Installing PostgreSQL
 

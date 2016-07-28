@@ -12,9 +12,9 @@ Ext.define("Admin.view.urbanismo.FullMapPanel", {
         type: "fullmap-urbanismo"
     },
 
-    defaults : {
+    defaults: {
         defaultFocus: 'combobox',
-        defaultButton : 'searchbyidbutton'
+        defaultButton: 'searchbyidbutton'
     },
 
     tools: [{
@@ -69,44 +69,15 @@ Ext.define("Admin.view.urbanismo.FullMapPanel", {
                     specialkey: 'onSearchByIDEnter'
                 }
             } /*, {
-                xtype: 'button',
-                reference : 'searchbyidbutton',
-                text: 'Search by ID'.translate(),
-                ui: 'blue',
-                listeners: {
-                    click: 'onSearchByIDClick'
-                }
-            }*/ ]
-        } /*, '->', {
-            xtype: 'buttongroup',
-            //padding: '30 10 10 10',
-            //margin: '10 10 10 10',
-            columns: 2,
-            title: 'Style'.translate(),
-            //iconCls: 'x-fa fa-edit',
-            frame: true,
-            items: [{
-                xtype: 'combobox',
-                width: 200,
-                colspan: 2,
-                //fieldLabel: 'Draw'.translate(),
-                labelSeparator: '',
-                labelWidth: 0, // 60,
-                displayField: 'name',
-                valueField: 'value',
-                value: 'None',
-                iconCls: 'x-fa fa-edit',
-                forceSelection: true,
-                editable: false,
-                bind: {
-                    store: '{estilos}'
-                },
-                queryMode: 'local',
-                listeners: {
-                    change: 'onChangeGeometry'
-                }
-            }]
-        } */];
+             xtype: 'button',
+             reference : 'searchbyidbutton',
+             text: 'Search by ID'.translate(),
+             ui: 'blue',
+             listeners: {
+             click: 'onSearchByIDClick'
+             }
+             }*/]
+        }];
 
         me.dockedItems = [{
             xtype: 'toolbar',

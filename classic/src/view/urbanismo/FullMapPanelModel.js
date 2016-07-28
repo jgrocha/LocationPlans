@@ -4,6 +4,8 @@ Ext.define('Admin.view.urbanismo.FullMapPanelModel', {
     requires: ['Admin.model.geo.Nominatim'],
 
     data: {
+        paper: 'A4',
+        orientation: 'portrait',
         defaultStyle: new ol.style.Style({
             stroke: new ol.style.Stroke({
                 color: [153, 102, 0, 0.8],

@@ -15,7 +15,7 @@ The print profile allows the usage of:
 
 ## Free printing
 
-Done (almost...).
+Done (almost...). 
 
 ## Printing profiles
 

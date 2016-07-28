@@ -241,7 +241,6 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
         if (userid) {
             username = vm.get('current.user.nome');
-            username = vm.get('current.user.nome');
             newfeature = {
                 geometry: new ol.geom.Point(center),
                 nome: username,
@@ -378,7 +377,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 //var isExtentLayer = (extent === layer);
                 //console.log('Layer ' + layer.get('title') + ' → ' + (!isExtentLayer && layer.getVisible()));
                 //console.log('Layer ' + layer.get('title') + ' → ' + (layer.get('layer') == 'carto2_5k' || layer.get('layer') == 'carto10k') );
-                return (layer.get('title') == 'Detail')
+                return (layer.get('title') == 'Detail');
                 //return !isExtentLayer && layer.getVisible();
             }
         );

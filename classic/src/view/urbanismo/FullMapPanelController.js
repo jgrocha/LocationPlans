@@ -182,6 +182,15 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
         });
         olMap.addInteraction(selectSingleClick);
 
+        // featureStore.on('datachanged', function () {
+        featureStore.on('filterchange', function () {
+            // console.log('filterchange');
+            // console.log(arguments);
+            var sm = grid.getSelectionModel();
+            sm.deselectAll();
+            sm.select(0);
+        });
+
         selectSingleClick.on('select', function (e) {
             selectedFeatures = [];
             e.target.getFeatures().forEach(function (feature, idx, a) {
@@ -196,6 +205,8 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
             // console.log(featureStore.count());
         });
+
+        // https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.data.store.OlObjects-method-onOlCollectionAdd
 
         var nominatimLayer = new ol.layer.Vector({
             name: 'nominatim--',  // legend tree

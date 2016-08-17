@@ -184,6 +184,7 @@ var DXLogin = {
                         return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                     console.log('Linhas retornadas: ', resultSelect.rows.length);
                     if (resultSelect.rows.length == 0) {
+                        done();
                         callback(null, {
                             message: request.app.locals.translate('Invalid user or password', lang),
                             success: false
@@ -264,6 +265,7 @@ var DXLogin = {
             if (err)
                 return dberror('Database connection error', '', err, callback, request, done);
             client.query(sql, function (err, result) {
+                done();
                 if (err)
                     return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                 if (result.rows.length == 0) {
@@ -279,7 +281,6 @@ var DXLogin = {
                         data: result.rows
                     });
                 }
-                done();
             }); // client.query
         });
     },
@@ -630,6 +631,7 @@ var DXLogin = {
                 if (err)
                     return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                 if (result.rows.length == 0) {
+                    done();
                     console.log('O email ' + email + ' não corresponde a nenhum utilizador registado e com o email validado.');
                     callback(null, {
                         message: 'O email ' + email + ' não corresponde a nenhum utilizador registado e com o email validado.',

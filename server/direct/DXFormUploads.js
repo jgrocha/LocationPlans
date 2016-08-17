@@ -12,7 +12,27 @@ var pg = global.App.postgres;
 
 var request = require('request');
 
-var dberror = function (text, log, err, callback) {
+var dberror = function (text, log, err, callback, request, done) {
+    console.error(text + ' ' + err.toString() + ' ' + log);
+
+    var lang = 'en';
+    if (request.session && request.session.lang) {
+        lang = request.session.lang;
+    }
+
+    // the message object is only returned if NODE_ENV != production
+    callback({
+        message: {
+            text: request.app.locals.translate(text, lang),
+            detail: err.toString()
+        }
+    });
+    // free this client, from the client pool
+    done();
+    return false;
+};
+
+/*var dberror = function (text, log, err, callback) {
     console.error(text + ' ' + err.toString() + ' ' + log);
     callback({
         message: {
@@ -21,7 +41,7 @@ var dberror = function (text, log, err, callback) {
         }
     });
     return false;
-};
+};*/
 
 var DXFormUploads = {
     /*
@@ -267,12 +287,15 @@ var DXFormUploads = {
                             application_name: 'filesubmitinstantaneo'
                         }, function (err, client, done) {
                             if (err)
-                                return dberror('Database connection error', '', err, callback);
+                                // return dberror('Database connection error', '', err, callback);
+                                return dberror('Database connection error', '', err, callback, request, done);
+
                             var sql = `INSERT INTO edificios.fotografia (${fields.join()}) VALUES (${buracos.join()}) RETURNING id`;
                             console.log(sql);
                             client.query(sql, values, function (err, result) {
                                 if (err)
-                                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                    // return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                                 console.log(result.rows[0]);
                                 callback(null, {
                                     message: 'Uploaded successfully',
@@ -311,12 +334,12 @@ var DXFormUploads = {
 
                     pg.connect(global.App.connection, function (err, client, done) {
                         if (err)
-                            return dberror('Database connection error', '', err, callback);
+                            return dberror('Database connection error', '', err, callback, request, done);
                         var sql = `INSERT INTO edificios.fotografia (${fields.join()}) VALUES (${buracos.join()}) RETURNING id`;
                         console.log(sql);
                         client.query(sql, values, function (err, result) {
                             if (err)
-                                return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                             console.log(result.rows[0]);
                             callback(null, {
                                 message: 'Uploaded successfully',
@@ -567,11 +590,11 @@ var DXFormUploads = {
 
                                                     pg.connect(global.App.connection, function (err, client, done) {
                                                         if (err)
-                                                            return dberror('Database connection error', '', err, callback);
+                                                            return dberror('Database connection error', '', err, callback, request, done);
                                                         console.log(sql);
                                                         client.query(sql, function (err, result) {
                                                             if (err)
-                                                                return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                                                return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                                                             callback(null, {
                                                                 message: 'Uploaded successfully',
                                                                 size: file.size,
@@ -723,11 +746,11 @@ var DXFormUploads = {
 
                                         pg.connect(global.App.connection, function (err, client, done) {
                                             if (err)
-                                                return dberror('Database connection error', '', err, callback);
+                                                return dberror('Database connection error', '', err, callback, request, done);
                                             console.log(sql);
                                             client.query(sql, function (err, result) {
                                                 if (err)
-                                                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                                                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback, request, done);
                                                 callback(null, {
                                                     //success: true,
                                                     message: 'Uploaded successfully',

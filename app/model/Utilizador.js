@@ -150,14 +150,14 @@ Ext.define('Admin.model.Utilizador', {
         type: 'direct',
         api: {
             // create : 'ExtRemote.DXSessao.create',
-            read: 'ExtRemote.DXSessao.readUtilizador'
+            read: 'Server.DXSessao.readUtilizador'
             // update : 'ExtRemote.DXSessao.update',
             // destroy : 'ExtRemote.DXSessao.destroy'
         },
         reader: {
             type: 'json',
-            root: 'data',
-            messageProperty: 'message' // mandatory if you want the framework to set it's content
+            rootProperty: 'data',
+            messageProperty: 'message'
         }
     }
 });

@@ -16,8 +16,8 @@ Ext.define('Admin.view.config.Users', {
         cls: 'shadow-panel',
         responsiveCls: 'big-100',
 
-        height: 400,
-        //margin: 10,
+        height: 600,
+        // margin: 10,
 
         tbar: [{
             text: 'Edit',
@@ -36,6 +36,14 @@ Ext.define('Admin.view.config.Users', {
         bind: {
             store: '{users}'
         },
+        dockedItems: [{
+            xtype: 'pagingtoolbar',
+            bind: {
+                store: '{users}'
+            },
+            dock: 'top',
+            displayInfo: true
+        }],
         viewConfig: {
             emptyText: 'No data available'
         },
@@ -52,9 +60,31 @@ Ext.define('Admin.view.config.Users', {
         }, {
             text: 'Email',
             dataIndex: 'email',
-            width: 120,
+            width: 180,
             editor: {
                 xtype: 'textfield',
+                allowBlank: false
+            },
+            filter: {
+                type: 'string'
+            }
+        }, {
+            text: 'Group',
+            dataIndex: 'idgrupo',
+            renderer : function (value, metaData, record) {
+                return record.get('group');
+            },
+            width: 120,
+            editor: {
+                xtype: 'combobox',
+                queryMode: 'local',
+                valueField: 'id',
+                displayField: 'nome',
+                typeAhead: true,
+                forceSelection: true,
+                bind: {
+                    store: '{group}'
+                },
                 allowBlank: false
             }
         }, {
@@ -64,6 +94,9 @@ Ext.define('Admin.view.config.Users', {
             editor: {
                 xtype: 'textfield',
                 allowBlank: false
+            },
+            filter: {
+                type: 'string'
             }
         }, {
             // https://docs.sencha.com/extjs/6.0/components/grids.html
@@ -82,15 +115,97 @@ Ext.define('Admin.view.config.Users', {
             dataIndex: 'nif',
             width: 160,
             editor: {
-                xtype: 'textfield',
-                allowBlank: false
-            }
+                xtype: 'textfield'
+            },
+            filter: {
+                type: 'string'
+            },
+            hidden: true
         }],
         selType: 'rowmodel',
         plugins: [{
+            ptype: 'gridfilters'
+        }, {
             ptype: 'rowediting',
             pluginId: 'usersGridRowEditing',
             clicksToEdit: 2
+        }]
+    }, /*------------------------------------------------------------------------------------------------------------*/
+    {
+        xtype: 'grid',
+        reference: 'sessionGrid',
+        //flex: 1,
+        cls: 'shadow-panel',
+        responsiveCls: 'big-100',
+
+        height: 400,
+        // margin: 10,
+
+        bind: {
+            store: '{session}'
+        },
+        dockedItems: [{
+            xtype: 'pagingtoolbar',
+            bind: {
+                store: '{users}'
+            },
+            dock: 'top',
+            displayInfo: true
+        }],
+        viewConfig: {
+            emptyText: 'No data available'
+        },
+        columns: [{
+            text: 'Id',
+            dataIndex: 'id',
+            width: 40,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            },
+            // , sortable: false,
+            hidden: true
+        }, {
+            text: 'Session ID',
+            dataIndex: 'sessionid',
+            width: 180,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        }, {
+            text: 'IP Address',
+            dataIndex: 'ip',
+            width: 180,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            },
+            filter: {
+                type: 'string'
+            }
+        }, {
+            text: 'Hostname',
+            dataIndex: 'hostname',
+            flex: 1,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            },
+            filter: {
+                type: 'string'
+            }
+        }, {
+            // https://docs.sencha.com/extjs/6.0/components/grids.html
+            xtype: 'datecolumn',
+            format: 'Y-m-d H:i:s',
+            width: 150,
+            text: 'Login date',
+            dataIndex: 'datalogin'
+        }],
+        selType: 'rowmodel',
+        plugins: [{
+            ptype: 'gridfilters'
         }]
     }]
 

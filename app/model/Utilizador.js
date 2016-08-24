@@ -2,24 +2,24 @@ Ext.define('Admin.model.Utilizador', {
     extend: 'Ext.data.Model',
     fields: [{
         name: 'id',
-        type: 'int',
-        persist: false
+        type: 'int'
     }, {
         name: 'login',
         type: 'string',
         persist: false
     }, {
         name: 'idgrupo',
-        type: 'int',
+        type: 'int'
+    }, {
+        name: 'group',
+        type: 'string',
         persist: false
     }, {
         name: 'email',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'fotografia',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'fotografia160',
         convert: function (value, record) {
@@ -44,36 +44,28 @@ Ext.define('Admin.model.Utilizador', {
         depends: ['fotografia']
     }, {
         name: 'nome',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'morada',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'localidade',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'codpostal',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'despostal',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'nif',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'nic',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'masculino',
-        type: 'auto', // 'boolean', // importante para não converter null para falso
-        persist: false
+        type: 'auto' // 'boolean', // importante para não converter null para falso
     }, {
         name: 'sexo',
         convert: function (value, record) {
@@ -90,37 +82,33 @@ Ext.define('Admin.model.Utilizador', {
         depends: ['masculino']
     }, {
         name: 'pessoacoletiva',
-        type: 'boolean',
-        persist: false
+        type: 'boolean'
     }, {
         name: 'telemovel',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'telefone',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'observacoes',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
         name: 'dicofre',
-        type: 'string',
-        persist: false
+        type: 'string'
     }, {
-        name: 'ponto',
+        name: 'ponto'
         //type : 'any',
-        persist: false
     }, {
         name: 'datacriacao',
-        type: 'date'
+        type: 'date',
+        persist: false
     }, {
         name: 'datacriacaoiso',
         convert: function (value, record) {
             return record.get('datacriacao').toISOString();
         },
-        depends: ['datacriacao']
+        depends: ['datacriacao'],
+        persist: false
     }, {
         name: 'datamodificacao',
         type: 'date'
@@ -150,9 +138,9 @@ Ext.define('Admin.model.Utilizador', {
         type: 'direct',
         api: {
             // create : 'ExtRemote.DXSessao.create',
-            read: 'Server.DXSessao.readUtilizador'
-            // update : 'ExtRemote.DXSessao.update',
-            // destroy : 'ExtRemote.DXSessao.destroy'
+            read: 'Server.Users.User.read',
+            update : 'Server.Users.User.update',
+            destroy : 'Server.Users.User.destroy'
         },
         reader: {
             type: 'json',

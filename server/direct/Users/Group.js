@@ -1,4 +1,5 @@
 var pg = global.App.postgres;
+var pgcfg = global.App.pgcfg;
 
 var dberror = function (text, log, err, callback) {
     console.error(text + ' ' + err.toString() + ' ' + log);
@@ -11,47 +12,55 @@ var dberror = function (text, log, err, callback) {
     return false;
 };
 
-var DXSessao = {
+var Group = {
 
-    //curl -v -H "Content-type: application/json" -d '{"action":"DXSessao","method":"readLayer","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://localhost:3000/direct
+    // curl -v -H "Content-type: application/json" -d '{"action":"Users.Group","method":"read","data":[{"userid":25}],"type":"rpc","tid":5}' http://localhost:3000/direct
 
-    readLayer: function (params, callback) {
-        console.log('DXSessao.readLayer');
+    read: function (params, callback) {
+        console.log('Users.Group.read');
         console.log(params);
-        /*
 
-         */
-        var sql = 'SELECT * FROM users.layer ',
-            where = ' WHERE active ', order = '', paging = '';
+        var sql = 'SELECT * FROM users.grupo ',
+            where = '', order = '', paging = '';
 
         var condicoes = [];
 
-        if (params.hasOwnProperty('viewid') && parseInt(params.viewid) >= 0) {
-            where += " AND viewid = " + parseInt(params.viewid);
-        }
-
         if (params.filter) {
             console.log('Exitem filtros:' + JSON.stringify(params.filter));
+            var condicoes = [];
             console.log('filtros.length: ' + params.filter.length);
             for (var k = 0; k < params.filter.length; k++) {
-                console.log('Filtrar por ' + params.filter[k].property + ' do tipo ' + params.filter[k].type);
-                switch (params.filter[k].type) {
-                    case 'string':
-                        console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                console.log('Filtrar por: ' + params.filter[k].property + ' com o operador ' + params.filter[k].operator + ' valor ' + params.filter[k].value);
+                switch (params.filter[k].operator) {
+                    case 'eq':
+                        //console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
                         //condicoes.push(params.filter[k].property + " ilike '%" + params.filter[k].value + "%'");
                         condicoes.push(params.filter[k].property + " = '" + params.filter[k].value + "'");
                         break;
-                    case 'date':
-                        console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
-                        condicoes.push("date_trunc('day', " + params.filter[k].property + ') ' + " = " + " '" + params.filter[k].value + "'");
+                    case 'lt':
+                        //console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                        //condicoes.push(params.filter[k].property + " ilike '%" + params.filter[k].value + "%'");
+                        condicoes.push(params.filter[k].property + " < '" + params.filter[k].value + "'");
                         break;
-                    case 'numeric':
-                    case 'number':
-                        console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
-                        condicoes.push(params.filter[k].property + ' ' + " = " + ' ' + params.filter[k].value);
+                    case 'gt':
+                        //console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                        //condicoes.push(params.filter[k].property + " ilike '%" + params.filter[k].value + "%'");
+                        condicoes.push(params.filter[k].property + " > '" + params.filter[k].value + "'");
                         break;
+                    case 'like':
+                        //console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                        //condicoes.push("date_trunc('day', " + params.filter[k].property + ') ' + " = " + " '" + params.filter[k].value + "'");
+                        condicoes.push(params.filter[k].property + " LIKE '%" + params.filter[k].value + "%'");
+                        break;
+                    /*
+                     case 'numeric':
+                     case 'number':
+                     console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                     condicoes.push(params.filter[k].property + ' ' + " = " + ' ' + params.filter[k].value);
+                     break;
+                     */
                     default:
-                        console.log('filtro inesperado sobre o tipo: ' + filtros[k].type);
+                        console.log('filtro inesperado com o operador: ' + filtros[k].operator);
                         break;
                 }
             }
@@ -63,11 +72,12 @@ var DXSessao = {
                 where = where + ' AND ' + condicoes.join(" AND ");
             }
         }
+
         if (params.sort) {
             var s = params.sort[0];
             order = ' ORDER BY ' + s.property + ' ' + s.direction;
         } else {
-            order = ' ORDER BY ord DESC';
+            order = ' ORDER BY datacriacao DESC';
         }
 
         if (params.hasOwnProperty('limit'))
@@ -90,7 +100,7 @@ var DXSessao = {
             database: detail[3], // 'geotuga',
             host: detail[2].split('@')[1].split(':')[0], // 'localhost',
             port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
-            application_name: 'DXSessao.readLayer'
+            application_name: 'Users.Group.read'
         }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
@@ -121,4 +131,4 @@ var DXSessao = {
 
 };
 
-module.exports = DXSessao;
+module.exports = Group;

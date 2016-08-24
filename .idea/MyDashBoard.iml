@@ -2,6 +2,10 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/executive-dashboard" />
+      <excludeFolder url="file://$MODULE_DIR$/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/print-apps" />
+      <excludeFolder url="file://$MODULE_DIR$/server/print-requests" />
       <excludeFolder url="file://$MODULE_DIR$/server/public" />
     </content>
     <orderEntry type="inheritedJdk" />

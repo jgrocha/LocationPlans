@@ -48,13 +48,13 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
             xtype: 'buttongroup',
             //padding: '30 10 10 10',
             //margin: '10 10 10 10',
-            columns: 2,
+            columns: 3,
             title: 'Draw'.translate(),
             //iconCls: 'x-fa fa-edit',
             frame: true,
             items: [{
                 xtype: 'combobox',
-                width: 200,
+                width: 180,
                 colspan: 2,
                 //fieldLabel: 'Draw'.translate(),
                 labelSeparator: '',
@@ -74,6 +74,15 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 }
             }, {
                 xtype: 'button',
+                iconCls: 'x-fa fa-upload',
+                //ui: 'gray',
+                //scale: 'small',
+                text: 'Upload'.translate(),
+                listeners: {
+                    click: 'onUpload'
+                }
+            }, {
+                xtype: 'button',
                 iconCls: 'x-fa fa-undo',
                 //ui: 'gray',
                 //scale: 'small',
@@ -88,6 +97,42 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 //ui: 'light',
                 listeners: {
                     click: 'onDeleteAll'
+                }
+            }, {
+                xtype: 'button',
+                iconCls: 'x-fa fa-exchange',
+                text: 'Import'.translate(),
+                //ui: 'light',
+                listeners: {
+                    click: 'onImportProcess'
+                }
+            }]
+        }, {
+            xtype: 'buttongroup',
+            //frame: true,
+            columns: 2,
+            //cls: 'shadow-panel',
+            title: 'Purpose'.translate(),
+            //padding: '30 0 0 0',
+            items: [{
+                xtype: 'combobox',
+                width: 180,
+                colspan: 2,
+                //fieldLabel: 'Draw'.translate(),
+                labelSeparator: '',
+                labelWidth: 0, // 60,
+                displayField: 'name',
+                valueField: 'id',
+                value: 1,
+                iconCls: 'x-fa fa-edit',
+                forceSelection: true,
+                editable: false,
+                bind: {
+                    store: '{purpose}'
+                },
+                queryMode: 'local',
+                listeners: {
+                    change: 'onChangePurpose'
                 }
             }]
         }, {

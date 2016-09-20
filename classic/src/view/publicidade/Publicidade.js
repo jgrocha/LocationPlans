@@ -15,6 +15,8 @@ Ext.define('Admin.view.publicidade.Publicidade', {
     Tem que ser passar estas tabelas para um esquema de uma nova BD no servidor...
     E passar de 27492 → para 3763
 
+    A anterior aplicação está em geobox@sw, na pasta /var/www/publicidade
+
      */
     items: [{
         xtype: 'fullmap-publicidade',

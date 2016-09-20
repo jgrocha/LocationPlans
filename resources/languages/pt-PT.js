@@ -388,4 +388,13 @@ Translation = [{
 }, {
     "id": 'No images available',
     "translation": 'Sem fotografias'
+}, {
+    "id": 'Import',
+    "translation": 'Importar'
+}, {
+    "id": 'Upload',
+    "translation": 'Carregar'
+}, {
+    "id": 'Purpose',
+    "translation": 'Finalidade'
 }];

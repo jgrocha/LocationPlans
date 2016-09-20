@@ -14,6 +14,9 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             'plantas': {
                 loaddraw: 'onLoadDrawClick'
                 //redownload: 'onReDownloadClick'
+            },
+            'ogre': {
+                uploadSuccessful: 'onUploadSuccessful'
             }
         }
     },
@@ -22,6 +25,31 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         '#': {  // matches the view itself
             requestprintid: 'onPedidoId'
         }
+    },
+
+    onUploadSuccessful: function (json) {
+        var me = this;
+        console.log('onUploadSuccessful');
+        var view = me.getView();
+        var vm = view.getViewModel();
+        var olMap = view.down('mapcanvas').map;
+
+        var printrequestdetaillayer = vm.get('printrequestdetaillayer');
+        var features = (new ol.format.GeoJSON()).readFeatures(json);
+        console.log(features);
+        printrequestdetaillayer.getSource().addFeatures(features);
+
+        var pan = ol.animation.pan({
+            duration: 1000,
+            source: olMap.getView().getCenter()
+        });
+        var zoom = ol.animation.zoom({duration: 1000, resolution: olMap.getView().getResolution()});
+        olMap.beforeRender(pan, zoom);
+        // olMap.beforeRender(pan);
+        var extent = printrequestdetaillayer.getSource().getExtent();
+        olMap.getView().fit(extent, olMap.getSize());
+
+
     },
 
     doLoadDraw: function (gid, pretensao) {
@@ -85,7 +113,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
     },
 
     onChangeGeometry: function (combo, newValue, oldValue, eOpts) {
-        //console.log('onChangeGeometry: ' + newValue);
+        console.log('onChangeGeometry: ' + newValue);
         var me = this;
 
         var view = this.getView();
@@ -152,6 +180,26 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
         addInteraction();
 
+    },
+
+    onChangePurpose: function (combo, newValue, oldValue, eOpts) {
+        console.log('onChangePurpose: ' + newValue);
+        var me = this;
+        var view = this.getView();
+        var vm = view.getViewModel();
+        vm.set('selectedPurpose', newValue);
+    },
+
+    onUpload: function (item, e, eOpts) {
+        console.log('onUpload');
+
+        var view = Ext.widget('ogre');
+        view.show();
+
+    },
+
+    onImportProcess: function (item, e, eOpts) {
+        console.log('onImportProcess');
     },
 
     onDeleteLast: function (item, e, eOpts) {
@@ -352,6 +400,12 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var vm = view.getViewModel();
         var extent = vm.get('extent');
 
+        var purposeId = vm.get('selectedPurpose');
+        console.log(purposeId);
+        var store = vm.getStore('purpose');
+        var purposeName = store.getById(purposeId).get('name');
+        console.log(purposeId, purposeName);
+
         var center = olMap.getView().getCenter();
         var layoutname = vm.get('paper') + '_' + vm.get('orientation');
 
@@ -364,7 +418,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             attributes: {
                 centro: out,
                 pedido: printid,
-                requerente: name
+                requerente: name,
+                purpose: purposeName
             }
         };
 
@@ -389,22 +444,67 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var serializedLayers2k = JSON.parse(JSON.stringify(serializedLayers));
         var serializedLayers10k = JSON.parse(JSON.stringify(serializedLayers));
 
-        serializedLayers2k.push({
-            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-            "customParams": {"VERSION": "1.1.1", "tiled": true},
-            "layers": ["carto2_5k"],
-            "opacity": 1,
-            "styles": [""],
-            "type": "WMS"
-        });
-        serializedLayers10k.push({
-            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-            "customParams": {"VERSION": "1.1.1", "tiled": true},
-            "layers": ["carto10k"],
-            "opacity": 1,
-            "styles": [""],
-            "type": "WMS"
-        });
+        // Preencher com camadas que vêem de uma tabela de base de dados, consoante o propósito da impressão.
+        // Começar com um store na ViewModel...
+        //
+
+        switch (purposeId) {
+            case 1:
+            case 3:
+                serializedLayers2k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "tiled": true},
+                    "layers": ["carto2_5k"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                serializedLayers10k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["carto10k"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                break;
+            case 2:
+                // 2k
+                serializedLayers2k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["ran_etrs89"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                serializedLayers2k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "tiled": true},
+                    "layers": ["carto2_5k"],
+                    "opacity": 0.4,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                // 10k
+                serializedLayers10k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["ran_etrs89"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                serializedLayers10k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["carto10k"],
+                    "opacity": 0.4,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+        }
+
         //serializedLayers.reverse();
 
         spec.attributes['map2k'] = {

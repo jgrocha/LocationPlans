@@ -345,6 +345,98 @@ app.locals.translate = function (text, lang) {
     return text;
 };
 
+/*
+ Adicionado a partir do ogre
+ https://github.com/wavded/ogre
+
+ npm install --save connect-multiparty
+ npm install --save ogr2ogr
+
+ */
+// var multiparty = require('connect-multiparty');
+var ogr2ogr = require('ogr2ogr');
+// var fs = require('fs');
+var urlencoded = require('body-parser').urlencoded;
+
+function enableCors(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Methods', 'POST')
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With')
+    res.header('Access-Control-Expose-Headers', 'Content-Disposition')
+    next()
+}
+
+app.use(urlencoded({extended: false, limit: 3000000}))
+// app.use(multiparty())
+
+function optionsHandler(methods) {
+    return function (req, res, next) {
+        res.header('Allow', methods);
+        res.send(methods);
+    }
+}
+
+function isOgreFailureError(er) {
+    return er && er.message && er.message.indexOf('FAILURE:') !== -1
+}
+
+function safelyParseJson(json) {
+    try {
+        if (json) return JSON.parse(json)
+    } catch (e) {
+        return ''
+    }
+}
+
+app.options('/convert', enableCors, optionsHandler('POST'));
+
+app.post('/convert', enableCors, function(req, res, next) {
+
+    console.log("/convert %s", req.files.upload.name);
+
+    if (!req.files.upload || !req.files.upload.name) {
+        res.status(400).json({error: true, msg: 'No file provided'})
+        return
+    }
+
+    var ogr = ogr2ogr(req.files.upload.path)
+
+    if (req.body.targetSrs) {
+        ogr.project(req.body.targetSrs, req.body.sourceSrs)
+    }
+
+    if ('skipFailures' in req.body) {
+        ogr.skipfailures()
+    }
+
+    res.header('Content-Type',
+        'forcePlainText' in req.body
+            ? 'text/plain; charset=utf-8'
+            : 'application/json; charset=utf-8'
+    )
+
+    if ('forceDownload' in req.body) {
+        res.attachment()
+    }
+
+    ogr.exec(function(er, data) {
+        fs.unlink(req.files.upload.path)
+
+        if (isOgreFailureError(er)) {
+            // return res.status(400).json({errors: er.message.replace('\n\n','').split('\n')})
+            return res.json({success: false, errors: {msg: er.message.replace('\n\n','').split('\n'), file: req.files.upload.name }});
+        }
+
+        if (er) return next(er)
+
+        if (req.body.callback) res.write(req.body.callback + '(')
+        // res.write(JSON.stringify(data))
+        res.write(JSON.stringify({success: true, data: data}))
+        if (req.body.callback) res.write(')')
+        res.end()
+    })
+});
+
 //Dev
 if (app.get('env') === 'development') {
     app.use(errorHandler({dumpExceptions: true, showStack: true}));

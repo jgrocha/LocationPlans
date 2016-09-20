@@ -3,7 +3,7 @@ Ext.define('Admin.view.consulta.EmbargoController', {
 
     alias: 'controller.embargo',
 
-    init: function() {
+    init: function () {
         var me = this,
             store = me.getViewModel().getStore('embargo');
         store.on('load', function (s) {

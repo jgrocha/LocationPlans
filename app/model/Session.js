@@ -40,11 +40,13 @@ Ext.define('Admin.model.Session', {
     }],
     proxy: {
         type: 'direct',
+        extraParams : {
+        	defaultTable : 'users.sessao',
+            defaultSortColumn: 'datalogin',
+            defaultSordDirection: 'DESC'
+        },
         api: {
-            // create : 'ExtRemote.DXSessao.create',
-            read: 'Server.Users.Session.read'
-            // update : 'Server.Users.User.update',
-            // destroy : 'Server.Users.User.destroy'
+            read: 'Server.Util.read'
         },
         reader: {
             type: 'json',

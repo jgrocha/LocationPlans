@@ -77,7 +77,7 @@ var Urbanismo = {
             }
         }
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        pg.connect(global.App.connectionide, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             pgclient = client;
@@ -144,7 +144,7 @@ var Urbanismo = {
         sql += where;
         sql += order;
         sql += paging;
-        pg.connect(global.App.connection, function (err, client, done) {
+        pg.connect(global.App.connectionide, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);
@@ -184,7 +184,7 @@ var Urbanismo = {
         console.log(ids);
         var sql = `DELETE FROM edificios.fotografia WHERE id IN (${ids.toString()})`;
         console.log(sql);
-        // pg.connect(global.App.connection, function (err, client, done) {
+        // pg.connect(global.App.connectionide, function (err, client, done) {
         var detail = global.App.connection.split('/');
         pg.connect({
             user: detail[2].split('@')[0].split(':')[0],
@@ -233,8 +233,8 @@ var Urbanismo = {
         console.log(sql);
 
         if (request.session.userid && parseInt(edificio) > 0) {
-            // pg.connect(global.App.connection, function (err, client, done) {
-            var detail = global.App.connection.split('/');
+            // pg.connect(global.App.connectionide, function (err, client, done) {
+            var detail = global.App.connectionide.split('/');
             pg.connect({
                 user: detail[2].split('@')[0].split(':')[0],
                 password: detail[2].split('@')[0].split(':')[1], // 'geobox',
@@ -272,7 +272,7 @@ var Urbanismo = {
         //var sql = 'SELECT  sensorid, address, location, installdate, sensortype, metric, calibrated, quantity, decimalplaces, cal_a, cal_b, read_interval, record_sample FROM ' + table,
         var sql = "select st_x(st_centroid(the_geom)), st_y(st_centroid(the_geom)) from edificios.edificado_vti2 where id_edifica = '" + params.id + "'";
             where = '', order = '', paging = '';
-        var detail = global.App.connection.split('/');
+        var detail = global.App.connectionide.split('/');
         pg.connect({
             user: detail[2].split('@')[0].split(':')[0],
             password: detail[2].split('@')[0].split(':')[1], // 'geobox',
@@ -364,7 +364,7 @@ var Urbanismo = {
         sql += where;
         sql += order;
         sql += paging;
-        pg.connect(global.App.connection, function (err, client, done) {
+        pg.connect(global.App.connectionide, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             console.log(sql);
@@ -452,7 +452,7 @@ var Urbanismo = {
             }
         }
 
-        pg.connect(global.App.connection, function (err, client, done) {
+        pg.connect(global.App.connectionide, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             pgclient = client;
@@ -473,7 +473,7 @@ var Urbanismo = {
         console.log(ids);
         var sql = `DELETE FROM ${table} WHERE id IN (${ids.toString()})`;
         console.log(sql);
-        pg.connect(global.App.connection, function (err, client, done) {
+        pg.connect(global.App.connectionide, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
             client.query(sql, function (err, result) {

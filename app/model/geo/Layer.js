@@ -57,13 +57,30 @@ Ext.define('Admin.model.geo.Layer', {
     }],
     proxy : {
         type : 'direct',
+        extraParams : {
+            defaultTable : 'users.layer'
+        },
         api : {
-            read : 'Server.DXSessao.readLayer'
+            read : 'Server.DXSessao.readLayer',
+            update : 'Server.Util.update'
         },
         reader: {
             type: 'json',
             rootProperty: 'data',
             messageProperty: 'message'
+        },
+        writer : {
+            writeAllFields : false,
+            transform: {
+                fn: function(data, request) {
+                    // do some manipulation of the unserialized data object
+                    console.log('transform');
+                    data['defaultTable'] = 'users.layer'
+                    console.log(data);
+                    return data;
+                },
+                scope: this
+            }
         }
     }
 });

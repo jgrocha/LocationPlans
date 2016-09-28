@@ -137,8 +137,10 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
                 defaultDataProjection: 'EPSG:3763'
             }),
             url: function (extent) {
+                // edificado_vti2 → edificado (ide)
+                /* http://geoserver.sig.cm-agueda.pt:8080/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=marte:edificado&outputFormat=application/json&srsname=EPSG:3763&EXCEPTIONS=application/json&EPSG:3763 */
                 return 'http://geoserver.sig.cm-agueda.pt:8080/geoserver/wfs?service=WFS&' +
-                    'version=1.1.0&request=GetFeature&typename=marte:edificado_vti2&' +
+                    'version=1.1.0&request=GetFeature&typename=marte:edificado&' +
                     'outputFormat=application/json&srsname=EPSG:3763&' +
                     'EXCEPTIONS=application/json&' +
                     'bbox=' + extent.join(',') + ',EPSG:3763';

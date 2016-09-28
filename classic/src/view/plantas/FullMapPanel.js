@@ -98,7 +98,7 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 listeners: {
                     click: 'onDeleteAll'
                 }
-            }, {
+            }/*, {
                 xtype: 'button',
                 iconCls: 'x-fa fa-exchange',
                 text: 'Import'.translate(),
@@ -106,8 +106,8 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 listeners: {
                     click: 'onImportProcess'
                 }
-            }]
-        }, {
+            }*/]
+        }/*, {
             xtype: 'buttongroup',
             //frame: true,
             columns: 2,
@@ -135,7 +135,7 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                     change: 'onChangePurpose'
                 }
             }]
-        }, {
+        }*/, {
             xtype: 'buttongroup',
             //frame: true,
             columns: 2,

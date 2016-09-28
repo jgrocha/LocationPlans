@@ -16,7 +16,8 @@
       "AllowCredentials": true,
       "MaxAge": 3600
     },
-    "dbide": "postgres://geobox:geobox@localhost:9433/ide",
+    "_dbide": "postgres://geobox:geobox@localhost:9433/ide",
+    "dbide": "postgres://geobox:geoptbox2k16@marte/ide",
     "dbpublica": "postgres://geobox:geobox@localhost:9432/publica",
     "dbproduction": "postgres://geobox:geoptbox2k16@marte/web",
     "_dbdevelopment": "postgres://geobox:geoptbox2k16@marte.sig.cm-agueda.pt/web",

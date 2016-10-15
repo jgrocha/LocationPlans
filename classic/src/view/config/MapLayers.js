@@ -85,7 +85,7 @@ Ext.define('Admin.view.config.MapLayers', {
                 type: 'string'
             }
         }, {
-            text: 'layer',
+            text: 'Layer'.translate(),
             dataIndex: 'layer',
             flex: 1,
             editor: {
@@ -95,8 +95,8 @@ Ext.define('Admin.view.config.MapLayers', {
                 type: 'string'
             }
         }, {
-            text: 'layergroup',
-            dataIndex: 'layer',
+            text: 'Group'.translate(),
+            dataIndex: 'layergroup',
             flex: 2,
             editor: {
                 xtype: 'textfield'

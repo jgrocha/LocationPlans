@@ -1,4 +1,4 @@
-var table = 'uso_do_solo.embargo';
+var table = 'publicidade.pub3763';
 
 var pg = global.App.postgres;
 
@@ -13,10 +13,10 @@ var dberror = function (text, log, err, callback) {
     return false;
 };
 
-var Urbanismo = {
+var Publicidade = {
 
     create: function (params, callback) {
-        console.log('Urbanismo.Urbanismo.create');
+        console.log('Publicidade.Publicidade.create');
         console.log(params);
 
         var rows = [].concat(params); // even if we receive just one object, we create an array with that object
@@ -86,11 +86,11 @@ var Urbanismo = {
         });
     },
 
-    // curl -v -H "Content-type: application/json" -d '{"action":"Urbanismo.Urbanismo","method":"read","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
+    // curl -v -H "Content-type: application/json" -d '{"action":"Publicidade.Publicidade","method":"read","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
     readFotografia: function (params, callback) {
         console.log(params);
         //var sql = 'SELECT  sensorid, address, location, installdate, sensortype, metric, calibrated, quantity, decimalplaces, cal_a, cal_b, read_interval, record_sample FROM ' + table,
-        var sql = 'SELECT * FROM edificios.fotografia',
+        var sql = 'SELECT * FROM publicidade.fotografia',
             where = '', order = '', paging = '';
         if (params.filter) {
             console.log('Exitem filtros:' + JSON.stringify(params.filter));
@@ -182,7 +182,7 @@ var Urbanismo = {
             return previousValue.concat(currentValue['id']);
         }, []);
         console.log(ids);
-        var sql = `DELETE FROM edificios.fotografia WHERE id IN (${ids.toString()})`;
+        var sql = `DELETE FROM publicidade.fotografia WHERE id IN (${ids.toString()})`;
         console.log(sql);
         // pg.connect(global.App.connectionide, function (err, client, done) {
         var detail = global.App.connectionide.split('/');
@@ -211,11 +211,11 @@ var Urbanismo = {
     },
 
     updateEdificio: function (params, callback, sessionID, request, response) {
-        console.log('Urbanismo.updateEdificio() Session ID = ' + sessionID);
+        console.log('Publicidade.updateEdificio() Session ID = ' + sessionID);
         console.log(params);
 
-        var edificio = params.id_edifica;
-        delete params.id_edifica;
+        var idpub = params.id_edifica;
+        delete params.id_pub;
 
         var fields = [], values = [], i = 1;
         for (var key in params) {
@@ -229,10 +229,10 @@ var Urbanismo = {
         fields.push('u_actualiz = $' + i);
         values.push(request.session.userid);
 
-        var sql = `UPDATE edificios.edificado_vti2 SET ${fields.join()} WHERE id_edifica = '${edificio}'`;
+        var sql = `UPDATE edificios.edificado_vti2 SET ${fields.join()} WHERE id_pub = '${idpub}'`;
         console.log(sql);
 
-        if (request.session.userid && parseInt(edificio) > 0) {
+        if (request.session.userid && parseInt(idpub) > 0) {
             // pg.connect(global.App.connectionide, function (err, client, done) {
             var detail = global.App.connectionide.split('/');
             pg.connect({
@@ -262,15 +262,15 @@ var Urbanismo = {
         }
     },
 
-    // curl -v -H "Content-type: application/json" -d '{"action":"Urbanismo.Urbanismo","method":"readEdificioByID","data":[{"id":"9999"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
-    readEdificioByID: function (params, callback) {
+    // curl -v -H "Content-type: application/json" -d '{"action":"Publicidade.Publicidade","method":"readPubByID","data":[{"id":"9999"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
+    readPubByID: function (params, callback) {
         console.log(params);
         /*
          { id: 9999 }
          */
 
         //var sql = 'SELECT  sensorid, address, location, installdate, sensortype, metric, calibrated, quantity, decimalplaces, cal_a, cal_b, read_interval, record_sample FROM ' + table,
-        var sql = "select st_x(st_centroid(the_geom)), st_y(st_centroid(the_geom)) from edificios.edificado_vti2 where id_edifica = '" + params.id + "'";
+        var sql = "select st_x(st_centroid(the_geom)), st_y(st_centroid(the_geom)) from " + table + " where id_pub = " + params.id;
             where = '', order = '', paging = '';
         var detail = global.App.connectionide.split('/');
         pg.connect({
@@ -279,7 +279,7 @@ var Urbanismo = {
             database: detail[3], // 'geotuga',
             host: detail[2].split('@')[1].split(':')[0], // 'localhost',
             port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
-            application_name: 'Urbanismo.readEdificioByID'
+            application_name: 'Publicidade.readPubByID'
         }, function (err, client, done) {
             if (err)
                 return dberror('Database connection error', '', err, callback);
@@ -296,7 +296,7 @@ var Urbanismo = {
         });
     },
 
-    // curl -v -H "Content-type: application/json" -d '{"action":"Urbanismo.Urbanismo","method":"read","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
+    // curl -v -H "Content-type: application/json" -d '{"action":"Publicidade.Publicidade","method":"read","data":[{"userid":25,"from":"test2","node":"root"}],"type":"rpc","tid":5}' http://127.0.0.1:3000/direct
     read: function (params, callback) {
         console.log(params);
         /*
@@ -492,4 +492,4 @@ var Urbanismo = {
 
 };
 
-module.exports = Urbanismo;
+module.exports = Publicidade;

@@ -277,7 +277,8 @@ var DXFormUploads = {
                         console.log(values);
 
                         // pg.connect(global.App.connection, function (err, client, done) {
-                        var detail = global.App.connection.split('/');
+                        // var detail = global.App.connection.split('/');
+                        var detail = global.App.connectionide.split('/');
                         pg.connect({
                             user: detail[2].split('@')[0].split(':')[0],
                             password: detail[2].split('@')[0].split(':')[1], // 'geobox',
@@ -332,7 +333,8 @@ var DXFormUploads = {
                     var values = [params.id_edifica, folder.replace(/^public\//, ''), newfilename, request.session.userid, file.size, largura, altura, file.originalname];
                     console.log(values);
 
-                    pg.connect(global.App.connection, function (err, client, done) {
+                    // pg.connect(global.App.connection, function (err, client, done) {
+                    pg.connect(global.App.connectionide, function (err, client, done) {
                         if (err)
                             return dberror('Database connection error', '', err, callback, request, done);
                         var sql = `INSERT INTO edificios.fotografia (${fields.join()}) VALUES (${buracos.join()}) RETURNING id`;

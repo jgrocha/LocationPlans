@@ -75,7 +75,8 @@ Ext.define('Admin.model.geo.Layer', {
                 fn: function(data, request) {
                     // do some manipulation of the unserialized data object
                     console.log('transform');
-                    data['defaultTable'] = 'users.layer'
+                    console.log(data);
+                    data['defaultTable'] = 'users.layer';
                     console.log(data);
                     return data;
                 },

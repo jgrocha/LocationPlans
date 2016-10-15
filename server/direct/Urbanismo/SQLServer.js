@@ -232,6 +232,7 @@ var SQLServer = {
                 sql += "SELECT *, ROW_NUMBER() OVER (" + order + ") as row FROM " + params.tableName + " " + where;
                 sql += ") a ";
                 sql += paging;
+                console.log(sql);
                 req.query(sql, function (err, recordset) {
                     if (err) {
                         console.log(err);

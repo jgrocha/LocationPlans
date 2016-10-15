@@ -232,7 +232,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
             var key = field.getValue();
             console.log(key);
             if (key) {
-                Server.Urbanismo.Urbanismo.readEdificioByID({
+                Server.Urbanismo.Urbanismo.readPubByID({
                     id: key
                 }, function (result, event) {
                     if (result) {

@@ -188,6 +188,11 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var view = this.getView();
         var vm = view.getViewModel();
         vm.set('selectedPurpose', newValue);
+        if (newValue == 4) {
+            vm.set('enablePreview', 1);
+        } else {
+            vm.set('enablePreview', 0);
+        }
     },
 
     onUpload: function (item, e, eOpts) {
@@ -284,6 +289,11 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var pedidoLayer = vm.get('pedidoLayer');
         var printrequestdetaillayer = vm.get('printrequestdetaillayer');
 
+        var purposeId = vm.get('selectedPurpose');
+        var store = vm.getStore('purpose');
+        var purposeName = store.getById(purposeId).get('name');
+        console.log(purposeId, purposeName);
+
         var newfeature = {};
         var username;
 
@@ -297,6 +307,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 userid: userid,
                 coord_x: center[0],
                 coord_y: center[1],
+                tipo: purposeId,
                 obs: 'Pedido via internet'
             };
         } else {
@@ -307,6 +318,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 utilizador: 'Anonymous', // required
                 coord_x: center[0],
                 coord_y: center[1],
+                tipo: purposeId,
                 obs: 'Pedido via internet'
             };
         }
@@ -325,7 +337,9 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 //console.log('Gravou bem', result.message);
                 //console.log(result.data[0].gid);
 
-                view.fireEvent('requestprintid', view, result.data[0].gid, username);
+                if (purposeId != 4) {
+                    view.fireEvent('requestprintid', view, result.data[0].gid, username);
+                }
                 // já tenho o gid
                 // gravar todos os desenhos
 
@@ -336,11 +350,24 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     Server.Plantas.Pedidos.saveGeoJsonDetail({
                         pedido: result.data[0].gid,
                         features: details
-                    }, function (result, event) {
-                        if (result.success) {
-                            console.log('Gravou bem', result.message);
+                    }, function (resultDetail, event) {
+                        if (resultDetail.success) {
+                            console.log('Gravou bem ' + resultDetail.total + ' detalhes');
+
+                            if (purposeId == 4) {
+                                Server.Plantas.Pedidos.createConfrontacao({
+                                    gid: result.data[0].gid
+                                }, function (resultConfrontacao, event) {
+                                    if (resultConfrontacao.success) {
+                                        console.log('Confrontacao bem lançada', resultConfrontacao);
+                                    } else {
+                                        console.log('Confrontacao mal lançada', resultConfrontacao);
+                                    }
+                                });
+                            }
+
                         } else {
-                            console.log('Gravou mal', result.message);
+                            console.log('Gravou mal', resultDetail);
                         }
                     });
                 }

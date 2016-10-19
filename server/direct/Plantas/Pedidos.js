@@ -299,6 +299,50 @@ var Pedidos = {
 
     },
 
+    // curl -v -H "Content-type: application/json" -d '{"action":"Plantas.Pedidos","method":"createConfrontacao","data":[{ "gid": "19468"}],"type":"rpc","tid":5}' http://localhost:3000/direct
+
+    createConfrontacao: function (params, callback, sessionID, request, response) {
+        console.log('Plantas.Pedidos.createConfrontacao');
+        console.log(params);
+
+        // designacao, idutilizador
+        var gid = params.gid;
+        var userid = 31;
+        if (request.session.userid) {
+            userid = request.session.userid;
+        }
+
+        pg.connect(global.App.connection, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+
+            var sql = `INSERT INTO infprevia.pretensao (designacao, idutilizador, the_geom)
+            SELECT 'Plantas de localização: ' || gid, ${userid}, ST_Multi(ST_Union(pretensao))
+            FROM plantas.pedidodetail
+            WHERE gid = ${gid} and (st_geometrytype(pretensao) = 'ST_Polygon' OR st_geometrytype(pretensao) = 'ST_MultiPolygon')
+            GROUP BY gid RETURNING id`;
+            console.log(sql);
+
+            client.query(sql, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                var id = result.rows[0].id;
+                sql = `SELECT * FROM infprevia.pretensao where id = ${id}`;
+                console.log(sql);
+                client.query(sql, function (err, pretensao) {
+                    if (err)
+                        return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                    console.log(pretensao.rows);
+                    callback(null, {
+                        data: pretensao.rows,
+                        total: pretensao.rows.length
+                    });
+                    done();
+                });
+            });
+        });
+    },
+
     downloadWhenReady: function (gid, pathpdf, startTime, data) {
         var me = this;
         console.log('downloadWhenReady()');

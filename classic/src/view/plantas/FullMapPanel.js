@@ -107,7 +107,7 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                     click: 'onImportProcess'
                 }
             }*/]
-        }/*, {
+        }, {
             xtype: 'buttongroup',
             //frame: true,
             columns: 2,
@@ -134,8 +134,20 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 listeners: {
                     change: 'onChangePurpose'
                 }
+            }, {
+                iconCls: 'x-fa fa-print',
+                text: 'Preview'.translate(),
+                colspan: 2,
+                listeners: {
+                    //click: 'onPrintClick'
+                    click: 'onPrintCheck'
+                },
+                visible: false,
+                bind: {
+                    visible: '{enablePreview}'
+                },
             }]
-        }*/, {
+        }, {
             xtype: 'buttongroup',
             //frame: true,
             columns: 2,

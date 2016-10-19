@@ -15,7 +15,7 @@ Ext.define('Admin.view.publicidade.Mupi', {
 
     controller: 'mupi',
 
-    title: 'Mupi details'.translate(),
+    title: 'Details'.translate(),
 
     items: [{
         xtype: 'form',
@@ -45,14 +45,21 @@ Ext.define('Admin.view.publicidade.Mupi', {
                         }
                     }
                 }, {
-                    xtype: 'textfield',
-                    padding: '0 0 10 0',
+                    xtype: 'combobox',
+                    fieldLabel: 'Type'.translate(),
                     flex: 1,
-                    labelAlign: 'right',
-                    name: 'nome',
-                    fieldLabel: 'Name'.translate(),
-                    tooltip: 'Nome do edifício. Ex: Escola Secundária Marques Castilho'.translate(),
-                    bind: '{publicidadeLevantadaGrid.selection.nome}',
+                    padding: '0 0 10 0',
+                    name: 'tipo',
+                    bind: {
+                        store: '{tipoPublicidade}',
+                        value: '{publicidadeLevantadaGrid.selection.tipo}'
+                    },
+                    valueField: 'codigo',
+                    displayField: 'descricao',
+                    typeAhead: true,
+                    queryMode: 'local',
+                    emptyText: 'Select the type...'.translate(),
+                    tooltip: 'Advertising type'.translate(),
                     listeners: {
                         render: function (p) {
                             p.getEl().down('input').set({'data-qtip': p.tooltip});
@@ -64,17 +71,6 @@ Ext.define('Admin.view.publicidade.Mupi', {
                 layout: 'hbox',
                 anchor: '100%',
                 items: [{
-                    xtype: 'textfield',
-                    fieldLabel: 'Type'.translate(),
-                    tooltip: 'Tipo de edifício, de acordo com: Residencial; Agrícola; Industrial; Comércio e Serviços; Auxiliares'.translate(),
-                    bind: '{publicidadeLevantadaGrid.selection.tipo}',
-                    name: 'tipo',
-                    listeners: {
-                        render: function (p) {
-                            p.getEl().down('input').set({'data-qtip': p.tooltip});
-                        }
-                    }
-                }, {
                     xtype: 'textfield',
                     labelAlign: 'right',
                     fieldLabel: 'Use'.translate(),
@@ -324,7 +320,7 @@ Ext.define('Admin.view.publicidade.Mupi', {
                     },
                     text: 'Remove'.translate()
                 }]
-        }, {
+        }/*, {
             xtype: 'fieldset',
             title: 'Dates'.translate(),
             frame: false,
@@ -361,7 +357,7 @@ Ext.define('Admin.view.publicidade.Mupi', {
                     }
                 }]
             }]
-        }]
+        }*/]
     }],
 
     bbar: {

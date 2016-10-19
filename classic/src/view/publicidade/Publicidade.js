@@ -114,7 +114,8 @@ FALTA FAZER RESTORE DESTE DUMP e depois passar as tabelas para um esquema public
         xtype: 'fullmap-publicidade',
         geoExtViewId: 30,
         responsiveCls: 'big-100',
-        title: 'Publicidade'
+        title: 'Publicidade',
+        height: 400
     }, {
         xtype: 'gridpublicidadelevantada',
         responsiveCls: 'big-40'

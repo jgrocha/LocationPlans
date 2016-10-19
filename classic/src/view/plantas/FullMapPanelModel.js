@@ -7,6 +7,7 @@ Ext.define('Admin.view.plantas.FullMapPanelModel', {
         paper: 'A4',
         orientation: 'portrait',
         selectedPurpose: 1,
+        enablePreview: 0,
         draw: {},
         modify: {}
     },
@@ -32,7 +33,8 @@ Ext.define('Admin.view.plantas.FullMapPanelModel', {
             data: [
                 {id: 1, name: "Location Plan".translate()},
                 {id: 2, name: "Condicionantes (RAN+REN)"},
-                {id: 3, name: "RJAAR"}
+                {id: 3, name: "RJAAR"},
+                {id: 4, name: "Informação Prévia"}
             ]
         }
     }

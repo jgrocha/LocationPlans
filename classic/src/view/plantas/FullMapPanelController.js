@@ -23,7 +23,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
     control: {
         '#': {  // matches the view itself
-            requestprintid: 'onPedidoId'
+            requestprintid: 'onPedidoId',
+            requestpretensaoid: 'onPretensaoId'
         }
     },
 
@@ -275,6 +276,16 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         }
     },
 
+    onConfrontacaoPreview: function (item, e, eOpts) {
+        console.log('onConfrontacaoPreview');
+        console.log(arguments);
+        var me = this;
+        var view = this.getView();
+        var pretensaoid = 506;
+        var name = 'Ana Isabel';
+        me.onPretensaoId(view, pretensaoid, name);
+    },
+
     onPrintCheck: function (item, e, eOpts) {
         var me = this;
         var view = this.getView();
@@ -360,6 +371,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                                 }, function (resultConfrontacao, event) {
                                     if (resultConfrontacao.success) {
                                         console.log('Confrontacao bem lançada', resultConfrontacao);
+                                        view.fireEvent('requestpretensaoid', view, resultConfrontacao.data[0].id, username);
                                     } else {
                                         console.log('Confrontacao mal lançada', resultConfrontacao);
                                     }
@@ -372,7 +384,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     });
                 }
             } else {
-                console.log('Gravou mal', result.message);
+                console.log('Não tem features para gravar');
             }
         });
 
@@ -410,6 +422,28 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 }]
             }
         };
+
+    },
+
+    onPretensaoId: function (view, pretensaoid, name) {
+        console.log('onPretensaoId');
+        console.log(arguments);
+        var me = this;
+        var view = this.getView();
+        var olMap = view.down('mapcanvas').map;
+        var mapView = view.down('mapcanvas').getView();
+
+        var windows = Ext.ComponentQuery.query('confrontacao');
+        if (windows.length > 0) {
+            me.confrontacao = windows[0];
+            me.confrontacao.show();
+        } else {
+            console.log('Vou criar uma nova janela de confrontação');
+            me.confrontacao = Ext.create('Admin.view.plantas.Confrontacao', {
+                pretensaoid: pretensaoid
+            });
+            me.confrontacao.show();
+        }
 
     },
 

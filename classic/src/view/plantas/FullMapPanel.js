@@ -140,12 +140,13 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 colspan: 2,
                 listeners: {
                     //click: 'onPrintClick'
-                    click: 'onPrintCheck'
+                    // click: 'onPrintCheck'
+                    click: 'onConfrontacaoPreview'
                 },
                 visible: false,
                 bind: {
                     visible: '{enablePreview}'
-                },
+                }
             }]
         }, {
             xtype: 'buttongroup',

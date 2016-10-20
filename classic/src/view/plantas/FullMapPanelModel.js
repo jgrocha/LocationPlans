@@ -9,7 +9,9 @@ Ext.define('Admin.view.plantas.FullMapPanelModel', {
         selectedPurpose: 1,
         enablePreview: 0,
         draw: {},
-        modify: {}
+        modify: {},
+        modified: 0 // if the current draw was modified after the print request
+        // is it another request or can we print the previous request?
     },
 
     stores: {

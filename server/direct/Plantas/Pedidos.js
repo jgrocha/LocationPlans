@@ -18,7 +18,68 @@ var dberror = function (text, log, err, callback) {
 
 var Pedidos = {
 
-    // curl -v -H "Content-type: application/json" -d '{"action":"Plantas.Pedidos","method":"asGeoJson","data":[{}],"type":"rpc","tid":5}' http://localhost:3000/direct
+    // curl -v -H "Content-type: application/json" -d '{"action":"Plantas.Pedidos","method":"confrontacaoAsGeoJson","data":[{"idpretensao": "506"}],"type":"rpc","tid":5}' http://localhost:3000/direct
+
+    confrontacaoAsGeoJson: function (params, callback) {
+        console.log('Plantas.Pedidos.asGeoJson');
+        console.log(params);
+
+        var idpretensao = 0;
+        if (params.idpretensao && parseInt(params.idpretensao) > 0) {
+            idpretensao = params.idpretensao;
+        }
+
+        var sql = `SELECT row_to_json(fc) as geojson
+         FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features
+         FROM (
+         -- query
+         SELECT 'Feature' As type, ST_AsGeoJSON(lgeom.the_geom)::json As geometry, row_to_json(lprop) As properties
+         FROM infprevia.confrontacao As lgeom
+         INNER JOIN (
+         SELECT id, idpretensao, camada, area, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
+         sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador FROM infprevia.confrontacao
+         where idpretensao = ${idpretensao}
+         ) As lprop
+         ON lgeom.id = lprop.id
+         UNION ALL
+         SELECT 'Feature' As type, ST_AsGeoJSON(lgeom.the_geom)::json As geometry, row_to_json(lprop) As properties
+         FROM infprevia.confrontacaodistancia As lgeom
+         INNER JOIN (
+         SELECT id, idpretensao, camada, area, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
+         sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador FROM infprevia.confrontacaodistancia
+         where idpretensao = ${idpretensao}
+         ) As lprop
+         ON lgeom.id = lprop.id
+         -- fim de query
+         ) As f )  As fc`;
+
+        console.log(sql);
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'asGeoJson'
+        }, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            console.log(sql);
+            client.query(sql, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                console.log(result.rows[0].geojson);
+                callback(null, {
+                    //data: result.rows,
+                    data: result.rows[0].geojson,
+                    total: 1
+                });
+                // free this client, from the client pool
+                done();
+            });
+        });
+    },
 
     asGeoJson: function (params, callback) {
         console.log('Plantas.Pedidos.asGeoJson');

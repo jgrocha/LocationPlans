@@ -15,6 +15,8 @@ templates:
       requerente: !string {}
       pedido: !string {}
       centro: !string {}
+      purpose: !string {}
+      legend: !legend {}
       map2k: !map
         maxDpi: 400
         width: 802
@@ -75,12 +77,20 @@ templates:
     - !createNorthArrow
       inputMapper: { map2k: map, northArrow2k: northArrow }
       outputMapper: { northArrowSubReport: northArrowSubReport2k }
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
   A3_landscape: !template
     reportTemplate: A3horizontal.jrxml
     attributes:
       requerente: !string {}
       pedido: !string {}
       centro: !string {}
+      purpose: !string {}
       map2k: !map
         maxDpi: 400
         width: 1150
@@ -147,6 +157,7 @@ templates:
       requerente: !string {}
       pedido: !string {}
       centro: !string {}
+      purpose: !string {}
       map2k: !map
         maxDpi: 400
         width: 555
@@ -213,6 +224,7 @@ templates:
       requerente: !string {}
       pedido: !string {}
       centro: !string {}
+      purpose: !string {}
       map2k: !map
         maxDpi: 400
         width: 802

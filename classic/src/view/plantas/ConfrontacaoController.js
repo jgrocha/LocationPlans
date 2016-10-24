@@ -2,12 +2,16 @@ Ext.define('Admin.view.plantas.ConfrontacaoController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.confrontacao',
 
-    onLoadConfrontacaoClick: function (button) {
-        console.log('onLoadConfrontacaoClick');
-        var me = this;
-        var view = me.getView();
-        console.log('onLoadConfrontacaoClick: ' + view.pretensaoid);
-        me.fireEvent('loadconfrontacao', view.pretensaoid);
+    afterRenderConfrontacao: function() {
+        console.log('afterRenderConfrontacao');
+    },
+
+    onCenterClick: function (button) {
+        console.log('onCenterClick');
+    },
+
+    onPrintConfrontacaoClick: function (button) {
+        console.log('onPrintConfrontacaoClick');
     },
 
     featureGridSelectionChanged: function (grid, selected) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-07T18:06:45 -->
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-10-24T18:40:49 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1150" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" whenResourceMissingType="Error" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -17,10 +17,21 @@
 	</parameter>
 	<parameter name="pedido" class="java.lang.String"/>
 	<parameter name="centro" class="java.lang.String"/>
+	<parameter name="purpose" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
 	<title>
 		<band height="802" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="1150" height="802" uuid="5f6e9a60-5b6d-4ca8-a12d-08afd7f54f05">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</rectangle>
 			<subreport>
 				<reportElement x="0" y="0" width="1150" height="802" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -75,15 +86,6 @@
 					<pen lineStyle="Dashed"/>
 				</graphicElement>
 			</line>
-			<staticText>
-				<reportElement x="832" y="713" width="168" height="15" uuid="ebe4b2d1-bd74-4593-85c3-ea1387177acf">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Planta de Localização]]></text>
-			</staticText>
 			<subreport>
 				<reportElement x="1077" y="736" width="40" height="40" uuid="a4c74e9b-ab3e-49fc-9f41-f19fa8bb7300">
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -132,19 +134,31 @@
 				<reportElement x="626" y="758" width="64" height="32" uuid="f001247e-40c4-4973-a4d0-b5c1d69568ad"/>
 				<imageExpression><![CDATA["apcer.jpg"]]></imageExpression>
 			</image>
+			<textField>
+				<reportElement x="832" y="713" width="212" height="15" uuid="a025796e-c8b4-4c53-b704-213bc572e145">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{purpose}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="802">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<rectangle>
-				<reportElement mode="Transparent" x="0" y="0" width="1150" height="802" uuid="5f6e9a60-5b6d-4ca8-a12d-08afd7f54f05">
+				<reportElement mode="Transparent" x="0" y="0" width="1150" height="802" uuid="923dab29-2a89-46df-970b-db6014d93110">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</rectangle>
-		</band>
-	</title>
-	<summary>
-		<band height="802">
-			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<subreport>
 				<reportElement x="0" y="0" width="1150" height="802" uuid="8c72ea54-9c50-4111-b09f-84f846357727">
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -199,15 +213,6 @@
 					<pen lineStyle="Dashed"/>
 				</graphicElement>
 			</line>
-			<staticText>
-				<reportElement x="832" y="713" width="168" height="15" uuid="9e7954a5-6269-4745-9bca-1ea31a559965">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Planta de Localização]]></text>
-			</staticText>
 			<subreport>
 				<reportElement x="1077" y="736" width="40" height="40" uuid="48aca09f-56dc-4241-8952-9651a8dac089">
 					<property name="local_mesure_unitwidth" value="pixel"/>
@@ -256,14 +261,18 @@
 				<reportElement x="626" y="758" width="64" height="32" uuid="b0919743-5880-4592-8276-f6e9e25545cf"/>
 				<imageExpression><![CDATA["apcer.jpg"]]></imageExpression>
 			</image>
-			<rectangle>
-				<reportElement mode="Transparent" x="0" y="0" width="1150" height="802" uuid="923dab29-2a89-46df-970b-db6014d93110">
+			<textField>
+				<reportElement x="832" y="713" width="212" height="15" uuid="5a2931a4-4ea5-45bf-9f22-b8f472d37372">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-			</rectangle>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{purpose}]]></textFieldExpression>
+			</textField>
 		</band>
 	</summary>
 </jasperReport>

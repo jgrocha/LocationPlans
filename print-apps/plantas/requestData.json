@@ -1,50 +1,84 @@
 {
-    "layout": "A4_portrait",
-    "attributes": {
-        "requerente": "Ana Isabel Gomes Vilar",
-        "pedido": "1999/2016",
-        "centro": "-26177, 101169",
-        "map2k": {
-            "center": [-26177, 101169],
-            "dpi": 200,
-            "layers": [{
-                "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                "customParams": {
-                    "VERSION": "1.1.1",
-                    "tiled": true,
-                    "STYLES": "",
-                    "LAYERS": "carto2_5k"
-                },
-                "layers": ["carto2_5k"],
-                "opacity": 1,
-                "styles": [""],
-                "type": "WMS"
-            }
-            ],
-            "projection": "EPSG:3763",
-            "rotation": 0,
-            "scale": 2000
+  "layout": "A3_portrait",
+  "attributes": {
+    "requerente": "Ana Isabel Gomes Vilar",
+    "pedido": "1999/2016",
+    "centro": "-26177, 101169",
+    "purpose": "Planta de Condicionantes (REN)",
+    "legend": {
+      "classes": [
+        {
+          "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ren_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
+          "name": "Reserva Ecológica Nacional"
         },
-        "map10k": {
-            "center": [-26177, 101169],
-            "dpi": 200,
-            "layers": [{
-                "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                "customParams": {
-                    "VERSION": "1.1.1",
-                    "tiled": true,
-                    "STYLES": "",
-                    "LAYERS": "carto10k"
-                },
-                "layers": ["carto10k"],
-                "opacity": 1,
-                "styles": [""],
-                "type": "WMS"
-            }
-            ],
-            "projection": "EPSG:3763",
-            "rotation": 0,
-            "scale": 10000
+        {
+          "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto10k&FORMAT=image%2Fpng"],
+          "name": "Cartografia 10k"
+        },
+        {
+          "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto2_5k&FORMAT=image%2Fpng"],
+          "name": "Cartografia 2k e 5k"
         }
+      ],
+      "name": ""
+    },
+    "map2k": {
+      "center": [
+        -26177,
+        101169
+      ],
+      "dpi": 200,
+      "layers": [
+        {
+          "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+          "customParams": {
+            "VERSION": "1.1.1",
+            "tiled": true,
+            "STYLES": "",
+            "LAYERS": "carto2_5k"
+          },
+          "layers": [
+            "carto2_5k"
+          ],
+          "opacity": 1,
+          "styles": [
+            ""
+          ],
+          "type": "WMS"
+        }
+      ],
+      "projection": "EPSG:3763",
+      "rotation": 0,
+      "scale": 2000
+    },
+    "map10k": {
+      "center": [
+        -26177,
+        101169
+      ],
+      "dpi": 200,
+      "layers": [
+        {
+          "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+          "customParams": {
+            "VERSION": "1.1.1",
+            "tiled": true,
+            "STYLES": "",
+            "LAYERS": "carto10k"
+          },
+          "layers": [
+            "carto10k"
+          ],
+          "opacity": 1,
+          "styles": [
+            ""
+          ],
+          "type": "WMS"
+        }
+      ],
+      "projection": "EPSG:3763",
+      "rotation": 0,
+      "scale": 10000
     }
+  }
 }

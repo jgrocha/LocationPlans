@@ -193,7 +193,10 @@ Ext.define("Admin.view.plantas.FullMapPanel", {
                 }
             }, {
                 iconCls: 'x-fa fa-print',
-                text: 'PDF document'.translate(),
+                bind: {
+                    text: '{printlabel}'
+                },
+                // text: 'PDF document'.translate(),
                 colspan: 2,
                 listeners: {
                     //click: 'onPrintClick'

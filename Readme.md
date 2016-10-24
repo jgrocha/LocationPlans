@@ -221,9 +221,13 @@ Jasper Studio can be installed in two different ways;
 [JaspersoftStudio-6.3.0.final-linux-x86_64.tgz](http://netassist.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.3.0/TIBCOJaspersoftStudio-6.3.0.final-linux-x86_64.tgz)
 
 ```
+cd Transferências
+wget http://heanet.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.3.1/TIBCOJaspersoftStudio-6.3.1.final-linux-x86_64.tgz
 cd ~/bin
-tar xvzf ~/Transferências/TIBCOJaspersoftStudio-6.3.0.final-linux-x86_64.tgz
-~/bin/TIBCOJaspersoftStudio-6.3.0.final/runubuntu.sh
+tar xvzf ~/Transferências/TIBCOJaspersoftStudio-6.3.1.final-linux-x86_64.tgz
+export SWT_GTK3=0
+export UBUNTU_MENUPROXY=0
+~/bin/TIBCOJaspersoftStudio-6.3.1.final/runubuntu.sh
 ```
 
 [JaspersoftStudio_6.3.0.final_amd64.deb](http://netcologne.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.3.0/TIBCOJaspersoftStudio_6.3.0.final_amd64.deb) for Debain based Linux.

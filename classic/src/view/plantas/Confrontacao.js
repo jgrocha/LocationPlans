@@ -52,14 +52,15 @@ Ext.define('Admin.view.plantas.Confrontacao', {
         }, {
             text: 'Domínio',
             dataIndex: 'dominio',
-            width: 140
+            width: 140,
+            hidden: true
         }, {
-            text: 'Subdomínio',
-            dataIndex: 'subdominio',
-            width: 140
+            text: 'Hierarquia',
+            dataIndex: 'hierarquia',
+            flex: 1
         }, {
-            text: 'Objecto',
-            dataIndex: 'objecto',
+            text: 'Diplomas',
+            dataIndex: 'diploma_es',
             width: 140
         }, {
             text: 'Área/distância',
@@ -86,11 +87,6 @@ Ext.define('Admin.view.plantas.Confrontacao', {
                 }
                 return resultado;
             }
-        }, {
-            text: 'diploma_es',
-            dataIndex: 'diploma_es',
-            flex: 1
-            //width: 140
         }],
         selModel: {
             allowDeselect: true
@@ -100,27 +96,27 @@ Ext.define('Admin.view.plantas.Confrontacao', {
             'selectionchange': 'featureGridSelectionChanged'
         }
     }],
-    dockedItems: [{
+/*    dockedItems: [{
         xtype: 'toolbar',
         dock: 'bottom',
         items: [{
             text: 'Center'.translate(),
-            iconCls: 'x-fa fa-pencil-square-o ',
-            bind: {
-                disabled: '{!pedidoGrid.selection}'
-            },
-            handler: 'onLoadDrawClick'
+            iconCls: 'x-fa fa-crosshairs',
+            // bind: {
+            //     disabled: '{!pedidoGrid.selection}'
+            // },
+            handler: 'onCenterClick'
         }, '->', {
             text: 'Ler a confrontação'.translate(),
             iconCls: 'x-fa fa-pencil-square-o ',
             handler: 'onLoadConfrontacaoClick'
         }, {
-            text: 'Download again'.translate(),
-            iconCls: 'x-fa fa-download',
-            bind: {
-                disabled: '{!pedidoGrid.selection}'
-            },
-            handler: 'onReDownloadClick'
+            text: 'Print'.translate(),
+            iconCls: 'x-fa fa-print',
+            handler: 'onPrintConfrontacaoClick'
         }]
-    }]
+    }],*/
+    listeners: {
+        afterRender: 'afterRenderConfrontacao'
+    }
 });

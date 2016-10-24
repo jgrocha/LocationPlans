@@ -289,74 +289,78 @@ Ext.define('Admin.view.maps.MapCanvasController', {
 
         me.popupwindow = null;
 
-        olMap.getViewport().addEventListener("dblclick", function (e) {
-            var windows = Ext.ComponentQuery.query('popup-window');
-            if (windows.length > 0) {
-                me.popupwindow = windows[0];
-            } else {
-                console.log('Vou criar um novo popup');
-                me.popupWindow = Ext.create('Admin.view.geo.PopupWindow');
-            }
-            var position = olMap.getEventPixel(e);
-            var coordinate = olMap.getEventCoordinate(e);
-            var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(coordinate, 'EPSG:3857', 'EPSG:4326'));
-            me.popupWindow.setPosition(position[0] + me.getView().getX(), position[1] + me.getView().getY(), {});
-            //console.log(me.getView().getConstrainRegion());
-            //console.log(view.getConstrainRegion());
-            me.popupWindow.setTitle(hdms);
-            me.popupWindow.show();
-            me.popupWindow.doConstrain(me.getView().getConstrainRegion());
-            me.popupWindow.constrain = true;
+        var show = vm.get('popup');
 
-            // clean both grids
-            var source = null;
-            var v = me.popupWindow.getViewModel();
-            var s = v.getStore('gfinfo');
-            s.removeAll();
-            // not necessary, if deferEmptyText: false
-            //var propertyGrid = me.popupWindow.down('#propertyGrid');
-            //propertyGrid.getStore().removeAll();
-
-            var mapView = olMap.getView();
-            var viewResolution = mapView.getResolution();
-
-            olMap.forEachLayerAtPixel(position, function (layer) {
-                //console.log('LayerAtPixel → ' + layer.get('title') + ' → ' + layer.get('getfeatureinfo'));
-                //console.log(layer);
-                if (layer.get('getfeatureinfo')) {
-                    console.log('Request GFI from layer → ' + layer.get('title'));
-                    source = layer.getSource();
-                    var url = source.getGetFeatureInfoUrl(
-                        coordinate, viewResolution, mapView.getProjection(),
-                        {'INFO_FORMAT': 'application/json', 'FEATURE_COUNT': 50});
-                    if (url) {
-                        //console.log(url);
-                        //console.log('Request GFI → ' + url);
-                        s.getProxy().setUrl(url);
-                        s.load({
-                            addRecords: true,
-                            scope: this,
-                            callback: function (records, operation, success) {
-                                var option = {
-                                    params: {
-                                        layer: layer.get('title'),
-                                        columns: layer.get('gficolumns')
-                                    }
-                                };
-                                me.onGFIStoreLoadedCallback(records, operation, success, option);
-
-                                if (records.length > 0) {
-                                    var grid = me.popupWindow.down('#featureGrid');
-                                    var sm = grid.getSelectionModel();
-                                    sm.select(0);
-                                }
-
-                            }
-                        });
-                    }
+        if (show) {
+            olMap.getViewport().addEventListener("dblclick", function (e) {
+                var windows = Ext.ComponentQuery.query('popup-window');
+                if (windows.length > 0) {
+                    me.popupwindow = windows[0];
+                } else {
+                    console.log('Vou criar um novo popup');
+                    me.popupWindow = Ext.create('Admin.view.maps.PopupWindow');
                 }
+                var position = olMap.getEventPixel(e);
+                var coordinate = olMap.getEventCoordinate(e);
+                var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(coordinate, 'EPSG:3857', 'EPSG:4326'));
+                me.popupWindow.setPosition(position[0] + me.getView().getX(), position[1] + me.getView().getY(), {});
+                //console.log(me.getView().getConstrainRegion());
+                //console.log(view.getConstrainRegion());
+                me.popupWindow.setTitle(hdms);
+                me.popupWindow.show();
+                me.popupWindow.doConstrain(me.getView().getConstrainRegion());
+                me.popupWindow.constrain = true;
+
+                // clean both grids
+                var source = null;
+                var v = me.popupWindow.getViewModel();
+                var s = v.getStore('gfinfo');
+                s.removeAll();
+                // not necessary, if deferEmptyText: false
+                //var propertyGrid = me.popupWindow.down('#propertyGrid');
+                //propertyGrid.getStore().removeAll();
+
+                var mapView = olMap.getView();
+                var viewResolution = mapView.getResolution();
+
+                olMap.forEachLayerAtPixel(position, function (layer) {
+                    //console.log('LayerAtPixel → ' + layer.get('title') + ' → ' + layer.get('getfeatureinfo'));
+                    //console.log(layer);
+                    if (layer.get('getfeatureinfo')) {
+                        console.log('Request GFI from layer → ' + layer.get('title'));
+                        source = layer.getSource();
+                        var url = source.getGetFeatureInfoUrl(
+                            coordinate, viewResolution, mapView.getProjection(),
+                            {'INFO_FORMAT': 'application/json', 'FEATURE_COUNT': 50});
+                        if (url) {
+                            //console.log(url);
+                            //console.log('Request GFI → ' + url);
+                            s.getProxy().setUrl(url);
+                            s.load({
+                                addRecords: true,
+                                scope: this,
+                                callback: function (records, operation, success) {
+                                    var option = {
+                                        params: {
+                                            layer: layer.get('title'),
+                                            columns: layer.get('gficolumns')
+                                        }
+                                    };
+                                    me.onGFIStoreLoadedCallback(records, operation, success, option);
+
+                                    if (records.length > 0) {
+                                        var grid = me.popupWindow.down('#featureGrid');
+                                        var sm = grid.getSelectionModel();
+                                        sm.select(0);
+                                    }
+
+                                }
+                            });
+                        }
+                    }
+                });
             });
-        });
+        }
 
         olMap.on('pointerdrag', function () {
             if (me.popupWindow) {

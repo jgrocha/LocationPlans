@@ -1,4 +1,4 @@
-Ext.define('Admin.view.geo.PopupWindow', {
+Ext.define('Admin.view.maps.PopupWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.popup-window',
 

@@ -1,24 +1,69 @@
+pdfConfig: !pdfConfig
+  compressed: true
+  title: "Plantas de Localização"
+  author: "Câmara Municipal de Águeda"
+  subject: "Plantas de Localização sobre a cartografia oficial 1:2k e 1:10k"
+  creator: "Geomaster, Lda"
+  keywords: ["Cartografia oficial", "Águeda"]
+
 throwErrorOnExtraParameters: true
 
 templates:
-    A4 portrait: !template
-        reportTemplate: A4_Portrait.jrxml
-        tableData: jrDataSource
+  A4 portrait: !template
+    reportTemplate: InfPreviaA4horizontal.jrxml
+    tableData: jrDataSource
+    attributes:
+      title: !string {}
+      planta: !string {}
+      comments: !string {}
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      map2k: !map
+        maxDpi: 400
+        width: 802
+        height: 475
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+      datasource: !datasource
         attributes:
-            title: !string {}
-            comments: !string {}
-            datasource: !datasource
-                attributes:
-                    title: !string {}
-                    description: !string {}
-                    map: !map
-                        maxDpi: 254
-                        width: 200
-                        height: 200
+          title: !string {}
+          description: !string {}
+          map: !map
+            maxDpi: 254
+            width: 200
+            height: 200
 
-        processors:
-        - !reportBuilder # compile all reports in current directory
-            directory: '.'
-        - !createDataSource
-            processors:
-            - !createMap {}
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createDataSource
+      processors:
+      - !createMap {}
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }

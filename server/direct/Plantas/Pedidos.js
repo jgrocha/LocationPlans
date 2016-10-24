@@ -37,7 +37,9 @@ var Pedidos = {
          FROM infprevia.confrontacao As lgeom
          INNER JOIN (
          SELECT id, idpretensao, camada, area, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
-         sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador FROM infprevia.confrontacao
+         sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador,
+         concat_ws(' → ', dominio::text, subdominio::text, familia::text, objecto::text, ident_gene::text, ident_part::text) as hierarquia
+          FROM infprevia.confrontacao
          where idpretensao = ${idpretensao}
          ) As lprop
          ON lgeom.id = lprop.id
@@ -46,7 +48,9 @@ var Pedidos = {
          FROM infprevia.confrontacaodistancia As lgeom
          INNER JOIN (
          SELECT id, idpretensao, camada, area, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
-         sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador FROM infprevia.confrontacaodistancia
+         sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador,
+         concat_ws(' → ', dominio::text, subdominio::text, familia::text, objecto::text, ident_gene::text, ident_part::text) as hierarquia
+          FROM infprevia.confrontacaodistancia
          where idpretensao = ${idpretensao}
          ) As lprop
          ON lgeom.id = lprop.id

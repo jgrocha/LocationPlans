@@ -15,6 +15,9 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 loaddraw: 'onLoadDrawClick'
                 //redownload: 'onReDownloadClick'
             },
+            // 'confrontacao': {
+            //     printconfrontacao: 'onPedidoId'
+            // },
             'ogre': {
                 uploadSuccessful: 'onUploadSuccessful'
             }
@@ -23,8 +26,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
     control: {
         '#': {  // matches the view itself
-            requestprintid: 'onPedidoId',
-            requestpretensaoid: 'onPretensaoId'
+            requestprintid: 'onPrintPlanta',
+            previewconfrontacao: 'onPreviewConfrontacao'
         }
     },
 
@@ -191,8 +194,10 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         vm.set('selectedPurpose', newValue);
         if (newValue == 4) {
             vm.set('enablePreview', 1);
+            // vm.set('printlabel', 'Preview'.translate());
         } else {
             vm.set('enablePreview', 0);
+            // vm.set('printlabel', 'PDF document'.translate());
         }
     },
 
@@ -280,10 +285,12 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         console.log('onConfrontacaoPreview');
         console.log(arguments);
         var me = this;
-        var view = this.getView();
-        var pretensaoid = 506;
-        var name = 'Ana Isabel';
-        me.onPretensaoId(view, pretensaoid, name);
+
+        Ext.apply(eOpts, {
+            preview: true
+        });
+
+        me.onPrintCheck(item, e, eOpts);
     },
 
     onPrintCheck: function (item, e, eOpts) {
@@ -304,6 +311,55 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var store = vm.getStore('purpose');
         var purposeName = store.getById(purposeId).get('name');
         console.log(purposeId, purposeName);
+
+        var features = printrequestdetaillayer.getSource().getFeatures();
+        var numOfPolygons = 0;
+        for (var i = 0; i < features.length; i++) {
+            var geotype = features[i].getGeometry().getType();
+            if (geotype == 'Polygon') {
+                numOfPolygons += 1;
+            }
+        }
+        console.log("#polygons: ", numOfPolygons);
+        if (vm.get('modified')) {
+            console.log('Features criados/editados');
+        } else {
+            console.log('Features NÃO criados/editados');
+        }
+        switch (purposeId) {
+            case 1:
+            case 2:
+            case 3:
+                me.getPrintRequestId(item, e, eOpts);
+                break;
+            case 4:
+                if (numOfPolygons > 0) {
+                    me.getPrintRequestId(item, e, eOpts);
+                } else {
+                    Ext.Msg.alert('No polygon added/designed'.translate(), 'You must import or draw a polygon'.translate());
+                }
+                break;
+        }
+    },
+
+    getPrintRequestId: function (item, e, eOpts) {
+        var me = this;
+        var view = this.getView();
+        var vm = view.getViewModel();
+        var user = vm.get('current.user');
+        //console.log(user);
+        var userid = vm.get('current.user.id');
+        //console.log(userid);
+
+        var olMap = view.down('mapcanvas').map;
+        var center = olMap.getView().getCenter();
+        var pedidoLayer = vm.get('pedidoLayer');
+        var printrequestdetaillayer = vm.get('printrequestdetaillayer');
+
+        var purposeId = vm.get('selectedPurpose');
+        var store = vm.getStore('purpose');
+        var purposeName = store.getById(purposeId).get('name');
+        // console.log(purposeId, purposeName);
 
         var newfeature = {};
         var username;
@@ -347,13 +403,13 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             if (result.success) {
                 //console.log('Gravou bem', result.message);
                 //console.log(result.data[0].gid);
+                vm.set('modified', false);
 
                 if (purposeId != 4) {
-                    view.fireEvent('requestprintid', view, result.data[0].gid, username);
+                    view.fireEvent('requestprintid', result.data[0].gid, 0, username);
                 }
                 // já tenho o gid
                 // gravar todos os desenhos
-
                 var features = printrequestdetaillayer.getSource().getFeatures();
 
                 if (features.length) {
@@ -371,7 +427,13 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                                 }, function (resultConfrontacao, event) {
                                     if (resultConfrontacao.success) {
                                         console.log('Confrontacao bem lançada', resultConfrontacao);
-                                        view.fireEvent('requestpretensaoid', view, resultConfrontacao.data[0].id, username);
+
+                                        // to preview or print?
+                                        if (eOpts.preview) {
+                                            view.fireEvent('previewconfrontacao', view, result.data[0].gid, resultConfrontacao.data[0].id, username);
+                                        } else {
+                                            view.fireEvent('requestprintid', result.data[0].gid, 0, username);
+                                        }
                                     } else {
                                         console.log('Confrontacao mal lançada', resultConfrontacao);
                                     }
@@ -388,50 +450,14 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             }
         });
 
-        deatilfeatures = {
-            features: {
-                "type": "FeatureCollection",
-                "features": [{
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [[[-20563.9, 102316.2], [-20499.5, 102317.59999999999], [-20478.5, 102384.79999999999], [-20456.100000000002, 102318.99999999999], [-20393.100000000002, 102317.59999999999], [-20443.5, 102279.79999999999], [-20429.5, 102226.59999999999], [-20479.9, 102260.2], [-20538.7, 102222.4], [-20516.300000000003, 102279.79999999999], [-20563.9, 102316.2]]]
-                    },
-                    "properties": null
-                }, {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [[-20432.300000000003, 102359.59999999999], [-20402.9, 102407.2], [-20379.1, 102429.6], [-20356.7, 102439.4], [-20317.5, 102445]]
-                    },
-                    "properties": null
-                }, {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [[-20422.5, 102345.6], [-20381.9, 102379.2], [-20348.3, 102397.40000000001], [-20288.1, 102411.40000000001], [-20227.9, 102411.40000000001]]
-                    },
-                    "properties": null
-                }, {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [[-20381.9, 102337.2], [-20310.5, 102363.80000000002], [-20246.1, 102372.2], [-20122.9, 102379.2], [-20024.9, 102376.40000000001]]
-                    },
-                    "properties": null
-                }]
-            }
-        };
-
     },
 
-    onPretensaoId: function (view, pretensaoid, name) {
-        console.log('onPretensaoId');
+    onPreviewConfrontacao: function (view, printid, pretensaoid, name) {
+        console.log('onPreviewConfrontacao');
         console.log(arguments);
         var me = this;
         var view = this.getView();
-        var olMap = view.down('mapcanvas').map;
-        var mapView = view.down('mapcanvas').getView();
+        var vm = view.getViewModel();
 
         var windows = Ext.ComponentQuery.query('confrontacao');
         if (windows.length > 0) {
@@ -440,16 +466,16 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         } else {
             console.log('Vou criar uma nova janela de confrontação');
             me.confrontacao = Ext.create('Admin.view.plantas.Confrontacao', {
+                printid: printid,
                 pretensaoid: pretensaoid
+                // , viewModel: vm // problems when destroy/recreate the window
             });
             me.confrontacao.show();
         }
 
     },
 
-    //onPrintClick: function (item, e, eOpts) {
-    onPedidoId: function (view, printid, name) {
-
+    onPrintPlanta: function (printid, pretensaoid, name) {
         //Ext.getDisplayName(temp2)
         //console.log(arguments);
 
@@ -509,9 +535,11 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         // Começar com um store na ViewModel...
         //
 
+        // Atenção: Nos reports está uma condição. Sò imprime a band summary com a legenda se o purpose (nome da planta) for diferente de "Plantas de Localização".
+        var legendClass = JSON.parse('[]');
+
         switch (purposeId) {
             case 1:
-            case 3:
                 serializedLayers2k.push({
                     "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
                     "customParams": {"VERSION": "1.1.1", "tiled": true},
@@ -528,6 +556,22 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "styles": [""],
                     "type": "WMS"
                 });
+                spec.attributes['map2k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers2k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 2000
+                };
+                spec.attributes['map10k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers10k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 10000
+                };
                 break;
             case 2:
                 // 2k
@@ -564,31 +608,125 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "styles": [""],
                     "type": "WMS"
                 });
+                spec.attributes['map2k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers2k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 2000
+                };
+                spec.attributes['map10k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers10k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 10000
+                };
+                legendClass.push({
+                    "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ran_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
+                    "name": "Reserva Agrícola Nacional"
+                });
+                /*
+                legendClass.push({
+                    "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto10k&FORMAT=image%2Fpng"],
+                    "name": "Cartografia 10k"
+                });
+                legendClass.push({
+                    "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto2_5k&FORMAT=image%2Fpng"],
+                    "name": "Cartografia 2k e 5k"
+                });
+                */
+                spec.attributes['legend'] = {
+                    "classes": legendClass,
+                    "name": ""
+                };
+                break;
+            case 3:
+                // 2k
+                serializedLayers2k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["ren_etrs89"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                serializedLayers2k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "tiled": true},
+                    "layers": ["carto2_5k"],
+                    "opacity": 0.4,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                // 10k
+                serializedLayers10k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["ren_etrs89"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                serializedLayers10k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+                    "layers": ["carto10k"],
+                    "opacity": 0.4,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                spec.attributes['map2k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers2k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 2000
+                };
+                spec.attributes['map10k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers10k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 10000
+                };
+                legendClass.push({
+                    "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ren_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
+                    "name": "Reserva Ecológica Nacional"
+                });
+                spec.attributes['legend'] = {
+                    "classes": legendClass,
+                    "name": ""
+                };
+                break;
+            case 4:
+                serializedLayers2k.push({
+                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "customParams": {"VERSION": "1.1.1", "tiled": true},
+                    "layers": ["carto2_5k"],
+                    "opacity": 1,
+                    "styles": [""],
+                    "type": "WMS"
+                });
+                spec.attributes['map2k'] = {
+                    center: center,
+                    dpi: 200, // clientInfo.dpiSuggestions[0],
+                    layers: serializedLayers2k,
+                    projection: mapView.getProjection().getCode(),
+                    rotation: mapView.getRotation(),
+                    scale: 2000
+                };
+                break;
         }
-
         //serializedLayers.reverse();
 
-        spec.attributes['map2k'] = {
-            center: center,
-            dpi: 200, // clientInfo.dpiSuggestions[0],
-            layers: serializedLayers2k,
-            projection: mapView.getProjection().getCode(),
-            rotation: mapView.getRotation(),
-            scale: 2000
-        };
-
-        spec.attributes['map10k'] = {
-            center: center,
-            dpi: 200, // clientInfo.dpiSuggestions[0],
-            layers: serializedLayers10k,
-            projection: mapView.getProjection().getCode(),
-            rotation: mapView.getRotation(),
-            scale: 10000
-        };
-
         Ext.Ajax.request({
-            //url: 'http://localhost:8080/print/print/plantas/report.pdf',
-            url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
+            url: 'http://localhost:8080/print/print/plantas/report.pdf',
+            // url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             jsonData: spec,
@@ -647,7 +785,9 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             //updateWaitingMsg(startTime, data);
             setTimeout(function () {
                 Ext.Ajax.request({
-                    url: 'http://geoserver.sig.cm-agueda.pt' + data.statusURL,
+
+                    url: 'http://localhost:8080' + data.statusURL,
+                    // url: 'http://geoserver.sig.cm-agueda.pt' + data.statusURL,
                     success: function (response, opts) {
                         var statusData = Ext.decode(response.responseText);
                         //console.dir(statusData);
@@ -655,7 +795,9 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                         if (!statusData.done) {
                             me.downloadWhenReady(me, startTime, data);
                         } else {
-                            window.location = 'http://geoserver.sig.cm-agueda.pt' + statusData.downloadURL;
+                            window.location = 'http://localhost:8080' + statusData.downloadURL;
+                            // window.location = 'http://geoserver.sig.cm-agueda.pt' + statusData.downloadURL;
+
                             //console.log('Downloading: ' + data.ref);
                             // refresh grid
 
@@ -870,6 +1012,31 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         map.addLayer(printrequestdetaillayer);
         vm.set('printrequestdetaillayer', printrequestdetaillayer);
 
+        // API
+        printrequestdetaillayer.getSource().on('addfeature', function (e) {
+            console.log(arguments);
+            console.log("feature added: ", e.feature.getGeometry().getType());
+            vm.set('modified', true);
+        });
+
+        // API
+        printrequestdetaillayer.getSource().on('removefeature', function (e) {
+            console.log("feature removed: ", e.feature.getGeometry().getType());
+            vm.set('modified', true);
+        });
+
+        // API
+        printrequestdetaillayer.getSource().on('changefeature', function (e) {
+            console.log("feature changefeature: ", e.feature.getGeometry().getType());
+            vm.set('modified', true);
+        });
+
+        // API
+        printrequestdetaillayer.getSource().on('clear', function () {
+            console.log("clear");
+            vm.set('modified', true);
+        });
+
         var selectInteraction = new ol.interaction.Select({
             condition: ol.events.condition.singleClick,
             toggleCondition: ol.events.condition.shiftKeyOnly,
@@ -901,6 +1068,14 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     ol.events.condition.singleClick(event);
             }
         });
+        // modify.on('modifyend',function(e) {
+        //     var features = e.features.getArray();
+        //     for (var i=0;i<features.length;i++){
+        //         console.log("feature modify id is",features[i].getId());
+        //         console.log("feature modify id is",features[i].getGeometry().getType());
+        //     }
+        //     vm.set('modified', true);
+        // });
 
         //map.addInteraction(modify);
         vm.set('modify', modify);

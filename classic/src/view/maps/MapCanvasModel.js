@@ -5,7 +5,8 @@ Ext.define('Admin.view.maps.MapCanvasModel', {
 
     data: {
         name: 'MapCanvasModel',
-        view: 1
+        view: 1,
+        popup: false
     },
 
     stores: {

@@ -8,9 +8,10 @@ Ext.define('Admin.view.plantas.FullMapPanelModel', {
         orientation: 'portrait',
         selectedPurpose: 1,
         enablePreview: 0,
+        printlabel: 'PDF document'.translate(),
         draw: {},
         modify: {},
-        modified: 0 // if the current draw was modified after the print request
+        modified: false // if the current draw was modified after the print request
         // is it another request or can we print the previous request?
     },
 
@@ -34,9 +35,9 @@ Ext.define('Admin.view.plantas.FullMapPanelModel', {
             fields: ['id', 'name'],
             data: [
                 {id: 1, name: "Location Plan".translate()},
-                {id: 2, name: "Condicionantes (RAN+REN)"},
-                {id: 3, name: "RJAAR"},
-                {id: 4, name: "Informação Prévia"}
+                {id: 2, name: "Condicionantes (RAN)"},
+                {id: 3, name: "Condicionantes (REN)"} // ,
+                // {id: 4, name: "Informação Prévia"}
             ]
         }
     }

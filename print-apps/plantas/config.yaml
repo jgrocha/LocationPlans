@@ -91,6 +91,7 @@ templates:
       pedido: !string {}
       centro: !string {}
       purpose: !string {}
+      legend: !legend {}
       map2k: !map
         maxDpi: 400
         width: 1150
@@ -151,6 +152,13 @@ templates:
     - !createNorthArrow
       inputMapper: { map2k: map, northArrow2k: northArrow }
       outputMapper: { northArrowSubReport: northArrowSubReport2k }
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
   A4_portrait: !template
     reportTemplate: A4vertical.jrxml
     attributes:
@@ -158,6 +166,7 @@ templates:
       pedido: !string {}
       centro: !string {}
       purpose: !string {}
+      legend: !legend {}
       map2k: !map
         maxDpi: 400
         width: 555
@@ -218,6 +227,13 @@ templates:
     - !createNorthArrow
       inputMapper: { map2k: map, northArrow2k: northArrow }
       outputMapper: { northArrowSubReport: northArrowSubReport2k }
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
   A4_landscape: !template
     reportTemplate: A4horizontal.jrxml
     attributes:
@@ -225,6 +241,7 @@ templates:
       pedido: !string {}
       centro: !string {}
       purpose: !string {}
+      legend: !legend {}
       map2k: !map
         maxDpi: 400
         width: 802
@@ -285,3 +302,10 @@ templates:
     - !createNorthArrow
       inputMapper: { map2k: map, northArrow2k: northArrow }
       outputMapper: { northArrowSubReport: northArrowSubReport2k }
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows

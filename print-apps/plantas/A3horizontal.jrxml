@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2016-10-24T18:40:49 -->
+<!-- 2016-10-25T10:01:09 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1150" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" whenResourceMissingType="Error" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
 	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -20,6 +20,8 @@
 	<parameter name="purpose" class="java.lang.String">
 		<parameterDescription><![CDATA[]]></parameterDescription>
 	</parameter>
+	<parameter name="legendSubReport" class="java.lang.String"/>
+	<parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
 	<title>
 		<band height="802" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
@@ -148,11 +150,10 @@
 			</textField>
 		</band>
 	</title>
-	<summary>
+	<detail>
 		<band height="802">
-			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<rectangle>
-				<reportElement mode="Transparent" x="0" y="0" width="1150" height="802" uuid="923dab29-2a89-46df-970b-db6014d93110">
+				<reportElement mode="Transparent" x="0" y="0" width="1150" height="802" uuid="dddef5d9-3f5f-45a6-ab3f-09f6d36b5b4d">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -160,23 +161,23 @@
 				</reportElement>
 			</rectangle>
 			<subreport>
-				<reportElement x="0" y="0" width="1150" height="802" uuid="8c72ea54-9c50-4111-b09f-84f846357727">
+				<reportElement x="0" y="0" width="1150" height="802" uuid="b11ef354-d25a-4828-947a-a3f90f43e092">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
 				</reportElement>
 				<subreportExpression><![CDATA[$P{mapSubReport2k}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement mode="Transparent" x="1022" y="662" width="120" height="40" uuid="767146cd-d76f-4843-9220-b320c8298ba2">
+				<reportElement mode="Transparent" x="1022" y="662" width="120" height="40" uuid="578beb32-6262-409d-89aa-72471e81eba9">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<subreportExpression><![CDATA[$P{scalebarSubReport2k}]]></subreportExpression>
 			</subreport>
 			<rectangle>
-				<reportElement x="701" y="708" width="441" height="84" backcolor="#F5F5F5" uuid="864830f9-02d4-410c-be99-3dc8cfb784b9"/>
+				<reportElement x="701" y="708" width="441" height="84" backcolor="#F5F5F5" uuid="d463da56-8246-4412-aae4-1709a37ae9c5"/>
 			</rectangle>
 			<staticText>
-				<reportElement positionType="Float" mode="Transparent" x="707" y="730" width="118" height="59" backcolor="rgba(255, 255, 255, 0.52156866)" uuid="5b6d0193-07e9-42ae-bd5b-ae9abb2c532a">
+				<reportElement positionType="Float" mode="Transparent" x="707" y="730" width="118" height="59" backcolor="rgba(255, 255, 255, 0.52156866)" uuid="6fe69f70-a64a-40c5-8bac-f77513c76826">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Left" markup="styled">
@@ -185,7 +186,7 @@
 				<text><![CDATA[Câmara Municipal de Águeda<br/>Praça do Município<br/>3754-500 Águeda<br/>Telefone: 234 610 070<br/>Email: geral@cm-agueda.pt]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="900" y="730" width="154" height="59" uuid="6ee75502-a70a-4e87-a306-241f899384e3">
+				<reportElement x="900" y="730" width="154" height="59" uuid="e83177bb-3969-46cb-91d8-de970387927f">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -196,7 +197,7 @@
 				<textFieldExpression><![CDATA[$P{requerente} + "<br/>" + $P{pedido} + "<br/>" + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())) + "<br/>" + $P{centro} + " (ponto central)<br/>PT-TM06/ETRS89"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="832" y="730" width="72" height="59" uuid="c5a6bce6-4683-49ff-b8c8-61271abe931b">
+				<reportElement x="832" y="730" width="72" height="59" uuid="0ed85869-7f75-47fc-a0ea-98f5575398f4">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<textElement markup="styled">
@@ -205,7 +206,7 @@
 				<text><![CDATA[Requerente:<br/>Pedido:<br/>Data:<br/>Coordenadas:<br/>Referência:]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="Float" x="1047" y="708" width="1" height="84" uuid="ce70c1ba-c233-4d51-b74a-ec5e4d41f4f2">
+				<reportElement positionType="Float" x="1047" y="708" width="1" height="84" uuid="72e8c3c8-9d4e-4c9a-899d-0256a01b81cb">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -214,7 +215,7 @@
 				</graphicElement>
 			</line>
 			<subreport>
-				<reportElement x="1077" y="736" width="40" height="40" uuid="48aca09f-56dc-4241-8952-9651a8dac089">
+				<reportElement x="1077" y="736" width="40" height="40" uuid="f3bafe94-bf26-459f-83ff-4fe680a44712">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -222,7 +223,7 @@
 				<subreportExpression><![CDATA[$P{northArrowSubReport2k}]]></subreportExpression>
 			</subreport>
 			<line>
-				<reportElement positionType="Float" x="826" y="708" width="1" height="84" uuid="8113c748-df2e-444b-ab05-b1f762cad947">
+				<reportElement positionType="Float" x="826" y="708" width="1" height="84" uuid="fc07a1bd-c82b-49f3-85a5-0a9057f8aa25">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -232,7 +233,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="706" y="713" width="118" height="15" uuid="c1e5cd67-a4e7-4c51-9647-0e245a9ab4a1">
+				<reportElement x="706" y="713" width="118" height="15" uuid="12ff55e0-c477-444f-ad97-195d8ae321cb">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
@@ -242,7 +243,7 @@
 				<text><![CDATA[Unidade Técnica SIG]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1048" y="713" width="93" height="15" uuid="e53b6d98-db89-41b3-8a8b-c8bbf16b5a0b">
+				<reportElement x="1048" y="713" width="93" height="15" uuid="22ba73ea-5c10-412e-8ef1-072e158c0174">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -251,18 +252,18 @@
 				<text><![CDATA[Escala 1:2000]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="616" y="708" width="85" height="84" backcolor="#FFFFFF" uuid="4bd67579-23e7-4f98-aada-d64fa5f6f68e"/>
+				<reportElement x="616" y="708" width="85" height="84" backcolor="#FFFFFF" uuid="c1bf6309-0145-4b24-aa6c-ab35cb68c418"/>
 			</rectangle>
 			<image>
-				<reportElement x="626" y="713" width="64" height="63" uuid="bd72fe95-aaf6-479f-9a70-af6447930f16"/>
+				<reportElement x="626" y="713" width="64" height="63" uuid="17a7a0ec-00ba-47ee-8205-b5f221848c6d"/>
 				<imageExpression><![CDATA["cmagueda_150x.jpg"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="626" y="758" width="64" height="32" uuid="b0919743-5880-4592-8276-f6e9e25545cf"/>
+				<reportElement x="626" y="758" width="64" height="32" uuid="83b24ea1-a9f3-4818-8ac2-9cde01a73cb6"/>
 				<imageExpression><![CDATA["apcer.jpg"]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="832" y="713" width="212" height="15" uuid="5a2931a4-4ea5-45bf-9f22-b8f472d37372">
+				<reportElement x="832" y="713" width="212" height="15" uuid="229fdfa3-eebe-48a8-a415-50fa737242c2">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -273,6 +274,23 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{purpose}]]></textFieldExpression>
 			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="65">
+			<printWhenExpression><![CDATA[!$P{purpose}.equals("Plantas de Localização")]]></printWhenExpression>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="23" uuid="3dec06bb-a797-4fb4-add2-ff90d0710ada"/>
+				<textElement>
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Legenda"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="23" width="802" height="42" uuid="beac28e7-0fbe-4f28-a11e-59c679a6c6f9"/>
+				<dataSourceExpression><![CDATA[$P{legend}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
+			</subreport>
 		</band>
 	</summary>
 </jasperReport>

@@ -20,6 +20,62 @@ var Pedidos = {
 
     // curl -v -H "Content-type: application/json" -d '{"action":"Plantas.Pedidos","method":"confrontacaoAsGeoJson","data":[{"idpretensao": "506"}],"type":"rpc","tid":5}' http://localhost:3000/direct
 
+    trafegoAsGeoJson: function (params, callback) {
+        console.log('Plantas.Pedidos.trafegoAsGeoJson');
+        console.log(params);
+
+        var diadasemana = 0;
+        if (params.diadasemana && parseInt(params.diadasemana) > 0) {
+            diadasemana = params.diadasemana;
+        }
+        var hora = 0;
+        if (params.hora && parseInt(params.hora) > 0) {
+            hora = params.hora;
+        }
+
+        var sql = `SELECT row_to_json(fc) as geojson
+         FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features
+         FROM (
+         -- query
+         SELECT 'Feature' As type, ST_AsGeoJSON(lgeom.geom)::json As geometry, row_to_json(lprop) As properties
+         FROM trafego.conta_trafego As lgeom
+         INNER JOIN (
+         SELECT h.gid, t.toponimo, diadasemana, hora, media 
+         FROM trafego.mediapordiadasemanahora h, trafego.conta_trafego t
+         where h.gid = t.gid and diadasemana = ${diadasemana} and hora = ${hora}
+         ) As lprop
+         ON lgeom.gid = lprop.gid
+         -- fim de query
+         ) As f )  As fc`;
+        
+        console.log(sql);
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'asGeoJson'
+        }, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            console.log(sql);
+            client.query(sql, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                console.log(result.rows[0].geojson);
+                callback(null, {
+                    //data: result.rows,
+                    data: result.rows[0].geojson,
+                    total: 1
+                });
+                // free this client, from the client pool
+                done();
+            });
+        });
+    },
+
     confrontacaoAsGeoJson: function (params, callback) {
         console.log('Plantas.Pedidos.asGeoJson');
         console.log(params);
@@ -610,6 +666,87 @@ var Pedidos = {
         }
 
         var sql = 'SELECT ' + colunas + ' FROM ' + table;
+        sql += where;
+        sql += group;
+        sql += order;
+
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'estatisticas'
+        }, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            console.log(sql);
+            client.query(sql, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                callback(null, {
+                    data: result.rows,
+                    total: result.rows.length
+                });
+                // free this client, from the client pool
+                done();
+            });
+        });
+    },
+
+    trafegoestatisticas: function (params, callback) {
+        console.log(params);
+        /*
+         */
+
+        var colunas = 'EXTRACT(YEAR FROM datahora) as ano, count(*) as contador',
+            where = '',
+            group = ' group by 1',
+            order = ' order by 1';
+
+        if (params.filter) {
+            console.log('Exitem filtros:' + JSON.stringify(params.filter));
+            var condicoes = [];
+            console.log('filtros.length: ' + params.filter.length);
+            for (var k = 0; k < params.filter.length; k++) {
+                console.log('Filtrar por ' + params.filter[k].property + ' do tipo ' + params.filter[k].type);
+                switch (params.filter[k].type) {
+                    case 'string':
+                        console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                        //condicoes.push(params.filter[k].property + " ilike '%" + params.filter[k].value + "%'");
+                        condicoes.push(params.filter[k].property + " = '" + params.filter[k].value + "'");
+                        break;
+                    case 'date':
+                        console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                        condicoes.push("EXTRACT(YEAR FROM " + params.filter[k].property + ") = " + params.filter[k].value);
+                        colunas = "date_trunc('year', datahora) as ano, EXTRACT(MONTH FROM datahora) as mes, to_char(datahora, 'Mon') as abrmes, count(*) as contador";
+                        group = ' group by 1, 2, 3 ';
+                        order = ' order by 1, 2 ';
+                        break;
+                    case 'numeric':
+                    case 'number':
+                        console.log('filtro sobre o tipo: ' + params.filter[k].type + ' com o valor ' + params.filter[k].value);
+                        condicoes.push(params.filter[k].property + ' ' + " = " + ' ' + params.filter[k].value);
+                        break;
+                    default:
+                        console.log('filtro inesperado sobre o tipo: ' + filtros[k].type);
+                        break;
+                }
+            }
+            console.log(condicoes.join(" AND "));
+            if (where == '') {
+                where = ' WHERE ' + condicoes.join(" AND ");
+            } else {
+                where = where + ' AND ' + condicoes.join(" AND ");
+            }
+        }
+
+        // select * from trafego.mediapordiadasemanahora where gid = 10 and diadasemana = 3 order by hora;
+
+        var sql = `select hora, media from trafego.mediapordiadasemanahora `;
+
+        // var sql = 'SELECT ' + colunas + ' FROM ';
         sql += where;
         sql += group;
         sql += order;

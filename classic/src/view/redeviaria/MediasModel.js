@@ -1,28 +1,19 @@
-Ext.define('Admin.view.redeviaria.RedeViariaModel', {
+Ext.define('Admin.view.redeviaria.MediasModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.redeviaria',
-
-    data: {
-        diadasemana: 0,
-        gid: 10,
-    },
+    alias: 'viewmodel.medias',
 
     stores: {
         trafego: {
-            model: 'plantas.Trafego',
+            model: 'plantas.Estatisticas',
             autoLoad: true, // important to set autoLoad to false. If there is an error on the backend, Ext will still try to resolve Direct method names and crash the app.
             autoSync: true, // true,
             remoteSort: true,
             remoteFilter: true,
             pageSize: 10,
             filters: [{
-                property: 'gid',
+                property: 'userid',
                 type: 'number',
-                value: '{gid}'
-            }, {
-                property: 'diadasemana',
-                type: 'number',
-                value: '{diadasemana}'
+                value: '{current.user.id}'
             }],
             sorters: [{
                 property: 'datahora',

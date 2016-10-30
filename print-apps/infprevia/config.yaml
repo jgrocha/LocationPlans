@@ -9,12 +9,11 @@ pdfConfig: !pdfConfig
 throwErrorOnExtraParameters: true
 
 templates:
-  A4 portrait: !template
+  A4_portrait: !template
     reportTemplate: InfPreviaA4horizontal.jrxml
     tableData: jrDataSource
     attributes:
-      title: !string {}
-      planta: !string {}
+      purpose: !string {}
       comments: !string {}
       requerente: !string {}
       pedido: !string {}

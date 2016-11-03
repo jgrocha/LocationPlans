@@ -729,8 +729,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         //serializedLayers.reverse();
 
         Ext.Ajax.request({
-            url: 'http://localhost:8080/print/print/plantas/report.pdf',
-            // url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
+            // url: 'http://localhost:8080/print/print/plantas/report.pdf',
+            url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             jsonData: spec,
@@ -1298,8 +1298,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     spec.attributes['datasource'] = datasource;
 
                     Ext.Ajax.request({
-                        url: 'http://localhost:8080/print/print/infprevia/report.pdf',
-                        // url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
+                        // url: 'http://localhost:8080/print/print/infprevia/report.pdf',
+                        url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
                         jsonData: spec,
@@ -1365,8 +1365,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             setTimeout(function () {
                 Ext.Ajax.request({
 
-                    url: 'http://localhost:8080' + data.statusURL,
-                    // url: 'http://geoserver.sig.cm-agueda.pt' + data.statusURL,
+                    // url: 'http://localhost:8080' + data.statusURL,
+                    url: 'http://geoserver.sig.cm-agueda.pt' + data.statusURL,
                     success: function (response, opts) {
                         var statusData = Ext.decode(response.responseText);
                         //console.dir(statusData);
@@ -1374,8 +1374,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                         if (!statusData.done) {
                             me.downloadWhenReady(me, startTime, data);
                         } else {
-                            window.location = 'http://localhost:8080' + statusData.downloadURL;
-                            // window.location = 'http://geoserver.sig.cm-agueda.pt' + statusData.downloadURL;
+                            // window.location = 'http://localhost:8080' + statusData.downloadURL;
+                            window.location = 'http://geoserver.sig.cm-agueda.pt' + statusData.downloadURL;
 
                             //console.log('Downloading: ' + data.ref);
                             // refresh grid
@@ -1753,8 +1753,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         vm.set('extent', extentLayer);
 
         Ext.create('GeoExt.data.MapfishPrintProvider', {
-            url: "http://localhost:8080/print/print/plantas/capabilities.json",
-            // url: "http://geoserver.sig.cm-agueda.pt/print/print/plantas/capabilities.json",
+            // url: "http://localhost:8080/print/print/plantas/capabilities.json",
+            url: "http://geoserver.sig.cm-agueda.pt/print/print/plantas/capabilities.json",
             listeners: {
                 ready: function (provider) {
                     me.onPrintProviderReady(provider, view, vm, olMap, extentLayer);

@@ -1249,6 +1249,18 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                             item.title = features[i].get('dominio');
                             item.description = features[i].get('sumario');
 
+                            item.area = features[i].get('area');
+                            item.dominio = features[i].get('dominio');
+                            item.subdominio = features[i].get('subdominio');
+                            item.familia = features[i].get('familia');
+                            item.objecto = features[i].get('objecto');
+                            item.ident_gene = features[i].get('ident_gene');
+                            item.ident_part = features[i].get('ident_part');
+                            item.diploma_es = features[i].get('diploma_es');
+                            item.sumario = features[i].get('sumario');
+                            item.texto = features[i].get('texto');
+                            item.hierarquia = features[i].get('hierarquia');
+
                             var extent = features[i].getGeometry().getExtent();
                             var featureCenter = ol.extent.getCenter(extent);
 

@@ -36,8 +36,8 @@ Ext.define('Admin.view.plantas.FullMapPanelModel', {
             data: [
                 {id: 1, name: "Location Plan".translate()},
                 {id: 2, name: "Condicionantes (RAN)"},
-                {id: 3, name: "Condicionantes (REN)"},
-                {id: 4, name: "Informação Prévia"}
+                {id: 3, name: "Condicionantes (REN)"} // ,
+                // {id: 4, name: "Informação Prévia"}
             ]
         }
     }

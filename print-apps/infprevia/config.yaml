@@ -45,9 +45,20 @@ templates:
         attributes:
           title: !string {}
           description: !string {}
+          area: !float {}
+          dominio: !string {}
+          subdominio: !string {}
+          familia: !string {}
+          objecto: !string {}
+          ident_gene: !string {}
+          ident_part: !string {}
+          diploma_es: !string {}
+          sumario: !string {}
+          texto: !string {}
+          hierarquia: !string {}
           map: !map
             maxDpi: 254
-            width: 200
+            width: 400
             height: 200
 
     processors:

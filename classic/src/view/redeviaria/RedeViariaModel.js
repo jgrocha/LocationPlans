@@ -4,7 +4,7 @@ Ext.define('Admin.view.redeviaria.RedeViariaModel', {
 
     data: {
         diadasemana: 0,
-        gid: 10,
+        gid: 10
     },
 
     stores: {

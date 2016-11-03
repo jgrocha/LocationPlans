@@ -45,7 +45,7 @@ Ext.define('Admin.view.dashboard.DashboardController', {
     
     onDestroy: function () {
         this.clearChartUpdates();
-        this.callParent();
+        this.callParent(arguments);
     },
     
     onHideView: function () {

@@ -50,7 +50,7 @@ Ext.define('Admin.view.redeviaria.Medias', {
             grid: true,
             maximum: 4000,
             majorTickSteps: 8,
-            title: 'Passagens',
+            title: 'Passagens'
             //renderer: 'onAxisLabelRender'
         }, {
             type: 'category',

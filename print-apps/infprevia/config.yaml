@@ -21,7 +21,7 @@ templates:
       map2k: !map
         maxDpi: 400
         width: 802
-        height: 475
+        height: 555
       scalebar2k: !scalebar
         # width: 171 # mostra a escala com 0, 50 e 100m
         width: 120
@@ -57,7 +57,7 @@ templates:
           texto: !string {}
           hierarquia: !string {}
           map: !map
-            maxDpi: 254
+            maxDpi: 400
             width: 400
             height: 200
 
@@ -65,8 +65,8 @@ templates:
     - !reportBuilder # compile all reports in current directory
       directory: '.'
     - !createDataSource
-      processors:
-      - !createMap {}
+        processors:
+        - !createMap {}
     - !createMap
       # imageType: 'TYPE_USHORT_GRAY'
       inputMapper: {map2k: map}
@@ -77,3 +77,4 @@ templates:
     - !createNorthArrow
       inputMapper: { map2k: map, northArrow2k: northArrow }
       outputMapper: { northArrowSubReport: northArrowSubReport2k }
+

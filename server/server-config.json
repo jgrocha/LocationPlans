@@ -51,6 +51,10 @@
     "headerlogo": "resources/images/dadosagueda_sem.png",
     "headerlogowidth": "56",
     "headerlogoheight": "26",
-    "helpbasefolder": "resources/help/"
+    "helpbasefolder": "resources/help/",
+    "printserver": "http://localhost:8080",
+    "printserver.development": "http://localhost:8080",
+    "printserver.production": "http://geoserver.sig.cm-agueda.pt"
+
   }
 }

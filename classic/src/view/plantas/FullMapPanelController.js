@@ -421,7 +421,6 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     }, function (resultDetail, event) {
                         if (resultDetail.success) {
                             console.log('Gravou bem ' + resultDetail.total + ' detalhes');
-
                             if (purposeId == 4) {
                                 Server.Plantas.Pedidos.createConfrontacao({
                                     gid: result.data[0].gid
@@ -431,12 +430,14 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
                                         // to preview or print?
                                         if (eOpts.preview) {
-                                            view.fireEvent('previewconfrontacao', view, result.data[0].gid, resultConfrontacao.data[0].id, username);
+                                            view.fireEvent('previewconfrontacao', view, result.data[0].gid, resultConfrontacao.data[0].id, resultConfrontacao.data[0].area, username);
                                         } else {
-                                            view.fireEvent('requestprintidconfrontacao', result.data[0].gid, resultConfrontacao.data[0].id, username);
+                                            view.fireEvent('requestprintidconfrontacao', result.data[0].gid, resultConfrontacao.data[0].id, resultConfrontacao.data[0].area, username);
                                         }
                                     } else {
-                                        console.log('Confrontacao mal lançada', resultConfrontacao);
+                                        // TODO
+                                        Ext.Msg.alert("Informação Prévia", "Não foi possível fazer a confrontação do polígono desenhado." + "<br/>" + "Verifique que o polígono é válido.");
+                                        // console.log('Confrontaçãoo mal lançada', resultConfrontacao);
                                     }
                                 });
                             } else {
@@ -456,7 +457,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
     },
 
-    onPreviewConfrontacao: function (view, printid, pretensaoid, name) {
+    onPreviewConfrontacao: function (view, printid, pretensaoid, area, name) {
         console.log('onPreviewConfrontacao');
         console.log(arguments);
         var me = this;
@@ -471,7 +472,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             console.log('Vou criar uma nova janela de confrontação');
             me.confrontacao = Ext.create('Admin.view.plantas.Confrontacao', {
                 printid: printid,
-                pretensaoid: pretensaoid
+                pretensaoid: pretensaoid,
+                area: area
                 // , viewModel: vm // problems when destroy/recreate the window
             });
             me.confrontacao.show();
@@ -781,7 +783,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
     },
 
-    onPrintPlantaConfrontacao: function (printid, pretensaoid, name) {
+    onPrintPlantaConfrontacao: function (printid, pretensaoid, area, name) {
         //Ext.getDisplayName(temp2)
         console.log('onPrintPlantaConfrontacao');
         console.log(arguments);
@@ -811,6 +813,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             outputFilename: printid,
             attributes: {
                 centro: out,
+                areaTotal: area,
                 pedido: printid,
                 requerente: name,
                 purpose: purposeName,
@@ -893,6 +896,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                             item.description = features[i].get('sumario');
 
                             item.area = features[i].get('area');
+                            item.percentagem = features[i].get('percentagem');
                             item.dominio = features[i].get('dominio');
                             item.subdominio = features[i].get('subdominio');
                             item.familia = features[i].get('familia');
@@ -900,12 +904,12 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                             item.ident_gene = features[i].get('ident_gene');
                             item.ident_part = features[i].get('ident_part');
                             item.diploma_es = features[i].get('diploma_es');
-                            // item.sumario = features[i].get('sumario');
-                            item.sumario = Ext.util.Format.ellipsis(features[i].get('sumario'), 100);
-                            // item.texto = features[i].get('texto');
-                            item.texto = Ext.util.Format.ellipsis(features[i].get('texto'), 100);
-                            // item.hierarquia = features[i].get('hierarquia');
-                            item.hierarquia = Ext.util.Format.ellipsis(features[i].get('hierarquia'), 100);
+                            item.sumario = features[i].get('sumario');
+                            // item.sumario = Ext.util.Format.ellipsis(features[i].get('sumario'), 100);
+                            item.texto = features[i].get('texto');
+                            // item.texto = Ext.util.Format.ellipsis(features[i].get('texto'), 100);
+                            item.hierarquia = features[i].get('hierarquia');
+                            // item.hierarquia = Ext.util.Format.ellipsis(features[i].get('hierarquia'), 100);
 
                             var extent = features[i].getGeometry().getExtent();
                             var featureCenter = ol.extent.getCenter(extent);
@@ -931,12 +935,11 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                                         symbolizers: [
                                             {
                                                 type: "polygon",
-                                                fillColor: "#663300",
-                                                fillOpacity: 0.2,
-                                                strokeColor: "#663300",
-                                                strokeOpacity: 0.2,
-                                                strokeWidth: 2,
-                                                strokeDashstyle: "dot"
+                                                fillColor: "#ff9900",
+                                                fillOpacity: 0.4,
+                                                strokeColor: "#ff9900",
+                                                strokeOpacity: 1,
+                                                strokeWidth: 2 // , strokeDashstyle: "dot"
                                             }
                                         ]
                                     },
@@ -945,11 +948,10 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                                             {
                                                 type: "polygon",
                                                 fillColor: "#006600",
-                                                fillOpacity: 0.2,
+                                                fillOpacity: 0.4,
                                                 strokeColor: "#006600",
-                                                strokeOpacity: 0.2,
-                                                strokeWidth: 2,
-                                                strokeDashstyle: "dot"
+                                                strokeOpacity: 1,
+                                                strokeWidth: 2 // , strokeDashstyle: "dot"
                                             }
                                         ]
                                     },
@@ -958,11 +960,10 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                                             {
                                                 type: "polygon",
                                                 fillColor: "#cc00cc",
-                                                fillOpacity: 0.2,
+                                                fillOpacity: 0.4,
                                                 strokeColor: "#cc00cc",
-                                                strokeOpacity: 0.2,
-                                                strokeWidth: 2,
-                                                strokeDashstyle: "dot"
+                                                strokeOpacity: 1,
+                                                strokeWidth: 2 // , strokeDashstyle: "dot"
                                             }
                                         ]
                                     }
@@ -987,7 +988,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                                             fillColor: "#ff3300",
                                             fillOpacity: 0,
                                             strokeColor: "#ff3300",
-                                            strokeOpacity: 0.5,
+                                            strokeOpacity: 0.7,
                                             strokeWidth: 2
                                         }
                                     ]

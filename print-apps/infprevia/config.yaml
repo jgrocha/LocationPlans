@@ -1,6 +1,6 @@
 pdfConfig: !pdfConfig
   compressed: true
-  title: "Plantas de Localização"
+  title: "Informação Pŕevia no Minuto"
   author: "Câmara Municipal de Águeda"
   subject: "Plantas de Localização sobre a cartografia oficial 1:2k e 1:10k"
   creator: "Geomaster, Lda"
@@ -9,7 +9,7 @@ pdfConfig: !pdfConfig
 throwErrorOnExtraParameters: true
 
 templates:
-  A4_portrait: !template
+  A4_landscape: !template
     reportTemplate: InfPreviaA4horizontal.jrxml
     tableData: jrDataSource
     attributes:
@@ -18,6 +18,7 @@ templates:
       requerente: !string {}
       pedido: !string {}
       centro: !string {}
+      areaTotal: !float {}
       map2k: !map
         maxDpi: 400
         width: 802
@@ -46,6 +47,7 @@ templates:
           title: !string {}
           description: !string {}
           area: !float {}
+          percentagem: !float {}
           dominio: !string {}
           subdominio: !string {}
           familia: !string {}
@@ -59,8 +61,7 @@ templates:
           map: !map
             maxDpi: 400
             width: 400
-            height: 200
-
+            height: 235
     processors:
     - !reportBuilder # compile all reports in current directory
       directory: '.'
@@ -77,4 +78,210 @@ templates:
     - !createNorthArrow
       inputMapper: { map2k: map, northArrow2k: northArrow }
       outputMapper: { northArrowSubReport: northArrowSubReport2k }
-
+  A4_portrait: !template
+    reportTemplate: InfPreviaA4vertical.jrxml
+    tableData: jrDataSource
+    attributes:
+      purpose: !string {}
+      comments: !string {}
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      areaTotal: !float {}
+      map2k: !map
+        maxDpi: 400
+        width: 555
+        height: 802
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+      datasource: !datasource
+        attributes:
+          title: !string {}
+          description: !string {}
+          area: !float {}
+          percentagem: !float {}
+          dominio: !string {}
+          subdominio: !string {}
+          familia: !string {}
+          objecto: !string {}
+          ident_gene: !string {}
+          ident_part: !string {}
+          diploma_es: !string {}
+          sumario: !string {}
+          texto: !string {}
+          hierarquia: !string {}
+          map: !map
+            maxDpi: 400
+            width: 235
+            height: 350
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createDataSource
+        processors:
+        - !createMap {}
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }
+  A3_portrait: !template
+    reportTemplate: InfPreviaA3vertical.jrxml
+    tableData: jrDataSource
+    attributes:
+      purpose: !string {}
+      comments: !string {}
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      areaTotal: !float {}
+      map2k: !map
+        maxDpi: 400
+        width: 802
+        height: 1150
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+      datasource: !datasource
+        attributes:
+          title: !string {}
+          description: !string {}
+          area: !float {}
+          percentagem: !float {}
+          dominio: !string {}
+          subdominio: !string {}
+          familia: !string {}
+          objecto: !string {}
+          ident_gene: !string {}
+          ident_part: !string {}
+          diploma_es: !string {}
+          sumario: !string {}
+          texto: !string {}
+          hierarquia: !string {}
+          map: !map
+            maxDpi: 400
+            width: 350
+            height: 350
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createDataSource
+        processors:
+        - !createMap {}
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }
+  A3_landscape: !template
+    reportTemplate: InfPreviaA3horizontal.jrxml
+    tableData: jrDataSource
+    attributes:
+      purpose: !string {}
+      comments: !string {}
+      requerente: !string {}
+      pedido: !string {}
+      centro: !string {}
+      areaTotal: !float {}
+      map2k: !map
+        maxDpi: 400
+        width: 1150
+        height: 802
+      scalebar2k: !scalebar
+        # width: 171 # mostra a escala com 0, 50 e 100m
+        width: 120
+        height: 40
+        default:
+          type: "line"
+          fontSize: 7
+          # intervals: 3
+          padding: 0
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+          # verticalAlign: "bottom"
+          # orientation: "horizontalLabelsAbove"
+      northArrow2k: !northArrow
+        size: 40
+        default:
+          # graphic: "NorthArrow_10.svg"
+          graphic: "NorthArrow_02.svg"
+          # backgroundColor: "rgba(214, 214, 214, 200)"
+      datasource: !datasource
+        attributes:
+          title: !string {}
+          description: !string {}
+          area: !float {}
+          percentagem: !float {}
+          dominio: !string {}
+          subdominio: !string {}
+          familia: !string {}
+          objecto: !string {}
+          ident_gene: !string {}
+          ident_part: !string {}
+          diploma_es: !string {}
+          sumario: !string {}
+          texto: !string {}
+          hierarquia: !string {}
+          map: !map
+            maxDpi: 400
+            width: 400
+            height: 350
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createDataSource
+        processors:
+        - !createMap {}
+    - !createMap
+      # imageType: 'TYPE_USHORT_GRAY'
+      inputMapper: {map2k: map}
+      outputMapper: { mapSubReport: mapSubReport2k, mapContext: mapContext2k }
+    - !createScalebar
+      inputMapper: { scalebar2k: scalebar, mapContext2k: mapContext }
+      outputMapper: { scalebarSubReport: scalebarSubReport2k }
+    - !createNorthArrow
+      inputMapper: { map2k: map, northArrow2k: northArrow }
+      outputMapper: { northArrowSubReport: northArrowSubReport2k }

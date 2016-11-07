@@ -40,12 +40,19 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
                     var features = (new ol.format.GeoJSON()).readFeatures(result.data);
                     console.log(features);
                     confrontacaolayer.getSource().addFeatures(features);
-                    var extent = confrontacaolayer.getSource().getExtent();
-                    mapView.fit(extent, olMap.getSize());
+                    // var extent = confrontacaolayer.getSource().getExtent();
+                    // mapView.fit(extent, olMap.getSize());
 
                     var featureStore = Ext.create('GeoExt.data.store.Features', {
                         layer: confrontacaolayer,
-                        map: olMap
+                        map: olMap,
+                        sorters: [{
+                            property: "dominio",
+                            direction: "ASC"
+                        }, {
+                            property: "area",
+                            direction: "DESC"
+                        }]
                     });
 
                     vm.setStores(Ext.apply(vm.getStores(), {'featureStore': featureStore}));
@@ -61,6 +68,27 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
                 console.log('Problema no Server.Plantas.Pedidos.confrontacaoAsGeoJson', result.message);
             }
         });
+
+        // Para já, só serve para centrar o mapa...
+        Server.Plantas.Pedidos.pretensaoAsGeoJson({
+            idpretensao: pretensao
+        }, function (result, event) {
+            if (result.success) {
+                if (result.data.features) {
+                    var features = (new ol.format.GeoJSON()).readFeatures(result.data);
+                    console.log(features);
+
+                    var extent = features[0].getGeometry().getExtent();
+                    // var featureCenter = ol.extent.getCenter(extent);
+
+                    mapView.fit(extent, olMap.getSize());
+
+                }
+            } else {
+                console.log('Problema no Server.Plantas.Pedidos.confrontacaoAsGeoJson', result.message);
+            }
+        });
+
     },
 
     onAfterLayersLoaded: function (view) {
@@ -133,174 +161,174 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
 
 
         /*
-                var stringifyFunc = ol.coordinate.createStringXY(0);
-                var out = stringifyFunc(center);
+         var stringifyFunc = ol.coordinate.createStringXY(0);
+         var out = stringifyFunc(center);
 
-                var spec = {
-                    layout: layoutname,
-                    outputFilename: printid,
-                    attributes: {
-                        centro: out,
-                        pedido: printid,
-                        requerente: name,
-                        purpose: purposeName
-                    }
-                };
+         var spec = {
+         layout: layoutname,
+         outputFilename: printid,
+         attributes: {
+         centro: out,
+         pedido: printid,
+         requerente: name,
+         purpose: purposeName
+         }
+         };
 
-                var util = GeoExt.data.MapfishPrintProvider;
-                var serializedLayers = util.getSerializedLayers(
-                    olMap,
-                    function (layer) {
-                        //console.log(layer);
-                        // do not print the extent layer
-                        //var isExtentLayer = (extent === layer);
-                        //console.log('Layer ' + layer.get('title') + ' → ' + (!isExtentLayer && layer.getVisible()));
-                        //console.log('Layer ' + layer.get('title') + ' → ' + (layer.get('layer') == 'carto2_5k' || layer.get('layer') == 'carto10k') );
-                        return (layer.get('title') == 'Detail');
-                        //return !isExtentLayer && layer.getVisible();
-                    }
-                );
+         var util = GeoExt.data.MapfishPrintProvider;
+         var serializedLayers = util.getSerializedLayers(
+         olMap,
+         function (layer) {
+         //console.log(layer);
+         // do not print the extent layer
+         //var isExtentLayer = (extent === layer);
+         //console.log('Layer ' + layer.get('title') + ' → ' + (!isExtentLayer && layer.getVisible()));
+         //console.log('Layer ' + layer.get('title') + ' → ' + (layer.get('layer') == 'carto2_5k' || layer.get('layer') == 'carto10k') );
+         return (layer.get('title') == 'Detail');
+         //return !isExtentLayer && layer.getVisible();
+         }
+         );
 
-                //console.log('----------------------------------');
-                //console.log(serializedLayers);
-                //console.log('----------------------------------');
+         //console.log('----------------------------------');
+         //console.log(serializedLayers);
+         //console.log('----------------------------------');
 
-                var serializedLayers2k = JSON.parse(JSON.stringify(serializedLayers));
-                var serializedLayers10k = JSON.parse(JSON.stringify(serializedLayers));
+         var serializedLayers2k = JSON.parse(JSON.stringify(serializedLayers));
+         var serializedLayers10k = JSON.parse(JSON.stringify(serializedLayers));
 
-                // Preencher com camadas que vêem de uma tabela de base de dados, consoante o propósito da impressão.
-                // Começar com um store na ViewModel...
-                //
+         // Preencher com camadas que vêem de uma tabela de base de dados, consoante o propósito da impressão.
+         // Começar com um store na ViewModel...
+         //
 
-                switch (purposeId) {
-                    case 1:
-                    case 3:
-                    case 4:
-                        serializedLayers2k.push({
-                            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                            "customParams": {"VERSION": "1.1.1", "tiled": true},
-                            "layers": ["carto2_5k"],
-                            "opacity": 1,
-                            "styles": [""],
-                            "type": "WMS"
-                        });
-                        serializedLayers10k.push({
-                            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                            "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
-                            "layers": ["carto10k"],
-                            "opacity": 1,
-                            "styles": [""],
-                            "type": "WMS"
-                        });
-                        break;
-                    case 2:
-                        // 2k
-                        serializedLayers2k.push({
-                            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                            "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
-                            "layers": ["ran_etrs89"],
-                            "opacity": 1,
-                            "styles": [""],
-                            "type": "WMS"
-                        });
-                        serializedLayers2k.push({
-                            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                            "customParams": {"VERSION": "1.1.1", "tiled": true},
-                            "layers": ["carto2_5k"],
-                            "opacity": 0.4,
-                            "styles": [""],
-                            "type": "WMS"
-                        });
-                        // 10k
-                        serializedLayers10k.push({
-                            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                            "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
-                            "layers": ["ran_etrs89"],
-                            "opacity": 1,
-                            "styles": [""],
-                            "type": "WMS"
-                        });
-                        serializedLayers10k.push({
-                            "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
-                            "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
-                            "layers": ["carto10k"],
-                            "opacity": 0.4,
-                            "styles": [""],
-                            "type": "WMS"
-                        });
-                }
+         switch (purposeId) {
+         case 1:
+         case 3:
+         case 4:
+         serializedLayers2k.push({
+         "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+         "customParams": {"VERSION": "1.1.1", "tiled": true},
+         "layers": ["carto2_5k"],
+         "opacity": 1,
+         "styles": [""],
+         "type": "WMS"
+         });
+         serializedLayers10k.push({
+         "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+         "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+         "layers": ["carto10k"],
+         "opacity": 1,
+         "styles": [""],
+         "type": "WMS"
+         });
+         break;
+         case 2:
+         // 2k
+         serializedLayers2k.push({
+         "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+         "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+         "layers": ["ran_etrs89"],
+         "opacity": 1,
+         "styles": [""],
+         "type": "WMS"
+         });
+         serializedLayers2k.push({
+         "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+         "customParams": {"VERSION": "1.1.1", "tiled": true},
+         "layers": ["carto2_5k"],
+         "opacity": 0.4,
+         "styles": [""],
+         "type": "WMS"
+         });
+         // 10k
+         serializedLayers10k.push({
+         "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+         "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+         "layers": ["ran_etrs89"],
+         "opacity": 1,
+         "styles": [""],
+         "type": "WMS"
+         });
+         serializedLayers10k.push({
+         "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+         "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
+         "layers": ["carto10k"],
+         "opacity": 0.4,
+         "styles": [""],
+         "type": "WMS"
+         });
+         }
 
-                //serializedLayers.reverse();
+         //serializedLayers.reverse();
 
-                spec.attributes['map2k'] = {
-                    center: center,
-                    dpi: 200, // clientInfo.dpiSuggestions[0],
-                    layers: serializedLayers2k,
-                    projection: mapView.getProjection().getCode(),
-                    rotation: mapView.getRotation(),
-                    scale: 2000
-                };
+         spec.attributes['map2k'] = {
+         center: center,
+         dpi: 200, // clientInfo.dpiSuggestions[0],
+         layers: serializedLayers2k,
+         projection: mapView.getProjection().getCode(),
+         rotation: mapView.getRotation(),
+         scale: 2000
+         };
 
-                spec.attributes['map10k'] = {
-                    center: center,
-                    dpi: 200, // clientInfo.dpiSuggestions[0],
-                    layers: serializedLayers10k,
-                    projection: mapView.getProjection().getCode(),
-                    rotation: mapView.getRotation(),
-                    scale: 10000
-                };
+         spec.attributes['map10k'] = {
+         center: center,
+         dpi: 200, // clientInfo.dpiSuggestions[0],
+         layers: serializedLayers10k,
+         projection: mapView.getProjection().getCode(),
+         rotation: mapView.getRotation(),
+         scale: 10000
+         };
 
-                Ext.Ajax.request({
-                    //url: 'http://localhost:8080/print/print/plantas/report.pdf',
-                    url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    jsonData: spec,
-                    success: function (response, opts) {
-                        var obj = Ext.decode(response.responseText);
-                        console.dir(obj);
+         Ext.Ajax.request({
+         //url: 'http://localhost:8080/print/print/plantas/report.pdf',
+         url: 'http://geoserver.sig.cm-agueda.pt/print/print/plantas/report.pdf',
+         method: 'POST',
+         headers: {'Content-Type': 'application/json'},
+         jsonData: spec,
+         success: function (response, opts) {
+         var obj = Ext.decode(response.responseText);
+         console.dir(obj);
 
-                        var startTime = new Date().getTime();
-                        me.downloadWhenReady(me, startTime, obj);
+         var startTime = new Date().getTime();
+         me.downloadWhenReady(me, startTime, obj);
 
-                        Ext.Msg.alert(Ext.String.format("Print request {0}".translate(), printid),
-                            'Your Location Plan can take up to 30 seconds to be ready.'.translate() + '<br/>' +
-                            'It will be downloaded automatically.'.translate() + '<br/>' +
-                            'Please wait.'.translate());
+         Ext.Msg.alert(Ext.String.format("Print request {0}".translate(), printid),
+         'Your Location Plan can take up to 30 seconds to be ready.'.translate() + '<br/>' +
+         'It will be downloaded automatically.'.translate() + '<br/>' +
+         'Please wait.'.translate());
 
-                        /!*
-                         downloadURL: "/print/print/report/47470980-2975-418e-8841-08261c9fd6ea@dbfe37f9-02ef-4f4b-9441-4e3d0247733c"
-                         ref: "47470980-2975-418e-8841-08261c9fd6ea@dbfe37f9-02ef-4f4b-9441-4e3d0247733c"
-                         statusURL: "/print/print/status/47470980-2975-418e-8841-08261c9fd6ea@dbfe37f9-02ef-4f4b-9441-4e3d0247733c.json"
-                         *!/
+         /!*
+         downloadURL: "/print/print/report/47470980-2975-418e-8841-08261c9fd6ea@dbfe37f9-02ef-4f4b-9441-4e3d0247733c"
+         ref: "47470980-2975-418e-8841-08261c9fd6ea@dbfe37f9-02ef-4f4b-9441-4e3d0247733c"
+         statusURL: "/print/print/status/47470980-2975-418e-8841-08261c9fd6ea@dbfe37f9-02ef-4f4b-9441-4e3d0247733c.json"
+         *!/
 
-                        var folderpdf = 'print-requests/' + Math.floor(printid / 1000);
-                        var pathpdf = folderpdf + '/' + printid + '.pdf';
+         var folderpdf = 'print-requests/' + Math.floor(printid / 1000);
+         var pathpdf = folderpdf + '/' + printid + '.pdf';
 
-                        Server.Plantas.Pedidos.update({
-                            gid: printid,
-                            pdf: pathpdf,
-                            download_cod: obj.downloadURL,
-                            //ref: obj.ref,
-                            statusURL: obj.statusURL
-                        }, function (result, event) {
-                            if (result) {
-                                if (result.success) {
-                                    console.log('Correu bem o update', result.message);
-                                } else {
-                                    console.log('Correu mal o update', result.message);
-                                }
-                            } else {
-                                console.log('Correu mal o update', result.message);
-                            }
-                        });
-                    },
+         Server.Plantas.Pedidos.update({
+         gid: printid,
+         pdf: pathpdf,
+         download_cod: obj.downloadURL,
+         //ref: obj.ref,
+         statusURL: obj.statusURL
+         }, function (result, event) {
+         if (result) {
+         if (result.success) {
+         console.log('Correu bem o update', result.message);
+         } else {
+         console.log('Correu mal o update', result.message);
+         }
+         } else {
+         console.log('Correu mal o update', result.message);
+         }
+         });
+         },
 
-                    failure: function (response, opts) {
-                        console.log('server-side failure with status code ' + response.status);
-                    }
-                });
-        */
+         failure: function (response, opts) {
+         console.log('server-side failure with status code ' + response.status);
+         }
+         });
+         */
 
 
     }

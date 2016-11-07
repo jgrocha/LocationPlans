@@ -18,7 +18,9 @@ Ext.define('Admin.view.plantas.Confrontacao', {
     // headerPosition: 'bottom',
     frameHeader: true, // false,
     //frame: true,
-    title: '{title}',
+    bind: {
+        title: '{title}'
+    },
     //layout: 'fit',
     layout: {
         type: 'hbox',
@@ -61,11 +63,12 @@ Ext.define('Admin.view.plantas.Confrontacao', {
         }, {
             text: 'Diplomas',
             dataIndex: 'diploma_es',
-            width: 140
+            width: 140,
+            hidden: true
         }, {
             text: 'Área/distância',
             dataIndex: 'area',
-            width: 140,
+            width: 120,
             align: 'end',
             renderer  : function(value, metaData, record, rowIndex, colIndex, store, view) {
                 // console.log('renderer');
@@ -87,6 +90,32 @@ Ext.define('Admin.view.plantas.Confrontacao', {
                 }
                 return resultado;
             }
+        }, {
+            text: '%',
+            dataIndex: 'percentagem',
+            width: 60,
+            align: 'end',
+            renderer  : function(value, metaData, record, rowIndex, colIndex, store, view) {
+                // console.log('renderer');
+                // console.log(record);
+                var resultado;
+                // One of 'Point', 'LineString', 'LinearRing', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon', 'GeometryCollection', 'Circle'.
+                switch (record.get('geometry').getType()) {
+                    case 'LineString':
+                    case 'MultiLineString':
+                        resultado = '';
+                        break;
+                    case 'Polygon':
+                    case 'MultiPolygon':
+                        resultado = Ext.util.Format.number(value, '0,0')  + ' %';
+                        break;
+                    default:
+                        resultado = '';
+                        break;
+                }
+                return resultado;
+            }
+
         }],
         selModel: {
             allowDeselect: true

@@ -77,7 +77,7 @@ var Pedidos = {
     },
 
     confrontacaoAsGeoJson: function (params, callback) {
-        console.log('Plantas.Pedidos.asGeoJson');
+        console.log('Plantas.Pedidos.confrontacaoAsGeoJson');
         console.log(params);
 
         var idpretensao = 0;
@@ -92,9 +92,9 @@ var Pedidos = {
          SELECT 'Feature' As type, ST_AsGeoJSON(lgeom.the_geom)::json As geometry, row_to_json(lprop) As properties
          FROM infprevia.confrontacao As lgeom
          INNER JOIN (
-         SELECT id, idpretensao, camada, area, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
+         SELECT id, idpretensao, camada, area, percentagem, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
          sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador,
-         concat_ws(' → ', dominio::text, subdominio::text, familia::text, objecto::text, ident_gene::text, ident_part::text) as hierarquia
+         concat_ws(' <br/> → ', dominio::text, subdominio::text, familia::text, objecto::text, ident_gene::text, ident_part::text) as hierarquia
           FROM infprevia.confrontacao
          where idpretensao = ${idpretensao}
          ) As lprop
@@ -103,11 +103,63 @@ var Pedidos = {
          SELECT 'Feature' As type, ST_AsGeoJSON(lgeom.the_geom)::json As geometry, row_to_json(lprop) As properties
          FROM infprevia.confrontacaodistancia As lgeom
          INNER JOIN (
-         SELECT id, idpretensao, camada, area, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
+         SELECT id, idpretensao, camada, area, percentagem, dominio, subdominio, familia, objecto, ident_gene, ident_part, diploma_es, 
          sumario, texto, parecer, buffer, entidade, dataregisto, idutilizador,
-         concat_ws(' → ', dominio::text, subdominio::text, familia::text, objecto::text, ident_gene::text, ident_part::text) as hierarquia
+         concat_ws(' <br/> → ', dominio::text, subdominio::text, familia::text, objecto::text, ident_gene::text, ident_part::text) as hierarquia
           FROM infprevia.confrontacaodistancia
          where idpretensao = ${idpretensao}
+         ) As lprop
+         ON lgeom.id = lprop.id
+         -- fim de query
+         ) As f )  As fc`;
+
+        console.log(sql);
+        var detail = global.App.connection.split('/');
+        pg.connect({
+            user: detail[2].split('@')[0].split(':')[0],
+            password: detail[2].split('@')[0].split(':')[1], // 'geobox',
+            database: detail[3], // 'geotuga',
+            host: detail[2].split('@')[1].split(':')[0], // 'localhost',
+            port: detail[2].split('@')[1].split(':')[1] ? detail[2].split('@')[1].split(':')[1] : "5432",
+            application_name: 'asGeoJson'
+        }, function (err, client, done) {
+            if (err)
+                return dberror('Database connection error', '', err, callback);
+            console.log(sql);
+            client.query(sql, function (err, result) {
+                if (err)
+                    return dberror('Database error', `${err.toString()} SQL: ${sql}`, err, callback);
+                console.log(result.rows[0].geojson);
+                callback(null, {
+                    //data: result.rows,
+                    data: result.rows[0].geojson,
+                    total: 1
+                });
+                // free this client, from the client pool
+                done();
+            });
+        });
+    },
+
+    pretensaoAsGeoJson: function (params, callback) {
+        console.log('Plantas.Pedidos.pretensaoAsGeoJson');
+        console.log(params);
+
+        var idpretensao = 0;
+        if (params.idpretensao && parseInt(params.idpretensao) > 0) {
+            idpretensao = params.idpretensao;
+        }
+
+        var sql = `SELECT row_to_json(fc) as geojson
+         FROM ( SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features
+         FROM (
+         -- query
+         SELECT 'Feature' As type, ST_AsGeoJSON(lgeom.the_geom)::json As geometry, row_to_json(lprop) As properties
+         FROM infprevia.pretensao As lgeom
+         INNER JOIN (
+         SELECT id, designacao, relatorio, dataregisto, datamodificacao, idutilizador, area
+         FROM infprevia.pretensao
+         where id = ${idpretensao}
          ) As lprop
          ON lgeom.id = lprop.id
          -- fim de query
@@ -441,7 +493,7 @@ var Pedidos = {
             SELECT 'Plantas de localização: ' || gid, ${userid}, ST_Multi(ST_Union(pretensao))
             FROM plantas.pedidodetail
             WHERE gid = ${gid} and (st_geometrytype(pretensao) = 'ST_Polygon' OR st_geometrytype(pretensao) = 'ST_MultiPolygon')
-            GROUP BY gid RETURNING id`;
+            GROUP BY gid RETURNING *`;
             console.log(sql);
 
             client.query(sql, function (err, result) {

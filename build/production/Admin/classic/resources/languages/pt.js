@@ -397,4 +397,7 @@ Translation = [{
 }, {
     "id": 'Purpose',
     "translation": 'Finalidade'
+}, {
+    "id": 'Preview',
+    "translation": 'Antever'
 }];

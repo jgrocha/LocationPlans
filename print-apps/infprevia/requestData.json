@@ -1,32 +1,32 @@
 {
   "layout": "A4_portrait",
-  "outputFilename": 19659,
+  "outputFilename": 19670,
   "attributes": {
-    "centro": "-25660, 100442",
-    "pedido": 19659,
+    "centro": "-26013, 99708",
+    "pedido": 19670,
     "requerente": "Gustavinho Rocha",
     "purpose": "Informa\u00e7\u00e3o Pr\u00e9via",
     "datasource": [
       {
-        "title": "PLANTA ORDENAMENTO",
-        "description": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo urbano, na categoria de solo urbanizado \u2013 Espa\u00e7os Residenciais Tipo 1.",
-        "area": 351.795427135552,
-        "dominio": "PLANTA ORDENAMENTO",
-        "subdominio": "classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo",
-        "familia": "solo urbano - urbanizado",
-        "objecto": "espa\u00e7o residencial",
-        "ident_gene": "espa\u00e7o residencial tipo 1",
-        "ident_part": "n\u00e3o se aplica",
-        "diploma_es": "Art. 13\u00ba a 25\u00ba ; 61\u00ba a 72\u00ba ; 81\u00ba a 85\u00ba",
-        "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicad...",
-        "texto": "O instrumento de planeamento e gest\u00e3o territorial para o local \u00e9 o plano diretor municipal (PDM),...",
-        "hierarquia": "PLANTA ORDENAMENTO \u2192 classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo \u2192 solo urbano - urbanizado \u2192 espa\u00e7o res...",
+        "title": "PLANTA CONDICIONANTES",
+        "description": "A parcela assinalada est\u00e1 dentro da REN.",
+        "area": 14157.0800000008,
+        "dominio": "PLANTA CONDICIONANTES",
+        "subdominio": "\u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C",
+        "familia": "Reserva Ecol\u00f3gica Nacional",
+        "objecto": "Zonas Amea\u00e7adas pelas Cheias",
+        "ident_gene": null,
+        "ident_part": null,
+        "diploma_es": null,
+        "sumario": "A parcela assinalada est\u00e1 dentro da REN.",
+        "texto": null,
+        "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Na...",
         "map": {
           "center": [
-            -25642.71063039885,
-            100427.884002273
+            -26017.1881256214,
+            99740.6472149085
           ],
-          "dpi": 72,
+          "dpi": 200,
           "projection": "EPSG:3763",
           "scale": 2000,
           "layers": [
@@ -40,128 +40,48 @@
                       "coordinates": [
                         [
                           [
-                            -25652.0172360977,
-                            100446.620985944
+                            -26040.2881256214,
+                            99821.8472149085
                           ],
                           [
-                            -25649.6440247,
-                            100450.698041422
+                            -25929.6881256214,
+                            99743.4472149085
                           ],
                           [
-                            -25633.4040247,
-                            100430.258041422
+                            -26048.6881256214,
+                            99659.4472149085
                           ],
                           [
-                            -25635.6440247,
-                            100414.858041422
+                            -26104.6881256214,
+                            99730.8472149085
                           ],
                           [
-                            -25645.4321029975,
-                            100405.069963124
-                          ],
-                          [
-                            -25645.3913166203,
-                            100405.547240159
-                          ],
-                          [
-                            -25645.0029764624,
-                            100409.949901598
-                          ],
-                          [
-                            -25644.994285116,
-                            100410.19329915
-                          ],
-                          [
-                            -25644.5977034243,
-                            100414.834258182
-                          ],
-                          [
-                            -25644.5613837929,
-                            100415.68604976
-                          ],
-                          [
-                            -25644.6044407548,
-                            100415.902346329
-                          ],
-                          [
-                            -25644.5698480732,
-                            100416.097045055
-                          ],
-                          [
-                            -25644.9887986708,
-                            100426.273573363
-                          ],
-                          [
-                            -25645.0422564001,
-                            100426.516019389
-                          ],
-                          [
-                            -25645.1581476135,
-                            100427.739503141
-                          ],
-                          [
-                            -25646.1297118241,
-                            100432.82277352
-                          ],
-                          [
-                            -25646.471446946,
-                            100433.964702582
-                          ],
-                          [
-                            -25646.5271074809,
-                            100434.288097668
-                          ],
-                          [
-                            -25648.4256678821,
-                            100439.6412422
-                          ],
-                          [
-                            -25648.5566732793,
-                            100439.848786697
-                          ],
-                          [
-                            -25648.6117821966,
-                            100440.125782304
-                          ],
-                          [
-                            -25649.0357074964,
-                            100441.02096204
-                          ],
-                          [
-                            -25649.7179923583,
-                            100442.294531253
-                          ],
-                          [
-                            -25649.8568525332,
-                            100442.641624028
-                          ],
-                          [
-                            -25652.0172360977,
-                            100446.620985944
+                            -26040.2881256214,
+                            99821.8472149085
                           ]
                         ]
                       ]
                     },
                     "properties": {
-                      "id": 1625,
-                      "idpretensao": 630,
-                      "camada": "ip_ordenamento.espaco_residencial_tipo1",
-                      "area": 351.795427135552,
-                      "dominio": "PLANTA ORDENAMENTO",
-                      "subdominio": "classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo",
-                      "familia": "solo urbano - urbanizado",
-                      "objecto": "espa\u00e7o residencial",
-                      "ident_gene": "espa\u00e7o residencial tipo 1",
-                      "ident_part": "n\u00e3o se aplica",
-                      "diploma_es": "Art. 13\u00ba a 25\u00ba ; 61\u00ba a 72\u00ba ; 81\u00ba a 85\u00ba",
-                      "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo urbano, na categoria de solo urbanizado \u2013 Espa\u00e7os Residenciais Tipo 1.",
-                      "texto": "O instrumento de planeamento e gest\u00e3o territorial para o local \u00e9 o plano diretor municipal (PDM), publicado no Di\u00e1rio\nda Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012, encontrando-se o terreno inserido em solo urbano, na categoria de solo\nurbanizado \u2013 Espa\u00e7os Residenciais Tipo 1, sendo aplic\u00e1veis \u00e0 opera\u00e7\u00e3o urban\u00edstica pretendida os seguintes artigos: 13.\u00ba a 25.\u00ba, 61.\u00ba a 74.\u00ba e 81.\u00ba a\n85.\u00ba da 1.\u00aa Revis\u00e3o do PDM.\n\nO solo urbanizado integra o tecido urbano consolidado ou em vias de consolida\u00e7\u00e3o que se encontra infraestruturado ou em\nvias de infraestrutura\u00e7\u00e3o, assim como as estruturas ecol\u00f3gicas do tecido urbano, e onde as interven\u00e7\u00f5es a realizar dever\u00e3o manter as carater\u00edsticas\nmorfol\u00f3gicas do tecido existente.\n\nI. Disposi\u00e7\u00f5es Gerais\n\n1.Alinhamento\n\nNas vias cujo perfil atual j\u00e1 se encontre comprometido \npor constru\u00e7\u00f5es existentes, aplica-se o alinhamento dominante, sendo que\nna falta de defini\u00e7\u00e3o do mesmo, aplica-se o estabelecido no artigo 20.\u00ba/A1  do C\u00f3digo Regulamentar do Munic\u00edpio publicado\natrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de\noutubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR,\nN.\u00ba131, de 10 de julho relativamente \u00e0s zonas de constru\u00e7\u00e3o interdita, nomeadamente:\n\na)  Sistema secund\u00e1rio \u2013 5m;\nb)  Sistema terci\u00e1rio \u2013 4 m.\n\n2. Recuo\nA fachada principal dos novos edif\u00edcios deve cumprir o recuo dominante existente.\nExcecionalmente \u00e9 permitido um recuo superior ao dominante, desde que verificadas as seguintes condi\u00e7\u00f5es:\n\na)  Desde que seja para cumprir quest\u00f5es de salubridade e habitabilidade, face \u00e0 reduzida dimens\u00e3o da parcela;\nb)  Desde que se trate de edifica\u00e7\u00f5es isoladas e a frente da parcela seja significativamente superior \u00e0s parcelas envolventes.\n\nNos casos constantes da al\u00ednea a) anterior, ter\u00e1 que ser criada uma falsa fachada ou\nqualquer outro elementos arquitet\u00f3nico, de forma a garantir que seja cumprido o recuo dominante das fachadas da envolvente.\n\nNa falta de defini\u00e7\u00e3o do recuo dominante, o recuo m\u00ednimo aplicar \u00e9 de 5 metros, conforme definido no artigo 21.\u00ba/A1 do\nC\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho \n\n3. Aterros, escava\u00e7\u00f5es e muros de suporte\n\nAs obras de constru\u00e7\u00e3o onde se proceda a aterro ou escava\u00e7\u00e3o dever\u00e1 assegurar, sempre que tecnicamente poss\u00edvel, entre a\nnova plataforma resultante da constru\u00e7\u00e3o e o terreno natural, uma pendente igual ou inferior a 60%.\n\nS\u00f3 \u00e9 permitida a constru\u00e7\u00e3o de muros de\nsuporte de terras que estabele\u00e7am diferen\u00e7a de cotas entre plataformas\ncontiguas ou entre plataformas e o terreno natural inferiores a 3 metros, com\nexce\u00e7\u00e3o dos muros de suporte de vias ou em situa\u00e7\u00f5es que seja tecnicamente\ninvi\u00e1vel a conjuga\u00e7\u00e3o da altura m\u00e1xima estabelecida com outras t\u00e9cnicas de\nsuporte de terras.\n\n4.Afastamentos\n\nOs afastamentos m\u00ednimos, medidos entre as fachadas da edifica\u00e7\u00e3o e os limites laterais da parcela, contanto para o efeito\nqualquer sali\u00eancia relativamente ao plano das fachadas, s\u00e3o os seguintes:\n\na) Edifica\u00e7\u00f5es at\u00e9 dois pisos acima da cota de soleira \u2013 3m;\nb) Edifica\u00e7\u00f5es com mais de dois pisos acima da cota de soleira ou de 6m de altura de fachada \u2013 4m;\nc) Edifica\u00e7\u00f5es com uso industrial ou de armazenagem \u2013 5m;\n\nPoder\u00e3o ser admitidos afastamentos inferiores ao definido na al\u00ednea c), desde que sejam cumpridas cumulativamente as seguintes condi\u00e7\u00f5es:\n\na) Tenham sido iniciadas antes de 1995, servindo de comprovativo os ortofotomapas do CNIG de 1995 ou as c\u00f3pias de documentos entregues no\nMinist\u00e9rio da Economia at\u00e9 \u00e0 referida data, para a regulariza\u00e7\u00e3o da atividade industrial;\nb) Desde que a amplia\u00e7\u00e3o resulte da necessidade de alterar o layout, n\u00e3o sendo poss\u00edvel cumprir o afastamento de 5 metros;\nc) N\u00e3o colidam com a \u00e1rea \u201cnon aedificandi\u201d das vias do sistema prim\u00e1rio e secund\u00e1rio com as quais os terrenos confinem diretamente.\n\n\u00c9 admitida a constru\u00e7\u00e3o em banda ou geminada, devendo o afastamento \u00e0s estremas livres ser o definido nos par\u00e1grafos anteriores.\n\n5. Pisos\n\nOs edif\u00edcios em banda ou geminados n\u00e3o podem ter uma diferen\u00e7a do n\u00famero de pisos superior a dois acima da cota de soleira.\n\nAs constru\u00e7\u00f5es que confinem com dois arruamentos desnivelados e que possuam duas frentes, n\u00e3o poder\u00e3o ultrapassar os\ndois pisos acima da cota de soleira do arruamento situado \u00e0 maior cota.\n\nNo caso em que a diferen\u00e7a de pisos resultar na cria\u00e7\u00e3o de uma empena cega, esta dever\u00e1 ser alvo de tratamento\narquitet\u00f3nico que passar\u00e1 pelo seu revestimento com materiais utilizados na fachada principal.\n\nO n\u00famero m\u00e1ximo de pisos abaixo da cota de soleira \u00e9 de 3, contando para o efeito, o arruamento situado \u00e0 menor cota.\n\nOs pisos situados abaixo da cota de soleira que seja poss\u00edvel observar a fachada posterior, ter\u00e3o que obedecer \u00e0s seguintes regras:\n\na) Ser integradas visualmente na parcela onde se desenvolvem, devendo privilegiar-se as situa\u00e7\u00f5es de socalco;\nb) O talude entre o limite do \u00faltimo piso da cave e o limite doterreno n\u00e3o pode ser superior a 30%;\nc) As fachadas abaixo da cota de soleira dever\u00e3o apresentar um tratamento arquitet\u00f3nico semelhante ao da fachada principal do edif\u00edcio.\n\n6. Logradouros\n\nS\u00f3 poder\u00e1 ser impermeabilizada, no m\u00e1ximo, 50% da \u00e1rea n\u00e3o constru\u00edda da parcela ou lote numa profundidade de 50 metros a\npartir do limite do espa\u00e7o publico, admitindo-se nas parcelas ou lotes de reduzida dimens\u00e3o que este valor seja ultrapassado, desde que se destine a\npavimenta\u00e7\u00e3o do acesso \u00e0 garagem.\n\nPara al\u00e9m dos 50 metros a partir da via geradora de per\u00edmetro, n\u00e3o s\u00e3o permitidas quaisquer impermeabiliza\u00e7\u00f5es que n\u00e3o\nas que resultem das condi\u00e7\u00f5es a edificar e dos seus acessos.\n\n7. Estacionamento\nAs novas constru\u00e7\u00f5es, bem como as que venham a ser alvo de amplia\u00e7\u00e3o igual ou superior a 50% da \u00e1rea de constru\u00e7\u00e3o licenciada,\ndevem ser garantidos os seguintes par\u00e2metros quantitativos m\u00ednimos de estacionamento privativo:\n\na) 1 lugar de estacionamento de ve\u00edculos ligeiros por fogo de tipologia T0, T1 e T2 para edif\u00edcios plurifamiliares;\nb) 2 lugares de estacionamento de ve\u00edculos ligeiros por fogo de tipologia T3 e T4 para edif\u00edcios plurifamiliares;\nc) 3 lugares de estacionamento de ve\u00edculos ligeiros por fogo de tipologias superior a T4 para edif\u00edcios plurifamiliares;\nd) 2 lugares de estacionamento de ve\u00edculos por edif\u00edcio unifamiliar;\ne) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 50 m2 de \u00e1rea total de constru\u00e7\u00e3o para com\u00e9rcio e ou servi\u00e7os com \u00e1rea total de constru\u00e7\u00e3o igual ou inferior a 1000 m2, devendo ser assegurados locais adequados para cargas e descargas;\nf) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 25 m2 de \u00e1rea total de constru\u00e7\u00e3o para com\u00e9rcio e ou servi\u00e7os com \u00e1rea total de\nconstru\u00e7\u00e3o superior a 1000 m2, devendo ser assegurados locais adequados para cargas e descargas;\ng) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 200m2 de \u00e1rea total de constru\u00e7\u00e3o para ind\u00fastria e ou armaz\u00e9ns, devendo\nser assegurados locais adequados para cargas e descargas;\nh) 1 lugar de estacionamento de ve\u00edculos pesados por cada 1000m2 de \u00e1rea total de constru\u00e7\u00e3o para ind\u00fastria e ou armaz\u00e9ns, devendo\nser assegurados locais adequados para cargas e descargas;\ni) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 5 quartos para os estabelecimentos hoteleiros, acrescido de 1 lugar de ve\u00edculo\npesado de passageiros por cada 50 quartos, com o m\u00ednimo de 1 lugar;\nj) 1 lugar de estacionamento de ve\u00edculos ligeiros  por cada 75 m2 de \u00e1rea total de constru\u00e7\u00e3o para equipamentos, acrescido de 1 lugar para ve\u00edculo pesado de\npassageiros  por cada 500 m2 de \u00e1rea total de constru\u00e7\u00e3o, quando o uso em causa o justificar;\nk) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 50 m2 de \u00e1rea total de constru\u00e7\u00e3o para oficinas autom\u00f3veis.\n\nDever\u00e1 ser previsto estacionamento p\u00fablico correspondente, no m\u00ednimo, \u00e0s percentagens a seguir indicadas, aplicadas aos\nvalores de estacionamento obtidos para cada uma das al\u00edneas referidas anteriormente:\n\na) 20% para os usos constantes da al\u00ednea a), b), c), e), f), j) e k), podendo no caso do uso ser oficina, o mesmo situar-se no interior do lote;\nb) 10% para os usos constantes na al\u00ednea g).\n\nA C\u00e2mara Municipal pode deliberar a dispensa total ou parcial do cumprimento da dota\u00e7\u00e3o de estacionamento\nestabelecido anteriormente, desde que se verifique uma das seguintes situa\u00e7\u00f5es:\na) O seu cumprimento implicar a modifica\u00e7\u00e3o da arquitetura original de edif\u00edcios ou na continuidade do conjunto edificado, que pelo seu\nvalor arquitet\u00f3nico intr\u00ednseco, pela sua integra\u00e7\u00e3o em conjuntos carater\u00edsticos\nou em \u00e1reas de reconhecido valor paisag\u00edstico, devem ser preservados;\nb) A impossibilidade ou a inconveni\u00eancia de natureza t\u00e9cnica, nomeadamente em fun\u00e7\u00e3o das carater\u00edsticas geol\u00f3gicas do terreno, dos n\u00edveis\nfre\u00e1ticos, do condicionamento da seguran\u00e7a das edifica\u00e7\u00f5es envolventes, da interfer\u00eancia com equipamentos e infraestruturas ou da funcionalidade dos\nsistemas p\u00fablicos de circula\u00e7\u00e3o de pessoas e ve\u00edculos;\nc) As dimens\u00f5es da parcela ou a sua situa\u00e7\u00e3o urbana tornarem tecnicamente desaconselh\u00e1vel a constru\u00e7\u00e3o do estacionamento com a dota\u00e7\u00e3o\nexigida, por raz\u00f5es de economia e funcionalidade interna. \n\nA n\u00e3o dota\u00e7\u00e3o dos lugares de estacionamento pelas raz\u00f5es referidas anteriormente, d\u00e1 lugar ao pagamento de uma compensa\u00e7\u00e3o\nao Munic\u00edpio definida nos termos e condi\u00e7\u00f5es estipuladas no artigo 17.\u00ba/A1 do C\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa\ns\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13,\nde 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho.\n\n8. Ced\u00eancias de \u00e1reas para espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva e de \u00e1reas para equipamentos de utiliza\u00e7\u00e3o coletiva\n\nOs par\u00e2metros para o dimensionamento das \u00e1reas destinadas a espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva e de equipamentos de\nutiliza\u00e7\u00e3o coletiva, em opera\u00e7\u00f5es de loteamento ou opera\u00e7\u00f5es urban\u00edsticas de impacte semelhante a um loteamento, s\u00e3o os seguintes:\n\na) Para espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva:\na.1. 28 m2/fogo, no caso de habita\u00e7\u00e3o unifamiliar;\na.2. 0,23 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de habita\u00e7\u00e3o coletiva;\na.3. 0,28 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de com\u00e9rcio ou servi\u00e7os;\na.4. 0,23 m2/m2 de \u00e1rea de constru\u00e7\u00e3o, no caso de ind\u00fastria ou armaz\u00e9ns;\nb) Para equipamentos de utiliza\u00e7\u00e3o coletiva:\nb.1. 35 m2/fogo, no caso de habita\u00e7\u00e3o unifamiliar;\nb.2. 0,29 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de habita\u00e7\u00e3o coletiva;\nb.3. 0,25 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de com\u00e9rcio ou servi\u00e7os;\nb.4. 0,10 m2/m2 de \u00e1rea de constru\u00e7\u00e3o, no caso de ind\u00fastria ou armaz\u00e9ns;\n\nAs parcelas de terreno resultante da aplica\u00e7\u00e3o do disposto anteriormente, passar\u00e3o a integrar o dom\u00ednio municipal atrav\u00e9s de ced\u00eancia gratuita ao munic\u00edpio.\n\nO Munic\u00edpio pode prescindir da integra\u00e7\u00e3o do dom\u00ednio municipal da totalidade ou parte das parcelas referidas anteriormente, de acordo com o estabelecido nos artigos 15.\u00ba/A1 e 16.\u00ba/A1 C\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho.\n\n9. Anexos\nOs anexos ter\u00e3o de cumprir as seguintes condi\u00e7\u00f5es:\na) N\u00famero m\u00e1ximo de pisos acima da cota de soleira, admitindo-se 1 destes em cave;\nb) A altura m\u00e1xima da fachada \u00e9 de 6 m, exceto nos casos em que os anexos se encontrem implantados \u00e0 estrema, n\u00e3o podendo nestes casos possuir\numa empena superior a 3,5 metros de altura relativamente \u00e0s parcelas vizinhas;\nc) Caso n\u00e3o sejam implantados \u00e0s estremas, dever\u00e3o cumprir os afastamentos m\u00ednimos impostos para a edifica\u00e7\u00e3o principal.\n\nPara al\u00e9m das condi\u00e7\u00f5es referidas anteriormente, os anexos ter\u00e3o sempre que ter em considera\u00e7\u00e3o a envolvente\nurbana e n\u00e3o contribuir para a descarateriza\u00e7\u00e3o urban\u00edstica e arquitet\u00f3nica da edifica\u00e7\u00e3o principal aos quais se encontram associados, assim como do\naglomerado urbano em que se inserem.\n\n10. Floresta\u00e7\u00e3o\n\u00c9 proibida a planta\u00e7\u00e3o de esp\u00e9cies de crescimento r\u00e1pido, classificadas de acordo com a legisla\u00e7\u00e3o em vigor.\n\n11.  [Autor des1] \u00c1reas Abrangidas por cheias\n\nNas \u00e1reas abrangidas pelas cheias, as cotas dos pisos inferiores das edifica\u00e7\u00f5es dever\u00e3o ser superiores \u00e0 cota local da m\u00e1xima cheia, que \u00e9 de 12,00 m.\nnestas \u00e1reas \u00e9 interdita a constru\u00e7\u00e3o de novas estruturas de sa\u00fade, estabelecimentos que utilizem subst\u00e2ncias perigosas e centrais el\u00e9tricas.\n\nII. Disposi\u00e7\u00f5es Especificas\n\nOs Espa\u00e7os residenciais s\u00e3o \u00e1reas consolidadas ou em vias de consolida\u00e7\u00e3o, ocupadas predominantemente por\nedif\u00edcios unifamiliares, com a presen\u00e7a no interior do tecido urbano, de edif\u00edcios plurifamiliares, agregados ou isolados, podendo acolher outros usos\ndesde que compat\u00edveis com a utiliza\u00e7\u00e3o dominante.\n\n1. Usos e condi\u00e7\u00f5es de ocupa\u00e7\u00e3o\na) Habita\u00e7\u00e3o;\nb) Comercio;\nc) Servi\u00e7os;\nd) Equipamentos de Utiliza\u00e7\u00e3o Coletiva.\nS\u00e3o usos compat\u00edveis\n\na) Ind\u00fastrias do tipo 3, de acordo com a legisla\u00e7\u00e3o em vigor;\nb) Armaz\u00e9ns;\nc) Oficinas de ve\u00edculos autom\u00f3veis, desde que n\u00e3o encostem a edif\u00edcios habitacionais;\n\nEmpreendimentos tur\u00edsticos.\n2. Regime de Edificabilidade\nAs regras a aplicar s\u00e3o as seguintes:\n\na) N\u00famero de pisos acima da cota de soleira com a exce\u00e7\u00e3o de moradias unifamiliares, ind\u00fastrias, armaz\u00e9ns e oficinas \u2013 3;\nb) N\u00famero m\u00e1ximo de pisos acima da cota de soleira para moradias unifamiliares \u2013 2;\nc) N\u00famero m\u00e1ximo de pisos acima da cota de soleira para ind\u00fastrias, armaz\u00e9ns e oficinas \u2013 2;\nd) Altura m\u00e1xima da fachada para ind\u00fastrias, armaz\u00e9ns e oficinas \u2013 9 m;\ne) \u00c1rea total de anexos \u2013 15% da \u00e1rea da parcela ou lote;\nf)  \u00cdndice m\u00e1ximo de ocupa\u00e7\u00e3o do solo \u2013 0,75.\n\nExcecionalmente permite-se um n\u00famero de pisos superior ao constante na anterior al\u00ednea a), at\u00e9 um m\u00e1ximo de 4 pisos,\ndesde que se cumpra pelo menos uma das seguintes condi\u00e7\u00f5es:\n\na) Os edif\u00edcios se localizem em encostas com inclina\u00e7\u00e3o significativa, devendo ter-se em aten\u00e7\u00e3o que:\n1.  \u00c9 proibida a execu\u00e7\u00e3o de anexos ou garagens fora da \u00e1rea de implanta\u00e7\u00e3o do edif\u00edcio;\n2.  Quando poss\u00edvel, a \u00e1rea da cobertura resultante do desenvolvimento do edif\u00edcio em socalcos, poder\u00e1 apresentar um tratamento de\nespa\u00e7o p\u00fablico e de circula\u00e7\u00e3o pedonal.\nb)  Os edif\u00edcios apresentem uma componente de espa\u00e7o p\u00fablico envolvente de dimens\u00e3o significativa, nomeadamente:\n1. Pra\u00e7as;\n2. Largos;\n3. Alamedas.\nc) A largura do espa\u00e7o publico com o qual o edif\u00edcio ir\u00e1 confinar seja igual ou superior, em termos de dimens\u00e3o, \u00e0 altura de edifica\u00e7\u00e3o.\n3. Edifica\u00e7\u00e3o em \u00e1reas urbanas consolidadas\n\nNas situa\u00e7\u00f5es de colmata\u00e7\u00e3o de \u00e1reas urbanas consolidadas, as regras a aplicar \u00e0 novas constru\u00e7\u00f5es s\u00e3o as seguintes:\na) Respeitem os recuos dos edif\u00edcios cont\u00edguos;\nb) Estabele\u00e7am uma articula\u00e7\u00e3o volum\u00e9trica com os edif\u00edcios cont\u00edguos.\n\n [Autor des1]Este campo s\u00f3 deve aparecer\nquando na carta de ordenamento a pretens\u00e3o esteja inserida dentro do limite da\ncota de cheia.",
-                      "parecer": "0",
+                      "id": 1694,
+                      "idpretensao": 641,
+                      "camada": "ip_condicionantes.ren_ip_polygon_ok",
+                      "area": 14157.0800000008,
+                      "dominio": "PLANTA CONDICIONANTES",
+                      "subdominio": "\u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C",
+                      "familia": "Reserva Ecol\u00f3gica Nacional",
+                      "objecto": "Zonas Amea\u00e7adas pelas Cheias",
+                      "ident_gene": null,
+                      "ident_part": null,
+                      "diploma_es": null,
+                      "sumario": "A parcela assinalada est\u00e1 dentro da REN.",
+                      "texto": null,
+                      "parecer": null,
                       "buffer": null,
-                      "entidade": "CM \u00c1gueda",
-                      "dataregisto": "2016-11-03T23:54:32.694911+00:00",
+                      "entidade": "CCDRC - Comiss\u00e3o de Coordena\u00e7\u00e3o de Desenvolvimento Regional do Centro",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
                       "idutilizador": 31,
-                      "hierarquia": "PLANTA ORDENAMENTO \u2192 classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo \u2192 solo urbano - urbanizado \u2192 espa\u00e7o residencial \u2192 espa\u00e7o residencial tipo 1 \u2192 n\u00e3o se aplica"
+                      "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Nacional \u2192 Zonas Amea\u00e7adas pelas Cheias"
                     }
                   }
                 ],
@@ -174,15 +94,42 @@
                   "symbolizers": [
                     {
                       "type": "polygon",
-                      "fillColor": "#ff3300",
+                      "fillColor": "#663300",
                       "fillOpacity": 0.2,
-                      "strokeColor": "#ffa500",
+                      "strokeColor": "#663300",
                       "strokeOpacity": 0.2,
-                      "strokeWidth": 1
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
                     }
                   ]
                 }
-              },
+              }
             },
             {
               "geoJson": {
@@ -195,36 +142,24 @@
                       "coordinates": [
                         [
                           [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ],
                           [
-                            -25660.564024700034,
-                            100431.93804142167
+                            -26104.688125621356,
+                            99730.84721490851
                           ],
                           [
-                            -25649.644024700032,
-                            100450.69804142167
+                            -26048.688125621356,
+                            99659.4472149085
                           ],
                           [
-                            -25633.404024700034,
-                            100430.25804142166
+                            -25929.688125621356,
+                            99743.4472149085
                           ],
                           [
-                            -25635.644024700032,
-                            100414.85804142167
-                          ],
-                          [
-                            -25649.084024700034,
-                            100401.41804142167
-                          ],
-                          [
-                            -25658.75718524947,
-                            100391.66830059752
-                          ],
-                          [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ]
                         ]
                       ]
@@ -236,22 +171,22 @@
                 ]
               },
               "opacity": 1,
+              "type": "geojson",
               "style": {
-                "version": 2,
-                "[_gx3_style_0 = 'ext-200']": {
+                "version": "2",
+                "*": {
                   "symbolizers": [
                     {
                       "type": "polygon",
                       "fillColor": "#ff3300",
-                      "fillOpacity": 0.2,
+                      "fillOpacity": 0,
                       "strokeColor": "#ff3300",
-                      "strokeOpacity": 0.2,
-                      "strokeWidth": 1
+                      "strokeOpacity": 0.5,
+                      "strokeWidth": 2
                     }
                   ]
                 }
-              },
-              "type": "geojson"
+              }
             },
             {
               "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
@@ -273,24 +208,24 @@
       },
       {
         "title": "PLANTA ORDENAMENTO",
-        "description": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo urbano, na categoria de solo urbanizado \u2013 Espa\u00e7os Residenciais Tipo 1.",
-        "area": 166.276179785883,
+        "description": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo rural, Espa\u00e7o Agricola.",
+        "area": 6500.97073402464,
         "dominio": "PLANTA ORDENAMENTO",
-        "subdominio": "classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo",
-        "familia": "solo urbano - urbanizado",
-        "objecto": "espa\u00e7o residencial",
-        "ident_gene": "espa\u00e7o residencial tipo 1",
-        "ident_part": "n\u00e3o se aplica",
-        "diploma_es": "Art. 13\u00ba a 25\u00ba ; 61\u00ba a 72\u00ba ; 81\u00ba a 85\u00ba",
+        "subdominio": "CLASSIFICACAO_QUALIFICACAO_SOLOS",
+        "familia": "SOLO_RURAL",
+        "objecto": "ESPACO_AGRICOLA",
+        "ident_gene": null,
+        "ident_part": null,
+        "diploma_es": "Art. 13.\ufffd a 36.\ufffd",
         "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicad...",
-        "texto": "O instrumento de planeamento e gest\u00e3o territorial para o local \u00e9 o plano diretor municipal (PDM),...",
-        "hierarquia": "PLANTA ORDENAMENTO \u2192 classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo \u2192 solo urbano - urbanizado \u2192 espa\u00e7o res...",
+        "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de flor...",
+        "hierarquia": "PLANTA ORDENAMENTO \u2192 CLASSIFICACAO_QUALIFICACAO_SOLOS \u2192 SOLO_RURAL \u2192 ESPACO_AGRICOLA",
         "map": {
           "center": [
-            -25671.58428402025,
-            100425.112171352
+            -26050.5630688023,
+            99717.533983001
           ],
-          "dpi": 72,
+          "dpi": 200,
           "projection": "EPSG:3763",
           "scale": 2000,
           "layers": [
@@ -304,82 +239,392 @@
                       "coordinates": [
                         [
                           [
-                            -25678.4840247,
-                            100442.018041422
+                            -25996.4380119832,
+                            99696.3296480649
                           ],
                           [
-                            -25669.6341256312,
-                            100437.039973195
+                            -26048.6881256214,
+                            99659.4472149085
                           ],
                           [
-                            -25666.9685315269,
-                            100431.914218475
+                            -26104.6881256214,
+                            99730.8472149085
                           ],
                           [
-                            -25666.1584693104,
-                            100429.808161504
+                            -26073.002238475,
+                            99775.6207510935
                           ],
                           [
-                            -25665.6553767992,
-                            100428.389739436
+                            -26070.7100951596,
+                            99774.6665856987
                           ],
                           [
-                            -25664.9250922364,
-                            100424.252152692
+                            -26069.0423946797,
+                            99773.9610351852
                           ],
                           [
-                            -25664.9041271043,
-                            100423.81185802
+                            -26067.5904935869,
+                            99773.3275784747
                           ],
                           [
-                            -25664.6845433405,
-                            100418.479221714
+                            -26066.3289918937,
+                            99772.7560663112
                           ],
                           [
-                            -25664.9246625417,
-                            100411.992586654
+                            -26065.233889708,
+                            99772.2395993752
                           ],
                           [
-                            -25664.9773354589,
-                            100411.241443558
+                            -26063.3424339099,
+                            99771.2901070993
                           ],
                           [
-                            -25665.236711837,
-                            100408.206301282
+                            -26061.9493275967,
+                            99770.5327502325
                           ],
                           [
-                            -25678.4840247,
-                            100442.018041422
+                            -26060.9216215689,
+                            99769.9351324648
+                          ],
+                          [
+                            -26059.4109601869,
+                            99768.9850306124
+                          ],
+                          [
+                            -26058.6712033303,
+                            99768.4833545816
+                          ],
+                          [
+                            -26057.9426456443,
+                            99767.9627284672
+                          ],
+                          [
+                            -26056.5705293531,
+                            99766.9306740041
+                          ],
+                          [
+                            -26055.3088128283,
+                            99765.9377663456
+                          ],
+                          [
+                            -26054.1462962988,
+                            99764.9859057551
+                          ],
+                          [
+                            -26053.0733799509,
+                            99764.0763424587
+                          ],
+                          [
+                            -26051.102147237,
+                            99762.3291107082
+                          ],
+                          [
+                            -26049.4167666077,
+                            99760.7596698686
+                          ],
+                          [
+                            -26047.9687384481,
+                            99759.3588712609
+                          ],
+                          [
+                            -26046.7198128838,
+                            99758.1143659773
+                          ],
+                          [
+                            -26044.5692163615,
+                            99755.9002437349
+                          ],
+                          [
+                            -26042.9803302348,
+                            99754.2145017218
+                          ],
+                          [
+                            -26040.6255245651,
+                            99751.6555883121
+                          ],
+                          [
+                            -26038.292217769,
+                            99749.0734746178
+                          ],
+                          [
+                            -26037.7614039509,
+                            99748.4605445256
+                          ],
+                          [
+                            -26036.8190757262,
+                            99747.2675309851
+                          ],
+                          [
+                            -26036.0368991966,
+                            99746.1891621897
+                          ],
+                          [
+                            -26035.7177875519,
+                            99745.725875171
+                          ],
+                          [
+                            -26033.390352643,
+                            99742.3474198406
+                          ],
+                          [
+                            -26032.7001798727,
+                            99741.4139471875
+                          ],
+                          [
+                            -26032.1624637178,
+                            99740.7316680134
+                          ],
+                          [
+                            -26031.3137913978,
+                            99739.7450999229
+                          ],
+                          [
+                            -26030.8666812716,
+                            99739.271716238
+                          ],
+                          [
+                            -26030.4019719461,
+                            99738.8137328344
+                          ],
+                          [
+                            -26029.7407104961,
+                            99738.2137558955
+                          ],
+                          [
+                            -26029.0997010096,
+                            99737.6779277647
+                          ],
+                          [
+                            -26028.4827430833,
+                            99737.19639845
+                          ],
+                          [
+                            -26027.2901303285,
+                            99736.3384876555
+                          ],
+                          [
+                            -26026.2167209246,
+                            99735.6252723153
+                          ],
+                          [
+                            -26022.3654432818,
+                            99733.2393948308
+                          ],
+                          [
+                            -26022.2796926255,
+                            99733.1850975701
+                          ],
+                          [
+                            -26021.4085359026,
+                            99732.6320254275
+                          ],
+                          [
+                            -26020.0003230707,
+                            99731.6821710569
+                          ],
+                          [
+                            -26019.3138155564,
+                            99731.1833436857
+                          ],
+                          [
+                            -26018.6419071102,
+                            99730.6641161609
+                          ],
+                          [
+                            -26017.1307362925,
+                            99729.4445172693
+                          ],
+                          [
+                            -26015.8225673836,
+                            99728.3635117845
+                          ],
+                          [
+                            -26014.6918501401,
+                            99727.4035505348
+                          ],
+                          [
+                            -26012.7515179896,
+                            99725.683467813
+                          ],
+                          [
+                            -26011.3349418464,
+                            99724.3517177463
+                          ],
+                          [
+                            -26010.2979708912,
+                            99723.3252048495
+                          ],
+                          [
+                            -26009.5359043382,
+                            99722.5380324705
+                          ],
+                          [
+                            -26008.4206780106,
+                            99721.3262735286
+                          ],
+                          [
+                            -26007.3415997469,
+                            99720.074514108
+                          ],
+                          [
+                            -26006.8162341993,
+                            99719.4142844071
+                          ],
+                          [
+                            -26006.3363680932,
+                            99718.7571035281
+                          ],
+                          [
+                            -26005.8975515613,
+                            99718.1049215601
+                          ],
+                          [
+                            -26005.4949347349,
+                            99717.45938861
+                          ],
+                          [
+                            -26005.1248677238,
+                            99716.8221547493
+                          ],
+                          [
+                            -26004.4582329694,
+                            99715.5574350728
+                          ],
+                          [
+                            -26003.8867484824,
+                            99714.3398624962
+                          ],
+                          [
+                            -26003.3905147454,
+                            99713.1748874581
+                          ],
+                          [
+                            -26002.9540320951,
+                            99712.0656603206
+                          ],
+                          [
+                            -26002.1914689282,
+                            99709.9536521241
+                          ],
+                          [
+                            -26001.0519160692,
+                            99706.55701717
+                          ],
+                          [
+                            -26000.9369556923,
+                            99706.2143237335
+                          ],
+                          [
+                            -26000.460513507,
+                            99704.8174506815
+                          ],
+                          [
+                            -26000.0281771833,
+                            99703.6054745425
+                          ],
+                          [
+                            -25999.6326960504,
+                            99702.5562957324
+                          ],
+                          [
+                            -25999.2695194441,
+                            99701.6491645916
+                          ],
+                          [
+                            -25998.5862246522,
+                            99700.0920984747
+                          ],
+                          [
+                            -25998.0253928455,
+                            99698.9549247797
+                          ],
+                          [
+                            -25997.5729201562,
+                            99698.1218950981
+                          ],
+                          [
+                            -25997.2138038681,
+                            99697.5096107053
+                          ],
+                          [
+                            -25996.6402307207,
+                            99696.6131347588
+                          ],
+                          [
+                            -25996.4380119832,
+                            99696.3296480649
                           ]
                         ]
                       ]
                     },
                     "properties": {
-                      "id": 1626,
-                      "idpretensao": 630,
-                      "camada": "ip_ordenamento.espaco_residencial_tipo1",
-                      "area": 166.276179785883,
+                      "id": 1689,
+                      "idpretensao": 641,
+                      "camada": "ip_ordenamento.espacos_agricolas",
+                      "area": 6500.97073402464,
                       "dominio": "PLANTA ORDENAMENTO",
-                      "subdominio": "classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo",
-                      "familia": "solo urbano - urbanizado",
-                      "objecto": "espa\u00e7o residencial",
-                      "ident_gene": "espa\u00e7o residencial tipo 1",
-                      "ident_part": "n\u00e3o se aplica",
-                      "diploma_es": "Art. 13\u00ba a 25\u00ba ; 61\u00ba a 72\u00ba ; 81\u00ba a 85\u00ba",
-                      "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo urbano, na categoria de solo urbanizado \u2013 Espa\u00e7os Residenciais Tipo 1.",
-                      "texto": "O instrumento de planeamento e gest\u00e3o territorial para o local \u00e9 o plano diretor municipal (PDM), publicado no Di\u00e1rio\nda Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012, encontrando-se o terreno inserido em solo urbano, na categoria de solo\nurbanizado \u2013 Espa\u00e7os Residenciais Tipo 1, sendo aplic\u00e1veis \u00e0 opera\u00e7\u00e3o urban\u00edstica pretendida os seguintes artigos: 13.\u00ba a 25.\u00ba, 61.\u00ba a 74.\u00ba e 81.\u00ba a\n85.\u00ba da 1.\u00aa Revis\u00e3o do PDM.\n\nO solo urbanizado integra o tecido urbano consolidado ou em vias de consolida\u00e7\u00e3o que se encontra infraestruturado ou em\nvias de infraestrutura\u00e7\u00e3o, assim como as estruturas ecol\u00f3gicas do tecido urbano, e onde as interven\u00e7\u00f5es a realizar dever\u00e3o manter as carater\u00edsticas\nmorfol\u00f3gicas do tecido existente.\n\nI. Disposi\u00e7\u00f5es Gerais\n\n1.Alinhamento\n\nNas vias cujo perfil atual j\u00e1 se encontre comprometido \npor constru\u00e7\u00f5es existentes, aplica-se o alinhamento dominante, sendo que\nna falta de defini\u00e7\u00e3o do mesmo, aplica-se o estabelecido no artigo 20.\u00ba/A1  do C\u00f3digo Regulamentar do Munic\u00edpio publicado\natrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de\noutubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR,\nN.\u00ba131, de 10 de julho relativamente \u00e0s zonas de constru\u00e7\u00e3o interdita, nomeadamente:\n\na)  Sistema secund\u00e1rio \u2013 5m;\nb)  Sistema terci\u00e1rio \u2013 4 m.\n\n2. Recuo\nA fachada principal dos novos edif\u00edcios deve cumprir o recuo dominante existente.\nExcecionalmente \u00e9 permitido um recuo superior ao dominante, desde que verificadas as seguintes condi\u00e7\u00f5es:\n\na)  Desde que seja para cumprir quest\u00f5es de salubridade e habitabilidade, face \u00e0 reduzida dimens\u00e3o da parcela;\nb)  Desde que se trate de edifica\u00e7\u00f5es isoladas e a frente da parcela seja significativamente superior \u00e0s parcelas envolventes.\n\nNos casos constantes da al\u00ednea a) anterior, ter\u00e1 que ser criada uma falsa fachada ou\nqualquer outro elementos arquitet\u00f3nico, de forma a garantir que seja cumprido o recuo dominante das fachadas da envolvente.\n\nNa falta de defini\u00e7\u00e3o do recuo dominante, o recuo m\u00ednimo aplicar \u00e9 de 5 metros, conforme definido no artigo 21.\u00ba/A1 do\nC\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho \n\n3. Aterros, escava\u00e7\u00f5es e muros de suporte\n\nAs obras de constru\u00e7\u00e3o onde se proceda a aterro ou escava\u00e7\u00e3o dever\u00e1 assegurar, sempre que tecnicamente poss\u00edvel, entre a\nnova plataforma resultante da constru\u00e7\u00e3o e o terreno natural, uma pendente igual ou inferior a 60%.\n\nS\u00f3 \u00e9 permitida a constru\u00e7\u00e3o de muros de\nsuporte de terras que estabele\u00e7am diferen\u00e7a de cotas entre plataformas\ncontiguas ou entre plataformas e o terreno natural inferiores a 3 metros, com\nexce\u00e7\u00e3o dos muros de suporte de vias ou em situa\u00e7\u00f5es que seja tecnicamente\ninvi\u00e1vel a conjuga\u00e7\u00e3o da altura m\u00e1xima estabelecida com outras t\u00e9cnicas de\nsuporte de terras.\n\n4.Afastamentos\n\nOs afastamentos m\u00ednimos, medidos entre as fachadas da edifica\u00e7\u00e3o e os limites laterais da parcela, contanto para o efeito\nqualquer sali\u00eancia relativamente ao plano das fachadas, s\u00e3o os seguintes:\n\na) Edifica\u00e7\u00f5es at\u00e9 dois pisos acima da cota de soleira \u2013 3m;\nb) Edifica\u00e7\u00f5es com mais de dois pisos acima da cota de soleira ou de 6m de altura de fachada \u2013 4m;\nc) Edifica\u00e7\u00f5es com uso industrial ou de armazenagem \u2013 5m;\n\nPoder\u00e3o ser admitidos afastamentos inferiores ao definido na al\u00ednea c), desde que sejam cumpridas cumulativamente as seguintes condi\u00e7\u00f5es:\n\na) Tenham sido iniciadas antes de 1995, servindo de comprovativo os ortofotomapas do CNIG de 1995 ou as c\u00f3pias de documentos entregues no\nMinist\u00e9rio da Economia at\u00e9 \u00e0 referida data, para a regulariza\u00e7\u00e3o da atividade industrial;\nb) Desde que a amplia\u00e7\u00e3o resulte da necessidade de alterar o layout, n\u00e3o sendo poss\u00edvel cumprir o afastamento de 5 metros;\nc) N\u00e3o colidam com a \u00e1rea \u201cnon aedificandi\u201d das vias do sistema prim\u00e1rio e secund\u00e1rio com as quais os terrenos confinem diretamente.\n\n\u00c9 admitida a constru\u00e7\u00e3o em banda ou geminada, devendo o afastamento \u00e0s estremas livres ser o definido nos par\u00e1grafos anteriores.\n\n5. Pisos\n\nOs edif\u00edcios em banda ou geminados n\u00e3o podem ter uma diferen\u00e7a do n\u00famero de pisos superior a dois acima da cota de soleira.\n\nAs constru\u00e7\u00f5es que confinem com dois arruamentos desnivelados e que possuam duas frentes, n\u00e3o poder\u00e3o ultrapassar os\ndois pisos acima da cota de soleira do arruamento situado \u00e0 maior cota.\n\nNo caso em que a diferen\u00e7a de pisos resultar na cria\u00e7\u00e3o de uma empena cega, esta dever\u00e1 ser alvo de tratamento\narquitet\u00f3nico que passar\u00e1 pelo seu revestimento com materiais utilizados na fachada principal.\n\nO n\u00famero m\u00e1ximo de pisos abaixo da cota de soleira \u00e9 de 3, contando para o efeito, o arruamento situado \u00e0 menor cota.\n\nOs pisos situados abaixo da cota de soleira que seja poss\u00edvel observar a fachada posterior, ter\u00e3o que obedecer \u00e0s seguintes regras:\n\na) Ser integradas visualmente na parcela onde se desenvolvem, devendo privilegiar-se as situa\u00e7\u00f5es de socalco;\nb) O talude entre o limite do \u00faltimo piso da cave e o limite doterreno n\u00e3o pode ser superior a 30%;\nc) As fachadas abaixo da cota de soleira dever\u00e3o apresentar um tratamento arquitet\u00f3nico semelhante ao da fachada principal do edif\u00edcio.\n\n6. Logradouros\n\nS\u00f3 poder\u00e1 ser impermeabilizada, no m\u00e1ximo, 50% da \u00e1rea n\u00e3o constru\u00edda da parcela ou lote numa profundidade de 50 metros a\npartir do limite do espa\u00e7o publico, admitindo-se nas parcelas ou lotes de reduzida dimens\u00e3o que este valor seja ultrapassado, desde que se destine a\npavimenta\u00e7\u00e3o do acesso \u00e0 garagem.\n\nPara al\u00e9m dos 50 metros a partir da via geradora de per\u00edmetro, n\u00e3o s\u00e3o permitidas quaisquer impermeabiliza\u00e7\u00f5es que n\u00e3o\nas que resultem das condi\u00e7\u00f5es a edificar e dos seus acessos.\n\n7. Estacionamento\nAs novas constru\u00e7\u00f5es, bem como as que venham a ser alvo de amplia\u00e7\u00e3o igual ou superior a 50% da \u00e1rea de constru\u00e7\u00e3o licenciada,\ndevem ser garantidos os seguintes par\u00e2metros quantitativos m\u00ednimos de estacionamento privativo:\n\na) 1 lugar de estacionamento de ve\u00edculos ligeiros por fogo de tipologia T0, T1 e T2 para edif\u00edcios plurifamiliares;\nb) 2 lugares de estacionamento de ve\u00edculos ligeiros por fogo de tipologia T3 e T4 para edif\u00edcios plurifamiliares;\nc) 3 lugares de estacionamento de ve\u00edculos ligeiros por fogo de tipologias superior a T4 para edif\u00edcios plurifamiliares;\nd) 2 lugares de estacionamento de ve\u00edculos por edif\u00edcio unifamiliar;\ne) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 50 m2 de \u00e1rea total de constru\u00e7\u00e3o para com\u00e9rcio e ou servi\u00e7os com \u00e1rea total de constru\u00e7\u00e3o igual ou inferior a 1000 m2, devendo ser assegurados locais adequados para cargas e descargas;\nf) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 25 m2 de \u00e1rea total de constru\u00e7\u00e3o para com\u00e9rcio e ou servi\u00e7os com \u00e1rea total de\nconstru\u00e7\u00e3o superior a 1000 m2, devendo ser assegurados locais adequados para cargas e descargas;\ng) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 200m2 de \u00e1rea total de constru\u00e7\u00e3o para ind\u00fastria e ou armaz\u00e9ns, devendo\nser assegurados locais adequados para cargas e descargas;\nh) 1 lugar de estacionamento de ve\u00edculos pesados por cada 1000m2 de \u00e1rea total de constru\u00e7\u00e3o para ind\u00fastria e ou armaz\u00e9ns, devendo\nser assegurados locais adequados para cargas e descargas;\ni) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 5 quartos para os estabelecimentos hoteleiros, acrescido de 1 lugar de ve\u00edculo\npesado de passageiros por cada 50 quartos, com o m\u00ednimo de 1 lugar;\nj) 1 lugar de estacionamento de ve\u00edculos ligeiros  por cada 75 m2 de \u00e1rea total de constru\u00e7\u00e3o para equipamentos, acrescido de 1 lugar para ve\u00edculo pesado de\npassageiros  por cada 500 m2 de \u00e1rea total de constru\u00e7\u00e3o, quando o uso em causa o justificar;\nk) 1 lugar de estacionamento de ve\u00edculos ligeiros por cada 50 m2 de \u00e1rea total de constru\u00e7\u00e3o para oficinas autom\u00f3veis.\n\nDever\u00e1 ser previsto estacionamento p\u00fablico correspondente, no m\u00ednimo, \u00e0s percentagens a seguir indicadas, aplicadas aos\nvalores de estacionamento obtidos para cada uma das al\u00edneas referidas anteriormente:\n\na) 20% para os usos constantes da al\u00ednea a), b), c), e), f), j) e k), podendo no caso do uso ser oficina, o mesmo situar-se no interior do lote;\nb) 10% para os usos constantes na al\u00ednea g).\n\nA C\u00e2mara Municipal pode deliberar a dispensa total ou parcial do cumprimento da dota\u00e7\u00e3o de estacionamento\nestabelecido anteriormente, desde que se verifique uma das seguintes situa\u00e7\u00f5es:\na) O seu cumprimento implicar a modifica\u00e7\u00e3o da arquitetura original de edif\u00edcios ou na continuidade do conjunto edificado, que pelo seu\nvalor arquitet\u00f3nico intr\u00ednseco, pela sua integra\u00e7\u00e3o em conjuntos carater\u00edsticos\nou em \u00e1reas de reconhecido valor paisag\u00edstico, devem ser preservados;\nb) A impossibilidade ou a inconveni\u00eancia de natureza t\u00e9cnica, nomeadamente em fun\u00e7\u00e3o das carater\u00edsticas geol\u00f3gicas do terreno, dos n\u00edveis\nfre\u00e1ticos, do condicionamento da seguran\u00e7a das edifica\u00e7\u00f5es envolventes, da interfer\u00eancia com equipamentos e infraestruturas ou da funcionalidade dos\nsistemas p\u00fablicos de circula\u00e7\u00e3o de pessoas e ve\u00edculos;\nc) As dimens\u00f5es da parcela ou a sua situa\u00e7\u00e3o urbana tornarem tecnicamente desaconselh\u00e1vel a constru\u00e7\u00e3o do estacionamento com a dota\u00e7\u00e3o\nexigida, por raz\u00f5es de economia e funcionalidade interna. \n\nA n\u00e3o dota\u00e7\u00e3o dos lugares de estacionamento pelas raz\u00f5es referidas anteriormente, d\u00e1 lugar ao pagamento de uma compensa\u00e7\u00e3o\nao Munic\u00edpio definida nos termos e condi\u00e7\u00f5es estipuladas no artigo 17.\u00ba/A1 do C\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa\ns\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13,\nde 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho.\n\n8. Ced\u00eancias de \u00e1reas para espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva e de \u00e1reas para equipamentos de utiliza\u00e7\u00e3o coletiva\n\nOs par\u00e2metros para o dimensionamento das \u00e1reas destinadas a espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva e de equipamentos de\nutiliza\u00e7\u00e3o coletiva, em opera\u00e7\u00f5es de loteamento ou opera\u00e7\u00f5es urban\u00edsticas de impacte semelhante a um loteamento, s\u00e3o os seguintes:\n\na) Para espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva:\na.1. 28 m2/fogo, no caso de habita\u00e7\u00e3o unifamiliar;\na.2. 0,23 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de habita\u00e7\u00e3o coletiva;\na.3. 0,28 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de com\u00e9rcio ou servi\u00e7os;\na.4. 0,23 m2/m2 de \u00e1rea de constru\u00e7\u00e3o, no caso de ind\u00fastria ou armaz\u00e9ns;\nb) Para equipamentos de utiliza\u00e7\u00e3o coletiva:\nb.1. 35 m2/fogo, no caso de habita\u00e7\u00e3o unifamiliar;\nb.2. 0,29 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de habita\u00e7\u00e3o coletiva;\nb.3. 0,25 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de com\u00e9rcio ou servi\u00e7os;\nb.4. 0,10 m2/m2 de \u00e1rea de constru\u00e7\u00e3o, no caso de ind\u00fastria ou armaz\u00e9ns;\n\nAs parcelas de terreno resultante da aplica\u00e7\u00e3o do disposto anteriormente, passar\u00e3o a integrar o dom\u00ednio municipal atrav\u00e9s de ced\u00eancia gratuita ao munic\u00edpio.\n\nO Munic\u00edpio pode prescindir da integra\u00e7\u00e3o do dom\u00ednio municipal da totalidade ou parte das parcelas referidas anteriormente, de acordo com o estabelecido nos artigos 15.\u00ba/A1 e 16.\u00ba/A1 C\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho.\n\n9. Anexos\nOs anexos ter\u00e3o de cumprir as seguintes condi\u00e7\u00f5es:\na) N\u00famero m\u00e1ximo de pisos acima da cota de soleira, admitindo-se 1 destes em cave;\nb) A altura m\u00e1xima da fachada \u00e9 de 6 m, exceto nos casos em que os anexos se encontrem implantados \u00e0 estrema, n\u00e3o podendo nestes casos possuir\numa empena superior a 3,5 metros de altura relativamente \u00e0s parcelas vizinhas;\nc) Caso n\u00e3o sejam implantados \u00e0s estremas, dever\u00e3o cumprir os afastamentos m\u00ednimos impostos para a edifica\u00e7\u00e3o principal.\n\nPara al\u00e9m das condi\u00e7\u00f5es referidas anteriormente, os anexos ter\u00e3o sempre que ter em considera\u00e7\u00e3o a envolvente\nurbana e n\u00e3o contribuir para a descarateriza\u00e7\u00e3o urban\u00edstica e arquitet\u00f3nica da edifica\u00e7\u00e3o principal aos quais se encontram associados, assim como do\naglomerado urbano em que se inserem.\n\n10. Floresta\u00e7\u00e3o\n\u00c9 proibida a planta\u00e7\u00e3o de esp\u00e9cies de crescimento r\u00e1pido, classificadas de acordo com a legisla\u00e7\u00e3o em vigor.\n\n11.  [Autor des1] \u00c1reas Abrangidas por cheias\n\nNas \u00e1reas abrangidas pelas cheias, as cotas dos pisos inferiores das edifica\u00e7\u00f5es dever\u00e3o ser superiores \u00e0 cota local da m\u00e1xima cheia, que \u00e9 de 12,00 m.\nnestas \u00e1reas \u00e9 interdita a constru\u00e7\u00e3o de novas estruturas de sa\u00fade, estabelecimentos que utilizem subst\u00e2ncias perigosas e centrais el\u00e9tricas.\n\nII. Disposi\u00e7\u00f5es Especificas\n\nOs Espa\u00e7os residenciais s\u00e3o \u00e1reas consolidadas ou em vias de consolida\u00e7\u00e3o, ocupadas predominantemente por\nedif\u00edcios unifamiliares, com a presen\u00e7a no interior do tecido urbano, de edif\u00edcios plurifamiliares, agregados ou isolados, podendo acolher outros usos\ndesde que compat\u00edveis com a utiliza\u00e7\u00e3o dominante.\n\n1. Usos e condi\u00e7\u00f5es de ocupa\u00e7\u00e3o\na) Habita\u00e7\u00e3o;\nb) Comercio;\nc) Servi\u00e7os;\nd) Equipamentos de Utiliza\u00e7\u00e3o Coletiva.\nS\u00e3o usos compat\u00edveis\n\na) Ind\u00fastrias do tipo 3, de acordo com a legisla\u00e7\u00e3o em vigor;\nb) Armaz\u00e9ns;\nc) Oficinas de ve\u00edculos autom\u00f3veis, desde que n\u00e3o encostem a edif\u00edcios habitacionais;\n\nEmpreendimentos tur\u00edsticos.\n2. Regime de Edificabilidade\nAs regras a aplicar s\u00e3o as seguintes:\n\na) N\u00famero de pisos acima da cota de soleira com a exce\u00e7\u00e3o de moradias unifamiliares, ind\u00fastrias, armaz\u00e9ns e oficinas \u2013 3;\nb) N\u00famero m\u00e1ximo de pisos acima da cota de soleira para moradias unifamiliares \u2013 2;\nc) N\u00famero m\u00e1ximo de pisos acima da cota de soleira para ind\u00fastrias, armaz\u00e9ns e oficinas \u2013 2;\nd) Altura m\u00e1xima da fachada para ind\u00fastrias, armaz\u00e9ns e oficinas \u2013 9 m;\ne) \u00c1rea total de anexos \u2013 15% da \u00e1rea da parcela ou lote;\nf)  \u00cdndice m\u00e1ximo de ocupa\u00e7\u00e3o do solo \u2013 0,75.\n\nExcecionalmente permite-se um n\u00famero de pisos superior ao constante na anterior al\u00ednea a), at\u00e9 um m\u00e1ximo de 4 pisos,\ndesde que se cumpra pelo menos uma das seguintes condi\u00e7\u00f5es:\n\na) Os edif\u00edcios se localizem em encostas com inclina\u00e7\u00e3o significativa, devendo ter-se em aten\u00e7\u00e3o que:\n1.  \u00c9 proibida a execu\u00e7\u00e3o de anexos ou garagens fora da \u00e1rea de implanta\u00e7\u00e3o do edif\u00edcio;\n2.  Quando poss\u00edvel, a \u00e1rea da cobertura resultante do desenvolvimento do edif\u00edcio em socalcos, poder\u00e1 apresentar um tratamento de\nespa\u00e7o p\u00fablico e de circula\u00e7\u00e3o pedonal.\nb)  Os edif\u00edcios apresentem uma componente de espa\u00e7o p\u00fablico envolvente de dimens\u00e3o significativa, nomeadamente:\n1. Pra\u00e7as;\n2. Largos;\n3. Alamedas.\nc) A largura do espa\u00e7o publico com o qual o edif\u00edcio ir\u00e1 confinar seja igual ou superior, em termos de dimens\u00e3o, \u00e0 altura de edifica\u00e7\u00e3o.\n3. Edifica\u00e7\u00e3o em \u00e1reas urbanas consolidadas\n\nNas situa\u00e7\u00f5es de colmata\u00e7\u00e3o de \u00e1reas urbanas consolidadas, as regras a aplicar \u00e0 novas constru\u00e7\u00f5es s\u00e3o as seguintes:\na) Respeitem os recuos dos edif\u00edcios cont\u00edguos;\nb) Estabele\u00e7am uma articula\u00e7\u00e3o volum\u00e9trica com os edif\u00edcios cont\u00edguos.\n\n [Autor des1]Este campo s\u00f3 deve aparecer\nquando na carta de ordenamento a pretens\u00e3o esteja inserida dentro do limite da\ncota de cheia.",
+                      "subdominio": "CLASSIFICACAO_QUALIFICACAO_SOLOS",
+                      "familia": "SOLO_RURAL",
+                      "objecto": "ESPACO_AGRICOLA",
+                      "ident_gene": null,
+                      "ident_part": null,
+                      "diploma_es": "Art. 13.\ufffd a 36.\ufffd",
+                      "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo rural, Espa\u00e7o Agricola.",
+                      "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de floresta\u00e7\u00e3o com esp\u00e9cies de crescimento r\u00e1pido.\n\nUsos admiss\u00edveis, em termos urban\u00edsticos:\na) Instala\u00e7\u00f5es pecu\u00e1rias e similares\nb) Estruturas de Apoio Agr\u00edcola\nUsos compat\u00edveis, em termos urban\u00edsticos:\na)Habita\u00e7\u00e3o para resid\u00eancia do agricultor\nb) Empreendimentos de turismo no espa\u00e7o rural que promovam a valoriza\u00e7\u00e3o das atividades agricolas tradicionais ou que tenham como fundamento o car\u00e1ter educativo e de preserva\u00e7\u00e3o dos valores naturais e culturais\nc) Ind\u00fastria e armaz\u00e9ns de car\u00e1ter agr\u00edcola ou de transforma\u00e7\u00e3o de produtos resultantes da explora\u00e7\u00e3o agr\u00edcola e pecu\u00e1ria.\nEm termos de edifica\u00e7\u00e3o das constru\u00e7\u00f5es afetas ao uso admitido na al\u00ednea a) e ao uso compat\u00edvel da al\u00ednea a) ter\u00e3o de ser cumpridas as seguintes condi\u00e7\u00f5es:\n1. Comprovar a qualidade de agricultor, nos termos da legisla\u00e7\u00e3o em vigor\n2. Constru\u00e7\u00f5es integradas num investimento agr\u00edcola e justificadas num plano de explora\u00e7\u00e3o t\u00e9cnico-economicamente vi\u00e1vel, validado pelo servi\u00e7o competente\nRegime de edificabilidade:\n1. Habita\u00e7\u00e3o - a \u00e1rea m\u00ednima da parcela \u00e9 de 40000 m2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1, o n\u00famero m\u00e1ximo de pisos acima da cota de soleira \u00e9 de 2, o m\u00e1ximo de 1 fogo e uma \u00e1rea brita de constru\u00e7\u00e3o m\u00e1xima, incluindo anexos de 300 m2\n2. Industria e Armaz\u00e9ns, com \u00edndice de utiliza\u00e7\u00e3o m\u00e1ximo de 0,2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1\n3. Empreendimentos Tur\u00edsticos em solo rural \u2013 o \u00edndice de utiliza\u00e7\u00e3o m\u00e1ximo de 0,2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1 e o n\u00famero m\u00e1ximo de pisos acima da cota de soleira \u00e9 de 2\n4. Instala\u00e7\u00f5es Pecu\u00e1rias e Similares e Estruturas de Apoio Agr\u00edcola - o \u00edndice de utiliza\u00e7\u00e3o m\u00e1ximo de 0,2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1 e o n\u00famero m\u00e1ximo de pisos acima da cota de soleira \u00e9 de 2 \n\n1 Risco Baixo e Muito baixo 25m e Risco M\u00e9dio 35m",
                       "parecer": "0",
                       "buffer": null,
                       "entidade": "CM \u00c1gueda",
-                      "dataregisto": "2016-11-03T23:54:32.694911+00:00",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
                       "idutilizador": 31,
-                      "hierarquia": "PLANTA ORDENAMENTO \u2192 classifica\u00e7\u00e3o e qualifica\u00e7\u00e3o do solo \u2192 solo urbano - urbanizado \u2192 espa\u00e7o residencial \u2192 espa\u00e7o residencial tipo 1 \u2192 n\u00e3o se aplica"
+                      "hierarquia": "PLANTA ORDENAMENTO \u2192 CLASSIFICACAO_QUALIFICACAO_SOLOS \u2192 SOLO_RURAL \u2192 ESPACO_AGRICOLA"
                     }
                   }
                 ],
                 "type": "FeatureCollection"
               },
-              "type": "geojson"
+              "type": "geojson",
+              "style": {
+                "version": 2,
+                "[dominio = 'PLANTA ORDENAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#663300",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#663300",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                }
+              }
             },
             {
               "geoJson": {
@@ -392,36 +637,24 @@
                       "coordinates": [
                         [
                           [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ],
                           [
-                            -25660.564024700034,
-                            100431.93804142167
+                            -26104.688125621356,
+                            99730.84721490851
                           ],
                           [
-                            -25649.644024700032,
-                            100450.69804142167
+                            -26048.688125621356,
+                            99659.4472149085
                           ],
                           [
-                            -25633.404024700034,
-                            100430.25804142166
+                            -25929.688125621356,
+                            99743.4472149085
                           ],
                           [
-                            -25635.644024700032,
-                            100414.85804142167
-                          ],
-                          [
-                            -25649.084024700034,
-                            100401.41804142167
-                          ],
-                          [
-                            -25658.75718524947,
-                            100391.66830059752
-                          ],
-                          [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ]
                         ]
                       ]
@@ -433,22 +666,22 @@
                 ]
               },
               "opacity": 1,
+              "type": "geojson",
               "style": {
-                "version": 2,
-                "[_gx3_style_0 = 'ext-200']": {
+                "version": "2",
+                "*": {
                   "symbolizers": [
                     {
                       "type": "polygon",
                       "fillColor": "#ff3300",
-                      "fillOpacity": 0.2,
+                      "fillOpacity": 0,
                       "strokeColor": "#ff3300",
-                      "strokeOpacity": 1,
+                      "strokeOpacity": 0.5,
                       "strokeWidth": 2
                     }
                   ]
                 }
-              },
-              "type": "geojson"
+              }
             },
             {
               "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
@@ -470,24 +703,267 @@
       },
       {
         "title": "PLANTA ORDENAMENTO",
-        "description": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo urbano, na categoria de solo urbanizado \u2013 Espa\u00e7os Verdes.",
-        "area": 794.401942347001,
+        "description": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo rural, Espa\u00e7o Agricola.",
+        "area": 5282.63920485625,
         "dominio": "PLANTA ORDENAMENTO",
-        "subdominio": null,
-        "familia": null,
-        "objecto": null,
+        "subdominio": "CLASSIFICACAO_QUALIFICACAO_SOLOS",
+        "familia": "SOLO_RURAL",
+        "objecto": "ESPACO_AGRICOLA",
+        "ident_gene": null,
+        "ident_part": null,
+        "diploma_es": "Art. 13.\ufffd a 36.\ufffd",
+        "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicad...",
+        "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de flor...",
+        "hierarquia": "PLANTA ORDENAMENTO \u2192 CLASSIFICACAO_QUALIFICACAO_SOLOS \u2192 SOLO_RURAL \u2192 ESPACO_AGRICOLA",
+        "map": {
+          "center": [
+            -25994.5255205583,
+            99765.4434059395
+          ],
+          "dpi": 200,
+          "projection": "EPSG:3763",
+          "scale": 2000,
+          "layers": [
+            {
+              "geoJson": {
+                "features": [
+                  {
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            -26059.3629154952,
+                            99794.893707478
+                          ],
+                          [
+                            -26040.2881256214,
+                            99821.8472149085
+                          ],
+                          [
+                            -25929.6881256214,
+                            99743.4472149085
+                          ],
+                          [
+                            -25978.4322510335,
+                            99709.0395969705
+                          ],
+                          [
+                            -25979.0919639604,
+                            99710.1466325439
+                          ],
+                          [
+                            -25992.9822960052,
+                            99731.0447587584
+                          ],
+                          [
+                            -25996.8518581412,
+                            99735.840059962
+                          ],
+                          [
+                            -26006.0186738517,
+                            99747.1998575752
+                          ],
+                          [
+                            -26015.5801849962,
+                            99757.1709102266
+                          ],
+                          [
+                            -26023.4366181644,
+                            99764.2166871654
+                          ],
+                          [
+                            -26023.6375715715,
+                            99764.3969301823
+                          ],
+                          [
+                            -26036.1332334794,
+                            99775.6032960401
+                          ],
+                          [
+                            -26044.0782495915,
+                            99782.1978757623
+                          ],
+                          [
+                            -26052.0234657552,
+                            99788.7927055496
+                          ],
+                          [
+                            -26055.728620099,
+                            99791.8725795155
+                          ],
+                          [
+                            -26059.3629154952,
+                            99794.893707478
+                          ]
+                        ]
+                      ]
+                    },
+                    "properties": {
+                      "id": 1690,
+                      "idpretensao": 641,
+                      "camada": "ip_ordenamento.espacos_agricolas",
+                      "area": 5282.63920485625,
+                      "dominio": "PLANTA ORDENAMENTO",
+                      "subdominio": "CLASSIFICACAO_QUALIFICACAO_SOLOS",
+                      "familia": "SOLO_RURAL",
+                      "objecto": "ESPACO_AGRICOLA",
+                      "ident_gene": null,
+                      "ident_part": null,
+                      "diploma_es": "Art. 13.\ufffd a 36.\ufffd",
+                      "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo rural, Espa\u00e7o Agricola.",
+                      "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de floresta\u00e7\u00e3o com esp\u00e9cies de crescimento r\u00e1pido.\n\nUsos admiss\u00edveis, em termos urban\u00edsticos:\na) Instala\u00e7\u00f5es pecu\u00e1rias e similares\nb) Estruturas de Apoio Agr\u00edcola\nUsos compat\u00edveis, em termos urban\u00edsticos:\na)Habita\u00e7\u00e3o para resid\u00eancia do agricultor\nb) Empreendimentos de turismo no espa\u00e7o rural que promovam a valoriza\u00e7\u00e3o das atividades agricolas tradicionais ou que tenham como fundamento o car\u00e1ter educativo e de preserva\u00e7\u00e3o dos valores naturais e culturais\nc) Ind\u00fastria e armaz\u00e9ns de car\u00e1ter agr\u00edcola ou de transforma\u00e7\u00e3o de produtos resultantes da explora\u00e7\u00e3o agr\u00edcola e pecu\u00e1ria.\nEm termos de edifica\u00e7\u00e3o das constru\u00e7\u00f5es afetas ao uso admitido na al\u00ednea a) e ao uso compat\u00edvel da al\u00ednea a) ter\u00e3o de ser cumpridas as seguintes condi\u00e7\u00f5es:\n1. Comprovar a qualidade de agricultor, nos termos da legisla\u00e7\u00e3o em vigor\n2. Constru\u00e7\u00f5es integradas num investimento agr\u00edcola e justificadas num plano de explora\u00e7\u00e3o t\u00e9cnico-economicamente vi\u00e1vel, validado pelo servi\u00e7o competente\nRegime de edificabilidade:\n1. Habita\u00e7\u00e3o - a \u00e1rea m\u00ednima da parcela \u00e9 de 40000 m2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1, o n\u00famero m\u00e1ximo de pisos acima da cota de soleira \u00e9 de 2, o m\u00e1ximo de 1 fogo e uma \u00e1rea brita de constru\u00e7\u00e3o m\u00e1xima, incluindo anexos de 300 m2\n2. Industria e Armaz\u00e9ns, com \u00edndice de utiliza\u00e7\u00e3o m\u00e1ximo de 0,2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1\n3. Empreendimentos Tur\u00edsticos em solo rural \u2013 o \u00edndice de utiliza\u00e7\u00e3o m\u00e1ximo de 0,2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1 e o n\u00famero m\u00e1ximo de pisos acima da cota de soleira \u00e9 de 2\n4. Instala\u00e7\u00f5es Pecu\u00e1rias e Similares e Estruturas de Apoio Agr\u00edcola - o \u00edndice de utiliza\u00e7\u00e3o m\u00e1ximo de 0,2, cumprir os afastamentos \u00e0s estremas de acordo com o plano municipal de defesa da floresta contra inc\u00eandios1 e o n\u00famero m\u00e1ximo de pisos acima da cota de soleira \u00e9 de 2 \n\n1 Risco Baixo e Muito baixo 25m e Risco M\u00e9dio 35m",
+                      "parecer": "0",
+                      "buffer": null,
+                      "entidade": "CM \u00c1gueda",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
+                      "idutilizador": 31,
+                      "hierarquia": "PLANTA ORDENAMENTO \u2192 CLASSIFICACAO_QUALIFICACAO_SOLOS \u2192 SOLO_RURAL \u2192 ESPACO_AGRICOLA"
+                    }
+                  }
+                ],
+                "type": "FeatureCollection"
+              },
+              "type": "geojson",
+              "style": {
+                "version": 2,
+                "[dominio = 'PLANTA ORDENAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#663300",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#663300",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "geoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            -26040.288125621355,
+                            99821.84721490851
+                          ],
+                          [
+                            -26104.688125621356,
+                            99730.84721490851
+                          ],
+                          [
+                            -26048.688125621356,
+                            99659.4472149085
+                          ],
+                          [
+                            -25929.688125621356,
+                            99743.4472149085
+                          ],
+                          [
+                            -26040.288125621355,
+                            99821.84721490851
+                          ]
+                        ]
+                      ]
+                    },
+                    "properties": {
+                      "_gx3_style_0": "ext-200"
+                    }
+                  }
+                ]
+              },
+              "opacity": 1,
+              "type": "geojson",
+              "style": {
+                "version": "2",
+                "*": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#ff3300",
+                      "fillOpacity": 0,
+                      "strokeColor": "#ff3300",
+                      "strokeOpacity": 0.5,
+                      "strokeWidth": 2
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+              "customParams": {
+                "VERSION": "1.1.1",
+                "tiled": true
+              },
+              "layers": [
+                "carto2_5k"
+              ],
+              "opacity": 1,
+              "styles": [
+                ""
+              ],
+              "type": "WMS"
+            }
+          ]
+        }
+      },
+      {
+        "title": "PLANTA CONDICIONANTES",
+        "description": "A parcela assinalada est\u00e1 dentro da RAN.",
+        "area": 5366.39827129936,
+        "dominio": "PLANTA CONDICIONANTES",
+        "subdominio": "RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS",
+        "familia": "RESERVA_AGRICOLA_NACIONAL",
+        "objecto": "RESERVA_AGRICOLA_NACIONAL",
         "ident_gene": null,
         "ident_part": null,
         "diploma_es": null,
-        "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicad...",
-        "texto": "O instrumento de planeamento e gest\u00e3o territorial para o local \u00e9 o plano diretor municipal (PDM),...",
-        "hierarquia": "PLANTA ORDENAMENTO",
+        "sumario": "A parcela assinalada est\u00e1 dentro da RAN.",
+        "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de flor...",
+        "hierarquia": "PLANTA CONDICIONANTES \u2192 RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS \u2192 RESERVA_AGRICOLA_NACION...",
         "map": {
           "center": [
-            -25657.09775471205,
-            100419.14464327099
+            -25994.525525550802,
+            99765.21217590879
           ],
-          "dpi": 72,
+          "dpi": 200,
           "projection": "EPSG:3763",
           "scale": 2000,
           "layers": [
@@ -501,174 +977,104 @@
                       "coordinates": [
                         [
                           [
-                            -25669.6341256312,
-                            100437.039973195
+                            -26059.3629254802,
+                            99794.8936933688
                           ],
                           [
-                            -25660.5640247,
-                            100431.938041422
+                            -26040.2881256214,
+                            99821.8472149085
                           ],
                           [
-                            -25652.0172360977,
-                            100446.620985944
+                            -25929.6881256214,
+                            99743.4472149085
                           ],
                           [
-                            -25649.8568525332,
-                            100442.641624028
+                            -25979.0874027872,
+                            99708.5771369091
                           ],
                           [
-                            -25649.7179923583,
-                            100442.294531253
+                            -25992.9822960052,
+                            99731.0447587584
                           ],
                           [
-                            -25649.0357074964,
-                            100441.02096204
+                            -26036.1332334757,
+                            99775.6031960403
                           ],
                           [
-                            -25648.6117821966,
-                            100440.125782304
-                          ],
-                          [
-                            -25648.5566732793,
-                            100439.848786697
-                          ],
-                          [
-                            -25648.4256678821,
-                            100439.6412422
-                          ],
-                          [
-                            -25646.5271074809,
-                            100434.288097668
-                          ],
-                          [
-                            -25646.471446946,
-                            100433.964702582
-                          ],
-                          [
-                            -25646.1297118241,
-                            100432.82277352
-                          ],
-                          [
-                            -25645.1581476135,
-                            100427.739503141
-                          ],
-                          [
-                            -25645.0422564001,
-                            100426.516019389
-                          ],
-                          [
-                            -25644.9887986708,
-                            100426.273573363
-                          ],
-                          [
-                            -25644.5698480732,
-                            100416.097045055
-                          ],
-                          [
-                            -25644.6044407548,
-                            100415.902346329
-                          ],
-                          [
-                            -25644.5613837929,
-                            100415.68604976
-                          ],
-                          [
-                            -25644.5977034243,
-                            100414.834258182
-                          ],
-                          [
-                            -25644.994285116,
-                            100410.19329915
-                          ],
-                          [
-                            -25645.0029764624,
-                            100409.949901598
-                          ],
-                          [
-                            -25645.3913166203,
-                            100405.547240159
-                          ],
-                          [
-                            -25645.4321029975,
-                            100405.069963124
-                          ],
-                          [
-                            -25649.0840247,
-                            100401.418041422
-                          ],
-                          [
-                            -25658.7571852495,
-                            100391.668300598
-                          ],
-                          [
-                            -25665.236711837,
-                            100408.206301282
-                          ],
-                          [
-                            -25664.9773354589,
-                            100411.241443558
-                          ],
-                          [
-                            -25664.9246625417,
-                            100411.992586654
-                          ],
-                          [
-                            -25664.6845433405,
-                            100418.479221714
-                          ],
-                          [
-                            -25664.9041271043,
-                            100423.81185802
-                          ],
-                          [
-                            -25664.9250922364,
-                            100424.252152692
-                          ],
-                          [
-                            -25665.6553767992,
-                            100428.389739436
-                          ],
-                          [
-                            -25666.1584693104,
-                            100429.808161504
-                          ],
-                          [
-                            -25666.9685315269,
-                            100431.914218475
-                          ],
-                          [
-                            -25669.6341256312,
-                            100437.039973195
+                            -26059.3629254802,
+                            99794.8936933688
                           ]
                         ]
                       ]
                     },
                     "properties": {
-                      "id": 1627,
-                      "idpretensao": 630,
-                      "camada": "ip_ordenamento.espacos_verdes",
-                      "area": 794.401942347001,
-                      "dominio": "PLANTA ORDENAMENTO",
-                      "subdominio": null,
-                      "familia": null,
-                      "objecto": null,
+                      "id": 1691,
+                      "idpretensao": 641,
+                      "camada": "ip_condicionantes.ran_ip",
+                      "area": 5366.39827129936,
+                      "dominio": "PLANTA CONDICIONANTES",
+                      "subdominio": "RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS",
+                      "familia": "RESERVA_AGRICOLA_NACIONAL",
+                      "objecto": "RESERVA_AGRICOLA_NACIONAL",
                       "ident_gene": null,
                       "ident_part": null,
                       "diploma_es": null,
-                      "sumario": "Para o local assinalado o instrumento de gest\u00e3o territorial \u00e9 o Plano Diretor Municipal, publicado no \nDi\u00e1rio da Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012.\nO terreno insere-se em solo urbano, na categoria de solo urbanizado \u2013 Espa\u00e7os Verdes.",
-                      "texto": "O instrumento de planeamento e gest\u00e3o territorial para o local \u00e9 o plano diretor municipal (PDM), publicado no Di\u00e1rio\nda Rep\u00fablica, 2.\u00aa s\u00e9rie \u2013 N.\u00ba44 de 1 de mar\u00e7o, atrav\u00e9s do Aviso n.\u00ba3341/2012,\nencontrando-se o terreno inserido em solo urbano, na categoria de solo\nurbanizado \u2013 Espa\u00e7os Verdes, sendo aplic\u00e1veis \u00e0 opera\u00e7\u00e3o urban\u00edstica pretendida\nos seguintes artigos: 13.\u00ba a 25.\u00ba, 61.\u00ba a 74.\u00ba, 81.\u00ba a 82.\u00ba e 102.\u00ba a 106.\u00ba da 1.\u00aa Revis\u00e3o do PDM.\n\nO solo urbanizado integra o tecido urbano consolidado ou em vias de consolida\u00e7\u00e3o que se encontra infraestruturado ou em vias de infraestrutura\u00e7\u00e3o, assim como as estruturas ecol\u00f3gicas do tecido urbano, e onde as interven\u00e7\u00f5es a realizar dever\u00e3o manter as carater\u00edsticas morfol\u00f3gicas do tecido existente.\n\nI.Disposi\u00e7\u00f5es Gerais\n\n1.Alinhamento\n\nNas vias cujo perfil atual j\u00e1 se encontre comprometido por constru\u00e7\u00f5es existentes, aplica-se o alinhamento dominante, sendo que\nna falta de defini\u00e7\u00e3o do mesmo, aplica-se o estabelecido no artigo 20.\u00ba/A1  do C\u00f3digo Regulamentar do Munic\u00edpio publicado\natrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho,\nalterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013\nna 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho relativamente \u00e0s zonas de constru\u00e7\u00e3o interdita,\nnomeadamente:\na)  Sistema secund\u00e1rio \u2013 5m;\nb)  Sistema terci\u00e1rio \u2013 4 m.\n\n2. Recuo\n\nA fachada principal dos novos edif\u00edcios deve cumprir o recuo dominante existente.\n\nExcecionalmente \u00e9 permitido um recuo superior ao dominante, desde que verificadas as seguintes condi\u00e7\u00f5es:\na) Desde que seja para cumprir quest\u00f5es de salubridade e habitabilidade, face \u00e0 reduzida dimens\u00e3o da parcela;\nb) Desde que se trate de edifica\u00e7\u00f5es isoladas e a frente da parcela seja significativamente superior \u00e0s parcelas envolventes.\n\nNos casos constantes da al\u00ednea a) anterior, ter\u00e1 que ser criada uma falsa fachada ou qualquer outro elementos arquitet\u00f3nico, de forma a garantir que seja cumprido o\nrecuo dominante das fachadas da envolvente.\n\nNa falta de defini\u00e7\u00e3o do recuo dominante, o recuo m\u00ednimo aplicar \u00e9 de 5 metros, conforme definido no artigo 21.\u00ba/A1 do\nC\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa\ns\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13, de 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e\nn.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho \n\n3. Aterros, escava\u00e7\u00f5es e muros de suporte\n\nAs obras de constru\u00e7\u00e3o onde se proceda a aterro ou escava\u00e7\u00e3o dever\u00e1 assegurar, sempre que tecnicamente poss\u00edvel, entre a\nnova plataforma resultante da constru\u00e7\u00e3o e o terreno natural, uma pendente igual ou inferior a 60%.\n\nS\u00f3 \u00e9 permitida a constru\u00e7\u00e3o de muros de suporte de terras que estabele\u00e7am diferen\u00e7a de cotas entre plataformas\ncontiguas ou entre plataformas e o terreno natural inferiores a 3 metros, com exce\u00e7\u00e3o dos muros de suporte de vias ou em situa\u00e7\u00f5es que seja tecnicamente\ninvi\u00e1vel a conjuga\u00e7\u00e3o da altura m\u00e1xima estabelecida com outras t\u00e9cnicas de suporte de terras.\n\n4. Afastamentos\n\nOs afastamentos m\u00ednimos, medidos entre as fachadas da edifica\u00e7\u00e3o e os limites laterais da parcela, contanto para o efeito\nqualquer sali\u00eancia relativamente ao plano das fachadas, s\u00e3o os seguintes:\n\na) Edifica\u00e7\u00f5es at\u00e9 dois pisos acima da cota de soleira \u2013 3m;\nb) Edifica\u00e7\u00f5es com mais de dois pisos acima da cota de soleira ou de 6m de altura de fachada \u2013 4m;\nc) Edifica\u00e7\u00f5es com uso industrial ou de armazenagem \u2013 5m;\n\nPoder\u00e3o ser admitidos afastamentos inferiores ao definido na al\u00ednea c), desde que sejam cumpridas cumulativamente\nas seguintes condi\u00e7\u00f5es:\na)  tenham sido iniciadas antes de 1995, servindo de comprovativo os ortofotomapas do CNIG de 1995 ou as c\u00f3pias de documentos\nentregues no Minist\u00e9rio da Economia at\u00e9 \u00e0 referida data, para a regulariza\u00e7\u00e3o da atividade industrial;\nb) Desde que a amplia\u00e7\u00e3o resulte da necessidade de alterar o\nlayout, n\u00e3o sendo poss\u00edvel cumprir o afastamento de 5 metros;\nc) N\u00e3o colidam com a \u00e1rea \u201cnon aedificandi\u201d das vias do sistema prim\u00e1rio e secund\u00e1rio com as quais os terrenos confinem diretamente.\n\n\u00c9 admitida a constru\u00e7\u00e3o em banda ou geminada, devendo o afastamento \u00e0s estremas livres ser o definido nos par\u00e1grafos anteriores.\n\n5. Pisos\n\nOs edif\u00edcios em banda ou geminados n\u00e3o podem ter uma diferen\u00e7a do n\u00famero de pisos superior a dois acima da cota de soleira.\n\nAs constru\u00e7\u00f5es que confinem com dois arruamentos desnivelados e que possuam duas frentes, n\u00e3o poder\u00e3o ultrapassar os\ndois pisos acima da cota de soleira do arruamento situado \u00e0 maior cota.\n\nNo caso em que a diferen\u00e7a de pisos resultar na cria\u00e7\u00e3o de uma empena cega, esta dever\u00e1 ser alvo de tratamento\narquitet\u00f3nico que passar\u00e1 pelo seu revestimento com materiais utilizados na fachada principal.\n\nO n\u00famero m\u00e1ximo de pisos abaixo da cota de soleira \u00e9 de 3, contando para o efeito, o arruamento situado \u00e0 menor cota.\n\nOs pisos situados abaixo da cota de soleira que seja poss\u00edvel observar a fachada posterior, ter\u00e3o que obedecer \u00e0s seguintes regras:\na) Ser integradas visualmente na parcela onde se desenvolvem, devendo privilegiar-se as situa\u00e7\u00f5es de socalco;\nb) O talude entre o limite do \u00faltimo piso da cave e o limite do terreno n\u00e3o pode ser superior a 30%;\nc) As fachadas abaixo da cota de soleira dever\u00e3o apresentar um tratamento arquitet\u00f3nico semelhante ao da fachada principal do edif\u00edcio.\n\n6. Logradouros\n\nS\u00f3 poder\u00e1 ser impermeabilizada, no m\u00e1ximo, 50% da \u00e1rea n\u00e3o constru\u00edda da parcela ou lote numa profundidade de 50 metros a\npartir do limite do espa\u00e7o publico, admitindo-se nas parcelas ou lotes de reduzida dimens\u00e3o que este valor seja ultrapassado, desde que se destine a\npavimenta\u00e7\u00e3o do acesso \u00e0 garagem.\n\nPara al\u00e9m dos 50 metros a partir da via geradora de per\u00edmetro, n\u00e3o s\u00e3o permitidas quaisquer impermeabiliza\u00e7\u00f5es que n\u00e3o\nas que resultem das condi\u00e7\u00f5es a edificar e dos seus acessos.\n\n7. Estacionamento\n\nAs novas constru\u00e7\u00f5es, bem como as que venham a ser alvo de amplia\u00e7\u00e3o igual ou superior a 50% da \u00e1rea de constru\u00e7\u00e3o\nlicenciada, devem ser garantidos os seguintes par\u00e2metros quantitativos m\u00ednimos de estacionamento privativo:\na)  1 lugar de estacionamento de ve\u00edculos ligeiros por fogo de tipologia T0, T1 e T2 para edif\u00edcios plurifamiliares;\nb)  2 lugares de estacionamento de ve\u00edculos ligeiros por fogo de tipologia T3 e T4 para edif\u00edcios plurifamiliares;\nc)  3 lugares de estacionamento de ve\u00edculos ligeiros por fogo de tipologias superior a T4 para edif\u00edcios plurifamiliares;\nd)  2 lugares de estacionamento de ve\u00edculos por edif\u00edcio unifamiliar;\ne)  1 lugar de estacionamento de ve\u00edculos ligeiros por cada 50 m2 de \u00e1rea total de constru\u00e7\u00e3o para com\u00e9rcio e ou servi\u00e7os com \u00e1rea total de\nconstru\u00e7\u00e3o igual ou inferior a 1000 m2, devendo ser assegurados locais adequados para cargas e descargas;\nf)   1 lugar de estacionamento de ve\u00edculos ligeiros por cada 25 m2 de \u00e1rea total de constru\u00e7\u00e3o para com\u00e9rcio e ou servi\u00e7os com \u00e1rea total de\nconstru\u00e7\u00e3o superior a 1000 m2, devendo ser assegurados locais adequados para cargas e descargas;\ng)  1 lugar de estacionamento de ve\u00edculos ligeiros por cada 200 m2 de \u00e1rea total de constru\u00e7\u00e3o para ind\u00fastria e ou armaz\u00e9ns, devendo\nser assegurados locais adequados para cargas e descargas;\nh)  1 lugar de estacionamento de ve\u00edculos pesados por cada 1000m2 de \u00e1rea total de constru\u00e7\u00e3o para ind\u00fastria e ou armaz\u00e9ns, devendo\nser assegurados locais adequados para cargas e descargas;\ni)   1 lugar de estacionamento de ve\u00edculos ligeiros por cada 5 quartos para os estabelecimentos hoteleiros, acrescido de 1 lugar de ve\u00edculo\npesado de passageiros por cada 50 quartos, com o m\u00ednimo de 1 lugar;\nj)   1 lugar de estacionamento de ve\u00edculos ligeiros  por cada 75 m2 de \u00e1rea total de constru\u00e7\u00e3o para equipamentos, acrescido de 1 lugar para ve\u00edculo pesado de\npassageiros  por cada 500 m2 de \u00e1rea total de constru\u00e7\u00e3o, quando o uso em causa o justificar;\nk)  1 lugar de estacionamento de ve\u00edculos ligeiros por cada 50 m2 de \u00e1rea total de constru\u00e7\u00e3o para oficinas autom\u00f3veis.\n\nDever\u00e1 ser previsto estacionamento p\u00fablico correspondente, no m\u00ednimo, \u00e0s percentagens a seguir indicadas, aplicadas aos\nvalores de estacionamento obtidos para cada uma das al\u00edneas referidas anteriormente:\na) 20% para os usos constantes da al\u00ednea a), b), c), e), f), j) e k), podendo no caso do uso ser oficina, o mesmo situar-se no interior do lote;\nb) 10% para os usos constantes na al\u00ednea g).\n\nA C\u00e2mara Municipal pode deliberar a dispensa total ou parcial do cumprimento da dota\u00e7\u00e3o de estacionamento estabelecido anteriormente, desde que se verifique uma das seguintes situa\u00e7\u00f5es:\na) O seu cumprimento implicar a modifica\u00e7\u00e3o da arquitetura original de edif\u00edcios ou na continuidade do conjunto edificado, que pelo seu\nvalor arquitet\u00f3nico intr\u00ednseco, pela sua integra\u00e7\u00e3o em conjuntos carater\u00edsticos ou em \u00e1reas de reconhecido valor paisag\u00edstico, devem ser preservados;\nb) A impossibilidade ou a inconveni\u00eancia de natureza t\u00e9cnica, nomeadamente em fun\u00e7\u00e3o das carater\u00edsticas geol\u00f3gicas do terreno, dos n\u00edveis fre\u00e1ticos, do\ncondicionamento da seguran\u00e7a das edifica\u00e7\u00f5es envolventes, da interfer\u00eancia com equipamentos e infraestruturas ou da funcionalidade dos sistemas p\u00fablicos de\ncircula\u00e7\u00e3o de pessoas e ve\u00edculos;\nc) As dimens\u00f5es da parcela ou a sua situa\u00e7\u00e3o urbana tornarem tecnicamente desaconselh\u00e1vel a constru\u00e7\u00e3o do estacionamento com a dota\u00e7\u00e3o\nexigida, por raz\u00f5es de economia e funcionalidade interna.\n\nA n\u00e3o dota\u00e7\u00e3o dos lugares de estacionamento pelas raz\u00f5es referidas anteriormente, d\u00e1 lugar ao pagamento de uma compensa\u00e7\u00e3o\nao Munic\u00edpio definida nos termos e condi\u00e7\u00f5es estipuladas no artigo 17.\u00ba/A1 do C\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa\ns\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aas\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13,\nde 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho.\n\n8. Ced\u00eancias de \u00e1reas para espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva e de \u00e1reas para equipamentos de utiliza\u00e7\u00e3o coletiva\n\nOs par\u00e2metros para o dimensionamento das \u00e1reas destinadas a espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva e de equipamentos de\nutiliza\u00e7\u00e3o coletiva, em opera\u00e7\u00f5es de loteamento ou opera\u00e7\u00f5es urban\u00edsticas de impacte semelhante a um loteamento, s\u00e3o os seguintes:\na)  Para espa\u00e7os verdes e de utiliza\u00e7\u00e3o coletiva:\na.1. 28 m2/fogo, no caso de habita\u00e7\u00e3o unifamiliar;\na.2. 0,23 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de habita\u00e7\u00e3o coletiva;\na.3. 0,28 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de com\u00e9rcio ou servi\u00e7os;\na.4. 0,23 m2/m2 de \u00e1rea de constru\u00e7\u00e3o, no caso de ind\u00fastria ou armaz\u00e9ns;\nb)  Para equipamentos de utiliza\u00e7\u00e3o coletiva:\nb.1. 35 m2/fogo, no caso de habita\u00e7\u00e3o unifamiliar;\nb.2. 0,29 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de habita\u00e7\u00e3o coletiva;\nb.3. 0,25 m2/m2 de \u00e1rea total de constru\u00e7\u00e3o, no caso de com\u00e9rcio ou servi\u00e7os;\nb.4. 0,10 m2/m2 de \u00e1rea de constru\u00e7\u00e3o, no caso de ind\u00fastria ou armaz\u00e9ns;\n\nAs parcelas de terreno resultante da aplica\u00e7\u00e3o do disposto anteriormente, passar\u00e3o a integrar o dom\u00ednio municipal\natrav\u00e9s de ced\u00eancia gratuita ao munic\u00edpio.\n\nO Munic\u00edpio pode prescindir da integra\u00e7\u00e3o do dom\u00ednio municipal da totalidade ou parte das parcelas referidas\nanteriormente, de acordo com o estabelecido nos artigos 15.\u00ba/A1 e 16.\u00ba/A1 C\u00f3digo Regulamentar do Munic\u00edpio publicado atrav\u00e9s do Aviso n.\u00ba9745/2012 na 2.\u00aa\ns\u00e9rie do DR, N.\u00ba137, de 17 de julho, alterado pelos Avisos n.\u00ba13547/2012 na 2.\u00aa s\u00e9rie do DR, N.\u00ba197, de 11 de outubro, n.\u00ba860/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba13,\nde 18 de janeiro, n.\u00ba7044/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba103, de 29 de maio e n.\u00ba8779/2013 na 2.\u00aa s\u00e9rie do DR, N.\u00ba131, de 10 de julho.\n\n9. Anexos\n\nOs anexos ter\u00e3o de cumprir as seguintes condi\u00e7\u00f5es:\na) N\u00famero m\u00e1ximo de pisos acima da cota de soleira, admitindo-se 1 destes em cave;\nb) A altura m\u00e1xima da fachada \u00e9 de 6 m, exceto nos casos em que os anexos se encontrem implantados \u00e0 estrema, n\u00e3o podendo nestes casos possuir\numa empena superior a 3,5 metros de altura relativamente \u00e0s parcelas vizinhas;\nc) Caso n\u00e3o sejam implantados \u00e0s estremas, dever\u00e3o cumprir os afastamentos m\u00ednimos impostos para a edifica\u00e7\u00e3o principal.\n\nPara al\u00e9m das condi\u00e7\u00f5es referidas anteriormente, os anexos ter\u00e3o sempre que ter em considera\u00e7\u00e3o a envolvente\nurbana e n\u00e3o contribuir para a descarateriza\u00e7\u00e3o urban\u00edstica e arquitet\u00f3nica da edifica\u00e7\u00e3o principal aos quais se encontram associados, assim como do\naglomerado urbano em que se inserem.\n\n10. Floresta\u00e7\u00e3o\n\n\u00c9 proibida a planta\u00e7\u00e3o de esp\u00e9cies de crescimento r\u00e1pido, classificadas de acordo com a legisla\u00e7\u00e3o em vigor.\n\n11. [Autor des1] \u00c1reas Abrangidas por cheias\n\nNas \u00e1reas abrangidas pelas cheias, as cotas dos pisos inferiores das edifica\u00e7\u00f5es dever\u00e3o ser superiores \u00e0 cota local da\nm\u00e1xima cheia, que \u00e9 de 12,00 m.\n\nnestas \u00e1reas \u00e9 interdita a constru\u00e7\u00e3o de novas estruturas de sa\u00fade, estabelecimentos que utilizem subst\u00e2ncias perigosas e centrais el\u00e9tricas.\n\nII. Disposi\u00e7\u00f5es Especificas\n\nS\u00e3o espa\u00e7os que englobam \u00e1reas com fun\u00e7\u00f5es de equil\u00edbrio ecol\u00f3gico do sistema urbano e acolhem atividades ao ar livre de recreio, lazer,\ndesporto e cultura, agr\u00edcolas ou florestais, coincidindo, no todo ou em parte, com a estrutura ecol\u00f3gica municipal.\n\n1. Usos e condi\u00e7\u00f5es de ocupa\u00e7\u00e3o\na) Quiosques;\nb) Parques infantis;\nc) Equipamentos ou infraestruturas de apoio \u00e1s atividades que tenham como objetivo a valoriza\u00e7\u00e3o dessas \u00e1reas.\n\nS\u00e3o usos compat\u00edveis\na) Estabelecimentos de restaura\u00e7\u00e3o e bebidas;\nb) Empreendimentos de turismo da natureza;\nc) Edifica\u00e7\u00f5es com fins agr\u00edcolas destinadas \u00e0 recolha e armazenagem de m\u00e1quinas e alfaias agr\u00edcolas, bem como de produtos resultantes da explora\u00e7\u00e3o.\n\n2. Regime de edificabilidade\na) \u00cdndice m\u00e1ximo de utiliza\u00e7\u00e3o \u2013 0,2;\nb) N\u00famero m\u00e1ximo de pisos acima da cota de soleira;\nc) Altura m\u00e1xima da fachada \u2013 6m;\nd) \u00c1rea total de constru\u00e7\u00e3o para edifica\u00e7\u00f5es com fins agr\u00edcolas \u2013 20 m2.\n\nA constru\u00e7\u00e3o de muros ter\u00e1 de ser em pedra seca ou veda\u00e7\u00f5es em madeira e sebe viva, com exce\u00e7\u00e3o dos muros de suporte de\nterras que, por quest\u00f5es t\u00e9cnicas, tenham de ser realizadas noutros materiais.\n\n3. Acabamentos e Revestimentos\n\n\u00c1s obras de constru\u00e7\u00e3o, reconstru\u00e7\u00e3o, amplia\u00e7\u00e3o, altera\u00e7\u00e3o e obras de conserva\u00e7\u00e3o aplicam-se os crit\u00e9rios:\na) N\u00e3o s\u00e3o permitidas outras cores que n\u00e3o o branco, ocres ou beges, exceto cores tradicionais em elementos decorativos das mesmas\n(cantarias, cunhais, entre outros);\nb) Nas coberturas n\u00e3o \u00e9 permitida a aplica\u00e7\u00e3o de fibrocimento, fibra de vidro ou telha de cor diferente da tradicional ou vidrada;\nc) No revestimento exterior das fachadas n\u00e3o s\u00e3o permitidas tintas texturadas, revestimentos de rebocos de cimento \u00e0 vista e marmorites ou\nimita\u00e7\u00f5es de pedra, assim como azulejos e mosaicos.\n\nNas obras de amplia\u00e7\u00e3o e obras de conserva\u00e7\u00e3o dever\u00e3o ser mantidos os materiais e cores originais, exceto nas\nsitua\u00e7\u00f5es em que se pretendam alterar os mesmos, sendo que nesses casos ter\u00e3o de ser aplicados os materiais e cores indicados anteriormente.\n\nNos casos em que os alpendres/telheiros n\u00e3o sejam executados em material semelhante ao da edifica\u00e7\u00e3o principal, apenas se\nadmite a sua execu\u00e7\u00e3o em madeira.\n\n [Autor des1]Este campo s\u00f3 deve aparecer quando na carta de ordenamento a pretens\u00e3o esteja inserida dentro do limite da cota de cheia.",
-                      "parecer": "0",
+                      "sumario": "A parcela assinalada est\u00e1 dentro da RAN.",
+                      "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de floresta\u00e7\u00e3o com esp\u00e9cies de crescimento r\u00e1pido.\nO terreno onde se insere a pretens\u00e3o \u00e9 abrangido pela restri\u00e7\u00e3o de utilidade p\u00fablica da Reserva Agr\u00edcola Nacional. A realiza\u00e7\u00e3o da opera\u00e7\u00e3o urban\u00edstica depende de parecer pr\u00e9vio ou comunica\u00e7\u00e3o pr\u00e9via por parte da Comiss\u00e3o da Reserva Agr\u00edcola Nacional em conformidade com o previsto nos artigos 23.\u00ba e 24.\u00ba do Decreto-Lei n.\u00ba73/2009, de 31 de mar\u00e7o, e instru\u00eddo em conformidade com o estabelecido na Portaria n.\u00ba162/2011, de 18 de abril e retificada pela Declara\u00e7\u00e3o de Retifica\u00e7\u00e3o n.\u00ba15/2011, de 23 de maio.",
+                      "parecer": "1",
                       "buffer": null,
-                      "entidade": "CM \u00c1gueda",
-                      "dataregisto": "2016-11-03T23:54:32.694911+00:00",
+                      "entidade": "ERRANC - Entidade Regional da Reserva Agricola Nacional do Centro",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
                       "idutilizador": 31,
-                      "hierarquia": "PLANTA ORDENAMENTO"
+                      "hierarquia": "PLANTA CONDICIONANTES \u2192 RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS \u2192 RESERVA_AGRICOLA_NACIONAL \u2192 RESERVA_AGRICOLA_NACIONAL"
                     }
                   }
                 ],
                 "type": "FeatureCollection"
               },
-              "type": "geojson"
+              "type": "geojson",
+              "style": {
+                "version": 2,
+                "[dominio = 'PLANTA ORDENAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#663300",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#663300",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                }
+              }
             },
             {
               "geoJson": {
@@ -681,36 +1087,24 @@
                       "coordinates": [
                         [
                           [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ],
                           [
-                            -25660.564024700034,
-                            100431.93804142167
+                            -26104.688125621356,
+                            99730.84721490851
                           ],
                           [
-                            -25649.644024700032,
-                            100450.69804142167
+                            -26048.688125621356,
+                            99659.4472149085
                           ],
                           [
-                            -25633.404024700034,
-                            100430.25804142166
+                            -25929.688125621356,
+                            99743.4472149085
                           ],
                           [
-                            -25635.644024700032,
-                            100414.85804142167
-                          ],
-                          [
-                            -25649.084024700034,
-                            100401.41804142167
-                          ],
-                          [
-                            -25658.75718524947,
-                            100391.66830059752
-                          ],
-                          [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ]
                         ]
                       ]
@@ -722,22 +1116,241 @@
                 ]
               },
               "opacity": 1,
+              "type": "geojson",
               "style": {
-                "version": 2,
-                "[_gx3_style_0 = 'ext-200']": {
+                "version": "2",
+                "*": {
                   "symbolizers": [
                     {
                       "type": "polygon",
                       "fillColor": "#ff3300",
-                      "fillOpacity": 0.2,
+                      "fillOpacity": 0,
                       "strokeColor": "#ff3300",
-                      "strokeOpacity": 1,
+                      "strokeOpacity": 0.5,
                       "strokeWidth": 2
                     }
                   ]
                 }
+              }
+            },
+            {
+              "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+              "customParams": {
+                "VERSION": "1.1.1",
+                "tiled": true
               },
-              "type": "geojson"
+              "layers": [
+                "carto2_5k"
+              ],
+              "opacity": 1,
+              "styles": [
+                ""
+              ],
+              "type": "WMS"
+            }
+          ]
+        }
+      },
+      {
+        "title": "PLANTA CONDICIONANTES",
+        "description": "A parcela assinalada est\u00e1 dentro da RAN.",
+        "area": 6476.09840513463,
+        "dominio": "PLANTA CONDICIONANTES",
+        "subdominio": "RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS",
+        "familia": "RESERVA_AGRICOLA_NACIONAL",
+        "objecto": "RESERVA_AGRICOLA_NACIONAL",
+        "ident_gene": null,
+        "ident_part": null,
+        "diploma_es": null,
+        "sumario": "A parcela assinalada est\u00e1 dentro da RAN.",
+        "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de flor...",
+        "hierarquia": "PLANTA CONDICIONANTES \u2192 RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS \u2192 RESERVA_AGRICOLA_NACION...",
+        "map": {
+          "center": [
+            -26050.50848963235,
+            99717.44122233684
+          ],
+          "dpi": 200,
+          "projection": "EPSG:3763",
+          "scale": 2000,
+          "layers": [
+            {
+              "geoJson": {
+                "features": [
+                  {
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            -25996.3288536433,
+                            99696.4067010107
+                          ],
+                          [
+                            -26048.6881256214,
+                            99659.4472149085
+                          ],
+                          [
+                            -26104.6881256214,
+                            99730.8472149085
+                          ],
+                          [
+                            -26073.133530492,
+                            99775.4352297652
+                          ],
+                          [
+                            -26057.9426456443,
+                            99767.9627284665
+                          ],
+                          [
+                            -26038.2922677664,
+                            99749.0734246171
+                          ],
+                          [
+                            -26030.4020219453,
+                            99738.8137328323
+                          ],
+                          [
+                            -26018.641907112,
+                            99730.6641661601
+                          ],
+                          [
+                            -26007.3416997453,
+                            99720.0745141048
+                          ],
+                          [
+                            -25996.3288536433,
+                            99696.4067010107
+                          ]
+                        ]
+                      ]
+                    },
+                    "properties": {
+                      "id": 1692,
+                      "idpretensao": 641,
+                      "camada": "ip_condicionantes.ran_ip",
+                      "area": 6476.09840513463,
+                      "dominio": "PLANTA CONDICIONANTES",
+                      "subdominio": "RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS",
+                      "familia": "RESERVA_AGRICOLA_NACIONAL",
+                      "objecto": "RESERVA_AGRICOLA_NACIONAL",
+                      "ident_gene": null,
+                      "ident_part": null,
+                      "diploma_es": null,
+                      "sumario": "A parcela assinalada est\u00e1 dentro da RAN.",
+                      "texto": "Admitido como uso geral, a pr\u00e1tica atividade agr\u00edcola e pecu\u00e1ria, sendo proibido as a\u00e7\u00f5es de floresta\u00e7\u00e3o com esp\u00e9cies de crescimento r\u00e1pido.\nO terreno onde se insere a pretens\u00e3o \u00e9 abrangido pela restri\u00e7\u00e3o de utilidade p\u00fablica da Reserva Agr\u00edcola Nacional. A realiza\u00e7\u00e3o da opera\u00e7\u00e3o urban\u00edstica depende de parecer pr\u00e9vio ou comunica\u00e7\u00e3o pr\u00e9via por parte da Comiss\u00e3o da Reserva Agr\u00edcola Nacional em conformidade com o previsto nos artigos 23.\u00ba e 24.\u00ba do Decreto-Lei n.\u00ba73/2009, de 31 de mar\u00e7o, e instru\u00eddo em conformidade com o estabelecido na Portaria n.\u00ba162/2011, de 18 de abril e retificada pela Declara\u00e7\u00e3o de Retifica\u00e7\u00e3o n.\u00ba15/2011, de 23 de maio.",
+                      "parecer": "1",
+                      "buffer": null,
+                      "entidade": "ERRANC - Entidade Regional da Reserva Agricola Nacional do Centro",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
+                      "idutilizador": 31,
+                      "hierarquia": "PLANTA CONDICIONANTES \u2192 RECURSOS_NATURAIS_RECURSOS_AGRICOLAS_FLORESTAIS \u2192 RESERVA_AGRICOLA_NACIONAL \u2192 RESERVA_AGRICOLA_NACIONAL"
+                    }
+                  }
+                ],
+                "type": "FeatureCollection"
+              },
+              "type": "geojson",
+              "style": {
+                "version": 2,
+                "[dominio = 'PLANTA ORDENAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#663300",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#663300",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "geoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            -26040.288125621355,
+                            99821.84721490851
+                          ],
+                          [
+                            -26104.688125621356,
+                            99730.84721490851
+                          ],
+                          [
+                            -26048.688125621356,
+                            99659.4472149085
+                          ],
+                          [
+                            -25929.688125621356,
+                            99743.4472149085
+                          ],
+                          [
+                            -26040.288125621355,
+                            99821.84721490851
+                          ]
+                        ]
+                      ]
+                    },
+                    "properties": {
+                      "_gx3_style_0": "ext-200"
+                    }
+                  }
+                ]
+              },
+              "opacity": 1,
+              "type": "geojson",
+              "style": {
+                "version": "2",
+                "*": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#ff3300",
+                      "fillOpacity": 0,
+                      "strokeColor": "#ff3300",
+                      "strokeOpacity": 0.5,
+                      "strokeWidth": 2
+                    }
+                  ]
+                }
+              }
             },
             {
               "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
@@ -760,11 +1373,11 @@
       {
         "title": "PLANTA CONDICIONANTES",
         "description": "A parcela assinalada est\u00e1 dentro da REN.",
-        "area": 792.92096946924,
+        "area": 14157.0800000008,
         "dominio": "PLANTA CONDICIONANTES",
         "subdominio": "\u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C",
         "familia": "Reserva Ecol\u00f3gica Nacional",
-        "objecto": "Leitos dos Cursos de \u00c1gua",
+        "objecto": "\u00c1reas de M\u00e1xima Infiltra\u00e7\u00e3o",
         "ident_gene": null,
         "ident_part": null,
         "diploma_es": null,
@@ -773,10 +1386,10 @@
         "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Na...",
         "map": {
           "center": [
-            -25657.06751350345,
-            100419.136332608
+            -26017.1881256214,
+            99740.6472149085
           ],
-          "dpi": 72,
+          "dpi": 200,
           "projection": "EPSG:3763",
           "scale": 2000,
           "layers": [
@@ -790,121 +1403,37 @@
                       "coordinates": [
                         [
                           [
-                            -25669.573643214,
-                            100437.005951836
+                            -26040.2881256214,
+                            99821.8472149085
                           ],
                           [
-                            -25660.5640247,
-                            100431.938041422
+                            -25929.6881256214,
+                            99743.4472149085
                           ],
                           [
-                            -25652.0269111978,
-                            100446.604364618
+                            -26048.6881256214,
+                            99659.4472149085
                           ],
                           [
-                            -25649.0357074964,
-                            100441.02096204
+                            -26104.6881256214,
+                            99730.8472149085
                           ],
                           [
-                            -25648.6117821966,
-                            100440.125782304
-                          ],
-                          [
-                            -25648.5566732793,
-                            100439.848786697
-                          ],
-                          [
-                            -25648.4256678821,
-                            100439.641242202
-                          ],
-                          [
-                            -25646.5271074809,
-                            100434.288097668
-                          ],
-                          [
-                            -25646.471446946,
-                            100433.964702582
-                          ],
-                          [
-                            -25646.1297118241,
-                            100432.82277352
-                          ],
-                          [
-                            -25645.1581476135,
-                            100427.739503141
-                          ],
-                          [
-                            -25645.0422564001,
-                            100426.516019389
-                          ],
-                          [
-                            -25644.9887986708,
-                            100426.273573363
-                          ],
-                          [
-                            -25644.5698480732,
-                            100416.097045055
-                          ],
-                          [
-                            -25644.6044407548,
-                            100415.902346329
-                          ],
-                          [
-                            -25644.5613837929,
-                            100415.68604976
-                          ],
-                          [
-                            -25644.5977034243,
-                            100414.834258182
-                          ],
-                          [
-                            -25645.4321141917,
-                            100405.06995193
-                          ],
-                          [
-                            -25649.0840247,
-                            100401.418041422
-                          ],
-                          [
-                            -25658.7571852495,
-                            100391.668300598
-                          ],
-                          [
-                            -25665.2367183981,
-                            100408.206318029
-                          ],
-                          [
-                            -25664.578654696,
-                            100415.906852441
-                          ],
-                          [
-                            -25664.9411581183,
-                            100424.711847271
-                          ],
-                          [
-                            -25665.630874728,
-                            100428.320640795
-                          ],
-                          [
-                            -25667.0221422945,
-                            100432.243313554
-                          ],
-                          [
-                            -25669.573643214,
-                            100437.005951836
+                            -26040.2881256214,
+                            99821.8472149085
                           ]
                         ]
                       ]
                     },
                     "properties": {
-                      "id": 1628,
-                      "idpretensao": 630,
+                      "id": 1693,
+                      "idpretensao": 641,
                       "camada": "ip_condicionantes.ren_ip_polygon_ok",
-                      "area": 792.92096946924,
+                      "area": 14157.0800000008,
                       "dominio": "PLANTA CONDICIONANTES",
                       "subdominio": "\u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C",
                       "familia": "Reserva Ecol\u00f3gica Nacional",
-                      "objecto": "Leitos dos Cursos de \u00c1gua",
+                      "objecto": "\u00c1reas de M\u00e1xima Infiltra\u00e7\u00e3o",
                       "ident_gene": null,
                       "ident_part": null,
                       "diploma_es": null,
@@ -913,15 +1442,57 @@
                       "parecer": null,
                       "buffer": null,
                       "entidade": "CCDRC - Comiss\u00e3o de Coordena\u00e7\u00e3o de Desenvolvimento Regional do Centro",
-                      "dataregisto": "2016-11-03T23:54:32.694911+00:00",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
                       "idutilizador": 31,
-                      "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Nacional \u2192 Leitos dos Cursos de \u00c1gua"
+                      "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Nacional \u2192 \u00c1reas de M\u00e1xima Infiltra\u00e7\u00e3o"
                     }
                   }
                 ],
                 "type": "FeatureCollection"
               },
-              "type": "geojson"
+              "type": "geojson",
+              "style": {
+                "version": 2,
+                "[dominio = 'PLANTA ORDENAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#663300",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#663300",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                }
+              }
             },
             {
               "geoJson": {
@@ -934,36 +1505,24 @@
                       "coordinates": [
                         [
                           [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ],
                           [
-                            -25660.564024700034,
-                            100431.93804142167
+                            -26104.688125621356,
+                            99730.84721490851
                           ],
                           [
-                            -25649.644024700032,
-                            100450.69804142167
+                            -26048.688125621356,
+                            99659.4472149085
                           ],
                           [
-                            -25633.404024700034,
-                            100430.25804142166
+                            -25929.688125621356,
+                            99743.4472149085
                           ],
                           [
-                            -25635.644024700032,
-                            100414.85804142167
-                          ],
-                          [
-                            -25649.084024700034,
-                            100401.41804142167
-                          ],
-                          [
-                            -25658.75718524947,
-                            100391.66830059752
-                          ],
-                          [
-                            -25678.484024700032,
-                            100442.01804142167
+                            -26040.288125621355,
+                            99821.84721490851
                           ]
                         ]
                       ]
@@ -975,22 +1534,353 @@
                 ]
               },
               "opacity": 1,
+              "type": "geojson",
               "style": {
-                "version": 2,
-                "[_gx3_style_0 = 'ext-200']": {
+                "version": "2",
+                "*": {
                   "symbolizers": [
                     {
                       "type": "polygon",
                       "fillColor": "#ff3300",
-                      "fillOpacity": 0.2,
+                      "fillOpacity": 0,
                       "strokeColor": "#ff3300",
-                      "strokeOpacity": 1,
+                      "strokeOpacity": 0.5,
                       "strokeWidth": 2
                     }
                   ]
                 }
+              }
+            },
+            {
+              "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+              "customParams": {
+                "VERSION": "1.1.1",
+                "tiled": true
               },
-              "type": "geojson"
+              "layers": [
+                "carto2_5k"
+              ],
+              "opacity": 1,
+              "styles": [
+                ""
+              ],
+              "type": "WMS"
+            }
+          ]
+        }
+      },
+      {
+        "title": "PLANTA CONDICIONANTES",
+        "description": "A parcela assinalada est\u00e1 dentro da REN.",
+        "area": 4699.8989111056,
+        "dominio": "PLANTA CONDICIONANTES",
+        "subdominio": "\u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C",
+        "familia": "Reserva Ecol\u00f3gica Nacional",
+        "objecto": "Leitos dos Cursos de \u00c1gua",
+        "ident_gene": null,
+        "ident_part": null,
+        "diploma_es": null,
+        "sumario": "A parcela assinalada est\u00e1 dentro da REN.",
+        "texto": null,
+        "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Na...",
+        "map": {
+          "center": [
+            -26024.58080480645,
+            99746.80519325714
+          ],
+          "dpi": 200,
+          "projection": "EPSG:3763",
+          "scale": 2000,
+          "layers": [
+            {
+              "geoJson": {
+                "features": [
+                  {
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            -26078.9232601633,
+                            99767.2540900123
+                          ],
+                          [
+                            -26053.617094515,
+                            99803.0128023414
+                          ],
+                          [
+                            -26053.4934416554,
+                            99802.9152681045
+                          ],
+                          [
+                            -26053.0412886453,
+                            99802.642332385
+                          ],
+                          [
+                            -26045.6339799779,
+                            99796.4849343221
+                          ],
+                          [
+                            -26029.7465477231,
+                            99783.2977746914
+                          ],
+                          [
+                            -26029.5066935319,
+                            99783.0791830609
+                          ],
+                          [
+                            -26029.4568431547,
+                            99783.0477846501
+                          ],
+                          [
+                            -26008.9038446594,
+                            99764.6154988154
+                          ],
+                          [
+                            -26008.6931372643,
+                            99764.3179073004
+                          ],
+                          [
+                            -26008.3627341495,
+                            99764.0921680316
+                          ],
+                          [
+                            -25998.8010730107,
+                            99754.1211653869
+                          ],
+                          [
+                            -25998.7690717499,
+                            99754.0720667185
+                          ],
+                          [
+                            -25998.2365086883,
+                            99753.479636465
+                          ],
+                          [
+                            -25985.2001808581,
+                            99737.3245376777
+                          ],
+                          [
+                            -25985.0325733777,
+                            99737.0422449208
+                          ],
+                          [
+                            -25984.6542626513,
+                            99736.5801093996
+                          ],
+                          [
+                            -25970.7639806432,
+                            99715.6818832522
+                          ],
+                          [
+                            -25970.6296237429,
+                            99715.4298393397
+                          ],
+                          [
+                            -25970.5018198374,
+                            99715.2656443208
+                          ],
+                          [
+                            -25970.2383494496,
+                            99714.8235275003
+                          ],
+                          [
+                            -26004.5584358301,
+                            99690.5975841729
+                          ],
+                          [
+                            -26004.7119578396,
+                            99690.7989432852
+                          ],
+                          [
+                            -26007.6312456186,
+                            99695.9285148213
+                          ],
+                          [
+                            -26008.1788269864,
+                            99697.0475890487
+                          ],
+                          [
+                            -26008.229535213,
+                            99697.3024350456
+                          ],
+                          [
+                            -26008.3518402111,
+                            99697.4953299013
+                          ],
+                          [
+                            -26012.1689085013,
+                            99708.1261700522
+                          ],
+                          [
+                            -26015.3328139617,
+                            99713.8586790434
+                          ],
+                          [
+                            -26024.942590304,
+                            99722.8641406266
+                          ],
+                          [
+                            -26036.0977492106,
+                            99730.5945269861
+                          ],
+                          [
+                            -26037.4727195135,
+                            99731.74258009
+                          ],
+                          [
+                            -26038.3287913183,
+                            99732.7175981199
+                          ],
+                          [
+                            -26045.8777765198,
+                            99742.5335532566
+                          ],
+                          [
+                            -26057.7200356291,
+                            99754.8092241657
+                          ],
+                          [
+                            -26063.7781232783,
+                            99759.8128183233
+                          ],
+                          [
+                            -26067.996503203,
+                            99762.4133844171
+                          ],
+                          [
+                            -26078.9232601633,
+                            99767.2540900123
+                          ]
+                        ]
+                      ]
+                    },
+                    "properties": {
+                      "id": 1695,
+                      "idpretensao": 641,
+                      "camada": "ip_condicionantes.ren_ip_polygon_ok",
+                      "area": 4699.8989111056,
+                      "dominio": "PLANTA CONDICIONANTES",
+                      "subdominio": "\u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C",
+                      "familia": "Reserva Ecol\u00f3gica Nacional",
+                      "objecto": "Leitos dos Cursos de \u00c1gua",
+                      "ident_gene": null,
+                      "ident_part": null,
+                      "diploma_es": null,
+                      "sumario": "A parcela assinalada est\u00e1 dentro da REN.",
+                      "texto": null,
+                      "parecer": null,
+                      "buffer": null,
+                      "entidade": "CCDRC - Comiss\u00e3o de Coordena\u00e7\u00e3o de Desenvolvimento Regional do Centro",
+                      "dataregisto": "2016-11-04T00:51:31.157698+00:00",
+                      "idutilizador": 31,
+                      "hierarquia": "PLANTA CONDICIONANTES \u2192 \u00c1REAS DE RESERVA E DE PROTE\u00c7\u00c3O DE SOLOS E DE ESP\u00c9C \u2192 Reserva Ecol\u00f3gica Nacional \u2192 Leitos dos Cursos de \u00c1gua"
+                    }
+                  }
+                ],
+                "type": "FeatureCollection"
+              },
+              "type": "geojson",
+              "style": {
+                "version": 2,
+                "[dominio = 'PLANTA ORDENAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#663300",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#663300",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'PLANTA CONDICIONANTES']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#006600",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#006600",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                },
+                "[dominio = 'LOTEAMENTO']": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#cc00cc",
+                      "fillOpacity": 0.2,
+                      "strokeColor": "#cc00cc",
+                      "strokeOpacity": 0.2,
+                      "strokeWidth": 2,
+                      "strokeDashstyle": "dot"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "geoJson": {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            -26040.288125621355,
+                            99821.84721490851
+                          ],
+                          [
+                            -26104.688125621356,
+                            99730.84721490851
+                          ],
+                          [
+                            -26048.688125621356,
+                            99659.4472149085
+                          ],
+                          [
+                            -25929.688125621356,
+                            99743.4472149085
+                          ],
+                          [
+                            -26040.288125621355,
+                            99821.84721490851
+                          ]
+                        ]
+                      ]
+                    },
+                    "properties": {
+                      "_gx3_style_0": "ext-200"
+                    }
+                  }
+                ]
+              },
+              "opacity": 1,
+              "type": "geojson",
+              "style": {
+                "version": "2",
+                "*": {
+                  "symbolizers": [
+                    {
+                      "type": "polygon",
+                      "fillColor": "#ff3300",
+                      "fillOpacity": 0,
+                      "strokeColor": "#ff3300",
+                      "strokeOpacity": 0.5,
+                      "strokeWidth": 2
+                    }
+                  ]
+                }
+              }
             },
             {
               "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
@@ -1014,8 +1904,8 @@
     "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas, massa eget placerat fermentum, nunc massa facilisis enim, id eleifend orci lacus sed sem.",
     "map2k": {
       "center": [
-        -25659.87718524947,
-        100441.50830059752
+        -26012.988125621338,
+        99708.44721490846
       ],
       "dpi": 200,
       "layers": [
@@ -1030,36 +1920,24 @@
                   "coordinates": [
                     [
                       [
-                        -25678.484024700032,
-                        100442.01804142167
+                        -26040.288125621355,
+                        99821.84721490851
                       ],
                       [
-                        -25660.564024700034,
-                        100431.93804142167
+                        -26104.688125621356,
+                        99730.84721490851
                       ],
                       [
-                        -25649.644024700032,
-                        100450.69804142167
+                        -26048.688125621356,
+                        99659.4472149085
                       ],
                       [
-                        -25633.404024700034,
-                        100430.25804142166
+                        -25929.688125621356,
+                        99743.4472149085
                       ],
                       [
-                        -25635.644024700032,
-                        100414.85804142167
-                      ],
-                      [
-                        -25649.084024700034,
-                        100401.41804142167
-                      ],
-                      [
-                        -25658.75718524947,
-                        100391.66830059752
-                      ],
-                      [
-                        -25678.484024700032,
-                        100442.01804142167
+                        -26040.288125621355,
+                        99821.84721490851
                       ]
                     ]
                   ]

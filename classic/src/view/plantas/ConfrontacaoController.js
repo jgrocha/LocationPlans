@@ -2,8 +2,13 @@ Ext.define('Admin.view.plantas.ConfrontacaoController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.confrontacao',
 
-    afterRenderConfrontacao: function() {
+    afterRenderConfrontacao: function () {
         console.log('afterRenderConfrontacao');
+        var view = this.getView();
+        var vm = this.getView().getViewModel();
+        var title = "Confrontação da pretensão " + view.pretensaoid + " com os instrumentos de gestão do território. Área: " +
+            Ext.util.Format.number(view.area, '0,0') + ' m²';
+        vm.set('title', title);
     },
 
     onCenterClick: function (button) {

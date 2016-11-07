@@ -34,14 +34,14 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
     onUploadSuccessful: function (json) {
         var me = this;
-        console.log('onUploadSuccessful');
+        // console.log('onUploadSuccessful');
         var view = me.getView();
         var vm = view.getViewModel();
         var olMap = view.down('mapcanvas').map;
 
         var printrequestdetaillayer = vm.get('printrequestdetaillayer');
         var features = (new ol.format.GeoJSON()).readFeatures(json);
-        console.log(features);
+        // console.log(features);
         printrequestdetaillayer.getSource().addFeatures(features);
 
         var pan = ol.animation.pan({
@@ -118,7 +118,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
     },
 
     onChangeGeometry: function (combo, newValue, oldValue, eOpts) {
-        console.log('onChangeGeometry: ' + newValue);
+        // console.log('onChangeGeometry: ' + newValue);
         var me = this;
 
         var view = this.getView();
@@ -188,7 +188,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
     },
 
     onChangePurpose: function (combo, newValue, oldValue, eOpts) {
-        console.log('onChangePurpose: ' + newValue);
+        // console.log('onChangePurpose: ' + newValue);
         var me = this;
         var view = this.getView();
         var vm = view.getViewModel();
@@ -203,7 +203,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
     },
 
     onUpload: function (item, e, eOpts) {
-        console.log('onUpload');
+        // console.log('onUpload');
 
         var view = Ext.widget('ogre');
         view.show();
@@ -283,8 +283,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
     },
 
     onConfrontacaoPreview: function (item, e, eOpts) {
-        console.log('onConfrontacaoPreview');
-        console.log(arguments);
+        // console.log('onConfrontacaoPreview');
+        // console.log(arguments);
         var me = this;
 
         Ext.apply(eOpts, {
@@ -311,7 +311,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var purposeId = vm.get('selectedPurpose');
         var store = vm.getStore('purpose');
         var purposeName = store.getById(purposeId).get('name');
-        console.log(purposeId, purposeName);
+        // console.log(purposeId, purposeName);
 
         var features = printrequestdetaillayer.getSource().getFeatures();
         var numOfPolygons = 0;
@@ -321,11 +321,11 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 numOfPolygons += 1;
             }
         }
-        console.log("#polygons: ", numOfPolygons);
+        // console.log("#polygons: ", numOfPolygons);
         if (vm.get('modified')) {
-            console.log('Features criados/editados');
+            // console.log('Features criados/editados');
         } else {
-            console.log('Features NÃO criados/editados');
+            // console.log('Features NÃO criados/editados');
         }
         switch (purposeId) {
             case 1:
@@ -402,8 +402,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             feature: dados
         }, function (result, event) {
             if (result.success) {
-                //console.log('Gravou bem', result.message);
-                //console.log(result.data[0].gid);
+                // console.log('Gravou bem', result.message);
+                // console.log(result.data[0].gid);
                 vm.set('modified', false);
 
                 // if (purposeId != 4) {
@@ -414,19 +414,21 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 var features = printrequestdetaillayer.getSource().getFeatures();
 
                 if (features.length) {
+                    // console.log('Temos detalhes para gravar');
+
                     var details = (new ol.format.GeoJSON()).writeFeatures(features);
                     Server.Plantas.Pedidos.saveGeoJsonDetail({
                         pedido: result.data[0].gid,
                         features: details
                     }, function (resultDetail, event) {
                         if (resultDetail.success) {
-                            console.log('Gravou bem ' + resultDetail.total + ' detalhes');
+                            // console.log('Gravou bem ' + resultDetail.total + ' detalhes');
                             if (purposeId == 4) {
                                 Server.Plantas.Pedidos.createConfrontacao({
                                     gid: result.data[0].gid
                                 }, function (resultConfrontacao, event) {
                                     if (resultConfrontacao.success) {
-                                        console.log('Confrontacao bem lançada', resultConfrontacao);
+                                        // console.log('Confrontacao bem lançada', resultConfrontacao);
 
                                         // to preview or print?
                                         if (eOpts.preview) {
@@ -445,21 +447,23 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                             }
 
                         } else {
-                            console.log('Gravou mal', resultDetail);
+                            console.log('Gravou mal o detalhe', resultDetail);
                         }
                     });
+                } else {
+                    console.log('Não tem features para gravar');
+                    view.fireEvent('requestprintid', result.data[0].gid, 0, username);
                 }
             } else {
-                console.log('Não tem features para gravar');
-                view.fireEvent('requestprintid', result.data[0].gid, 0, username);
+                console.log('Gravou mal o pedido', result);
             }
         });
 
     },
 
     onPreviewConfrontacao: function (view, printid, pretensaoid, area, name) {
-        console.log('onPreviewConfrontacao');
-        console.log(arguments);
+        // console.log('onPreviewConfrontacao');
+        // console.log(arguments);
         var me = this;
         var view = this.getView();
         var vm = view.getViewModel();
@@ -469,7 +473,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             me.confrontacao = windows[0];
             me.confrontacao.show();
         } else {
-            console.log('Vou criar uma nova janela de confrontação');
+            // console.log('Vou criar uma nova janela de confrontação');
             me.confrontacao = Ext.create('Admin.view.plantas.Confrontacao', {
                 printid: printid,
                 pretensaoid: pretensaoid,
@@ -494,10 +498,10 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var extent = vm.get('extent');
 
         var purposeId = vm.get('selectedPurpose');
-        console.log(purposeId);
+        // console.log(purposeId);
         var store = vm.getStore('purpose');
         var purposeName = store.getById(purposeId).get('name');
-        console.log(purposeId, purposeName);
+        // console.log(purposeId, purposeName);
 
         var center = olMap.getView().getCenter();
         var layoutname = vm.get('paper') + '_' + vm.get('orientation');
@@ -785,8 +789,8 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
     onPrintPlantaConfrontacao: function (printid, pretensaoid, area, name) {
         //Ext.getDisplayName(temp2)
-        console.log('onPrintPlantaConfrontacao');
-        console.log(arguments);
+        // console.log('onPrintPlantaConfrontacao');
+        // console.log(arguments);
 
         var me = this;
         var view = this.getView();
@@ -797,10 +801,10 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         var extent = vm.get('extent');
 
         var purposeId = vm.get('selectedPurpose');
-        console.log(purposeId);
+        // console.log(purposeId);
         var store = vm.getStore('purpose');
         var purposeName = store.getById(purposeId).get('name');
-        console.log(purposeId, purposeName);
+        // console.log(purposeId, purposeName);
 
         var center = olMap.getView().getCenter();
         var layoutname = vm.get('paper') + '_' + vm.get('orientation');
@@ -836,10 +840,10 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             }
         );
 
-        console.log('----------------------------------');
-        console.log(serializedLayers);
-        console.log(JSON.parse(JSON.stringify(serializedLayers)));
-        console.log('----------------------------------');
+        // console.log('----------------------------------');
+        // console.log(serializedLayers);
+        // console.log(JSON.parse(JSON.stringify(serializedLayers)));
+        // console.log('----------------------------------');
 
         // TODO
         // Fico com uma replica; não mudo o objeto original
@@ -974,7 +978,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                             // [_gx3_style_0 = 'ext-207']
                             // "_gx3_style_0": "ext-200"
 
-                            console.log(serializedLayers2k[0].style);
+                            // console.log(serializedLayers2k[0].style);
 
                             // criar um clone, para não alterar o objecto original
                             var layerConfrontacao = JSON.parse(JSON.stringify(serializedLayers2k[0]));
@@ -1316,26 +1320,26 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
 
         // API
         printrequestdetaillayer.getSource().on('addfeature', function (e) {
-            console.log(arguments);
-            console.log("feature added: ", e.feature.getGeometry().getType());
+            // console.log(arguments);
+            // console.log("feature added: ", e.feature.getGeometry().getType());
             vm.set('modified', true);
         });
 
         // API
         printrequestdetaillayer.getSource().on('removefeature', function (e) {
-            console.log("feature removed: ", e.feature.getGeometry().getType());
+            // console.log("feature removed: ", e.feature.getGeometry().getType());
             vm.set('modified', true);
         });
 
         // API
         printrequestdetaillayer.getSource().on('changefeature', function (e) {
-            console.log("feature changefeature: ", e.feature.getGeometry().getType());
+            // console.log("feature changefeature: ", e.feature.getGeometry().getType());
             vm.set('modified', true);
         });
 
         // API
         printrequestdetaillayer.getSource().on('clear', function () {
-            console.log("clear");
+            // console.log("clear");
             vm.set('modified', true);
         });
 

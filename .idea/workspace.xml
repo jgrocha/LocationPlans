@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61e971d5-b08e-4d59-b333-e3de1794b27a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/apcer.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/cmagueda_150x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/A4vertical.jrxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/InfPreviaA3horizontal.jrxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/InfPreviaA3vertical.jrxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/InfPreviaA4horizontal.jrxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/InfPreviaA4vertical.jrxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/infprevia/NorthArrow_02.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/print-apps/plantas/legend.jrxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic.json" afterPath="$PROJECT_DIR$/build/production/Admin/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic/app.js" afterPath="$PROJECT_DIR$/build/production/Admin/classic/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic/resources/languages/pt-BR.js" afterPath="$PROJECT_DIR$/build/production/Admin/classic/resources/languages/pt-BR.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic/resources/languages/pt-PT.js" afterPath="$PROJECT_DIR$/build/production/Admin/classic/resources/languages/pt-PT.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic/resources/languages/pt.js" afterPath="$PROJECT_DIR$/build/production/Admin/classic/resources/languages/pt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/resources/languages/pt-BR.js" afterPath="$PROJECT_DIR$/build/production/Admin/resources/languages/pt-BR.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/resources/languages/pt-PT.js" afterPath="$PROJECT_DIR$/build/production/Admin/resources/languages/pt-PT.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/resources/languages/pt.js" afterPath="$PROJECT_DIR$/build/production/Admin/resources/languages/pt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/plantas/Confrontacao.js" afterPath="$PROJECT_DIR$/classic/src/view/plantas/Confrontacao.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js" afterPath="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js" afterPath="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoModel.js" afterPath="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js" afterPath="$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/print-apps/infprevia/config.yaml" afterPath="$PROJECT_DIR$/print-apps/infprevia/config.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/print-apps/infprevia/requestData.json" afterPath="$PROJECT_DIR$/print-apps/infprevia/requestData.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/languages/pt-PT.js" afterPath="$PROJECT_DIR$/resources/languages/pt-PT.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/direct/Plantas/Pedidos.js" afterPath="$PROJECT_DIR$/server/direct/Plantas/Pedidos.js" />
     </list>
     <ignored path="server/server-config.json" />
     <ignored path="server/node_modules/" />
@@ -64,9 +43,22 @@
       <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="917" column="60" selection-start-line="917" selection-start-column="60" selection-end-line="917" selection-end-column="60" />
+            <state relative-caret-position="258">
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Readme-Notes.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1270">
+                <caret line="455" column="0" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -75,47 +67,17 @@
         <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="202" column="35" selection-start-line="202" selection-start-column="35" selection-end-line="202" selection-end-column="35" />
+              <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/print-apps/infprevia/config.yaml">
+      <file leaf-file-name="server-config.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server-config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlantasModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/PlantasModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="21" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/print-apps/plantas/config.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Confrontacao.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/Confrontacao.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="94" column="35" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="35" />
+            <state relative-caret-position="450">
+              <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -124,28 +86,8 @@
       <file leaf-file-name="ConfrontacaoController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FullMapPanelModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pt-PT.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/languages/pt-PT.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="401" column="28" selection-start-line="401" selection-start-column="28" selection-end-line="401" selection-end-column="28" />
+            <state relative-caret-position="391">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -154,8 +96,18 @@
       <file leaf-file-name="ConfrontacaoFullMapPanelController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-504">
-              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+            <state relative-caret-position="268">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlantasController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/PlantasController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -215,20 +167,20 @@
         <option value="$PROJECT_DIR$/classic/src/view/redeviaria/RedeViariaModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
         <option value="$PROJECT_DIR$/ext/classic/locale/overrides/pt_PT/ext-locale-pt_PT.js" />
-        <option value="$PROJECT_DIR$/Readme-Notes.md" />
         <option value="$PROJECT_DIR$/server/server-config.json" />
         <option value="$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelModel.js" />
         <option value="$PROJECT_DIR$/print-apps/infprevia/requestData.json" />
         <option value="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoModel.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/plantas/Confrontacao.js" />
         <option value="$PROJECT_DIR$/server/direct/Plantas/Pedidos.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js" />
         <option value="$PROJECT_DIR$/print-apps/infprevia/InfPreviaA3vertical.jrxml" />
         <option value="$PROJECT_DIR$/print-apps/infprevia/InfPreviaA3horizontal.jrxml" />
         <option value="$PROJECT_DIR$/print-apps/infprevia/config.yaml" />
-        <option value="$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js" />
         <option value="$PROJECT_DIR$/resources/languages/pt-PT.js" />
+        <option value="$PROJECT_DIR$/Readme-Notes.md" />
+        <option value="$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js" />
       </list>
     </option>
   </component>
@@ -313,7 +265,59 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="print-apps" />
+              <option name="myItemId" value="classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plantas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -635,7 +639,7 @@
       <workItem from="1478213712885" duration="7448000" />
       <workItem from="1478257760383" duration="2289000" />
       <workItem from="1478359924279" duration="13172000" />
-      <workItem from="1478522120149" duration="6873000" />
+      <workItem from="1478522120149" duration="10438000" />
     </task>
     <task id="LOCAL-00001" summary="Navigation tree from database">
       <created>1447546384939</created>
@@ -938,11 +942,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478220971102</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Impressão da Informação Prévia no Minuto">
+      <created>1478530101830</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1478530101830</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="696584000" />
+    <option name="totallyTimeSpent" value="700149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -963,7 +974,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46659708" sideWeight="0.4832251" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36743215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3862213" sideWeight="0.626252" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5741127" sideWeight="0.626252" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1058,13 +1069,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/print-apps/plantas/requestData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="23" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1173,16 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="456">
-            <caret line="439" column="44" selection-start-line="439" selection-start-column="44" selection-end-line="439" selection-end-column="44" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
@@ -1237,13 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server-config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1308,6 +1295,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2449">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1315,6 +1305,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-73">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,46 +1323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2574">
           <caret line="143" column="22" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/Confrontacao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="94" column="35" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/print-apps/plantas/config.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="202" column="35" selection-start-line="202" selection-start-column="35" selection-end-line="202" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1398,18 +1351,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/print-apps/infprevia/config.yaml">
+    <entry file="file://$PROJECT_DIR$/resources/languages/pt-PT.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
+        <state relative-caret-position="454">
+          <caret line="401" column="28" selection-start-line="401" selection-start-column="4" selection-end-line="401" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="917" column="60" selection-start-line="917" selection-start-column="60" selection-end-line="917" selection-end-column="60" />
+        <state relative-caret-position="378">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/Confrontacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-181">
+          <caret line="94" column="35" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/print-apps/plantas/config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1422,18 +1391,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelModel.js">
+    <entry file="file://$PROJECT_DIR$/print-apps/infprevia/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        <state relative-caret-position="477">
+          <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/languages/pt-PT.js">
+    <entry file="file://$PROJECT_DIR$/server/server-config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="401" column="28" selection-start-line="401" selection-start-column="28" selection-end-line="401" selection-end-column="28" />
+        <state relative-caret-position="450">
+          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1270">
+            <caret line="455" column="0" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoFullMapPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/PlantasController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

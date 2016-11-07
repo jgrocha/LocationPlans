@@ -3,7 +3,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoController', {
     alias: 'controller.confrontacao',
 
     afterRenderConfrontacao: function () {
-        console.log('afterRenderConfrontacao');
+        // console.log('afterRenderConfrontacao');
         var view = this.getView();
         var vm = this.getView().getViewModel();
         var title = "Confrontação da pretensão " + view.pretensaoid + " com os instrumentos de gestão do território. Área: " +
@@ -20,7 +20,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoController', {
     },
 
     featureGridSelectionChanged: function (grid, selected) {
-        console.log('featureGridSelectionChanged');
+        // console.log('featureGridSelectionChanged');
 
         var vm = this.getView().down('fullmap-confrontacao').getViewModel();
         var selectControl = vm.data.select;

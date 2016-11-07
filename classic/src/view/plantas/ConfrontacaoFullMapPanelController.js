@@ -19,8 +19,8 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
     },
 
     loadConfrontacao: function (pretensao) {
-        console.log('loadConfrontacao');
-        console.log(arguments);
+        // console.log('loadConfrontacao');
+        // console.log(arguments);
 
         var me = this;
         var view = me.getView();
@@ -38,7 +38,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
             if (result.success) {
                 if (result.data.features) {
                     var features = (new ol.format.GeoJSON()).readFeatures(result.data);
-                    console.log(features);
+                    // console.log(features);
                     confrontacaolayer.getSource().addFeatures(features);
                     // var extent = confrontacaolayer.getSource().getExtent();
                     // mapView.fit(extent, olMap.getSize());
@@ -60,8 +60,8 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
                     // vm.setStores(Ext.apply(vm.getStores(), {'featureStore': featureStore}));
                     // var grid = view.up('fullmap-confrontacao').up('confrontacao').down('featureGrid');
                     var grid = view.up('confrontacao').lookupReference('featureGrid');
-                    console.log(grid);
-                    console.log(view);
+                    // console.log(grid);
+                    // console.log(view);
                     grid.setStore(featureStore);
                 }
             } else {
@@ -76,7 +76,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
             if (result.success) {
                 if (result.data.features) {
                     var features = (new ol.format.GeoJSON()).readFeatures(result.data);
-                    console.log(features);
+                    // console.log(features);
 
                     var extent = features[0].getGeometry().getExtent();
                     // var featureCenter = ol.extent.getCenter(extent);
@@ -93,7 +93,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
 
     onAfterLayersLoaded: function (view) {
         var me = this;
-        console.log('afterlayersloaded()@Admin.view.plantas.ConfrontacaoFullMapPanelController');
+        // console.log('afterlayersloaded()@Admin.view.plantas.ConfrontacaoFullMapPanelController');
         var olMap = view.map;
         var vm = me.getView().getViewModel();
         // Each print request can have several features
@@ -114,7 +114,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
 
         selectSingleClick.on('select', function (e) {
             var features = e.target.getFeatures();
-            console.log('selectSingleClick');
+            // console.log('selectSingleClick');
 
             var geomapv = view.up('confrontacao');
             var grid = geomapv.lookupReference('featureGrid');
@@ -134,14 +134,14 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
 
         //
         var id = view.up('confrontacao').pretensaoid;
-        console.log(id);
+        // console.log(id);
         me.loadConfrontacao(id);
     },
 
     onPrintConfrontacao: function (printid, pretensaoid, name) {
 
         //Ext.getDisplayName(temp2)
-        console.log('printConfrontacao');
+        // console.log('printConfrontacao');
 
         var me = this;
         var view = this.getView();
@@ -157,7 +157,7 @@ Ext.define('Admin.view.plantas.ConfrontacaoFullMapPanelController', {
         var center = olMap.getView().getCenter();
         var layoutname = vm.get('paper') + '_' + vm.get('orientation');
 
-        console.log(layoutname);
+        // console.log(layoutname);
 
 
         /*

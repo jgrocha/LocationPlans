@@ -39,6 +39,28 @@ Ext.define('Admin.view.urbanismo.EdificioController', {
         console.log("onButtonOpenProcess");
     },
 
+    onButtonCopy: function (button, e, options) {
+        var me = this;
+        var vm = me.getViewModel();
+        var latlon = vm.get('edificadoGrid.selection.latlon');
+        // console.log("onButtonCopy: " + latlon);
+
+        var one = Ext.ComponentQuery.query('#LatLonItemId')[0];
+        // console.log(one);
+
+        var field = one.inputEl.dom;
+        field.select();
+
+        try {
+            var successful = document.execCommand('copy');
+            // var msg = successful ? 'successful' : 'unsuccessful';
+            // console.log('Copying text command was ' + msg);
+        } catch (err) {
+            console.log('Oops, unable to copy');
+        }
+
+    },
+
     onButtonRemoverInstantaneo: function (button, e, options) {
         var me = this;
         console.log("onButtonRemoverInstantaneo");
@@ -48,7 +70,7 @@ Ext.define('Admin.view.urbanismo.EdificioController', {
         var sm = dv.getSelectionModel();
         var records = sm.getSelection();
 
-        console.log(records);
+        // console.log(records);
 
         var vm = me.getViewModel();
         var fotografiasStore = vm.getStore('fotografia');

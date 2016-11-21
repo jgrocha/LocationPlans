@@ -30,6 +30,25 @@
       "dpi": 200,
       "layers": [
         {
+          "type": "grid",
+          "gridType": "lines",
+//          "gridType": "points",
+          // "numberOfLines": [5,5],
+          "origin": [ -26000, 101000],
+          "spacing": [ 100, 100],
+          "renderAsSvg": true,
+//          "haloColor" : "#CCFFCC", // most css color definitions supported
+          "labelColor" : "black",
+          "labelFomat": "%1.0f %s",
+          "indent": 10,
+//          "haloRadius" : 4,
+          "font" : {
+            "name" : ["Arial", "Helvetica", "Nimbus Sans L", "Liberation Sans", "FreeSans", "Sans-serif"],
+            "size" : 8,
+            "style" : "BOLD"
+          }
+        },
+        {
           "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
           "customParams": {
             "VERSION": "1.1.1",
@@ -58,6 +77,25 @@
       ],
       "dpi": 200,
       "layers": [
+        {
+          "type": "grid",
+          "gridType": "lines",
+          //          "gridType": "points",
+          // "numberOfLines": [5,5],
+          "origin": [ -26000, 101000],
+          "spacing": [ 500, 500],
+          "renderAsSvg": true,
+//          "haloColor" : "#CCFFCC", // most css color definitions supported
+          "labelColor" : "black",
+          "labelFomat": "%1.0f %s",
+          "indent": 10,
+//          "haloRadius" : 4,
+          "font" : {
+            "name" : ["Arial", "Helvetica", "Nimbus Sans L", "Liberation Sans", "FreeSans", "Sans-serif"],
+            "size" : 8,
+            "style" : "BOLD"
+          }
+        },
         {
           "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
           "customParams": {

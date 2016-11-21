@@ -89,7 +89,7 @@ Ext.define('Admin.view.urbanismo.Edificio', {
                 }, {
                     xtype: 'textfield',
                     padding: '0 0 10 0',
-                    // flex: 1,
+                    flex: 1,
                     labelAlign: 'right',
                     fieldLabel: 'Current use'.translate(),
                     tooltip: 'Uso corrente do edifício, independentemente do considerado na licença emitida pelo Município',
@@ -111,6 +111,19 @@ Ext.define('Admin.view.urbanismo.Edificio', {
                     bind: '{edificadoGrid.selection.n_proc}',
                     name: 'n_proc',
                     tooltip: 'Número do processo de obras',
+                    listeners: {
+                        render: function (p) {
+                            p.getEl().down('input').set({'data-qtip': p.tooltip});
+                        }
+                    }
+                }, {
+                    xtype: 'textfield',
+                    // padding: '0 0 10 0',
+                    labelAlign: 'right',
+                    fieldLabel: 'Nº Alvará'.translate(),
+                    bind: '{edificadoGrid.selection.n_alvara}',
+                    name: 'n_alvara',
+                    tooltip: 'Número de alvará de utilização. Oficializa o edificado e o seu uso',
                     listeners: {
                         render: function (p) {
                             p.getEl().down('input').set({'data-qtip': p.tooltip});
@@ -169,16 +182,28 @@ Ext.define('Admin.view.urbanismo.Edificio', {
                     }
                 }, {
                     xtype: 'textfield',
-                    padding: '0 0 10 0',
+                    padding: '0 10 10 0',
                     labelAlign: 'right',
-                    fieldLabel: 'Nº Alvará'.translate(),
-                    bind: '{edificadoGrid.selection.n_alvara}',
-                    name: 'n_alvara',
-                    tooltip: 'Número de alvará de utilização. Oficializa o edificado e o seu uso',
+                    flex: 1,
+                    readOnly: true,
+                    fieldLabel: 'Coordinates'.translate(),
+                    bind: '{edificadoGrid.selection.latlon}',
+                    name: 'latlon',
+                    itemId: 'LatLonItemId',
+                    tooltip: 'Coordenadas geográficas do ponto central (EPSG:4326)',
                     listeners: {
                         render: function (p) {
                             p.getEl().down('input').set({'data-qtip': p.tooltip});
                         }
+                    }
+                }, {
+                    xtype: 'button',
+                    padding: '0 0 10 10',
+                    // margin: '0 0 10 105',
+                    iconCls: 'x-fa fa-copy',
+                    tooltip: 'Copy to clipboard'.translate(),
+                    listeners: {
+                        click: 'onButtonCopy'
                     }
                 }]
             }]

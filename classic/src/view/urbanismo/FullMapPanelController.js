@@ -225,30 +225,52 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
 
     },
 
+    onChangeKeyClick: function (btn, menuitem) {
+        var me = this;
+        var view = this.getView();
+        var canvas = view.down('mapcanvas');
+
+        var vm = view.getViewModel();
+        vm.set('searchkey', menuitem.type);
+        console.log(menuitem.type);
+
+    },
+
     onSearchByIDEnter: function (field, e) {
         var me = this;
+        var view = this.getView();
+        var vm = view.getViewModel();
+        var key = vm.get('searchkey');
+
         if (e.getKey() == e.ENTER) {
             console.log('Search by ID');
-            var key = field.getValue();
-            console.log(key);
-            if (key) {
+            var keyValue = field.getValue();
+            console.log(keyValue);
+            if (keyValue) {
                 Server.Urbanismo.Urbanismo.readEdificioByID({
-                    id: key
+                    id: keyValue,
+                    key: key
                 }, function (result, event) {
                     if (result) {
                         if (result.success) {
                             // Ext.Msg.alert('Successo', 'As alterações foram gravadas com sucesso.');
-                            console.log(result);
+                            // console.log(result);
 
-                            if (result.total == 1) {
+                            var vm = me.getView().getViewModel();
+                            var vectorLayer = vm.get('nominatimLayer');
+                            vectorLayer.getSource().clear();
 
-                                var spot = [result.data[0]["st_x"], result.data[0]["st_y"]];
-                                var vm = me.getView().getViewModel();
-                                var vectorLayer = vm.get('nominatimLayer');
-                                var geoMarker = new ol.Feature({
-                                    geometry: new ol.geom.Point(spot)
-                                });
-                                vectorLayer.getSource().addFeature(geoMarker);
+                            if (result.total >= 1) {
+
+                                var spot = [];
+                                for (var k=0; k < result.total; k++) {
+                                    spot[k] = [result.data[k]["st_x"], result.data[k]["st_y"]];
+                                    var geoMarker = new ol.Feature({
+                                        geometry: new ol.geom.Point(spot[k])
+                                    });
+                                    vectorLayer.getSource().addFeature(geoMarker);
+                                }
+
                                 //
                                 var map = me.getView().down('mapcanvas').map;
                                 var mapView = map.getView();
@@ -258,7 +280,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
                                     source: mapView.getCenter()
                                 });
                                 map.beforeRender(pan);
-                                mapView.setCenter(spot);
+                                mapView.setCenter(spot[0]);
 
                                 var zoom = ol.animation.zoom({
                                     duration: 2000,
@@ -266,6 +288,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelController', {
                                 });
                                 map.beforeRender(zoom);
                                 mapView.setResolution(0.27999999999999997);
+
                             } else {
                                 Ext.Msg.alert('Not found'.translate(), 'No building found'.translate());
                             }

@@ -61,9 +61,30 @@ Ext.define("Admin.view.urbanismo.FullMapPanel", {
             xtype: 'buttongroup',
             //plugins: Ext.create('Ext.ux.BoxReorderer'),
             //padding: '30 0 0 0',
-            columns: 1,
+            columns: 2,
             title: 'Search by ID'.translate(),
             items: [{
+                xtype: 'cycle',
+                showText: true,
+                width: 122,
+                textAlign: 'right',
+                listeners: {
+                    change: 'onChangeKeyClick'
+                },
+                menu: {
+                    items: [{
+                        text: 'por ID'.translate(),
+                        type: 'id_edifica',
+                        checked: true
+                    }, {
+                        text: 'por Nº Proc.'.translate(),
+                        type: 'n_proc'
+                    }, {
+                        text: 'por Nº Alvará'.translate(),
+                        type: 'n_alvara'
+                    }]
+                }
+            }, {
                 xtype: 'textfield',
                 listeners: {
                     specialkey: 'onSearchByIDEnter'

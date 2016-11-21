@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61e971d5-b08e-4d59-b333-e3de1794b27a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic.json" afterPath="$PROJECT_DIR$/build/production/Admin/classic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/production/Admin/classic/app.js" afterPath="$PROJECT_DIR$/build/production/Admin/classic/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic.json" afterPath="$PROJECT_DIR$/classic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/Edificio.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/Edificio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/print-apps/crosses_point_grid/requestData-all-usa-states-with-crosses-grid.json" afterPath="$PROJECT_DIR$/print-apps/crosses_point_grid/requestData-all-usa-states-with-crosses-grid.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/print-apps/plantas/requestData.json" afterPath="$PROJECT_DIR$/print-apps/plantas/requestData.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js" afterPath="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.json" afterPath="$PROJECT_DIR$/sass/example/bootstrap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js" afterPath="$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js" />
     </list>
     <ignored path="server/server-config.json" />
     <ignored path="server/node_modules/" />
@@ -41,101 +40,141 @@
     <favorites_list name="MyDashBoard" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="584" column="1" lean-forward="false" selection-start-line="584" selection-start-column="1" selection-end-line="584" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Edificio.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/Edificio.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="191" column="41" lean-forward="false" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EdificioController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-202">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <marker date="1479739081556" expanded="true" signature="54:11137" ph="{&quot;extend&quot;: 'Ext.app.ViewController'...}" />
-                <marker date="1479739081556" expanded="true" signature="1565:2191" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UrbanismoModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-864">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FullMapPanelModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GridEdificado.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/GridEdificado.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UrbanismoController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Urbanismo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="279" column="72" lean-forward="false" selection-start-line="279" selection-start-column="72" selection-end-line="279" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.59461194">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="196">
+                  <caret line="231" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EdificioController.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1314">
+                  <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GridEdificado.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/GridEdificado.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FullMapPanelModel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="108">
+                  <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="17" />
+                  <folding>
+                    <marker date="1479741402972" expanded="true" signature="53:1667" ph="{&quot;extend&quot;: 'Admin.view.maps.FullMapPanelModel'...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Readme-Notes.md" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="414">
+                    <caret line="236" column="14" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="14" />
+                    <folding />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FullMapPanelController.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="209">
+                  <caret line="284" column="62" lean-forward="false" selection-start-line="284" selection-start-column="62" selection-end-line="284" selection-end-column="62" />
+                  <folding>
+                    <marker date="1479743307877" expanded="true" signature="10084:12469" ph="{...}" />
+                    <marker date="1479743307877" expanded="true" signature="10118:12316" ph="{...}" />
+                    <marker date="1479743307877" expanded="true" signature="10164:12151" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UrbanismoController.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="46" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Urbanismo.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="265" column="4" lean-forward="false" selection-start-line="265" selection-start-column="4" selection-end-line="265" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="558">
+                  <caret line="89" column="44" lean-forward="false" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+                  <folding>
+                    <marker date="1479741518333" expanded="true" signature="48:3406" ph="{&quot;extend&quot;: &quot;Admin.view.maps.FullMapPanel&quot;...}" />
+                    <marker date="1479741518333" expanded="true" signature="675:3402" ph="{...}" />
+                    <marker date="1479741518333" expanded="true" signature="784:3039" ph="[...]" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FullMapPanel.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="181" column="40" lean-forward="false" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Urbanismo.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="154">
+                  <caret line="299" column="3" lean-forward="false" selection-start-line="299" selection-start-column="3" selection-end-line="299" selection-end-column="3" />
+                  <folding>
+                    <marker date="1479741998095" expanded="true" signature="328:22524" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -150,7 +189,15 @@
       <find>n_alvara</find>
       <find>edificado</find>
       <find>read</find>
+      <find>byid</find>
+      <find>callback</find>
+      <find>nominatimLayer</find>
+      <find>remove</find>
+      <find>vectorLayer</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/classic/src/view/urbanismo</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -159,9 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classic/src/view/publicidade/Requer.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/publicidade/GridPublicidadeLevantada.js" />
-        <option value="$PROJECT_DIR$/app/model/publicidade/Fotografia.js" />
         <option value="$PROJECT_DIR$/classic/src/view/publicidade/FullMapPanel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/publicidade/Publicidade.js" />
         <option value="$PROJECT_DIR$/classic/src/view/publicidade/PublicidadeModel.js" />
@@ -186,7 +230,6 @@
         <option value="$PROJECT_DIR$/classic/src/view/redeviaria/RedeViariaController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/redeviaria/MediasModel.js" />
         <option value="$PROJECT_DIR$/app/model/plantas/Trafego.js" />
-        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/redeviaria/Medias.js" />
         <option value="$PROJECT_DIR$/classic/src/view/redeviaria/RedeViariaModel.js" />
         <option value="$PROJECT_DIR$/classic/src/view/dashboard/DashboardController.js" />
@@ -210,6 +253,10 @@
         <option value="$PROJECT_DIR$/classic/src/view/publicidade/MupiController.js" />
         <option value="$PROJECT_DIR$/classic/src/view/urbanismo/Edificio.js" />
         <option value="$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js" />
+        <option value="$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js" />
+        <option value="$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js" />
       </list>
     </option>
   </component>
@@ -245,6 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -448,36 +496,16 @@
               <option name="myItemId" value="classic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="plantas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -491,44 +519,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="urbanismo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyDashBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="consulta" />
+              <option name="myItemId" value="classic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -583,6 +580,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -590,6 +598,12 @@
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
       <envs />
@@ -824,7 +838,8 @@
       <workItem from="1479579269531" duration="2648000" />
       <workItem from="1479722720925" duration="65000" />
       <workItem from="1479722812914" duration="190000" />
-      <workItem from="1479723023744" duration="5982000" />
+      <workItem from="1479723023744" duration="6674000" />
+      <workItem from="1479740757540" duration="2448000" />
     </task>
     <task id="LOCAL-00001" summary="Navigation tree from database">
       <created>1447546384939</created>
@@ -1141,11 +1156,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478533682841</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="added WGS84 coordinates with copy to clipboard to buildings">
+      <created>1479739186945</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1479739186945</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="713869000" />
+    <option name="totallyTimeSpent" value="717009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1160,7 +1182,7 @@
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26568267" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17817606" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27597764" sideWeight="0.37374803" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46659708" sideWeight="0.4832251" order="4" side_tool="false" content_ui="tabs" />
@@ -1218,7 +1240,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server/public" />
     </ignored-roots>
-    <MESSAGE value="Added application_name to PostgreSQL connections to monitor issue #6" />
     <MESSAGE value="Added more application_name to PostgreSQL connections to monitor issue #6" />
     <MESSAGE value="Search using nominatim and search by building id. Closes #1. Finally." />
     <MESSAGE value="Hide WFS from layer tree; layer tree starts collapsed" />
@@ -1243,7 +1264,8 @@
     <MESSAGE value="Redeploy c/ URl de print corrigidos" />
     <MESSAGE value="Impressão da Informação Prévia no Minuto" />
     <MESSAGE value="Fixed print with no new features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed print with no new features" />
+    <MESSAGE value="added WGS84 coordinates with copy to clipboard to buildings" />
+    <option name="LAST_COMMIT_MESSAGE" value="added WGS84 coordinates with copy to clipboard to buildings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,13 +1286,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/model/plantas/Trafego.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/redeviaria/MediasController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1474,13 +1489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3636">
-          <caret line="202" column="33" lean-forward="false" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/ConfrontacaoController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1492,7 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,24 +1507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1525,7 +1514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="29" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1533,7 +1521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1541,7 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
           <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1549,7 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1565,40 +1550,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8298">
           <caret line="475" column="63" lean-forward="false" selection-start-line="475" selection-start-column="63" selection-end-line="475" selection-end-column="63" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="584" column="1" lean-forward="false" selection-start-line="584" selection-start-column="1" selection-end-line="584" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/publicidade/MupiController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/Edificio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3438">
+          <caret line="191" column="41" lean-forward="false" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
+    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="279" column="72" lean-forward="false" selection-start-line="279" selection-start-column="72" selection-end-line="279" selection-end-column="72" />
+        <state relative-caret-position="1314">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme-Notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="414">
+            <caret line="236" column="14" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="14" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1613,43 +1611,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/UrbanismoController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="342">
+          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="181" column="40" lean-forward="false" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <marker date="1479741402972" expanded="true" signature="53:1667" ph="{&quot;extend&quot;: 'Admin.view.maps.FullMapPanelModel'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/direct/Urbanismo/Urbanismo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="265" column="4" lean-forward="false" selection-start-line="265" selection-start-column="4" selection-end-line="265" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="89" column="44" lean-forward="false" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+          <folding>
+            <marker date="1479741518333" expanded="true" signature="48:3406" ph="{&quot;extend&quot;: &quot;Admin.view.maps.FullMapPanel&quot;...}" />
+            <marker date="1479741518333" expanded="true" signature="675:3402" ph="{...}" />
+            <marker date="1479741518333" expanded="true" signature="784:3039" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classic/src/view/plantas/FullMapPanelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="231" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/FullMapPanelController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/publicidade/MupiController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/Edificio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="191" column="41" lean-forward="false" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classic/src/view/urbanismo/EdificioController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="209">
+          <caret line="284" column="62" lean-forward="false" selection-start-line="284" selection-start-column="62" selection-end-line="284" selection-end-column="62" />
           <folding>
-            <marker date="1479739081556" expanded="true" signature="54:11137" ph="{&quot;extend&quot;: 'Ext.app.ViewController'...}" />
-            <marker date="1479739081556" expanded="true" signature="1565:2191" ph="{...}" />
+            <marker date="1479743307877" expanded="true" signature="10084:12469" ph="{...}" />
+            <marker date="1479743307877" expanded="true" signature="10118:12316" ph="{...}" />
+            <marker date="1479743307877" expanded="true" signature="10164:12151" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -4,6 +4,7 @@ Ext.define('Admin.view.urbanismo.FullMapPanelModel', {
     requires: ['Admin.model.geo.Nominatim'],
 
     data: {
+        searchkey: 'id_edifica',
         paper: 'A4',
         orientation: 'portrait',
         defaultStyle: new ol.style.Style({

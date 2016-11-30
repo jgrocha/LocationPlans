@@ -62,7 +62,7 @@ Ext.define("Admin.view.urbanismo.FullMapPanel", {
             //plugins: Ext.create('Ext.ux.BoxReorderer'),
             //padding: '30 0 0 0',
             columns: 2,
-            title: 'Search by ID'.translate(),
+            title: 'Search'.translate(),
             items: [{
                 xtype: 'cycle',
                 showText: true,

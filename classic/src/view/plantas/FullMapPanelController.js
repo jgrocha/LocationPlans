@@ -551,7 +551,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
         switch (purposeId) {
             case 1:
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "tiled": true},
                     "layers": ["carto2_5k"],
                     "opacity": 1,
@@ -559,7 +559,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "type": "WMS"
                 });
                 serializedLayers10k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["carto10k"],
                     "opacity": 1,
@@ -586,7 +586,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             case 2:
                 // 2k
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["ran_etrs89"],
                     "opacity": 1,
@@ -594,7 +594,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "type": "WMS"
                 });
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "tiled": true},
                     "layers": ["carto2_5k"],
                     "opacity": 0.4,
@@ -603,7 +603,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 });
                 // 10k
                 serializedLayers10k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["ran_etrs89"],
                     "opacity": 1,
@@ -611,7 +611,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "type": "WMS"
                 });
                 serializedLayers10k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["carto10k"],
                     "opacity": 0.4,
@@ -635,16 +635,16 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     scale: 10000
                 };
                 legendClass.push({
-                    "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ran_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
+                    "icons": ["http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ran_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
                     "name": "Reserva Agrícola Nacional"
                 });
                 /*
                  legendClass.push({
-                 "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto10k&FORMAT=image%2Fpng"],
+                 "icons": ["http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto10k&FORMAT=image%2Fpng"],
                  "name": "Cartografia 10k"
                  });
                  legendClass.push({
-                 "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto2_5k&FORMAT=image%2Fpng"],
+                 "icons": ["http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=carto2_5k&FORMAT=image%2Fpng"],
                  "name": "Cartografia 2k e 5k"
                  });
                  */
@@ -656,7 +656,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
             case 3:
                 // 2k
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["ren_etrs89"],
                     "opacity": 1,
@@ -664,7 +664,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "type": "WMS"
                 });
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "tiled": true},
                     "layers": ["carto2_5k"],
                     "opacity": 0.4,
@@ -673,7 +673,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 });
                 // 10k
                 serializedLayers10k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["ren_etrs89"],
                     "opacity": 1,
@@ -681,7 +681,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     "type": "WMS"
                 });
                 serializedLayers10k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "transparent": true, "tiled": true},
                     "layers": ["carto10k"],
                     "opacity": 0.4,
@@ -705,7 +705,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                     scale: 10000
                 };
                 legendClass.push({
-                    "icons": ["http://softwarelivre.cm-agueda.pt/geoserver/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ren_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
+                    "icons": ["http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms?request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=ren_etrs89&FORMAT=image%2Fpng&SCALE=2183915&LEGEND_OPTIONS=dpi:254"],
                     "name": "Reserva Ecológica Nacional"
                 });
                 spec.attributes['legend'] = {
@@ -715,7 +715,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 break;
             case 4:
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "tiled": true},
                     "layers": ["carto2_5k"],
                     "opacity": 1,
@@ -864,7 +864,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                 break;
             case 4:
                 serializedLayers2k.push({
-                    "baseURL": "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                    "baseURL": "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                     "customParams": {"VERSION": "1.1.1", "tiled": true},
                     "layers": ["carto2_5k"],
                     "opacity": 1,
@@ -1006,7 +1006,7 @@ Ext.define('Admin.view.plantas.FullMapPanelController', {
                             item.map.layers.push(serializedLayers2k[1]);
 
                             /*                            item.map.layers.push({
-                             baseURL: "http://softwarelivre.cm-agueda.pt/geoserver/wms",
+                             baseURL: "http://geoserver.sig.cm-agueda.pt/geoserver/gwc/service/wms",
                              customParams: {
                              LAYERS: "carto2_5k",
                              STYLES: "",
